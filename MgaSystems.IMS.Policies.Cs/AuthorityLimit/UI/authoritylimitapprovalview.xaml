@@ -1,0 +1,137 @@
+<local:AuthorityLimitApprovalView x:Class="MgaSystems.IMS.Policies.AuthorityLimit.UI.AuthorityLimitApprovalView"
+                                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                                  xmlns:local="clr-namespace:MgaSystems.IMS.Policies.AuthorityLimit.UI"
+                                  xmlns:mgaInterop="clr-namespace:Mga.Wpf.Ims.Interop;assembly=Mga.Wpf.Ims"
+                                  x:Name="mainWindow" FrameworkElement.Height="575" FrameworkElement.Width="850"
+                                  Title="Authority Limits Approval" WindowStartupLocation="CenterScreen"
+                                  ResizeMode="CanResizeWithGrip">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/CommonResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/DatagridResources2.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Mga.Wpf.Ims;component/Resources/ToolBarResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/TreeViewResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/ListViewResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource textBoxStyleMain}">
+        <Style.Triggers>
+          <Trigger Property="TextBoxBase.IsReadOnly" Value="true">
+            <Setter Property="Control.Background" Value="LightGray"/>
+          </Trigger>
+        </Style.Triggers>
+      </Style>
+      <Style TargetType="{x:Type DataGrid}" BasedOn="{StaticResource dataGridStyle}"/>
+      <Style TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.MinWidth" Value="80"/>
+      </Style>
+      <Style x:Key="SearchBtnStyle" TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.Margin" Value="2"/>
+      </Style>
+      <Style TargetType="{x:Type TextBlock}">
+        <Setter Property="FrameworkElement.Margin" Value="2"/>
+        <Setter Property="TextBlock.Foreground" Value="{StaticResource standardTextForegroundColor}"/>
+      </Style>
+      <DataTemplate x:Key="lbiTemplate">
+        <TextBlock Grid.Column="1" Margin="0,2,2,2" Text="{Binding RatingType}"/>
+      </DataTemplate>
+      <Style TargetType="{x:Type ListBoxItem}">
+        <Setter Property="Control.HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="ContentControl.ContentTemplate" Value="{StaticResource lbiTemplate}"/>
+        <Style.Triggers>
+          <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+            <Setter Property="Control.Background" Value="White"/>
+          </Trigger>
+          <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+            <Setter Property="Control.Background" Value="{StaticResource alternateRowBrush}"/>
+          </Trigger>
+          <Trigger Property="ListBoxItem.IsSelected" Value="true">
+            <Trigger.Setters>
+              <Setter Property="Control.Background" Value="{StaticResource selectedItemBrush}"/>
+            </Trigger.Setters>
+          </Trigger>
+        </Style.Triggers>
+      </Style>
+      <SolidColorBrush x:Key="SelectedBrush" Color="{DynamicResource {x:Static JetSystemColors.HighlightColorKey}}"/>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <DockPanel LastChildFill="true">
+    <ToolBarTray DockPanel.Dock="Top">
+      <FrameworkElement.Resources>
+        <Style TargetType="{x:Type ToolBarTray}" BasedOn="{StaticResource toolBarTrayStyle}"/>
+        <Style TargetType="{x:Type Image}" BasedOn="{StaticResource verticalToolbarImageStyle}"/>
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource toolbarButtonStyle}"/>
+        <Style TargetType="{x:Type StackPanel}" BasedOn="{StaticResource toolbarStackPanelStyle}"/>
+        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource verticalToolbarTextBlockStyle}"/>
+        <Style TargetType="{x:Type AccessText}" BasedOn="{StaticResource verticalToolbarAccessTextStyle}"/>
+      </FrameworkElement.Resources>
+      <ToolBar>
+        <Button ToolTip="Save" Command="{Binding SaveCommand}">
+          <StackPanel>
+            <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/saveHS.png"/>
+            <AccessText Text="_Save"/>
+          </StackPanel>
+        </Button>
+        <Separator/>
+      </ToolBar>
+    </ToolBarTray>
+    <Grid DockPanel.Dock="Top">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition/>
+      </Grid.ColumnDefinitions>
+      <DataGrid Grid.Column="0" CanUserAddRows="false" CanUserDeleteRows="false"
+                ItemsSource="{Binding LimitCSV.View, UpdateSourceTrigger=PropertyChanged}"
+                SelectedItem="{Binding SelectedItem, UpdateSourceTrigger=PropertyChanged}">
+        <DataGrid.Columns>
+          <DataGridTextColumn Header="Field " Width="Auto" IsReadOnly="true"
+                              Binding="{Binding DatabaseField, UpdateSourceTrigger=PropertyChanged}"/>
+          <DataGridTextColumn Header="Field Value " Width="Auto" IsReadOnly="true"
+                              Binding="{Binding CellValueAtCheck, UpdateSourceTrigger=PropertyChanged, StringFormat={0:n2}}"/>
+          <DataGridTextColumn Header="Current Min Value " Width="Auto" IsReadOnly="true"
+                              Binding="{Binding MinValue, UpdateSourceTrigger=PropertyChanged}"/>
+          <DataGridTextColumn Header="Current Max Value " Width="Auto" IsReadOnly="true"
+                              Binding="{Binding MaxValue, UpdateSourceTrigger=PropertyChanged}"/>
+          <DataGridTextColumn Header="Min Value at Check " Width="Auto" IsReadOnly="true"
+                              Binding="{Binding MinValueAtCheck, UpdateSourceTrigger=PropertyChanged}"/>
+          <DataGridTextColumn Header="Max Value at Check" Width="Auto" IsReadOnly="true"
+                              Binding="{Binding MaxValueAtCheck, UpdateSourceTrigger=PropertyChanged}"/>
+          <DataGridCheckBoxColumn Header="Stop Bind  " Width="Auto" IsReadOnly="true"
+                                  Binding="{Binding StopBind, UpdateSourceTrigger=PropertyChanged}"/>
+          <DataGridCheckBoxColumn Header="Stop Quote  " Width="Auto" IsReadOnly="true"
+                                  Binding="{Binding StopQuote, UpdateSourceTrigger=PropertyChanged}"/>
+          <DataGridCheckBoxColumn Header="New  " Width="Auto" IsReadOnly="true"
+                                  Binding="{Binding ForNewPolicy, UpdateSourceTrigger=PropertyChanged}"/>
+          <DataGridCheckBoxColumn Header="Renewal  " Width="Auto" IsReadOnly="true"
+                                  Binding="{Binding ForRenewalPolicy, UpdateSourceTrigger=PropertyChanged}"/>
+          <DataGridTemplateColumn Header="Approve">
+            <DataGridTemplateColumn.CellTemplate>
+              <DataTemplate>
+                <CheckBox IsChecked="{Binding Path=Approve, UpdateSourceTrigger=PropertyChanged}">
+                  <FrameworkElement.Style>
+                    <Style TargetType="{x:Type CheckBox}">
+                      <Setter Property="UIElement.IsEnabled" Value="false"/>
+                      <Style.Triggers>
+                        <DataTrigger Binding="{Binding UserCanApprove}" Value="True">
+                          <Setter Property="UIElement.IsEnabled" Value="true"/>
+                        </DataTrigger>
+                      </Style.Triggers>
+                    </Style>
+                  </FrameworkElement.Style>
+                </CheckBox>
+              </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+          </DataGridTemplateColumn>
+          <DataGridTextColumn Header="Approval Date " Width="Auto" IsReadOnly="true"
+                              Binding="{Binding ApproveDate, UpdateSourceTrigger=PropertyChanged, StringFormat={0:MM/dd/yyyy}}"/>
+          <DataGridTextColumn Header="Approved By " Width="Auto" IsReadOnly="true"
+                              Binding="{Binding ApproveUserName, UpdateSourceTrigger=PropertyChanged}"/>
+          <DataGridTextColumn Header="Cell " Width="Auto" IsReadOnly="true"
+                              Binding="{Binding Cell, UpdateSourceTrigger=PropertyChanged}"/>
+        </DataGrid.Columns>
+      </DataGrid>
+    </Grid>
+  </DockPanel>
+</local:AuthorityLimitApprovalView>

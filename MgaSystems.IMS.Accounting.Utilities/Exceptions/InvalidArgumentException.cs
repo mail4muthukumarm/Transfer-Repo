@@ -1,0 +1,14 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: MGASystems.IMS.Accounting.Utilities.Exceptions.InvalidArgumentException
+// Assembly: MgaSystems.IMS.Accounting.Utilities, Version=2.0.0.0, Culture=neutral, PublicKeyToken=e175cb7c4ce15bbd
+// MVID: 0980F864-5BDB-427E-98EE-09B90661DBB2
+// Assembly location: D:\augusta\fortegra\IMS Project\MgaSystems.IMS.Accounting.Utilities.dll
+
+using System;
+
+#nullable disable
+namespace MGASystems.IMS.Accounting.Utilities.Exceptions;
+
+public sealed class InvalidArgumentException(string Message) : Exception(Message)
+{
+}

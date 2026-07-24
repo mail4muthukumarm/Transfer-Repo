@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: D:\augusta\fortegra\IMS Project\MgaSystems.IMS.Accounting.Shared.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0CDF2E71-074B-4695-AB5E-2816C2176891}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>MgaSystems.IMS.Accounting.Shared</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <ApplicationVersion>2.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>MGASystems.IMS.Accounting</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MgaSystems.IMS.Accounting.Datasets">
+      <HintPath>lib\MgaSystems.IMS.Accounting.Datasets.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Common">
+      <HintPath>lib\MgaSystems.IMS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Security">
+      <HintPath>lib\MgaSystems.IMS.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interfaces\IAccountingExplorerProvider.cs" />
+    <Compile Include="Interfaces\IAccountingExplorerControlProvider.cs" />
+    <Compile Include="Interfaces\IAccountingExplorerProviderExtensions.cs" />
+    <Compile Include="Interfaces\ISupportCostCenterAllocation.cs" />
+    <Compile Include="Shared\CostCenter.cs" />
+    <Compile Include="Shared\CostCenterAllocation.cs" />
+    <Compile Include="Shared\CostCenterAllocationCollection.cs" />
+    <Compile Include="Shared\Methods.cs" />
+    <Compile Include="Shared\StringResourceManager.cs" />
+    <Compile Include="Shared\Strings.cs" />
+    <Compile Include="Shared\Forms\formAccountingMenu.cs" />
+    <Compile Include="Shared\Forms\FormProducerFinancialView.cs" />
+    <Compile Include="Exceptions\AllocationExceedsExpenseException.cs" />
+    <Compile Include="Attributes\AccountingLibrary.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Shared\dll.licenses" />
+    <EmbeddedResource Include="Shared\Forms\formAccountingMenu.resx" />
+    <EmbeddedResource Include="Shared\Forms\FormProducerFinancialView.resx" />
+    <EmbeddedResource Include="Shared\Strings.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

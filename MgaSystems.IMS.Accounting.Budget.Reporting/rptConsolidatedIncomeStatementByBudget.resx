@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="txtRF_YTD_PremActual.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtGfAcctClassPct_CM_ActualPct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="textBox39.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtGfATYTD_ActVBudgetPerct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="txtGfAcctTypePct_CM_ActualPct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="txtGfATCurrentMonth_Budget.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtRF_CurrentMonth_PremActVBudgetPerct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="txtGfACYTD_Budget.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtGfAcctTypePct_CM_BudgetPct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="txtGhAcctClassName.OutputFormat" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox49.OutputFormat" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtRfYTD_Actual.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtRfCurrentMonth_PYActVActual.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="textBox46.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtGfATYTD_PYActual.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtRfYTD_PYActVActual.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtGfATCurrentMonth_PYActual.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtRF_YTD_PremPYActVActual.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtRfYTD_ActVBudgetPerct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="textBox42.OutputFormat" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtRfCurrentMonth_ActVBudgetPerct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="txtRF_YTD_PremActVBudget.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtGfACYTD_ActVBudgetPerct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="textBox8.OutputFormat" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtGfATCurrentMonth_ActVBudgetPerct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="textBox3.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="textBox10.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="textBox4.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtRF_CurrentMonth_PremPYActVActual.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtRF_YTD_PremPYActVActualPerct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="textBox11.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtGfATCurrentMonth_ActualAmount.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtRfYTD_Budget.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtRfCurrentMonth_Budget.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="textBox7.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="textBox14.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="textBox19.OutputFormat" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtRfYTD_PYActual.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="textBox15.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="textBox21.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtGfAcctClassPct_YTD_ActualPct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="txtRF_CurrentMonth_PremPYActVActualPerct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="txtRfCurrentMonth_ActualAmount.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtRfCurrentMonth_ActVBudget.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtRfYTD_PYActVActualPerct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="txtGfACYTD_Actual.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="textBox29.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtGfAcctTypePct_CM_PriorYearPct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="txtGfAcctClassPct_YTD_BudgetPct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="textBox33.OutputFormat" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtRF_YTD_PremBudget.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="textBox25.OutputFormat" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtRF_CurrentMonth_PremPYActual.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtGfATYTD_PYActVActualPerct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="txtGfAcctClassPct_CM_BudgetPct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="txtGfATYTD_Actual.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtGfACCurrentMonth_PYActVActualPerct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="txtGfATCurrentMonth_PYActVActualPerct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="textBox44.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="textBox2.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="textBox12.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="textBox37.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtGfAcctTypePct_YTD_BudgetPct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="txtRF_CurrentMonth_PremActual.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtRfCurrentMonth_PYActVActualPerct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="textBox1.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtGfAcctTypePct_YTD_ActualPct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="txtGfACYTD_PYActVActualPerct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="txtRF_YTD_PremActVBudgetPerct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="txtRfYTD_ActVBudget.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="textBox9.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtGfAcctTypePct_YTD_PriorYearPct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="txtGfAcctClassPct_CM_PriorYearPct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="textBox6.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtRfCurrentMonth_PYActual.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="textBox16.OutputFormat" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtRF_YTD_PremPYActual.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="textBox48.OutputFormat" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtGfACCurrentMonth_PYActual.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtGfACCurrentMonth_Budget.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="textBox5.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="txtGfACCurrentMonth_ActVBudgetPerct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="textBox65.OutputFormat" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtGfACYTD_PYActual.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="textBox20.OutputFormat" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtGfAcctClassPct_YTD_PriorYearPct.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="txtRF_CurrentMonth_PremActVBudget.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtGfACCurrentMonth_ActualAmount.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtRF_CurrentMonth_PremBudget.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="textBox31.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="txtGfATYTD_Budget.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="textBox23.OutputFormat" xml:space="preserve">
+    <value>#,##0</value>
+  </data>
+  <data name="textBox13.OutputFormat" xml:space="preserve">
+    <value>0%</value>
+  </data>
+</root>

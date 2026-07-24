@@ -1,0 +1,181 @@
+<UserControl x:Class="MgaSystems.IMS.Policies.SimpleQuoteEntry.UI.SubmissionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:MgaSystems.IMS.Policies.SimpleQuoteEntry.UI"
+             xmlns:addr="clr-namespace:MgaSystems.IMS.Policies.SimpleQuoteEntry">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Mga.Wpf.Ims;component/Resources/SuggestTextBoxBaseResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <local:InverseBooleanConverter x:Key="InvBoolConverter"/>
+      <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource textBoxStyleMain}">
+        <Setter Property="FrameworkElement.MinHeight" Value="18"/>
+        <Style.Triggers>
+          <Trigger Property="TextBoxBase.IsReadOnly" Value="true">
+            <Setter Property="Control.Background" Value="LightGray"/>
+          </Trigger>
+        </Style.Triggers>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="auto"/>
+      <RowDefinition Height="auto"/>
+    </Grid.RowDefinitions>
+    <Grid Row="0">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition/>
+        <ColumnDefinition/>
+      </Grid.ColumnDefinitions>
+      <Border Grid.Column="0" BorderBrush="Gray" BorderThickness="1">
+        <Grid Column="0">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+          </Grid.ColumnDefinitions>
+          <StackPanel Grid.Row="0" Grid.Column="0">
+            <TextBlock Text="Type:"/>
+            <ComboBox DisplayMemberPath="BusinessType" SelectedValuePath="BusinessTypeID" MinWidth="100"
+                      ItemsSource="{Binding SimpleQuote.Submission.BusinessTypes}"
+                      SelectedValue="{Binding SimpleQuote.Submission.InsuredTypeID, UpdateSourceTrigger=PropertyChanged}"/>
+          </StackPanel>
+          <StackPanel Grid.Row="0" Grid.Column="1">
+            <TextBlock Text="Status:"/>
+            <ComboBox DisplayMemberPath="Status" SelectedValuePath="StatusID" MinWidth="100"
+                      ItemsSource="{Binding Statuses}"
+                      SelectedValue="{Binding SimpleQuote.Submission.InsuredStatusID, UpdateSourceTrigger=PropertyChanged}"/>
+          </StackPanel>
+          <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+            <TextBlock Text="Business Name:"/>
+            <TextBox Text="{Binding SimpleQuote.Submission.InsuredBusinessName, UpdateSourceTrigger=PropertyChanged}"
+                     IsReadOnly="{Binding SimpleQuote.Submission.IsIndividual, UpdateSourceTrigger=PropertyChanged}"/>
+          </StackPanel>
+          <GroupBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Header="Individual Information">
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+              </Grid.ColumnDefinitions>
+              <StackPanel Grid.Row="0" Grid.Column="0">
+                <TextBlock Text="Title:"/>
+                <ComboBox DisplayMemberPath="Salutation" SelectedValuePath="Salutation" MinWidth="100"
+                          ItemsSource="{Binding Titles}"
+                          SelectedValue="{Binding SimpleQuote.Submission.Salutation, UpdateSourceTrigger=PropertyChanged}"
+                          IsEnabled="{Binding SimpleQuote.Submission.IsIndividual}"/>
+              </StackPanel>
+              <StackPanel Grid.Row="1" Grid.Column="0">
+                <TextBlock Text="First:"/>
+                <TextBox Text="{Binding SimpleQuote.Submission.FirstName, UpdateSourceTrigger=PropertyChanged}"
+                         IsReadOnly="{Binding SimpleQuote.Submission.IsIndividual, Converter={StaticResource InvBoolConverter}, UpdateSourceTrigger=PropertyChanged}"/>
+              </StackPanel>
+              <StackPanel Grid.Row="1" Grid.Column="1">
+                <TextBlock Text="Middle:"/>
+                <TextBox Text="{Binding SimpleQuote.Submission.MiddleName, UpdateSourceTrigger=PropertyChanged}"
+                         IsReadOnly="{Binding SimpleQuote.Submission.IsIndividual, Converter={StaticResource InvBoolConverter}, UpdateSourceTrigger=PropertyChanged}"/>
+              </StackPanel>
+              <StackPanel Grid.Row="1" Grid.Column="2">
+                <TextBlock Text="Last:"/>
+                <TextBox Text="{Binding SimpleQuote.Submission.LastName, UpdateSourceTrigger=PropertyChanged}"
+                         IsReadOnly="{Binding SimpleQuote.Submission.IsIndividual, Converter={StaticResource InvBoolConverter}, UpdateSourceTrigger=PropertyChanged}"/>
+              </StackPanel>
+              <StackPanel Grid.Row="2" Grid.Column="0">
+                <TextBlock Text="Gender:"/>
+                <ComboBox DisplayMemberPath="GenderName" SelectedValuePath="GenderID" MinWidth="100"
+                          ItemsSource="{Binding Genders}"
+                          SelectedValue="{Binding SimpleQuote.Submission.GenderID, UpdateSourceTrigger=PropertyChanged}"
+                          IsEnabled="{Binding SimpleQuote.Submission.IsIndividual}"/>
+              </StackPanel>
+            </Grid>
+          </GroupBox>
+          <StackPanel Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3">
+            <StackPanel Orientation="Horizontal">
+              <TextBlock Text="Name on Policy:"/>
+              <TextBlock>
+                <Hyperlink Command="{Binding SetInsuredNameCommand}">
+                  <TextBlock Text="(use insured name)"/>
+                </Hyperlink>
+              </TextBlock>
+            </StackPanel>
+            <TextBox HorizontalAlignment="Stretch"
+                     Text="{Binding SimpleQuote.Submission.PolicyName, UpdateSourceTrigger=PropertyChanged}"/>
+          </StackPanel>
+        </Grid>
+      </Border>
+      <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="1">
+        <Grid Column="1">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+          </Grid.ColumnDefinitions>
+          <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <TextBlock Text="Description:"/>
+            <TextBox Text="{Binding SimpleQuote.Submission.Description, UpdateSourceTrigger=PropertyChanged}"/>
+          </StackPanel>
+          <addr:AddressResolver2 Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                                 ISOCountryCode="{Binding SimpleQuote.Submission.ISOCountryCode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 Address1="{Binding SimpleQuote.Submission.Address1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 Address2="{Binding SimpleQuote.Submission.Address2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 City="{Binding SimpleQuote.Submission.City, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 State="{Binding SimpleQuote.Submission.State, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 ZipCode="{Binding SimpleQuote.Submission.ZipCode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 ZipExt="{Binding SimpleQuote.Submission.ZipExt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 County="{Binding SimpleQuote.Submission.County, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <addr:AddressResolver2.CountryList>
+              <Binding>                <!-- constructor argument:
+                     Countries
+                -->
+
+              </Binding>
+            </addr:AddressResolver2.CountryList>
+          </addr:AddressResolver2>
+          <StackPanel Grid.Row="2" Grid.Column="0">
+            <TextBlock Text="Delivery:"/>
+            <ComboBox DisplayMemberPath="Description" SelectedValuePath="DeliveryMethodID" MinWidth="100"
+                      ItemsSource="{Binding DeliveryMethods}"
+                      SelectedValue="{Binding SimpleQuote.Submission.DeliveryMethodID, UpdateSourceTrigger=PropertyChanged}"/>
+          </StackPanel>
+          <StackPanel Grid.Row="2" Grid.Column="1">
+            <TextBlock Text="Office:"/>
+            <ComboBox DisplayMemberPath="LocationType" SelectedValuePath="LocationTypeID" MinWidth="100"
+                      ItemsSource="{Binding OfficeTypes}"
+                      SelectedValue="{Binding SimpleQuote.Submission.LocationTypeID, UpdateSourceTrigger=PropertyChanged}"/>
+          </StackPanel>
+        </Grid>
+      </Border>
+    </Grid>
+    <StackPanel Grid.Row="1">
+      <TextBlock Text="Producer:"/>
+      <local:SuggestProducerByLoc x:Name="suggestProducer" MaxSuggestions="50" MinHeight="18" Margin="2"
+                                  SelectedItem="{Binding SelectedProducer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+    </StackPanel>
+  </Grid>
+</UserControl>

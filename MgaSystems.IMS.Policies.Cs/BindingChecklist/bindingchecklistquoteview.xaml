@@ -1,0 +1,125 @@
+<local:BindingChecklistQuoteView x:Class="MgaSystems.IMS.Policies.BindingChecklist.BindingChecklistQuoteView"
+                                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                                 xmlns:local="clr-namespace:MgaSystems.IMS.Policies.BindingChecklist"
+                                 xmlns:baseWpfBehaviors="clr-namespace:Mga.Wpf.Ims.Controls;assembly=Mga.Wpf.Ims"
+                                 xmlns:mgaInterop="clr-namespace:Mga.Wpf.Ims.Interop;assembly=Mga.Wpf.Ims"
+                                 FrameworkElement.Width="700" FrameworkElement.Height="700"
+                                 TransactionLogFilter="9f277213-6081-4081-853d-9e720a21df9c">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Mga.Wpf.Ims;component/Resources/CommonResources.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Mga.Wpf.Ims;component/Resources/ToolBarResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="auto"/>
+      <RowDefinition/>
+      <RowDefinition Height="auto" MinHeight="293"/>
+    </Grid.RowDefinitions>
+    <ToolBarTray Grid.Row="0" Height="41" VerticalAlignment="Bottom">
+      <FrameworkElement.Resources>
+        <Style TargetType="{x:Type ToolBarTray}" BasedOn="{StaticResource toolBarTrayStyle}"/>
+        <Style TargetType="{x:Type Image}" BasedOn="{StaticResource verticalToolbarImageStyle}"/>
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource toolbarButtonStyle}"/>
+        <Style TargetType="{x:Type StackPanel}" BasedOn="{StaticResource toolbarStackPanelStyle}"/>
+        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource verticalToolbarTextBlockStyle}"/>
+        <Style TargetType="{x:Type AccessText}" BasedOn="{StaticResource verticalToolbarAccessTextStyle}"/>
+      </FrameworkElement.Resources>
+      <ToolBar Band="1">
+        <Button ToolTip="Save" Command="{Binding SaveCommand}">
+          <StackPanel>
+            <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/saveHS.png"/>
+            <AccessText Text="_Save"/>
+          </StackPanel>
+        </Button>
+        <Separator/>
+        <baseWpfBehaviors:UndoButton ChangeManager="{Binding ChangeManager, Mode=OneWay}"/>
+        <baseWpfBehaviors:RedoButton ChangeManager="{Binding ChangeManager, Mode=OneWay}"/>
+        <Separator/>
+        <Button ToolTip="Remove Requirement" Command="{Binding RemoveItem, Mode=OneWay}">
+          <StackPanel>
+            <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/delete.png"/>
+            <AccessText Text="Remove Requirement"/>
+          </StackPanel>
+        </Button>
+        <Button ToolTip="Add (Single) Requirement" Command="{Binding AddSingleItemCommand}">
+          <StackPanel>
+            <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/add.png"/>
+            <AccessText Text="Add (Single) Item"/>
+          </StackPanel>
+        </Button>
+        <Button ToolTip="Add (Multiple) Requirements" Command="{Binding AddMultipleItemsCommand}">
+          <StackPanel>
+            <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/add.png"/>
+            <AccessText Text="Add (Multiple) Items"/>
+          </StackPanel>
+        </Button>
+      </ToolBar>
+    </ToolBarTray>
+    <DataGrid Grid.Row="1" AutoGenerateColumns="false" HorizontalScrollBarVisibility="Visible"
+              SelectionMode="Single" CanUserAddRows="false" CanUserDeleteRows="false"
+              ItemsSource="{Binding pBindingChecklistQuote}" SelectedItem="{Binding SelectedItemGrid}">
+      <DataGrid.Columns>
+        <DataGridTextColumn Header="Requirement" IsReadOnly="true"
+                            Binding="{Binding Requirement, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <DataGridTemplateColumn Header="Bind">
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <CheckBox IsChecked="{Binding IsBind, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+        <DataGridTemplateColumn Header="Issue">
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <CheckBox IsChecked="{Binding IsIssue, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+        <DataGridTemplateColumn Header="Quote">
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <CheckBox IsChecked="{Binding IsQuote, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+        <DataGridTextColumn Header="User" IsReadOnly="true"
+                            Binding="{Binding Username, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <DataGridTextColumn Header="Date Satisfied" IsReadOnly="true"
+                            Binding="{Binding DateCompleted, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <DataGridTextColumn Header="Requirement Comment" IsReadOnly="true"
+                            Binding="{Binding AdminBindingReqComment, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+      </DataGrid.Columns>
+    </DataGrid>
+    <Grid Row="2">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="auto"/>
+        <ColumnDefinition/>
+        <ColumnDefinition Width="auto"/>
+        <ColumnDefinition/>
+      </Grid.ColumnDefinitions>
+      <TextBlock Name="lblRequirement" Text="Comment:" Margin="0,15,0,0" Grid.Row="0" Grid.Column="0"/>
+      <TextBox Name="txComment" Grid.Row="0" Grid.Column="1"
+               Text="{Binding SelectedItemGrid.Comment, UpdateSourceTrigger=PropertyChanged}"/>
+      <CheckBox Name="txtcompleted" Grid.Row="1" Grid.Column="1" Content="completed"
+                IsChecked="{Binding SelectedItemGrid.IsCompleted, UpdateSourceTrigger=PropertyChanged}"/>
+      <TextBlock Name="lblBy" Text="By:" Margin="0,15,0,0" Grid.Row="2" Grid.Column="0"/>
+      <TextBlock Name="By" Margin="0,15,0,0" Grid.Row="2" Grid.Column="1" Text="{Binding SelectedItemGrid.Username}"/>
+      <TextBlock Name="lbldate" Text="Date:" Margin="0,15,0,0" Grid.Row="3" Grid.Column="0"/>
+      <TextBlock Name="Date" Margin="0,15,0,0" Grid.Row="3" Grid.Column="1"
+                 Text="{Binding SelectedItemGrid.DateCompleted}"/>
+    </Grid>
+  </Grid>
+</local:BindingChecklistQuoteView>

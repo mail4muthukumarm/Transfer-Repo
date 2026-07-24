@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ERROR_GLACCOUNTNAME_EXISTS" xml:space="preserve">
+    <value>An account with the specified GL account name already exists.</value>
+  </data>
+  <data name="BANKACCOUNTERROR_ROUTINGNUMBER_MISSING" xml:space="preserve">
+    <value>You must specify an ABA routing number to continue.</value>
+  </data>
+  <data name="CREATERROR_THRESHOLDSMISSING" xml:space="preserve">
+    <value>You must specify an AR and an AP write off threshold to continue.</value>
+  </data>
+  <data name="QUESTION_PROPAGATECHANGES_HEADER" xml:space="preserve">
+    <value>Update Existing Charts?</value>
+  </data>
+  <data name="QUESTION_BANKNAMEFOUND_HEADER" xml:space="preserve">
+    <value>Use Existing bank Information?</value>
+  </data>
+  <data name="BANKACCOUNTERROR_ACCOUNTNUMBER_MISSING" xml:space="preserve">
+    <value>You must specify a bank account number to continue.</value>
+  </data>
+  <data name="BANKACCOUNTERROR_ROUTINGNUMBER_INVALID" xml:space="preserve">
+    <value>The ABA routing number must be 9 characters.</value>
+  </data>
+  <data name="ERROR_GLACCOUNTCLASSTOACCTNUM_INVALID" xml:space="preserve">
+    <value>The system has determined that the GL Account Number specified with the GL classification is an invalid assignment for the Office Location selected. Please ensure that the GL Account Number is within the range of the GL Classification.</value>
+  </data>
+  <data name="ERROR_REQUIRED_HEADER" xml:space="preserve">
+    <value>Required Field Missing!</value>
+  </data>
+  <data name="table_refresh" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAANwMAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAr8g3BYrpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAslJREFUOE+VktlPU0EYxW/ik38ECURRwaAxRh80Jvjio0ZUJOxQxAqGKrYJVqhYCFWgiNDQslsWoaWCLAZl3yqUAgUqYJFNkEJboEDLUnw4zm1ZfCBGv+Rk7pzJ95vzTS5V3GHmFbWb5wrblpHfYkJOkwlZDQZk1i8g/aMeqTU/8bJqFomKGcTLJhFXOgFu8XgvAIoWJW1fMVm3fuF/xH47tr0PKGhdspulI3mQaiXIHxRBMpCOTHUK0lQClI8Uo2n6MzSL/RConmN90wZW7lfSuwvIbTbZAf9SCUouXin5iBAP0VsHQELmpQHvOg37ataa0TmjRbomBaw2BiKbgnG/PgD8jqfgtXDgL31yABCRx9oD0CXrWsTEmg5CTSLyhkWoGa9Ala4c77+VQj5ahLKRQrDrHuK6+NqEHfC6bp7MtQP5FwMUtLqNkGgKINakoVonR0InFyFVd+Ev80JMPQvs2kjcyGDSdzkSpFbPYY0AKlVG2sQHsvKUbDA/BSCs1hdxjbF2ny6WgoloeRTuJClxVXDpKLEoSlD5A6vWHdSojajtc2jKsAnjmg2mdRt08xZ8129gbM6CGEUsDOYN3E7qonmOBHz5NMwWG+oHHAkaB032da+WCCTpE393B5hWtxAk7KE/HQBe+aQd0EAa6WZa43orFsxWLJEU0RWPEFoYDB3xaDHEITjP8cAZlhvcI1xnKG6JDisE0DLsuLlVe5DgWTUHEbJQ3CsJwOX4C7jIPQcf8U0Ie/hgSP3gGuaSTXGkY1he34aRRNMvb2LWaMXUggU+OV5glgVD3C+ESJ2MN70C8mcmIrXnhd0/znDucwly8qSiC0a7orK1VmbWEBgZAwhMU8MvWQVvQTf8ROEIzPeGb/YtnH3sjtORJ3Ay/Bjcwq+YnAOdPElIyv4QfxOZt43MO3zYGa1DzT/lEXXqiNsDV/lhZwCo37b2EwQwZ30VAAAAAElFTkSuQmCCCw==</value>
+  </data>
+  <data name="BANKACCOUNTERROR_CHECKNUMBER_MISSING" xml:space="preserve">
+    <value>You must specify a check number to continue.</value>
+  </data>
+  <data name="exclamation" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA5wIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAr8g3BYrpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAnlJREFUOE+lk/1LE3Ecx/1bNEx7ICSC8AfNB8TswdiZD+kxtzk3a/nAyKS86R4kVyRqiEmELnMoBAVWUKmJhEiEURZRl5Habe3Bh3nnvFnw7ns3bsuKIPrA+7i7z/f1/nw/34cEAP+l3358bzudtOWoYSI2A7vZquc3LDqeb9awoQtqZvU8nfTr+G0fBKQiNqNnxV4Lwd0N8f6ALN7dBR9jRMBc5vE1FFM/M7GXiN1IidZqIdTrwLfxEYiDlxF2npEl3nJia2wYwe4WfDGphMWawpiJ/BCthsRwi55b67XL8IZNJ0sJ3qIB31yJyCM3/Fcv4lNVAcdq8xNJKmpA+rQEraY4bNVCaNXKsBSkf6w1qbHaSEN8MIT5ehrv6BwLSUUNyABW6lN0tcugUlEJCVwxVyBYX47QNRuC1514XZrBklTUYLmxPCw+dEFwGGRQqaiEBAZqT8FvKoOvTo3Q8A3MUulhkooa+BpKwpujA1hv1cemKlXcej8nG0jg15pSeA0l8JpohIb68LzwQNyAO6ti1/o7IPQ5YlOVKoZudoK/65ZBj74YnPYkAk4G3q42TBekxVtYMB63fDZXYnP0dmyqUkUlJHBJU4RFNYX1kX680pzAVN7e+CJ+1B1O/FCZx3nam7BxbzBWcbnbSfa+XQYXaJUMzzN1mMzdzU1kp8a3UdLbimxqrixTWHKcg3DHheAVcmgMFViqLof/EkMWjsDNdXiakyqMZ+3cfpAUvSxKp16oDnreVKng7STrMdCD5f4ecB12zNJHMZ6V4nmSmfzno6xo5tj+pOkjacyz/H3sVN4efjJ3Fz+RncKOHUpmHmfs+Ptl+nch4Qdyr9QaeF6REgAAAABJRU5ErkJgggs=</value>
+  </data>
+  <data name="ERROR_AUTOMATIONSETTING_ASSIGNMENT" xml:space="preserve">
+    <value>You must assign an account to each of the automation settings to continue!</value>
+  </data>
+  <data name="calendar" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAxAIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAr8g3BYrpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAlZJREFUOE+lkNlPE1EUh/m/jC+8+OSLwR2sCyYEhcrSKCSgMQRMRSCyyBJ2XEAohdKgIJsgpRZQlrAIuLB3Bmg7VJYS83lnBltMfFFv8ptzz8n5fXPPCQP+S9qn9q0nvabPs1TZu0l5t0zpG5miDjf57Wvk2VfJbl3mQfMiGY1fuVe/QNrTeVJrP70PAqr7tmT/7gF/o+Sq6b0goKJnQytSdx1qo6HqMlREQck5KIqAvJPw8ARkhMPd41qvsWxSWA8BZV3yIUCYu1Kg0wSvE+BVHNhiwHoFXl6A5wKWdkzrjX0yFgIUi3l/e0HNVagWpkoDlEdCqTAXn4VCASg4pfVG54+GAAViWWrxWb9bLVI/sK7FhkE9b3TouXVIj7JvF0OuS73qgNy2FZSdgGZoVOWQaHK4sTjdWIUSrDeJb44lrikG+/A6n9cUzpuHQoDsliV8AmBxSmpRmPRoc+kvSGoxUjieg7H5hpbPrfg4nTmoXnVAluUbXn+AVpeEbVgi1W4ixZ7MnbYk2kclTLZbJLcaSWyJxyLGcE5LRGQOhAD3G77g2d7XmtWjAsomCzSIejo+SGLEA7zbAVwzMgurCoZHR0ZIf7GgATo+ynQKqYBf6hqTsY9I2guHZ2Xmln34xD3SfGSE1LpZtgSge1xWi/RM6LH3MDaJpY7Mbmhmr+jzKPsYso8ATNXTbCp7SN5dVjd3WJT8YtPbmmFm0cvQlMT8iqL9WQUo3wNEmd/9CAISK6YG4ksm/DFFY1x7PMqlHBcXzU7OZDk4ldH/R4Xf7rQGAf8uwn4CON82rvdcscIAAAAASUVORK5CYIIL</value>
+  </data>
+  <data name="NewChartOfAccounts" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAsAEAAAJHSUY4OWEQABAAhQAAPkVVg8v9SVVrQ0tcgMb99sdAdazXKTFDprbK/++UhLw7y8zR+fz/gLg4ccb+frY3kMVFerMzlclIl8tLj8REksdH//jWi8BAlspKicA/wdv6jLPMUWF75PH/Vm2NeJSwcqwt9vz/8Pj/7PX/7fH22er49Pn/5ez0yeD4////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIf8LTkVUU0NBUEUyLjADAQEAACH5BAAAAAAALAAAAAAQABAAAAi6AFMIHEgwhYUCBEukAAEixYaHHz4kKODhA8EJEgaWKIFg4gcOAkFgqEAhQ0MCKA0YQOAhJIQLCh40DEAzgIMTLQc2iDAwhImfIk6AdLiwYQifJkQoFSpwA0GfKKKOGHFCQNMTDKKaQCFiqoYOVQUaOHEUxdapHb6eGCDwA9mtIlCM6JC2xNq2b7mO0MB3YwkAbUX47Dq3g18SgFN4QEHiBInHkB8vONDWg2UOHAQIGDAAAIADQwuKJhgQADsL</value>
+  </data>
+  <data name="QUESTION_SYNCCLASSIFICATIONS" xml:space="preserve">
+    <value>Do you want to sync all office account classifications with the master account classficiations?</value>
+  </data>
+  <data name="ERROR_ALLOFFICESHAVECHART" xml:space="preserve">
+    <value>The system has determined that there are no office locations to create a chart of accounts for.</value>
+  </data>
+  <data name="BANKACCOUNTERROR_BANKSIGNATUREORDER_NOTNUMERIC" xml:space="preserve">
+    <value>You must enter a number for the bank signature order.</value>
+  </data>
+  <data name="ERROR_AUTOMATIONACCOUNT" xml:space="preserve">
+    <value>The system has determined that the GL account you are trying to delete is an automation account. You must remove this account from the automation setting before it can be deleted.</value>
+  </data>
+  <data name="CREATEERROR_WRITEOFFMUSBENUMERDIC" xml:space="preserve">
+    <value>Write off thresholds must be numeric.</value>
+  </data>
+  <data name="cross" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAoAIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAr8g3BYrpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAjJJREFUOE+VkmtPE0EUhomJycbfoFaJhshKQOINoS0LlNYGBBPo/UK7lQLSll7SplAb9YMm/hJ/F4iKvWGlu73s9vVMSZdu+okPTzJzZt73zDlnRgBci+aWeGtwrztEJmcgeF1sgGYwzMtef6LhcJv6sasLTJw7RDebh5pIDZk0AyG+GYqgtbOHf283vtdX1x6xuE6M4id0CTWZQWd3XzOR/Vs8ZUcnlgAKRbD1udWeqC5YblwapLNcN5lRu4cfgK/foOYLzACtkMjLviBP2dHejwN0LgdDOF9+rVSFpZtXLyDUeJJT3scVNZMDPn+Bks6iGY6AsqO9FwPyR711zWIj8SLX12kGjE50l2uJ20ondkDlfASOiiQsALk8ZF8AtSWrUp1f0MQMnQGDnstJHr+KPJXjDQAuL5DJora4rFbMgk7M0G0YktvHRgXQNOBwAxtO4CBFddtQmpkbmo5uI7m8vOTxoR2JAqkMCdNAnMqhBsqbTlSNZvyemtaZaIuG08NLbi/a4jZAY5RcHlCzlPKcSb1YXQeiO2i8WUfp6XOcjo1rJpdih5un7GiH31HWJCR6OjVLKc+auNKLGe5s+plSt1iBsIgLmx1nE5M4uTfaM+kZ0M8SGg4X2iER0qYL1Cyl/MqoNezXxBT3c/yx8tcsQLKv4M/kExzfMQiaAYN+llBfWUPFNK9Ss4a6ffpwjPsx+kAZFDN0lypGs1B6OTsk7nNiuM8d376riRm6C9cHI/8Bcrukx4kLLOAAAAAASUVORK5CYIIL</value>
+  </data>
+  <data name="ERROR_GLFINANCIALACCOUNTNUMBER_MISSING" xml:space="preserve">
+    <value>You must specify an account type to continue.</value>
+  </data>
+  <data name="BANKACCOUNTERROR_DEPOSITROUTING_MISSING" xml:space="preserve">
+    <value>You must specify an deposit slip routing number to continue.</value>
+  </data>
+  <data name="ERROR_GLAUTOMATION_ALREADYEXISTS" xml:space="preserve">
+    <value>An account with the specified automation setting already exists. One one account can be designated for each automation type.</value>
+  </data>
+  <data name="ERROR_GLACCOUNTNUMBER_EXISTS" xml:space="preserve">
+    <value>An account with the specified GL account number already exists.</value>
+  </data>
+  <data name="QUESTION_SYNCCLASSIFICATIONS_HEADER" xml:space="preserve">
+    <value>Sync Account Classifications?</value>
+  </data>
+  <data name="BANKACCOUNTERROR_ADDRESS_MISSING" xml:space="preserve">
+    <value>When entering a bank address you must supply an address, city, state and a zip code to continue.</value>
+  </data>
+  <data name="ERROR_GLACCOUNTNUMBERMISSING" xml:space="preserve">
+    <value>You must specify a GL account number to continue.</value>
+  </data>
+  <data name="QUESTION_PROPAGATECHANGES" xml:space="preserve">
+    <value>Do you wish to update the existing chart of accounts?</value>
+  </data>
+  <data name="delete" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA1wIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAr8g3BYrpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAmlJREFUOE+lk/tLU2EYx/1b9IcoQaIbIWEUFOa8zJ21Nrd5O8v0uMUilqbsDNMMahi68IdwltpVK3/JNLFRXjJydh1aHisv7dRGrek5u6Z82yZtLkcQvfB54Tw8n+/Lec55kwD8FxsKCxpNyjxVqf9AlTOzKpKbUZVw70klM0XK9bZSacqf/XEPi2oN8Ymi2O+mJvhHLAi8tSIwMQr+fjcWtGV4XUiwL5RCYr0TJ89VUPzy3W6szr5DcPAegl3NCJov4OftNqyMD8JRq4VVns0/l2ZGQyLbvFqdHJLt3M0urDI2BC+fg7vZgKWmGvgvGRBooeE3noL/wS0sHicxfuSAfUyyLzkaEJJpZ70eK7bJyIk+Ew3XeR28Deo4uNMk/L3X8CovA8PiDDoa8JE6xnh6ryPYY4bbWIVvReKELFeR4Jvq4DBU4zGRzkQDmAqVN/CwF0GTAe6z2lAp8XLIcuCiCrFkboUlb5c3VFoLmCGLvL6eDvgbtfCeKY80J1rhAGeZAkttrRgSbosFTJcqGJexDr5mGtxJZaQxIfI8uOtrsVCrw6AgLfYKtmIpzUgE8PZ0wq2SwFUm2iCz0mywBSJ4uq5gVLgDA1lbYkN8UyROfllC2BcrS+C50xEZmFMhXBNluWAlIVkiBN/ZjqlicVi29wk2xz5jmMmCHGJCdoifO6qA50YHfjTScJByfFHK4GrQg7/ajmllPvqzUvmQHP8j/eaZ9CDx9PB+1irag681OrhaLkb4XH0CT3K2h2V2vRwmLiDMiHhvyrAwXW8hdjOP8ndyQ4Kt3EBuGtOfnarvy9z098v07yDpFx3SzrlpSNZLAAAAAElFTkSuQmCCCw==</value>
+  </data>
+  <data name="MSG_ACCOUNTCLASSIFICATIONWARNING" xml:space="preserve">
+    <value>The account classifications you have specified have conflicting limits. Please ensure the limits do not overlap.</value>
+  </data>
+  <data name="ERROR_GLACCOUNTNAME_MISSING" xml:space="preserve">
+    <value>You must specify a GL Account Name to continue.</value>
+  </data>
+  <data name="accept" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAFwMAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAr8g3BYrpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAqlJREFUOE+lk+tLU2Ecx/07drYdU5BARhQiSAi1V0EisWk2FPOyLE1390rbjGEzLcrIeRkjpbTMUqvNObOpU5tbU8rEZUcJMfemC9WG0cW+PedAmxYE0YvPc57n8Pt8f+c5zzlxAP6LP24U+Q4k5s/s1+d60pisR3vDkoeisMSVzEicyfpM++7E3+t3LAq86VKZJzWk88hwPWjBwEoPR/dSK8pcRyDup0PiPlq63YlOSFdp9kRK5PK8Ec61QdheXIFpvpqDnTvWBtA8W4N9NkEk1SaIhnBDnictIdudssHKbGFdoAJV/jJoZk9BR6gk1PpOw/7qDs5PV0Fk4W+IrvITogEyd4pBNZ7DdWZlVlR5T0AxUwzFdBHU08Vwrw/D4FXCQULy+w4h6RLfEA3IeihiuoOtsAZbUOUrhfKxnIiFUE4RPIWYeO0iZUAoso6OZ82wzTcjvpHPRAMO25M2763eRH1AA623hDzJEJbeL0A1WYzx9RFO/r71DR1PL8AwWYqBYDeERmozGiC+S28OrvTC6Feh3q/Fxy8fOOnd5zfclZUtc41Qu3Khd5/EYLALwrrtAX00c22hBZ2LF6GbksPsq0Xk6ydO3vqxBcuTc6hw5kBDAtoCDej0mkHXULEtpN8QGuRDGbCv3kbtpBxq93E0zFRi+e0iOuaaUD58FArHMeicebC/7EWm9SDoair2ElOtgoQ95GjMHg3uM7dQPVYA7WgeVCMyKB0srJyLB8s9MI6UQqjmbdBqKnaMLMktfGl8ExUxuSvgICHtATP0YyU4MypHO9mCnch6ZwkE5bwIkXd+SL/Y1cSX0iYqJOkSo9NvRv9zK/oXrLB4TchoS4dQwQvRqpjMsiOAhT7LT6QNlJ6uoxihlhcWqnhh0pEh6Oly6u8/07+DuJ9n0KzlylZKigAAAABJRU5ErkJgggs=</value>
+  </data>
+  <data name="refresh" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAANQEAAAJHSUY4OWEQABAAhB8AlcbYldr5ks7kKGuWQLLhNnWSJW+kI3S2u+j1I3nFN3iWt+HuJH3OjdL4QbPskMnhNoKuiau8L3KbJX7QN3eZOXWSh7vZi83stOP72d7o3eDq/v7/QLDZK2iH////////If8LTkVUU0NBUEUyLjADAQEAACH5BAEAAB8ALAAAAAAQABAAAAifAD8IHOihoAeBBQcq9FChQAEKBSUcVPghgwIECxAggGDBwESCHRYIEMCBwAUMBz5+8NAhQocOAx4QcNAggUqWCgwaCNCgAYObBQ56GGDgQAIGEz4aXMpU6QQGCQ4YGCA06EIGGAIE8FhQQYebCQI4IPBgwICWXxceCHCBAIeRANIuNGABwoMHAAAo0LCBogeJHig4rKCS4MSlFBMrphgQADsL</value>
+  </data>
+  <data name="CREATERRROR_FULLYORPRORPTIONAL" xml:space="preserve">
+    <value>You must specify whether you recognize your income proprtionally or fully based on the AR received.</value>
+  </data>
+  <data name="BANKACCOUNTERROR_BANKSIGNATURENAME_MISSING" xml:space="preserve">
+    <value>You must select a bank signature.</value>
+  </data>
+  <data name="ERRORHEADER_AUTOMATIONACCOUNT" xml:space="preserve">
+    <value>Cannot Delete Automation Account!</value>
+  </data>
+  <data name="ERROR_GLACCOUNTNUMBER_MISSING" xml:space="preserve">
+    <value>You must specify a GL Account Number to continue.</value>
+  </data>
+  <data name="ERROR_INVALIDENTRY_HEADER" xml:space="preserve">
+    <value>Invalid Entry!</value>
+  </data>
+  <data name="ERROR_GLACCOUNTSHORTNAME_EXISTS" xml:space="preserve">
+    <value>An account with the specified GL account short name already exists.</value>
+  </data>
+  <data name="BANKACCOUNTERROR_DEPOSITROUTING_INVALID" xml:space="preserve">
+    <value>The deposit slip routing number must be 9 characters.</value>
+  </data>
+  <data name="BANKACCOUNTERROR_BANKSIGNATUREORDER_MISSING" xml:space="preserve">
+    <value>You must enter a numeric value for the bank signature order.</value>
+  </data>
+  <data name="flag_blue" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAsQIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAr8g3BYrpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAkNJREFUOE+lkl1Ik1EYx0cZkRsEXVgIXgR9Yhl9rCKqi6KgQlCS8iIqgj6okEyCpCbVPkx6Y5DWwjUTK6ptZlvOSZkutOxrlTLdysRcWS0XWvE6Xrfef895bcuBdrOLH+dwzvP/neeBIwOQEGMeMtYc0KUuOnbLNlfT0ju7qPlDeoHFcXbvMlNxbhqIe8RmVjdmmCHnAmK2cxgvAiKs3SIWWyLIKPMiHBrAA81yScLqZCv26SZM1vJ3Jmn44SQtj6RiHhNLeJS2ReAdAL4MAe4g0BoAXLWV8DfocP1oBhPskQRL93PyKVyo2egFrr4FjD6g/iPwlAJ1fqDt+8j5xQ7AkKfEp0d66HfNZIJUSbDwsGmOwiC0M0H2fSCLOO2m0Dug5SvwmDCR9IhrULAWKtFVk8fClB0ZVTYr35Y1vTLsN9ErOQ3A9kbgDAluvKfW+wEndVNO8tIm76CLW4cepypeMKPQrdW3iz9UL4EdFN7ZBGhfA+ZuoOcX8LAPcNAo+pvV6KzahtYLG5nAExMo1P12eiHCWt9UD5wk0W0Kuz7TGJ2R3zm1P4cyHUK42m6RBHeLVjGBOiaQnws9K/OIuNYFVNHc9l4RSrMAxfmguOXyK7f+TTh3d01fxZK0FHgqtqL8YDoTrI0J5udbjCmqDj5ZFxSTtd/EaWqfMK/A/CRawKDA+iuHFkgdjJ6fEdv8DwqV2E6tTkjge27ITEgghRu5DUwgfeEocYXjERVYT6xkguOj7+IKx4NCl5jk7zr13x1kfwD3S85wHLpkywAAAABJRU5ErkJgggs=</value>
+  </data>
+  <data name="flag_orange" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAsgIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAr8g3BYrpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAkRJREFUOE+lkl1Ik1EYx0cfRG4QdGEheBH0iWX0sYqoLoqCCkFJyovKCiJQWhFRaa2atvnRYNAsQXu3mi5qG+WWZl/aYsuZ26xstlmROiaSSZnwNl633n/nvLblQLvZxY9zOOf5/57nwBEBSIpJDymqw5vT7hautDpPL+l3nFnUZz6e0VR+dC1TlpcOwkPCLlo3aZjytVjMjxlywIfc4H0WRLWr4L+UiUj4B55dWSdIaJ1IdWD9NLZy1n22YuYYWz4DrJJQOh3RNi0w5AdGB4GQF+h3wd54C8HnKtSfyqSCI4JAnb9GHC6b7YC7FvDqgQ6yfnwMBNuBnkfA4Lvx8/brqJZJEXqpgSZ/ARWkCQLm2IrFnELSJQjqc4C6bKBFAXhIqM9JOr8iewYjppOcpUiKTw9kNEyy408VWU8szI4o5wXhZgBjLnBnH9BaArwxAgNk9J5mMlUN/A3aEbt6K3qb5YkCb/F8Je/U/MRTOWDaD5gPAi+UwHsT8L0X+NwCBJrgsTH4YNgL17UdVOCLC76pJDbSISqMrtsJPLkAdN0DvtgR9eh/j+pzf3H6rMhbY5EgaLi4kQpK44Jwpfg176oCOusIBvDdNnBVUgzLJXzn1d3eiEOTN3D7kG51eip8uj2oKciggi1xgVm2rLZbnsoOl6TwQ4oUPnB2LmcqWNoWK6CQwLabhcuFCSa+nxLf/A8SqrBe3pSUINBRnZWUQAi3qrdTgfCFYyQUTkVMYDm/gQrOTbxLKJwKErpBJX/XOf/uIPoDYDjKc4O/WrkAAAAASUVORK5CYIIL</value>
+  </data>
+  <data name="CREATEERROR_PAYABLEORRECEIVABLE" xml:space="preserve">
+    <value>You must specify whether you recognize you income on payables or receivables.</value>
+  </data>
+  <data name="app_tree" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAADAIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAr8g3BYrpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAZ5JREFUOE+lk/0rQ1Ecxr//oghJXiIpMiyrbVLSokTSIkJi0RiZmFhE/OAtIsr7T2ry7t7t3m132+N8T7slNnl56uk5Pd3zOeeeew8B+Jcpp8Fb0+W/Djsnr+CYEPZcwD52BtvoKZpGTmAdPkbj4CHqBw5g6dtDrXsHjsGtMM+TAJfvOtm7fIff2tKzkZQAXvkvrupcF/MFwOG55MEX8UPfqaJ9lYPIPn4ui0AggGAwKMcsE/Ck6rh/0RB6iOD2XsVNSJF9mWuFQwDEgbE+TmaZgDfNwHM4igdFgF513D1qsi9pXeIg4tNmMcA0ywSEowZU3YASMfCixvGoRGVf3LLIQcSfiqWqasZX0GMGIsIMUtIgVlHzPAeRdehIFibg8w6iySRihgE9bkATZhCr0DHHQWTp35dFth3EBcC0nkhAEzBWXpOPg6jOvSuLbDtIpFLS8bRjAsLKtU5xENX2bsvis0xANuU0ejnkXfBWd2/KP6uyYw3lriBK25bFKS/Igyp0+lFgn0W+bUZse1qs7IWYw2YCZbxhv3HG8ucGvQPX6E0nWnHUbwAAAABJRU5ErkJgggs=</value>
+  </data>
+  <data name="createchart" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAzwIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAr8g3BYrpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAmFJREFUOE+lk+1Lk1EYxs/fIgR9iKBvQfWpQPwS6iotejEMETRXLiVXCwxXii3GMqORkbas+VqCiGaRMzCXuKZL3bs59+Jc7u2Zzmd7uDrnGBTqF+uGi+twn/v+3Q/nPIcA+C+RguvGCs07t3DrtQvKTiqDA3UdC6h98R01z21QtM2gWm/BtafTkLd+RWXLJJT6zwLr4wB1j1vSDYewV8m1YxIHsMn/orLmT7SfApQGJ1vsOUrvf2BGSN1LO09sZrJIUwlrZkRsF7BqPYvwdBFC5tMITsiwbDoJn6kYnh8uXl+iHmFGAfTAWIiSBDEjIr6oQdJzA+u+JqQ8agj2esRnbyJkykfQ0YdQROD1F+uHmBHCTptFlgI2N/xYncpFOvgIwsIlrC9qkZhTYWW8EKvOLkSTIiKJNK8/f2eQGSHsqlhkJRGJJT3i9goKaEXCkgvB1QTf8GFEnAYI6QwSG1SpDK8/d3uAGSGKZ1aeSCdtCE/mIR3QYsOnQWKmBMJ8A5aGjiJsuYcVSzOC5rsITGkhJv0oVr7dAsifTHFAxFqK2EIVorPl+GkpQ9LeQAGNiFtUCI0Wwz9UiPm2HKzMvoIkpnCqpmcLUNVi5gDBZ0DMqUXUocPa3AM6+Rhi31SITFzF0sAJLI8pkIp6sZnN8nqZoosZIZW6Lzzxd0iZJLz9hxAYKYCn9whi9u7fO3+ioNrIjL8FY/nDcf5nXWn8iMvq9xhtp3c+eBz9j2UoUb1BUV0fztT20s/uppONoD1MjEB2vC539/48Z+c+r6MjJ3/73m7akaDNB+3tOQe253cXyC9Y2SlReLNvtwAAAABJRU5ErkJgggs=</value>
+  </data>
+  <data name="printer" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA4gIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAr8g3BYrpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAnRJREFUOE+Nkt9LU2EYx89d+HeoN+J/EDSY2SotYcLQC2GH5c0C8UKDDTZYq2DohMCx1EuhhRZBtECGrNxxmzoR3WpDrDUrneVSz+bOzn59e84bzg1GdOAD57zv9/m8z/NyOAA1rls+6O9MhH19k+EqgT5nWOqbXJN6HavVqw+E6frsBQ0ft54IxWNRwu9cAZnsX47FAuIHIixv9mF4upu/dv/tlfqaBkGvI5g/O5ex+a1MlBD+KmNlr4BCqYLNgzIevduH2uR/Xl/TIOhxBCVFsEWCre9lrKeKED7LSB7lqBMJRyfn6LaulOprai82m62lx7Eqn+ZkROm06CGdyroowvfpHN5YFqc02o2HAVmv17c0CKjYQGTpsnBCgvhhFR9JsEOiSKrExljezdNeETftAgYHB7P9/f0GJqDC7tnZWUQiEdydCCFDgkS6ijgR/VHBNo0Soi4CNEqGBLcfhxAIBDA2NgaNRtOtCHboQTqdhsVi+S+UrCAI0Ol0e4pALpfLUNjY2IAoiv8kGAyyrMLo6GiVs1qtkGWZsbi4iGQyyUTNUPbm5+dreZ7nwZnNZsTjcYbb7UYikYDf72+KkpmamqrlVSoVuPHxcfh8PobT6UQsFsPS0lJTotEo7HZ7Ld/R0QGO5oDX62W4XC7QnTBMJhNGRkZYm1qtFl1dXVCr1WztIt/e3g7OaDRWPB4PW1AKF16+xvL71aa8WHiFzs5Olp2bm0Nrays4g8EwMzQ0tDMwMADeFUJeknF8JuMXcXRawEFGQupnDl/SIvKFIvjpENra2pTibcJc+5UVeFe4MvxsHcPuS+4x1hjKHj8drlzWgPsDuxIEyFG403MAAAAASUVORK5CYIIL</value>
+  </data>
+  <data name="BANKACCOUNTERROR_BANKNAME_MISSING" xml:space="preserve">
+    <value>You must specify a bank name to continue.</value>
+  </data>
+  <data name="CREATEERROR_CASHORACCRUAL" xml:space="preserve">
+    <value>You must specify whether your accounting methodology will be cash or accrual based to continue.</value>
+  </data>
+  <data name="pencil" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA4AEAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAr8g3BYrpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAXJJREFUOE+lkj9IQkEcx11bC4OWcKmWQASbXEQaoiGFlhwMo8GKpCFoa6kphDIkMNAtS40kyIaEirTIP8GrkEjU4mVYhDXYE5+SfHv3Qki74kHD5wt39/38Do6TAfgX1E0ajyFlS9qvf4k7DLWofQjXbuX93UZfB7VMI+U14NYzhTIbA59LIL6mQ3hBFaCWmxFuB5fcAs+eoZK7ECmnDxGz62tU4TtE5l8j4B+8yAamwTEeETIg4RguU6U6dfmD20MpNYF3ZgaXbiOy27OIreqFyh+P2CBnzOBu+lF9W0Y+aEJqRSNUvno/RIJUmdAgEo7tPZJlQsPiYKkbxfyRZJkghnNcoSAym9hF1GeRLBPEcFg7UWSjqD5dYX9ejci6CplTKxjXIM4X1UKFLhPEIAMqwu8q+Mfw7NQibJHDb25HcK5XOKaLdcQw6lqRdJlQYjZRYHw4sQ1IkglijGjbMKqTwzXZJYohm2anufgb1E3pQPYJVVz3JkzWykwAAAAASUVORK5CYIIL</value>
+  </data>
+  <data name="QUESTION_BANKNAMEFOUND" xml:space="preserve">
+    <value>The system has found a bank with the same name as the bank entered, do you wish to use the address information already on file?</value>
+  </data>
+  <data name="ERROR_GLACCOUNTNUMBER_NUMERIC" xml:space="preserve">
+    <value>GL Account Number must be numeric.</value>
+  </data>
+  <data name="ERROR_GLACCOUNTSHORTNAME_MISSING" xml:space="preserve">
+    <value>You must specify a GLAccount Short Name to continue.</value>
+  </data>
+  <data name="CREATEERROR_GLCOMPANYMISSING" xml:space="preserve">
+    <value>You must select an office location to continue.</value>
+  </data>
+  <data name="disk" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAABAMAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAr8g3BYrpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAApZJREFUOE+NkltPE0EYhvuXgC6eEn+F14ZTgVIwgIicNJp4oUaQaDRCEbQQKCCKYgG7gAZFKFQsGEw5FNoilAI9Q3fZtvv6zVS5IoSLJ5Nu532+d3dGk20YqyCaCTsRJJRsg6gSyC5Jc6F0DJeujeNimYjzBjF0uVycE/TDVwBomMC44I5jwS1BTqiQiPhRCuHDJHbDCgLRBP8tKSnsRRLY8MvquGM/cfWBbV/QW/KZwLmwEcedPj/iCoVpY8GjGQRjCexSIBpPcnGEVu/+EVZ9MqyOIEgCaiIzQdhBgtvmHb6JwQT+iILgQYJPZg12qI1rR8bqtoS6Tg++LoUg6EdUJlDsrkMS+PgmRmGjDX5aY3IKMrUKHSSpOpsuYXlLQo3Jjd5JH4TiYZBAVG1rB7jV44OHKjI2A0c0Pcmnx6QUtgLKcdi5FcfNV+vomvgDbdFHLsD0Mgm6t3l1HU0varKh9Mkcygh98yx09Jz995+qthV0WD3QFg6RgI5pyhlFfdcmvRtBa32XF/WdDA9qTR6auIHqjnVUtbtQ2baKqpdraLW4oNW9Twsml6LpMJEOEiRh4ZrXbl75RjsJKHjduEIs49ngCrIK3qUFE4thCnv/4TmezsM0ubrDxcOVFKxocaK85Tea+peQlT/ABFaIjhDqTF5+3meh7PkvPOxZRGZePzR0NTE6H+J1JTqy+1/yToXdiZKnP3Gvcx6ZuX0kKBUxbA9Sg7Rgcu3zqTBBcfMP3G23k8AMzTmDVR2aDZDAfeYGusZZNBhtyMjpUTVCiXV94PseBqZ2T3zfk2honUHti2kmCLCP+FjQf7II+tGgUDxC19PCb5i28AOydIN0VG+Rmf+GPlgfVe6lkJlPzsjpjmTkmr/9BZvMFO32QxDDAAAAAElFTkSuQmCCCw==</value>
+  </data>
+  <data name="bank" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAhwIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAABc1JHQgCuzhzpAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAIMSURBVDhPlZI5q1pRFIWPA3kIWikoWokQVHCoBBELQRsVUbAIFinShNekUSEJaYIgEp7Rp50IYic2goIoNkoQxQmcRQSHv5Ayxc5dp0iVxOTCZk/fWpd7zmUul4t5PB7m8/lYIBBgoVCIRSIRFo1GXwrxFhk95tiDAw8dEbHfGTyEw2FfMplMjcfjBTJ6zO8a+P1+bTAYfF0ul+vH4/FHrVYjZPSYY/8nA7HX63XGYrEPvV5vOxqNKJvNUiaT4Rk95tiDA//LwOl0Mrfb/SqRSJSm0+n3ZrNJhUKBWq0WFyKjxxx7cOCh4wYOh+Mxn89/GwwG1Gg0qFKpcFG326VOp8MzesyxBwceOm5gsVje9/t9Gg6HNJvNaLPZ0Ol0ouv1SrfbjS6XC86B1us134MDDx03UKvVb1QqVSqdTtO/BnjouIFcLmdSqTQD51KpRMJB8bf8rQYPHTeQSCSIT/P5nKrVKsXjcbpXg4eOG2i1WiYWixO73Y7q9TqlUim6V4OHjhvY7faYSCR6dz6f+Wnncjm6V4OHjhuYTKaPwi9L+OtwVe12+24NHjpuoNFoPmMwmUxosVjQarWi7XZLh8OBx36/5/1yueR7cOCh4wYymexRoVBklErlF51O92QwGHJms/nZarUWbTZbUbjvotFofNbr9V+F734CBx46biA8L4RQC6H9j9AI8UBE7CdV6w139kjZnwAAAABJRU5ErkJgggs=</value>
+  </data>
+  <data name="spinner" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>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</value>
+  </data>
+</root>

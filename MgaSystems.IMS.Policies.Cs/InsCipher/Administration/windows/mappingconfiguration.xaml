@@ -1,0 +1,280 @@
+<MappingConfiguration x:Class="MgaSystems.IMS.Policies.InsCipher.Administration.Windows.MappingConfiguration"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      xmlns:icData="clr-namespace:MgaSystems.IMS.Policies.InsCipher.Administration.Data"
+                      xmlns:icCommands="clr-namespace:MgaSystems.IMS.Policies.InsCipher.Administration.Commands"
+                      xmlns:mgaInterop="clr-namespace:Mga.Wpf.Ims.Interop;assembly=Mga.Wpf.Ims"
+                      xmlns:baseWpfBehaviors="clr-namespace:Mga.Wpf.Ims.Controls;assembly=Mga.Wpf.Ims"
+                      xmlns:baseWpfCommands="clr-namespace:Mga.Wpf.Ims.Commands;assembly=Mga.Wpf.Ims"
+                      xmlns:baseWpfControls="clr-namespace:Mga.Wpf.Ims.Controls;assembly=Mga.Wpf.Ims"
+                      xmlns:baseWpfValueConverters="clr-namespace:Mga.Wpf.Ims.ValueConverters;assembly=Mga.Wpf.Ims"
+                      x:Name="mainWindow" PromptOnCloseIfDataContextHasChanges="true" FrameworkElement.Height="450"
+                      FrameworkElement.Width="600" Title="InsCipher Data Mappings" FrameworkElement.MinWidth="600"
+                      FrameworkElement.MinHeight="450" ResizeMode="CanResizeWithGrip"
+                      FrameworkElement.DataContext="{Binding Source={StaticResource mapData}}">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Mga.Wpf.Ims;component/Resources/SplitButtonResources.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Mga.Wpf.Ims;component/Resources/CommonResources.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Mga.Wpf.Ims;component/Resources/ToolBarResources.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Mga.Wpf.Ims;component/Resources/ListViewResources.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Mga.Wpf.Ims;component/Resources/DataGridResources2.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Mga.Wpf.Ims;component/Resources/TreeViewResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <Style TargetType="{x:Type DataGrid}" BasedOn="{StaticResource dataGridStyle}"/>
+      <Style TargetType="{x:Type GridViewColumnHeader}" BasedOn="{StaticResource gridViewColumnHeaderStyle}"/>
+      <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource textBoxStyle}">
+        <Setter Property="FrameworkElement.Width" Value="100"/>
+        <Setter Property="Grid.Column" Value="1"/>
+      </Style>
+      <Style TargetType="{x:Type baseWpfControls:SplitButton}"
+             BasedOn="{StaticResource ToolBarSplitButtonStyle}"/>
+      <baseWpfValueConverters:MultiValueConverter x:Key="MultiValueConverter"/>
+      <ObjectDataProvider x:Key="mapData" ObjectType="{x:Type icData:MappingDataManager}" MethodName="Create"/>
+      <Style TargetType="{x:Type DatePicker}">
+        <Setter Property="FrameworkElement.Width" Value="250"/>
+        <Setter Property="FrameworkElement.Margin" Value="2"/>
+        <Setter Property="Grid.Column" Value="1"/>
+        <Setter Property="FrameworkElement.HorizontalAlignment" Value="Left"/>
+      </Style>
+      <Style TargetType="{x:Type ComboBox}">
+        <Style.Triggers>
+          <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Items.Count}" Value="1">
+            <Setter Property="UIElement.IsEnabled" Value="false"/>
+            <Setter Property="Selector.SelectedItem"
+                    Value="{Binding RelativeSource={RelativeSource Self}, Path=Items/}"/>
+          </DataTrigger>
+        </Style.Triggers>
+        <Setter Property="FrameworkElement.Width" Value="250"/>
+        <Setter Property="FrameworkElement.Margin" Value="2"/>
+        <Setter Property="FrameworkElement.HorizontalAlignment" Value="Left"/>
+        <Setter Property="FrameworkElement.DataContext" Value="{Binding Path=Parent.XmlInputData}"/>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Grid>
+      <ToolBarTray DockPanel.Dock="Top">
+        <FrameworkElement.Resources>
+          <Style x:Key="companyButton" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+            <Style.Triggers>
+              <DataTrigger Binding="{Binding ElementName=dataTab, Path=SelectedItem.Header}" Value="Companies">
+                <Setter Property="UIElement.Visibility" Value="Visible"/>
+              </DataTrigger>
+            </Style.Triggers>
+            <Setter Property="UIElement.Visibility" Value="Collapsed"/>
+          </Style>
+          <Style x:Key="lineButton" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+            <Style.Triggers>
+              <DataTrigger Binding="{Binding ElementName=dataTab, Path=SelectedItem.Header}" Value="Lines">
+                <Setter Property="UIElement.Visibility" Value="Visible"/>
+              </DataTrigger>
+            </Style.Triggers>
+            <Setter Property="UIElement.Visibility" Value="Collapsed"/>
+          </Style>
+          <Style TargetType="{x:Type ToolBarTray}" BasedOn="{StaticResource toolBarTrayStyle}"/>
+          <Style TargetType="{x:Type Image}" BasedOn="{StaticResource verticalToolbarImageStyle}"/>
+          <Style TargetType="{x:Type Button}" BasedOn="{StaticResource toolbarButtonStyle}"/>
+          <Style TargetType="{x:Type StackPanel}" BasedOn="{StaticResource toolbarStackPanelStyle}"/>
+          <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource verticalToolbarTextBlockStyle}"/>
+          <Style TargetType="{x:Type ToolBar}" BasedOn="{StaticResource toolBarStyle}"/>
+          <Style TargetType="{x:Type AccessText}" BasedOn="{StaticResource verticalToolbarAccessTextStyle}"/>
+        </FrameworkElement.Resources>
+        <ToolBar>
+          <Button ToolTip="Save" Command="{Binding Source={x:Static baseWpfCommands:DatabaseCommands.SubmitChanges}}"
+                  CommandParameter="{Binding Source={StaticResource mapData}}">
+            <StackPanel>
+              <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/saveHS.png"/>
+              <AccessText Text="_Save"/>
+            </StackPanel>
+          </Button>
+          <Separator/>
+          <baseWpfControls:SplitButton FrameworkElement.ToolTip="Undo the last change made since the most recent save."
+                                       ButtonBase.CommandParameter="{Binding Path=ChangeManager}"
+                                       ButtonBase.Command="{Binding Source={x:Static baseWpfCommands:ChangeManagerCommands.Undo}}">
+            <ContentControl.Content>
+              <StackPanel>
+                <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/arrow_undo.png"/>
+                <TextBlock Text="Undo"/>
+              </StackPanel>
+            </ContentControl.Content>
+            <baseWpfControls:SplitButton.DropDownContextMenu>
+              <ContextMenu>
+                <MenuItem>
+                  <FrameworkElement.Style>
+                    <Style TargetType="{x:Type MenuItem}">
+                      <Setter Property="Control.Template">
+                        <Setter.Value>
+                          <ControlTemplate>
+                            <MenuItem Style="{DynamicResource headerOverrideMenuItemStyle}"
+                                      Command="{Binding Source={x:Static baseWpfCommands:ChangeManagerCommands.Undo}}">
+                              <MenuItem.CommandParameter>
+                                <MultiBinding Converter="{StaticResource MultiValueConverter}">
+                                  <MultiBinding.Bindings>
+                                    <Binding Source="{StaticResource mapData}" Path="ChangeManager"/>
+                                    <Binding ElementName="undoList" Path="SelectedItems.Count"/>
+                                  </MultiBinding.Bindings>
+                                </MultiBinding>
+                              </MenuItem.CommandParameter>
+                              <HeaderedItemsControl.Header>
+                                <Grid>
+                                  <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="auto"/>
+                                  </Grid.RowDefinitions>
+                                  <ListBox Name="undoList" Width="300" Focusable="false" MinHeight="30" MaxHeight="100"
+                                           AutoSelectOnMouseHover="true" ItemsSource="{Binding Path=ChangeManager.UndoList}"/>
+                                  <Label Grid.Row="1" Background="LightGray" ContentStringFormat="Undo {0} Actions"
+                                         Content="{Binding ElementName=undoList, Path=SelectedItems.Count}"/>
+                                </Grid>
+                              </HeaderedItemsControl.Header>
+                            </MenuItem>
+                          </ControlTemplate>
+                        </Setter.Value>
+                      </Setter>
+                    </Style>
+                  </FrameworkElement.Style>
+                </MenuItem>
+              </ContextMenu>
+            </baseWpfControls:SplitButton.DropDownContextMenu>
+          </baseWpfControls:SplitButton>
+          <baseWpfControls:SplitButton FrameworkElement.ToolTip="Redo the last undone change"
+                                       ButtonBase.CommandParameter="{Binding Path=ChangeManager}"
+                                       ButtonBase.Command="{Binding Source={x:Static baseWpfCommands:ChangeManagerCommands.Redo}}">
+            <ContentControl.Content>
+              <StackPanel>
+                <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/arrow_redo.png"/>
+                <TextBlock Text="Redo"/>
+              </StackPanel>
+            </ContentControl.Content>
+            <baseWpfControls:SplitButton.DropDownContextMenu>
+              <ContextMenu>
+                <MenuItem>
+                  <FrameworkElement.Style>
+                    <Style TargetType="{x:Type MenuItem}">
+                      <Setter Property="Control.Template">
+                        <Setter.Value>
+                          <ControlTemplate>
+                            <MenuItem Style="{DynamicResource headerOverrideMenuItemStyle}"
+                                      Command="{Binding Source={x:Static baseWpfCommands:ChangeManagerCommands.Redo}}">
+                              <MenuItem.CommandParameter>
+                                <MultiBinding Converter="{StaticResource MultiValueConverter}">
+                                  <MultiBinding.Bindings>
+                                    <Binding Source="{StaticResource mapData}" Path="ChangeManager"/>
+                                    <Binding ElementName="redoList" Path="SelectedItems.Count"/>
+                                  </MultiBinding.Bindings>
+                                </MultiBinding>
+                              </MenuItem.CommandParameter>
+                              <HeaderedItemsControl.Header>
+                                <Grid>
+                                  <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="auto"/>
+                                  </Grid.RowDefinitions>
+                                  <ListBox Name="redoList" Width="300" Focusable="false" MinHeight="30" MaxHeight="100"
+                                           AutoSelectOnMouseHover="true" ItemsSource="{Binding Path=ChangeManager.RedoList}"/>
+                                  <Label Grid.Row="1" Background="LightGray" ContentStringFormat="Redo {0} Actions"
+                                         Content="{Binding ElementName=redoList, Path=SelectedItems.Count}"/>
+                                </Grid>
+                              </HeaderedItemsControl.Header>
+                            </MenuItem>
+                          </ControlTemplate>
+                        </Setter.Value>
+                      </Setter>
+                    </Style>
+                  </FrameworkElement.Style>
+                </MenuItem>
+              </ContextMenu>
+            </baseWpfControls:SplitButton.DropDownContextMenu>
+          </baseWpfControls:SplitButton>
+          <Separator/>
+          <Button ToolTip="Add Line Mapping" Style="{StaticResource lineButton}"
+                  Command="{Binding Source={x:Static icCommands:MappingCommands.AddLineMapping}}"
+                  CommandParameter="{Binding Source={StaticResource mapData}}">
+            <StackPanel>
+              <Image Source="/Mga.Wpf.Ims;component/Images/page_add.png"/>
+              <AccessText Text="Add Line"/>
+            </StackPanel>
+          </Button>
+          <Button ToolTip="Add All Lines" Style="{StaticResource lineButton}"
+                  Command="{Binding Source={x:Static icCommands:MappingCommands.AddAllLines}}"
+                  CommandParameter="{Binding Source={StaticResource mapData}}">
+            <StackPanel>
+              <Image Source="/Mga.Wpf.Ims;component/Images/page_add.png"/>
+              <AccessText Text="Add All Lines"/>
+            </StackPanel>
+          </Button>
+          <Button ToolTip="Remove Line(s)" Style="{StaticResource lineButton}"
+                  Command="{Binding Source={x:Static icCommands:MappingCommands.DeleteLineMappings}}"
+                  CommandParameter="{Binding ElementName=LineCoverageGrid, Path=SelectedItems}">
+            <StackPanel>
+              <Image Source="/Mga.Wpf.Ims;component/Images/page_delete.png"/>
+              <AccessText Text="Remove Line(s)"/>
+            </StackPanel>
+          </Button>
+        </ToolBar>
+      </ToolBarTray>
+    </Grid>
+    <Grid Row="1">
+      <TabControl Name="dataTab" Background="Transparent">
+        <TabItem Header="Lines">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Row="1">
+              <GroupBox Header="Line Coverage Mappings">
+                <Grid>
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                  </Grid.RowDefinitions>
+                  <DataGrid Name="LineCoverageGrid" EditClickAction="SingleClick" AutoScrollCurrentRowIntoView="true"
+                            IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding Path=ImportLines}">
+                    <DataGrid.Columns>
+                      <DataGridTemplateColumn Width="Auto" Header=" Line Name ">
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                          <DataTemplate>
+                            <ComboBox DisplayMemberPath="@LineName" SelectedValuePath="@LineGUID"
+                                      ItemsSource="{Binding XPath=Lines/Line, Mode=OneTime}"
+                                      SelectedValue="{Binding RelativeSource={RelativeSource AncestorType=DataGridRow}, Path=DataContext.LineGUID, UpdateSourceTrigger=PropertyChanged}"/>
+                          </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                          <DataTemplate>
+                            <TextBlock Text="{Binding LineName}"/>
+                          </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                      </DataGridTemplateColumn>
+                      <DataGridTemplateColumn Width="Auto" Header=" Import Code ">
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                          <DataTemplate>
+                            <ComboBox DisplayMemberPath="@LineOfBusiness" SelectedValuePath="@ImportCode" Width="Auto"
+                                      ItemsSource="{Binding XPath=Codes/Code, Mode=OneTime}"
+                                      SelectedValue="{Binding RelativeSource={RelativeSource AncestorType=DataGridRow}, Path=DataContext.CoverageCode, UpdateSourceTrigger=PropertyChanged}"/>
+                          </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                          <DataTemplate>
+                            <TextBlock Text="{Binding CoverageName}"/>
+                          </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                      </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                  </DataGrid>
+                </Grid>
+              </GroupBox>
+            </Grid>
+          </Grid>
+        </TabItem>
+      </TabControl>
+    </Grid>
+  </Grid>
+</MappingConfiguration>

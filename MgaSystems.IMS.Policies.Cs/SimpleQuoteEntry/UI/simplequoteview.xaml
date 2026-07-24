@@ -1,0 +1,84 @@
+<local:SimpleQuoteView x:Class="MgaSystems.IMS.Policies.SimpleQuoteEntry.UI.SimpleQuoteView"
+                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                       xmlns:local="clr-namespace:MgaSystems.IMS.Policies.SimpleQuoteEntry.UI"
+                       xmlns:mgaInterop="clr-namespace:Mga.Wpf.Ims.Interop;assembly=Mga.Wpf.Ims"
+                       x:Name="mainWindow" FrameworkElement.Height="750" FrameworkElement.Width="775" Title="Create Quote"
+                       WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/CommonResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/DatagridResources2.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Mga.Wpf.Ims;component/Resources/ToolBarResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/TreeViewResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource textBoxStyleMain}">
+        <Style.Triggers>
+          <Trigger Property="TextBoxBase.IsReadOnly" Value="true">
+            <Setter Property="Control.Background" Value="LightGray"/>
+          </Trigger>
+        </Style.Triggers>
+      </Style>
+      <Style x:Key="SearchBtnStyle" TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.Margin" Value="2"/>
+        <Setter Property="FrameworkElement.Height" Value="20"/>
+        <Setter Property="FrameworkElement.Width" Value="20"/>
+      </Style>
+      <Style TargetType="{x:Type DataGrid}" BasedOn="{StaticResource dataGridStyle}"/>
+      <Style TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.MinWidth" Value="80"/>
+        <Setter Property="FrameworkElement.Margin" Value="2"/>
+        <Setter Property="FrameworkElement.MinHeight" Value="20"/>
+      </Style>
+      <Style TargetType="{x:Type TextBlock}">
+        <Setter Property="FrameworkElement.Margin" Value="2"/>
+        <Setter Property="TextBlock.Foreground" Value="{StaticResource standardTextForegroundColor}"/>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="auto"/>
+      <RowDefinition Height="auto"/>
+      <RowDefinition Height="auto"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="auto"/>
+      <ColumnDefinition/>
+    </Grid.ColumnDefinitions>
+    <Border Grid.Row="0" Grid.Column="0" BorderBrush="Navy" BorderThickness="1" Padding="2">
+      <TextBlock Text="Submission" VerticalAlignment="Center" FontWeight="Bold">
+        <FrameworkElement.LayoutTransform>
+          <RotateTransform Angle="270"/>
+        </FrameworkElement.LayoutTransform>
+      </TextBlock>
+    </Border>
+    <Border Name="brdSubmission" Grid.Row="0" Grid.Column="1" BorderBrush="Navy" BorderThickness="1"
+            Padding="2"/>
+    <Border Grid.Row="1" Grid.Column="0" BorderBrush="Navy" BorderThickness="1" Padding="2">
+      <TextBlock Text="Quote" VerticalAlignment="Center" FontWeight="Bold">
+        <FrameworkElement.LayoutTransform>
+          <RotateTransform Angle="270"/>
+        </FrameworkElement.LayoutTransform>
+      </TextBlock>
+    </Border>
+    <Border Grid.Row="1" Grid.Column="1" BorderBrush="Navy" BorderThickness="1" Padding="2">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="auto"/>
+          <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Border Name="brdQuote" Grid.Row="0"/>
+        <Border Name="brdQuoteDetails" Grid.Row="1"/>
+      </Grid>
+    </Border>
+    <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right"
+                VerticalAlignment="Bottom">
+      <Button Content="Create Quote" Command="{Binding CreateQuoteCommand}"
+              CommandParameter="{Binding ElementName=mainWindow}"/>
+    </StackPanel>
+  </Grid>
+</local:SimpleQuoteView>

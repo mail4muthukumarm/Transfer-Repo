@@ -1,0 +1,23 @@
+<Window x:Class="MGASystems.IMS.Forms.HostedBrowserInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:MicrosoftToolkitWebView="clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls.WebView"
+        Title="Hosted Browser Test" Height="600" Width="800">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="auto"/>
+      <RowDefinition/>
+    </Grid.RowDefinitions>
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition/>
+        <ColumnDefinition Width="auto"/>
+      </Grid.ColumnDefinitions>
+      <TextBox Name="navigationTextBox" Text="https://www.whatismybrowser.com/" Margin="0,2"/>
+      <Button Content="Go" Grid.Column="1" Margin="2"/>
+    </Grid>
+    <MicrosoftToolkitWebView:WebViewCompatible FrameworkElement.Name="browser" Grid.Row="1"/>
+  </Grid>
+</Window>

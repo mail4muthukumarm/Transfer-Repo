@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<License>
+  <Data>
+    <LicensedTo>MGA Systems, Inc.</LicensedTo>
+    <DevelopersNote>Limited to 1 developer.</DevelopersNote>
+    <OemNote>This is a redistributable license.</OemNote>
+    <Products>
+      <Product>Aspose.Pdf.Kit</Product>
+    </Products>
+    <EditionType>Enterprise</EditionType>
+    <SerialNumber>f491cee6-1e0d-4110-ab8e-a043918e7979</SerialNumber>
+    <SubscriptionExpiry>20070315</SubscriptionExpiry>
+    <OemPublicKeyToken>716fcc553a201e56</OemPublicKeyToken>
+    <LicenseVersion>2.0</LicenseVersion>
+  </Data>
+  <Signature>Vx31as/nChOAiEEKrvZ7RzeCRdV+1T61zf8qpBnKmrtTPg5Gj0xqkOCdmSqac5EurPlAqsTbca+jfJNs4c3nXiH63zR8ialU5RxW7vG4la2xDz5AnQe6lNQ+YYnOIoJGlSLNvN3JMb1zKiwi8CyqpNIBuziCxTFpkc6u7zx78Tk=</Signature>
+</License>

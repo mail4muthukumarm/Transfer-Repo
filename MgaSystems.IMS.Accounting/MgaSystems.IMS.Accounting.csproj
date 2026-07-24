@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: D:\augusta\fortegra\IMS Project\MgaSystems.IMS.Accounting.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2F0754BC-B83F-4861-A9FC-834F2F88508F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>MgaSystems.IMS.Accounting</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <ApplicationVersion>2.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>MGASystems.IMS.Accounting</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MgaSystems.IMS.Accounting.Banking">
+      <HintPath>lib\MgaSystems.IMS.Accounting.Banking.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Accounting.Core">
+      <HintPath>lib\MgaSystems.IMS.Accounting.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Accounting.GeneralLedger">
+      <HintPath>lib\MgaSystems.IMS.Accounting.GeneralLedger.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Accounting.OperatingExpenses">
+      <HintPath>lib\MgaSystems.IMS.Accounting.OperatingExpenses.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Accounting.Services">
+      <HintPath>lib\MgaSystems.IMS.Accounting.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Accounting.Shared">
+      <HintPath>lib\MgaSystems.IMS.Accounting.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Common">
+      <HintPath>lib\MgaSystems.IMS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Common.Cs">
+      <HintPath>lib\MgaSystems.IMS.Common.Cs.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.NotesDocuments">
+      <HintPath>lib\MgaSystems.IMS.NotesDocuments.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Security">
+      <HintPath>lib\MgaSystems.IMS.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Tools">
+      <HintPath>lib\MgaSystems.IMS.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountingProviderManager.cs" />
+    <Compile Include="FormsManager.cs" />
+    <Compile Include="Forms\formAccounting.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Accounting.bmp" />
+    <EmbeddedResource Include="dll.licenses" />
+    <EmbeddedResource Include="Forms\formAccounting.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="URLFile\URLText.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

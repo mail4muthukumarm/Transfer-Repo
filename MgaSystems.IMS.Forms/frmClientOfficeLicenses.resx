@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Appearance15.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAKwMAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAr8g3BYrpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAr1JREFUOE+FkltIk2EYx4Uuuu6mi+qmLiKSDhfVVUEnROsqSIhEvbC6qpsgTIsQRGupUNEyK4uxhszmdAd3cq21GfJZm9ucc2tTdyg3Ptuhze3b3OHf9700Sxf0wZ+P5+X5/d/n8FYBINLr9VsnJibqdTqdVKPRuNRqdV6lUuWUSqVFoVCIZTJZzejo6JZyfllleD8L2202GyKRCFKpFIrFIgqFAqLRKPx+P0wmE0ZGRswSiWRnhQF764dAIIBSqcSG//7y+TxmZmYgFosFbLjRQKvV0tls9r8GNE1jaGiIZsONBmy/NMMwCIfDiMfjyGQyBFhbW0MikcDi4iLMZjOWl5chEokqDcbHx2kOWllZIckulwtzc3Ow2+0EZGcEo9GIkPMd3KJL8Mq6YBusgZ1f3UQM2EnT6XQasViM3BIMBsmfm4vFYiEDtBp4CBtakXAogdR3xB0STPXWRoiBXC6nV1dXSY8ctLCwgFAoRKqhKAqUjoeoswO5kBxhYw8ys1IU/JOYfXONIQZjY2M0tzpuBhzs8XjI6rxeLyzGfsScd1HMTCKzcB3R6RuYF7bA8bLxx/STC3uJgVQqpZPJJCnd7XaT/n0+Hzxf3iI224YiM4W0rxlMsAFJVzuWBk5GLH1nD3MsMWAfB12ettPphMPhwIxhAOHPrb/hJjCBy/jpvAM3v6bk6T12hOPWDdjHQXMw1wZXNqV5Bpf2Flu2CcxSC7LBRiTYSr7214Lf0xEtw+sG7OM4x+531Wq1wqp7hTlVO+zqR/hG1SO91ICo7Tbm+8+D//Ae3d3dfbTCgJNQKNwtEAgGh3lngKQf7hcXYWjfgU/P66DvPF4c5N18zcLb/4Y5bQg4dV6tzuemniJHPQbVdQrDV3altG0HD23OK6vioP7ENuZ+8778+wd1eX3f6Y+K1gN7Nuf8Eap+ATErJn1O6QIuAAAAAElFTkSuQmCCCw==</value>
+  </data>
+  <data name="SqlSelectCommand3.CommandText" xml:space="preserve">
+    <value>SELECT      ClientOfficeLicenseGUID, ClientLocationGUID, LicenseTypeID, LicenseNumber, Expires, StateID, UserGUID, NumDaysToSendNote, UserReceivingNote, Signature, Address2, County, State, ZipCode, ZipPlus, Address1, City, ISOCountryCode
+FROM         tblClientOfficeLicenses
+WHERE      (ClientLocationGUID = @ClientLocationGUID)</value>
+  </data>
+  <data name="SqlUpdateCommand1.CommandText" xml:space="preserve">
+    <value>UPDATE [tblClientOfficeLicenses] SET [ClientOfficeLicenseGUID] = @ClientOfficeLicenseGUID, [ClientLocationGUID] = @ClientLocationGUID, [LicenseTypeID] = @LicenseTypeID, [LicenseNumber] = @LicenseNumber, [Expires] = @Expires, [StateID] = @StateID, [UserGUID] = @UserGUID, [NumDaysToSendNote] = @NumDaysToSendNote, [UserReceivingNote] = @UserReceivingNote, [Signature] = @Signature, [Address2] = @Address2, [County] = @County, [State] = @State, [ZipCode] = @ZipCode, [ZipPlus] = @ZipPlus, [Address1] = @Address1, [City] = @City, [ISOCountryCode] = @ISOCountryCode WHERE (([ClientOfficeLicenseGUID] = @Original_ClientOfficeLicenseGUID));
+SELECT ClientOfficeLicenseGUID, ClientLocationGUID, LicenseTypeID, LicenseNumber, Expires, StateID, UserGUID, NumDaysToSendNote, UserReceivingNote, Signature, Address2, County, State, ZipCode, ZipPlus, Address1, City, ISOCountryCode FROM tblClientOfficeLicenses WHERE (ClientOfficeLicenseGUID = @ClientOfficeLicenseGUID)</value>
+  </data>
+  <data name="SqlInsertCommand1.CommandText" xml:space="preserve">
+    <value>INSERT INTO [tblClientOfficeLicenses] ([ClientOfficeLicenseGUID], [ClientLocationGUID], [LicenseTypeID], [LicenseNumber], [Expires], [StateID], [UserGUID], [NumDaysToSendNote], [UserReceivingNote], [Signature], [Address2], [County], [State], [ZipCode], [ZipPlus], [Address1], [City], [ISOCountryCode]) VALUES (@ClientOfficeLicenseGUID, @ClientLocationGUID, @LicenseTypeID, @LicenseNumber, @Expires, @StateID, @UserGUID, @NumDaysToSendNote, @UserReceivingNote, @Signature, @Address2, @County, @State, @ZipCode, @ZipPlus, @Address1, @City, @ISOCountryCode);
+SELECT ClientOfficeLicenseGUID, ClientLocationGUID, LicenseTypeID, LicenseNumber, Expires, StateID, UserGUID, NumDaysToSendNote, UserReceivingNote, Signature, Address2, County, State, ZipCode, ZipPlus, Address1, City, ISOCountryCode FROM tblClientOfficeLicenses WHERE (ClientOfficeLicenseGUID = @ClientOfficeLicenseGUID)</value>
+  </data>
+</root>

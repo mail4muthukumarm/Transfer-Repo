@@ -1,0 +1,71 @@
+<local:ThresholdLimitNotificationView x:Class="MgaSystems.IMS.Policies.ThresholdLimit.UI.ThresholdLimitNotificationView"
+                                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                                      xmlns:local="clr-namespace:MgaSystems.IMS.Policies.ThresholdLimit.UI"
+                                      xmlns:mgaInterop="clr-namespace:Mga.Wpf.Ims.Interop;assembly=Mga.Wpf.Ims"
+                                      x:Name="mainWindow" FrameworkElement.Height="375" FrameworkElement.Width="755"
+                                      Title="Thresold Limits Notification" WindowStartupLocation="CenterScreen"
+                                      ResizeMode="CanResizeWithGrip">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/CommonResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/DatagridResources2.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Mga.Wpf.Ims;component/Resources/ToolBarResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/TreeViewResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/ListViewResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <Style TargetType="{x:Type DataGrid}" BasedOn="{StaticResource dataGridStyle}"/>
+      <Style TargetType="{x:Type TextBlock}">
+        <Setter Property="FrameworkElement.Margin" Value="2"/>
+        <Setter Property="TextBlock.Foreground" Value="{StaticResource standardTextForegroundColor}"/>
+      </Style>
+      <Style x:Key="ApprovalCellStyle" TargetType="{x:Type DataGridCell}">
+        <Setter Property="Control.Foreground" Value="Black"/>
+        <Setter Property="Control.Background" Value="Transparent"/>
+        <Style.Triggers>
+          <DataTrigger Binding="{Binding IsApprovalOver30Days}" Value="True">
+            <Setter Property="Control.Foreground" Value="Red"/>
+          </DataTrigger>
+        </Style.Triggers>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="auto"/>
+      <RowDefinition/>
+    </Grid.RowDefinitions>
+    <TextBlock Grid.Row="0" FontWeight="Bold" FontSize="16"
+               Text="{Binding UserMessage, UpdateSourceTrigger=PropertyChanged}"/>
+    <DataGrid Grid.Row="1" CanUserAddRows="false" CanUserDeleteRows="false"
+              ItemsSource="{Binding LimitCSV.View, UpdateSourceTrigger=PropertyChanged}">
+      <DataGrid.Columns>
+        <DataGridTextColumn Header="Field " Width="Auto" IsReadOnly="true"
+                            Binding="{Binding DatabaseField, UpdateSourceTrigger=PropertyChanged}"/>
+        <DataGridTextColumn Header="Cell " Width="Auto" IsReadOnly="true"
+                            Binding="{Binding Cell, UpdateSourceTrigger=PropertyChanged}"/>
+        <DataGridTextColumn Header="Field Value " Width="Auto" IsReadOnly="true"
+                            Binding="{Binding FieldValue, UpdateSourceTrigger=PropertyChanged, StringFormat={0:n2}}"/>
+        <DataGridTextColumn Header="Min Value " Width="Auto" IsReadOnly="true"
+                            Binding="{Binding MinValue, UpdateSourceTrigger=PropertyChanged}"/>
+        <DataGridTextColumn Header="Max Value " Width="Auto" IsReadOnly="true"
+                            Binding="{Binding MaxValue, UpdateSourceTrigger=PropertyChanged}"/>
+        <DataGridCheckBoxColumn Header="Stop Bind (Hard)  " Width="Auto" IsReadOnly="true"
+                                Binding="{Binding StopBind, UpdateSourceTrigger=PropertyChanged}"/>
+        <DataGridCheckBoxColumn Header="Stop Bind (Soft)  " Width="Auto" IsReadOnly="true"
+                                Binding="{Binding StopBindSoft, UpdateSourceTrigger=PropertyChanged}"/>
+        <DataGridCheckBoxColumn Header="Stop Quote (Hard) " Width="Auto" IsReadOnly="true"
+                                Binding="{Binding StopQuote, UpdateSourceTrigger=PropertyChanged}"/>
+        <DataGridCheckBoxColumn Header="Stop Quote (Soft) " Width="Auto" IsReadOnly="true"
+                                Binding="{Binding StopQuoteSoft, UpdateSourceTrigger=PropertyChanged}"/>
+        <DataGridCheckBoxColumn Header="New  " Width="Auto" IsReadOnly="true"
+                                Binding="{Binding ForNewPolicy, UpdateSourceTrigger=PropertyChanged}"/>
+        <DataGridCheckBoxColumn Header="Renewal  " Width="Auto" IsReadOnly="true"
+                                Binding="{Binding ForRenewalPolicy, UpdateSourceTrigger=PropertyChanged}"/>
+      </DataGrid.Columns>
+    </DataGrid>
+  </Grid>
+</local:ThresholdLimitNotificationView>

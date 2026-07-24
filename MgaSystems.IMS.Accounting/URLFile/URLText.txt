@@ -1,0 +1,12 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<title>MGA Systems IMS Integrated Accounting - What's New!</title>
+</head><!-- filter:progid:DXImageTransform.Microsoft.Gradient(endColorstr='#C0CFE2', startColorstr='#FFFFFF', gradientType='0'); -->
+<body style="margin: 0px 0px 0px 2px;"><table style="width: 100%; " border="0" cellpadding="0" cellspacing="0">
+</td><td style="border-bottom: white 0px solid" align="right">
+</tr><tr style="font-size: 12pt" ><td valign="top" colspan="2"></td></tr><tr ><td valign="top" colspan="2" >
+<span style="font-size: 14pt; font-family: Tahoma"><br />What's New in Accounting?<br /><br />
+<span style="font-family: Arial"><span style="color: steelblue; font-size: 12pt;"><strong>New Transaction Builder<br />
+</strong></span><span style="font-size: 10pt">Accounts payable and accounts receivable just got easier with the Transaction Builder screen. Now you can process both AP and AR at the same time from one screen, giving you the ability to work with agency bill items and direct bill items for an entity simultaneously. Click here for more information.<br /><br /></span></span></span></td></tr><tr><td colspan="2"><span style="font-size: 12pt; font-family: Arial"><span style="color: steelblue"><strong>Cost Center Allocation Changes</strong><br /></span></span><span style="font-size: 10pt; font-family: Arial">Cost centers are now done at the transaction detail level giving you the ability to put any portion of a transaction to any cost center defined in the system.</span></tr><tr><td colspan="2"><br /><span style="font-family: Arial"><strong><span style="color: steelblue">Accounting Tutorials and Training Documentation</span></strong><br /><span style="font-size: 10pt">The IMS Integrated Accounting system will now feature online tutorials and how-to's available from within the IMS via the internet. Look to this section in the future for a list of available documentation.</span></span></td></tr></table></body></html>

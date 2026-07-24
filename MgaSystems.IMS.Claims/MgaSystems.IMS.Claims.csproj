@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: F:\augusta\fortegra\IMS Project\MgaSystems.IMS.Claims.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D09373FE-FB43-4121-8482-67A329660B88}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>MgaSystems.IMS.Claims</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <ApplicationVersion>2.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>MGASystems.IMS.Claims</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MgaSystems.IMS.Accounting.Controls">
+      <HintPath>lib\MgaSystems.IMS.Accounting.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Accounting.Datasets">
+      <HintPath>lib\MgaSystems.IMS.Accounting.Datasets.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Accounting.GeneralLedger">
+      <HintPath>lib\MgaSystems.IMS.Accounting.GeneralLedger.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.BusinessClasses">
+      <HintPath>lib\MgaSystems.IMS.BusinessClasses.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.BusinessObjects">
+      <HintPath>lib\MgaSystems.IMS.BusinessObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Common">
+      <HintPath>lib\MgaSystems.IMS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Common.Cs">
+      <HintPath>lib\MgaSystems.IMS.Common.Cs.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.DocumentAutomation">
+      <HintPath>lib\MgaSystems.IMS.DocumentAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Forms">
+      <HintPath>lib\MgaSystems.IMS.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Policies">
+      <HintPath>lib\MgaSystems.IMS.Policies.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.WebIntegration">
+      <HintPath>lib\MgaSystems.IMS.WebIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dsPaymentTransfer.cs" />
+    <Compile Include="Claim.cs" />
+    <Compile Include="Claimant.cs" />
+    <Compile Include="ClaimantLegalInformation.cs" />
+    <Compile Include="ClaimantSavedEventArgs.cs" />
+    <Compile Include="ClaimOFACEntity.cs" />
+    <Compile Include="ClaimPolicyInformation.cs" />
+    <Compile Include="MedicareEligibilityData.cs" />
+    <Compile Include="NotificationCollection`1.cs" />
+    <Compile Include="PaymentReserveType.cs" />
+    <Compile Include="PaymentReserve.cs" />
+    <Compile Include="FormAttorneyManagement.cs" />
+    <Compile Include="formClaimsAuditUserManagement.cs" />
+    <Compile Include="dsClaimActivity.cs" />
+    <Compile Include="dsClaimOptions.cs" />
+    <Compile Include="dsCoverageTypes.cs" />
+    <Compile Include="dsReservePaymentEntryTypes.cs" />
+    <Compile Include="dsReservesPayments.cs" />
+    <Compile Include="FormChangeReservePaymentDate.cs" />
+    <Compile Include="FormDepositPaymentInformation.cs" />
+    <Compile Include="FormEditClaimNumber.cs" />
+    <Compile Include="FormEditReservePaymentComment.cs" />
+    <Compile Include="FormEditTransactionULAEComment.cs" />
+    <Compile Include="FormModifyReserve.cs" />
+    <Compile Include="ModifyReserveSavedEventArgs.cs" />
+    <Compile Include="NoteAutomationRecipientManager.cs" />
+    <Compile Include="ClaimActivity.cs" />
+    <Compile Include="LoadedPolicyInformationEventArgs.cs" />
+    <Compile Include="dsClaimsSearch.cs" />
+    <Compile Include="ViewLayoutEventArgs.cs" />
+    <Compile Include="AdministrationPortalTypeEventArgs.cs" />
+    <Compile Include="dsClaimsAdministration.cs" />
+    <Compile Include="FormClaims.cs" />
+    <Compile Include="ClaimantFormLoadedEventArgs.cs" />
+    <Compile Include="ClaimantFormBeforeShownEventArgs.cs" />
+    <Compile Include="ModifyReserveFormShownEventArgs.cs" />
+    <Compile Include="dsClaims_PhoneNumbers.cs" />
+    <Compile Include="dsPhoneTypes.cs" />
+    <Compile Include="IClaimant.cs" />
+    <Compile Include="IClaimAdministrationControl.cs" />
+    <Compile Include="INotifyChanges.cs" />
+    <Compile Include="IClaimsExplorerProvider.cs" />
+    <Compile Include="IClaimsExplorerProviderExtensions.cs" />
+    <Compile Include="IClaimsSearch.cs" />
+    <Compile Include="MgaPhoneNumberEntry.cs" />
+    <Compile Include="UnsavedPhoneNumberDeletedEventArgs.cs" />
+    <Compile Include="PhoneNumber.cs" />
+    <Compile Include="FormClaimsManagement.cs" />
+    <Compile Include="ClaimsAdministrationPortal.cs" />
+    <Compile Include="ClaimsSearch.cs" />
+    <Compile Include="ClaimEntity.cs" />
+    <Compile Include="ControlNumberNotFoundException.cs" />
+    <Compile Include="NoClaimantsSpecifiedException.cs" />
+    <Compile Include="ClaimNumberingException.cs" />
+    <Compile Include="ClaimNotFoundException.cs" />
+    <Compile Include="InvalidArgumentException.cs" />
+    <Compile Include="AutomatedExpenseNotFoundException.cs" />
+    <Compile Include="InvalidReservePaymentTypeException.cs" />
+    <Compile Include="NoReservePaymentMenuToolException.cs" />
+    <Compile Include="PrimaryPhoneTypeNotFoundException.cs" />
+    <Compile Include="ClaimantSaveCustomDataFailedException.cs" />
+    <Compile Include="Utility.cs" />
+    <Compile Include="dsExpenseTransfer.cs" />
+    <Compile Include="FormExpenseTransfer.cs" />
+    <Compile Include="FormPaymentTransfer.cs" />
+    <Compile Include="AccidentInformation.cs" />
+    <Compile Include="dsClaimExpenses.cs" />
+    <Compile Include="dsSublineCodes.cs" />
+    <Compile Include="FormAutomatedExpenses.cs" />
+    <Compile Include="FormCoverageCodeLinking.cs" />
+    <Compile Include="FormCoverageTypeSublines.cs" />
+    <Compile Include="FormSettings.cs" />
+    <Compile Include="FormUnallocatedExpenses.cs" />
+    <Compile Include="dsCompanyLocations.cs" />
+    <Compile Include="dsLines.cs" />
+    <Compile Include="dsReservePaymentBreakout.cs" />
+    <Compile Include="dsReservePaymentTypes.cs" />
+    <Compile Include="dsUnallocatedExpenses.cs" />
+    <Compile Include="FormAddPayment.cs" />
+    <Compile Include="DocumentDeleteEventArgs.cs" />
+    <Compile Include="FormAddReserve.cs" />
+    <Compile Include="FormAddTransaction.cs" />
+    <Compile Include="FormClaimant.cs" />
+    <Compile Include="FormPaymentCheckInformation.cs" />
+    <Compile Include="FormSelectPayee.cs" />
+    <Compile Include="ClaimSavedEventArgs.cs" />
+    <Compile Include="ExpenseAutomationSetting.cs" />
+    <Compile Include="dsclaimsAR.cs" />
+    <Compile Include="ClaimAddress.cs" />
+    <Compile Include="dsPhoneNumberManager.cs" />
+    <Compile Include="PhoneNumberManager.cs" />
+    <Compile Include="dsSearchEntity.cs" />
+    <Compile Include="FormSearchEntity.cs" />
+    <Compile Include="ClaimDriverInformation.cs" />
+    <Compile Include="ClaimPolicyAggregates.cs" />
+    <Compile Include="FormMoveClaim.cs" />
+    <Compile Include="Utility_Classes\UserReserveLevelProvider.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="UserLog\FormClaimUserLog.cs" />
+    <Compile Include="TemplateDocuments\Claims_NoteAutomation.cs" />
+    <Compile Include="TemplateDocuments\ClaimsAssemblyStart.cs" />
+    <Compile Include="TemplateDocuments\Claims_BroadcastMessageListener.cs" />
+    <Compile Include="TemplateDocuments\Claims_CompanyDocumentAutomation.cs" />
+    <Compile Include="TemplateDocuments\Claims_PolicyTagParser.cs" />
+    <Compile Include="TemplateDocuments\Claims_DocumentHandling.cs" />
+    <Compile Include="TemplateDocuments\Claims_TagParserFactory.cs" />
+    <Compile Include="ReserveSecurity\FormClaimReserveSecurity.cs" />
+    <Compile Include="ReserveSecurity\FormReserveSecurity.cs" />
+    <Compile Include="Reports\VoidedChecksReport.cs" />
+    <Compile Include="Reports\BillingDetailReport.cs" />
+    <Compile Include="Reports\BillingRecapReport.cs" />
+    <Compile Include="Reports\ClaimCoverageReport.cs" />
+    <Compile Include="Reports\ClaimsTransactionSubReport.cs" />
+    <Compile Include="Reports\ClaimTransactionReport.cs" />
+    <Compile Include="Reports\ClosedClaimsReport.cs" />
+    <Compile Include="Reports\EmployeeHoursReport.cs" />
+    <Compile Include="Reports\IncurredLossesReport.cs" />
+    <Compile Include="Reports\LossAmountReport.cs" />
+    <Compile Include="Reports\OpenClaimsReport.cs" />
+    <Compile Include="Reports\SubroSalvageReport.cs" />
+    <Compile Include="My_Claims\FormMyClaims.cs" />
+    <Compile Include="IMS_Overrides\AccountingTransactionDetail.cs" />
+    <Compile Include="IMS_Overrides\ClaimAccountingWorksheet.cs" />
+    <Compile Include="IMS_Overrides\ClaimInsuranceTransaction.cs" />
+    <Compile Include="IMS_Overrides\ClaimReceivableValue.cs" />
+    <Compile Include="IMS_Overrides\ClaimReceivableValueCollection.cs" />
+    <Compile Include="IMS_Overrides\FormSaveWorksheet.cs" />
+    <Compile Include="IMS_Overrides\FormClaimsARAP.cs" />
+    <Compile Include="DataAccess\RemitterJournal\RemitterJournalDto.cs" />
+    <Compile Include="DataAccess\RemitterJournal\RemitterJournalRepository.cs" />
+    <Compile Include="DataAccess\ReceiveTransactionExpense\ReceiveTransactionExpenseDto.cs" />
+    <Compile Include="DataAccess\ReceiveTransactionExpense\ReceiveTransactionExpenseRepository.cs" />
+    <Compile Include="DataAccess\LossType\ILossTypeRepository.cs" />
+    <Compile Include="DataAccess\LossType\LossTypeDto.cs" />
+    <Compile Include="DataAccess\LossType\LossTypeRepository.cs" />
+    <Compile Include="DataAccess\GridClaimsArHeader\JournalDataAccess.cs" />
+    <Compile Include="DataAccess\GridClaimsArHeader\ReceiveExpenseHeaderDto.cs" />
+    <Compile Include="DataAccess\CheckRegister\CheckRegisterDto.cs" />
+    <Compile Include="DataAccess\CheckRegister\CheckRegisterRepository.cs" />
+    <Compile Include="DataAccess\ActiveUser\ActiveUserDto.cs" />
+    <Compile Include="DataAccess\ActiveUser\ActiveUserRepository.cs" />
+    <Compile Include="DataAccess\ActiveUser\IActiveUserRepository.cs" />
+    <Compile Include="Claims\EditReservesPayments.cs" />
+    <Compile Include="Claims\FormEditReserveComment.cs" />
+    <Compile Include="Claims\FormTest.cs" />
+    <Compile Include="Claims\FormVoidTransactionComment.cs" />
+    <Compile Include="Claims\testForm.cs" />
+    <Compile Include="ClaimsAuditUser\ActiveUserGridController.cs" />
+    <Compile Include="ClaimLocks\FormClaimLockManagement.cs" />
+    <Compile Include="NumberingAutomation\ClaimNumberingAutomationUI.cs" />
+    <Compile Include="NumberingAutomation\ClaimNumberAutomationLinkingUI.cs" />
+    <Compile Include="NumberingAutomation\dsNumberingLinking.cs" />
+    <Compile Include="NumberingAutomation\dsNumberingRules.cs" />
+    <Compile Include="Claims_Entities\ClaimsEntityView.cs" />
+    <Compile Include="Claims_Entities\MVC\ClaimsEntityForm.cs" />
+    <Compile Include="Claims_Entities\MVC\View\IClaimsEntityView.cs" />
+    <Compile Include="Claims_Entities\MVC\Model\ClaimsEntityModel.cs" />
+    <Compile Include="Claims_Entities\MVC\Model\IClaimsEntityModel.cs" />
+    <Compile Include="Claims_Entities\MVC\Controller\ClaimsEntityController.cs" />
+    <Compile Include="Claims_Entities\MVC\Controller\IClaimsEntityController.cs" />
+    <Compile Include="Claims_Entities\DataAccess\ClaimsEntityDto.cs" />
+    <Compile Include="Claims_Entities\DataAccess\ClaimsEntityRepository`1.cs" />
+    <Compile Include="Claims_Entities\DataAccess\ClaimsEntityRepository.cs" />
+    <Compile Include="Claims_Entities\DataAccess\IClaimsEntityRepository.cs" />
+    <Compile Include="Claims_Entities\DataAccess\IClaimsEntityRepository`1.cs" />
+    <Compile Include="Claim_Location_Settings\ILocationSettingsRepository.cs" />
+    <Compile Include="Claim_Location_Settings\ILocationSettingsRepository`1.cs" />
+    <Compile Include="Claim_Location_Settings\LocationSettingsDto.cs" />
+    <Compile Include="Claim_Location_Settings\LocationSettingsRepository`1.cs" />
+    <Compile Include="Claim_Location_Settings\LocationSettingsRepository.cs" />
+    <Compile Include="Claim_Location_Settings\ILocationSettingsController.cs" />
+    <Compile Include="Claim_Location_Settings\LocationSettingsController.cs" />
+    <Compile Include="Claim_Location_Settings\LocationSettingsForm.cs" />
+    <Compile Include="Claim_Location_Settings\ILocationSettingsModel.cs" />
+    <Compile Include="Claim_Location_Settings\LocationSettingsModel.cs" />
+    <Compile Include="Claim_Location_Settings\ILocationSettingsView.cs" />
+    <Compile Include="Claim_Location_Settings\LocationSettingsView.cs" />
+    <Compile Include="Attorney_Management\AttorneyManagementDto.cs" />
+    <Compile Include="Attorney_Management\AttorneyManagementRepository`1.cs" />
+    <Compile Include="Attorney_Management\AttorneyManagementRepository.cs" />
+    <Compile Include="Attorney_Management\IAttorneyManagementRepository.cs" />
+    <Compile Include="Attorney_Management\IAttorneyManagementRepository`1.cs" />
+    <Compile Include="Attorney_Management\AttorneyManagementForm.cs" />
+    <Compile Include="Attorney_Management\AttorneyManagementController.cs" />
+    <Compile Include="Attorney_Management\IAttorneyManagementController.cs" />
+    <Compile Include="Attorney_Management\AttorneyManagementModel.cs" />
+    <Compile Include="Attorney_Management\IAttorneyManagementModel.cs" />
+    <Compile Include="Attorney_Management\AttorneyManagementView.cs" />
+    <Compile Include="Attorney_Management\IAttorneyManagementView.cs" />
+    <Compile Include="Claims\ClaimAdministrationMaster.cs" />
+    <Compile Include="Claims\ClaimOverview.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Attorney_Management\AttorneyManagementForm.resx" />
+    <EmbeddedResource Include="Attorney_Management\AttorneyManagementView.resx" />
+    <EmbeddedResource Include="Claim_Location_Settings\LocationSettingsForm.resx" />
+    <EmbeddedResource Include="Claim_Location_Settings\LocationSettingsView.resx" />
+    <EmbeddedResource Include="ClaimLocks\FormClaimLockManagement.resx" />
+    <EmbeddedResource Include="Claims\ClaimAdministrationMaster.resx" />
+    <EmbeddedResource Include="Claims\ClaimOverview.resx" />
+    <EmbeddedResource Include="Claims\EditReservesPayments.resx" />
+    <EmbeddedResource Include="Claims\FormEditReserveComment.resx" />
+    <EmbeddedResource Include="Claims\FormTest.resx" />
+    <EmbeddedResource Include="Claims\FormVoidTransactionComment.resx" />
+    <EmbeddedResource Include="Claims\testForm.resx" />
+    <EmbeddedResource Include="Claims_Entities\ClaimsEntityView.resx" />
+    <EmbeddedResource Include="Claims_Entities\MVC\ClaimsEntityForm.resx" />
+    <EmbeddedResource Include="ClaimsAdministrationPortal.resx" />
+    <EmbeddedResource Include="ClaimsSearch.resx" />
+    <EmbeddedResource Include="dll.licenses" />
+    <EmbeddedResource Include="FormAddPayment.resx" />
+    <EmbeddedResource Include="FormAddReserve.resx" />
+    <EmbeddedResource Include="FormAddTransaction.resx" />
+    <EmbeddedResource Include="FormAttorneyManagement.resx" />
+    <EmbeddedResource Include="FormAutomatedExpenses.resx" />
+    <EmbeddedResource Include="FormChangeReservePaymentDate.resx" />
+    <EmbeddedResource Include="FormClaimant.resx" />
+    <EmbeddedResource Include="FormClaims.resx" />
+    <EmbeddedResource Include="formClaimsAuditUserManagement.resx" />
+    <EmbeddedResource Include="FormClaimsManagement.resx" />
+    <EmbeddedResource Include="FormCoverageCodeLinking.resx" />
+    <EmbeddedResource Include="FormCoverageTypeSublines.resx" />
+    <EmbeddedResource Include="FormDepositPaymentInformation.resx" />
+    <EmbeddedResource Include="FormEditClaimNumber.resx" />
+    <EmbeddedResource Include="FormEditReservePaymentComment.resx" />
+    <EmbeddedResource Include="FormEditTransactionULAEComment.resx" />
+    <EmbeddedResource Include="FormExpenseTransfer.resx" />
+    <EmbeddedResource Include="FormModifyReserve.resx" />
+    <EmbeddedResource Include="FormMoveClaim.resx" />
+    <EmbeddedResource Include="FormPaymentCheckInformation.resx" />
+    <EmbeddedResource Include="FormPaymentTransfer.resx" />
+    <EmbeddedResource Include="FormSearchEntity.resx" />
+    <EmbeddedResource Include="FormSelectPayee.resx" />
+    <EmbeddedResource Include="FormSettings.resx" />
+    <EmbeddedResource Include="FormUnallocatedExpenses.resx" />
+    <EmbeddedResource Include="IMS_Overrides\FormClaimsARAP.resx" />
+    <EmbeddedResource Include="IMS_Overrides\FormSaveWorksheet.resx" />
+    <EmbeddedResource Include="MgaPhoneNumberEntry.resx" />
+    <EmbeddedResource Include="My_Claims\FormMyClaims.resx" />
+    <EmbeddedResource Include="NumberingAutomation\ClaimNumberAutomationLinkingUI.resx" />
+    <EmbeddedResource Include="NumberingAutomation\ClaimNumberingAutomationUI.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="Reports\BillingDetailReport.resx" />
+    <EmbeddedResource Include="Reports\BillingRecapReport.resx" />
+    <EmbeddedResource Include="Reports\ClaimCoverageReport.resx" />
+    <EmbeddedResource Include="Reports\ClaimsTransactionSubReport.resx" />
+    <EmbeddedResource Include="Reports\ClaimTransactionReport.resx" />
+    <EmbeddedResource Include="Reports\ClosedClaimsReport.resx" />
+    <EmbeddedResource Include="Reports\EmployeeHoursReport.resx" />
+    <EmbeddedResource Include="Reports\IncurredLossesReport.resx" />
+    <EmbeddedResource Include="Reports\LossAmountReport.resx" />
+    <EmbeddedResource Include="Reports\OpenClaimsReport.resx" />
+    <EmbeddedResource Include="Reports\SubroSalvageReport.resx" />
+    <EmbeddedResource Include="Reports\VoidedChecksReport.resx" />
+    <EmbeddedResource Include="ReserveSecurity\FormClaimReserveSecurity.resx" />
+    <EmbeddedResource Include="ReserveSecurity\FormReserveSecurity.resx" />
+    <EmbeddedResource Include="Resources\coins.png" />
+    <EmbeddedResource Include="UserLog\FormClaimUserLog.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

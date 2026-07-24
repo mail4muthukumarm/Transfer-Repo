@@ -1,0 +1,136 @@
+<UserControl x:Class="MgaSystems.IMS.Policies.SimpleQuoteEntry.UI.QuoteView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:MgaSystems.IMS.Policies.SimpleQuoteEntry.UI"
+             xmlns:baseWpfValueConverters="clr-namespace:Mga.Wpf.Ims.ValueConverters;assembly=Mga.Wpf.Ims">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/CommonResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/DatagridResources2.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Mga.Wpf.Ims;component/Resources/ToolBarResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/TreeViewResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/ListViewResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <baseWpfValueConverters:BoolToVisibilityConverter x:Key="mgaBoolToVisibilityConverter"/>
+      <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource textBoxStyleMain}">
+        <Style.Triggers>
+          <Trigger Property="TextBoxBase.IsReadOnly" Value="true">
+            <Setter Property="Control.Background" Value="LightGray"/>
+          </Trigger>
+        </Style.Triggers>
+      </Style>
+      <Style TargetType="{x:Type DataGrid}" BasedOn="{StaticResource dataGridStyle}"/>
+      <Style TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.MinWidth" Value="20"/>
+      </Style>
+      <Style TargetType="{x:Type TextBlock}">
+        <Setter Property="FrameworkElement.Margin" Value="2"/>
+        <Setter Property="TextBlock.Foreground" Value="{StaticResource standardTextForegroundColor}"/>
+      </Style>
+      <SolidColorBrush x:Key="SelectedBrush" Color="{DynamicResource {x:Static JetSystemColors.HighlightColorKey}}"/>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition/>
+      <RowDefinition/>
+    </Grid.RowDefinitions>
+    <Grid Row="0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition/>
+        <ColumnDefinition/>
+      </Grid.ColumnDefinitions>
+      <Grid Row="0" Column="0">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="2*"/>
+          <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+          <TextBlock Text="Quoting Office:"/>
+          <ComboBox DisplayMemberPath="Location" SelectedValuePath="OfficeGuid" HorizontalAlignment="Stretch"
+                    ItemsSource="{Binding SimpleQuote.Submission.QuoteEditCode.QuotingOffices}"
+                    SelectedValue="{Binding QuotingOfficeGuid, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+        <ComboBox Grid.Column="1" VerticalAlignment="Bottom" DisplayMemberPath="CurrencyCode"
+                  SelectedValuePath="CurrencyCode" MinWidth="50"
+                  ItemsSource="{Binding Currencies, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedValue="{Binding SimpleQuote.Quote.CurrencyCode, UpdateSourceTrigger=PropertyChanged}"
+                  Visibility="{Binding SimpleQuote.Quote.UseMulticurrency, Converter={StaticResource mgaBoolToVisibilityConverter}, ConverterParameter=False-Collapsed;*-Visible}"/>
+      </Grid>
+      <StackPanel Grid.Row="1" Grid.Column="0">
+        <TextBlock Text="Line:"/>
+        <ComboBox DisplayMemberPath="LineName" HorizontalAlignment="Stretch" MinWidth="100"
+                  ItemsSource="{Binding LineCVS.View, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItem="{Binding SelectedLine, UpdateSourceTrigger=PropertyChanged}"/>
+      </StackPanel>
+      <StackPanel Grid.Row="2" Grid.Column="0">
+        <TextBlock Text="State:"/>
+        <ComboBox DisplayMemberPath="State" SelectedValuePath="StateID" MinWidth="100"
+                  ItemsSource="{Binding States, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedValue="{Binding StateID, UpdateSourceTrigger=PropertyChanged}"/>
+      </StackPanel>
+      <StackPanel Grid.Row="3" Grid.Column="0">
+        <TextBlock Text="Company:"/>
+        <ComboBox DisplayMemberPath="Name" HorizontalAlignment="Stretch" MinWidth="100"
+                  ItemsSource="{Binding CompanyLocations, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItem="{Binding SelectedCompanyLocation, UpdateSourceTrigger=PropertyChanged}"/>
+      </StackPanel>
+      <StackPanel Grid.Row="4" Grid.Column="0">
+        <TextBlock Text="Billing Type:"/>
+        <ComboBox DisplayMemberPath="BillingType" SelectedValuePath="BillingTypeID" HorizontalAlignment="Stretch"
+                  MinWidth="100" ItemsSource="{Binding BillingTypes, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedValue="{Binding BillingTypeID, UpdateSourceTrigger=PropertyChanged}"/>
+      </StackPanel>
+      <StackPanel Grid.Row="0" Grid.Column="1">
+        <TextBlock Text="Issuing Office:"/>
+        <ComboBox DisplayMemberPath="Location" SelectedValuePath="OfficeGuid" HorizontalAlignment="Stretch"
+                  MinWidth="100" ItemsSource="{Binding SimpleQuote.Submission.QuoteEditCode.IssuingOffices}"
+                  SelectedValue="{Binding IssuingOfficeGuid, UpdateSourceTrigger=PropertyChanged}"/>
+      </StackPanel>
+      <StackPanel Grid.Row="1" Grid.Column="1">
+        <TextBlock Text="Underwriter:"/>
+        <ComboBox DisplayMemberPath="FullName" SelectedValuePath="UserGuid" HorizontalAlignment="Stretch"
+                  MinWidth="100" ItemsSource="{Binding Underwriters, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedValue="{Binding SimpleQuote.Quote.UnderwriterGuid, UpdateSourceTrigger=PropertyChanged}"/>
+      </StackPanel>
+      <StackPanel Grid.Row="2" Grid.Column="1">
+        <TextBlock Text="Policy Type:"/>
+        <ComboBox DisplayMemberPath="Description" SelectedValuePath="PolicyTypeID" HorizontalAlignment="Stretch"
+                  MinWidth="100"
+                  ItemsSource="{Binding SimpleQuote.Submission.QuoteEditCode.PolicyTypes, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedValue="{Binding SimpleQuote.Quote.PolicyTypeID, UpdateSourceTrigger=PropertyChanged}"/>
+      </StackPanel>
+      <StackPanel Grid.Row="3" Grid.Column="1">
+        <TextBlock Text="Effective Date:"/>
+        <DatePicker HorizontalAlignment="Left"
+                    SelectedDate="{Binding SimpleQuote.Quote.EffectiveDate, UpdateSourceTrigger=PropertyChanged}"/>
+      </StackPanel>
+      <StackPanel Grid.Row="4" Grid.Column="1">
+        <TextBlock Text="Expiration Date:"/>
+        <DatePicker HorizontalAlignment="Left"
+                    SelectedDate="{Binding SimpleQuote.Quote.ExpirationDate, UpdateSourceTrigger=PropertyChanged}"/>
+      </StackPanel>
+      <Separator Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"/>
+      <StackPanel Grid.Row="6" Grid.Column="0">
+        <TextBlock Text="Cost Center:"/>
+        <ComboBox DisplayMemberPath="GroupName" SelectedValuePath="GroupId" HorizontalAlignment="Stretch"
+                  MinWidth="100"
+                  ItemsSource="{Binding SimpleQuote.Quote.CostCenters, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedValue="{Binding SimpleQuote.Quote.CostCenterID, UpdateSourceTrigger=PropertyChanged}"
+                  IsEnabled="{Binding SimpleQuote.Quote.CanEditCostCenter, UpdateSourceTrigger=PropertyChanged}"/>
+      </StackPanel>
+    </Grid>
+  </Grid>
+</UserControl>

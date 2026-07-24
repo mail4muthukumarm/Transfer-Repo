@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: D:\augusta\fortegra\IMS Project\MgaSystems.IMS.Claims\lib\MgaSystems.IMS.Accounting.GeneralLedger.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0946317D-2A54-45EA-8964-20B2AC1E50CD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>MgaSystems.IMS.Accounting.GeneralLedger</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <ApplicationVersion>2.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>MGASystems.IMS.Accounting</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MgaSystems.IMS.Accounting.Controls">
+      <HintPath>lib\MgaSystems.IMS.Accounting.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Accounting.Datasets">
+      <HintPath>lib\MgaSystems.IMS.Accounting.Datasets.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Accounting.Reports" />
+    <Reference Include="MgaSystems.IMS.Accounting.Services" />
+    <Reference Include="MgaSystems.IMS.Accounting.Shared" />
+    <Reference Include="MgaSystems.IMS.Accounting.Utilities" />
+    <Reference Include="MgaSystems.IMS.Common">
+      <HintPath>lib\MgaSystems.IMS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Forms">
+      <HintPath>lib\MgaSystems.IMS.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Reporting" />
+    <Reference Include="MgaSystems.IMS.Security" />
+    <Reference Include="MgaSystems.IMS.Tools" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountingCache.cs" />
+    <Compile Include="GlCompany.cs" />
+    <Compile Include="GeneralLedger\SharedMembers.cs" />
+    <Compile Include="GeneralLedger\StringResourceManager.cs" />
+    <Compile Include="GeneralLedger\Strings.cs" />
+    <Compile Include="GeneralLedger\Properties\Resources.cs" />
+    <Compile Include="GeneralLedger\Exceptions\InvalidCallerException.cs" />
+    <Compile Include="GeneralLedger\Exceptions\JournalEntryUnbalancedException.cs" />
+    <Compile Include="GeneralLedger\Exceptions\JournalEntrySQLException.cs" />
+    <Compile Include="GeneralLedger\Exceptions\JournalEntryException.cs" />
+    <Compile Include="GeneralLedger\Exceptions\JournalEntryObjectNotSetException.cs" />
+    <Compile Include="GeneralLedger\Exceptions\LedgerEntryNotFoundException.cs" />
+    <Compile Include="GeneralLedger\Exceptions\GLAccountNotFoundException.cs" />
+    <Compile Include="GeneralLedger\Exceptions\LoadGLAccountException.cs" />
+    <Compile Include="GeneralLedger\Exceptions\CorrectionChargeCodeNotFound.cs" />
+    <Compile Include="GeneralLedger\JournalEntry_Advanced\dsGLAccountList.cs" />
+    <Compile Include="GeneralLedger\JournalEntry_Advanced\dsJournalEntryAdvanced.cs" />
+    <Compile Include="GeneralLedger\JournalEntry_Advanced\ucReversalDate.cs" />
+    <Compile Include="GeneralLedger\Forms\formAccountClassificationAutomation.cs" />
+    <Compile Include="GeneralLedger\Forms\formAccountFinancialClassification.cs" />
+    <Compile Include="GeneralLedger\Forms\formAccountLinking.cs" />
+    <Compile Include="GeneralLedger\Forms\formAgingBuckets.cs" />
+    <Compile Include="GeneralLedger\Forms\formAutomationAccounts.cs" />
+    <Compile Include="GeneralLedger\Forms\formBuildingGLCompany.cs" />
+    <Compile Include="GeneralLedger\Forms\formCloseFiscalYear.cs" />
+    <Compile Include="GeneralLedger\Forms\formCreateCompany.cs" />
+    <Compile Include="GeneralLedger\Forms\formFiscalConfiguration.cs" />
+    <Compile Include="GeneralLedger\Forms\formGLAccountDialog.cs" />
+    <Compile Include="GeneralLedger\Forms\formGLAccountManagement.cs" />
+    <Compile Include="GeneralLedger\Forms\formInvoiceLedgerEntryWizard.cs" />
+    <Compile Include="GeneralLedger\Forms\FormImportErrors.cs" />
+    <Compile Include="GeneralLedger\Forms\FormImportJournalEntry.cs" />
+    <Compile Include="GeneralLedger\Forms\FormJournalEntryTemplates.cs" />
+    <Compile Include="GeneralLedger\Forms\FormJournalEntry_Advanced.cs" />
+    <Compile Include="GeneralLedger\Forms\formJournalViewer.cs" />
+    <Compile Include="GeneralLedger\Forms\formLedgerEntryWizard.cs" />
+    <Compile Include="GeneralLedger\Forms\formPaymentMethod.cs" />
+    <Compile Include="GeneralLedger\Forms\formReloadingGLAccounts.cs" />
+    <Compile Include="GeneralLedger\Forms\FormPostJournalEntry.cs" />
+    <Compile Include="GeneralLedger\EntityView\dsEntityView.cs" />
+    <Compile Include="GeneralLedger\EntityView\FormEntityActivityView.cs" />
+    <Compile Include="GeneralLedger\Controls\AutomationAccountControl.cs" />
+    <Compile Include="GeneralLedger\Controls\GLAccountBalanceInformation.cs" />
+    <Compile Include="GeneralLedger\UserControls\AccountingExplorerControl.cs" />
+    <Compile Include="GeneralLedger\UserControls\GLCompanyTotals.cs" />
+    <Compile Include="GeneralLedger\ClassObjects\AccountingProvider.cs" />
+    <Compile Include="GeneralLedger\ClassObjects\AccountingProviderExtensions.cs" />
+    <Compile Include="GeneralLedger\ClassObjects\BankAccount.cs" />
+    <Compile Include="GeneralLedger\ClassObjects\GLAccount.cs" />
+    <Compile Include="GeneralLedger\ClassObjects\GLClass.cs" />
+    <Compile Include="GeneralLedger\ClassObjects\GLAccountClassType.cs" />
+    <Compile Include="GeneralLedger\ClassObjects\GLTreeNode.cs" />
+    <Compile Include="GeneralLedger\ClassObjects\JournalEntry.cs" />
+    <Compile Include="GeneralLedger\ClassObjects\LedgerEntriesCollection.cs" />
+    <Compile Include="GeneralLedger\ClassObjects\LedgerEntry.cs" />
+    <Compile Include="GeneralLedger\ClassObjects\Utilities.cs" />
+    <Compile Include="Exceptions\AutomationAccountRoleNotFoundExceptions.cs" />
+    <Compile Include="Exceptions\EditableAutomationAccountsNotFoundException.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GeneralLedger\Controls\AutomationAccountControl.resx" />
+    <EmbeddedResource Include="GeneralLedger\Controls\GLAccountBalanceInformation.resx" />
+    <EmbeddedResource Include="GeneralLedger\dll.licenses" />
+    <EmbeddedResource Include="GeneralLedger\EntityView\FormEntityActivityView.resx" />
+    <EmbeddedResource Include="GeneralLedger\Forms\formAccountClassificationAutomation.resx" />
+    <EmbeddedResource Include="GeneralLedger\Forms\formAccountFinancialClassification.resx" />
+    <EmbeddedResource Include="GeneralLedger\Forms\formAccountLinking.resx" />
+    <EmbeddedResource Include="GeneralLedger\Forms\formAgingBuckets.resx" />
+    <EmbeddedResource Include="GeneralLedger\Forms\formAutomationAccounts.resx" />
+    <EmbeddedResource Include="GeneralLedger\Forms\formBuildingGLCompany.resx" />
+    <EmbeddedResource Include="GeneralLedger\Forms\formCloseFiscalYear.resx" />
+    <EmbeddedResource Include="GeneralLedger\Forms\formCreateCompany.resx" />
+    <EmbeddedResource Include="GeneralLedger\Forms\formFiscalConfiguration.resx" />
+    <EmbeddedResource Include="GeneralLedger\Forms\formGLAccountDialog.resx" />
+    <EmbeddedResource Include="GeneralLedger\Forms\formGLAccountManagement.resx" />
+    <EmbeddedResource Include="GeneralLedger\Forms\FormImportErrors.resx" />
+    <EmbeddedResource Include="GeneralLedger\Forms\FormImportJournalEntry.resx" />
+    <EmbeddedResource Include="GeneralLedger\Forms\formInvoiceLedgerEntryWizard.resx" />
+    <EmbeddedResource Include="GeneralLedger\Forms\FormJournalEntry_Advanced.resx" />
+    <EmbeddedResource Include="GeneralLedger\Forms\FormJournalEntryTemplates.resx" />
+    <EmbeddedResource Include="GeneralLedger\Forms\formJournalViewer.resx" />
+    <EmbeddedResource Include="GeneralLedger\Forms\formLedgerEntryWizard.resx" />
+    <EmbeddedResource Include="GeneralLedger\Forms\formPaymentMethod.resx" />
+    <EmbeddedResource Include="GeneralLedger\Forms\FormPostJournalEntry.resx" />
+    <EmbeddedResource Include="GeneralLedger\Forms\formReloadingGLAccounts.resx" />
+    <EmbeddedResource Include="GeneralLedger\JournalEntry_Advanced\ucReversalDate.resx" />
+    <EmbeddedResource Include="GeneralLedger\Properties\Resources.resx" />
+    <EmbeddedResource Include="GeneralLedger\Resources\automation.png" />
+    <EmbeddedResource Include="GeneralLedger\Resources\CloseFiscal.png" />
+    <EmbeddedResource Include="GeneralLedger\Resources\date.png" />
+    <EmbeddedResource Include="GeneralLedger\Resources\fiscal.png" />
+    <EmbeddedResource Include="GeneralLedger\Resources\gl.png" />
+    <EmbeddedResource Include="GeneralLedger\Resources\jview.png" />
+    <EmbeddedResource Include="GeneralLedger\Strings.resx" />
+    <EmbeddedResource Include="GeneralLedger\UserControls\AccountingExplorerControl.resx" />
+    <EmbeddedResource Include="GeneralLedger\UserControls\GLCompanyTotals.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

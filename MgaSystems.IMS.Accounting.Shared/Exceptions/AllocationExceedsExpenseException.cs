@@ -1,0 +1,34 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: MGASystems.IMS.Accounting.Exceptions.AllocationExceedsExpenseException
+// Assembly: MgaSystems.IMS.Accounting.Shared, Version=2.0.0.0, Culture=neutral, PublicKeyToken=e175cb7c4ce15bbd
+// MVID: 2F2619CC-F01B-4DB6-A722-33DC5B19310E
+// Assembly location: D:\augusta\fortegra\IMS Project\MgaSystems.IMS.Accounting.Shared.dll
+
+using System;
+using System.Runtime.Serialization;
+
+#nullable disable
+namespace MGASystems.IMS.Accounting.Exceptions;
+
+[Serializable]
+public class AllocationExceedsExpenseException : Exception
+{
+  public AllocationExceedsExpenseException()
+  {
+  }
+
+  public AllocationExceedsExpenseException(string message)
+    : base(message)
+  {
+  }
+
+  public AllocationExceedsExpenseException(string message, Exception innerException)
+    : base(message, innerException)
+  {
+  }
+
+  protected AllocationExceedsExpenseException(SerializationInfo info, StreamingContext context)
+    : base(info, context)
+  {
+  }
+}

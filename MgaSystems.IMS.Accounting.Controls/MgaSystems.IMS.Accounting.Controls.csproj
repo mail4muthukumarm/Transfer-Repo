@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: D:\augusta\fortegra\IMS Project\MgaSystems.IMS.Claims\lib\MgaSystems.IMS.Accounting.Controls.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2AB6DFD1-775B-45C1-9C0D-CF81F6068738}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>MgaSystems.IMS.Accounting.Controls</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <ApplicationVersion>2.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>MGASystems.IMS.Accounting.Controls</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MgaSystems.IMS.Accounting.Datasets">
+      <HintPath>lib\MgaSystems.IMS.Accounting.Datasets.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Accounting.Services" />
+    <Reference Include="MgaSystems.IMS.BusinessObjects">
+      <HintPath>lib\MgaSystems.IMS.BusinessObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Common">
+      <HintPath>lib\MgaSystems.IMS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Forms">
+      <HintPath>lib\MgaSystems.IMS.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Tools" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CashFlow_DashBoard.cs" />
+    <Compile Include="GLAccountSelectedEventArgs.cs" />
+    <Compile Include="DateRangeOptionPicker.cs" />
+    <Compile Include="DateRangeOptions.cs" />
+    <Compile Include="DateRangeEventArgs.cs" />
+    <Compile Include="dsInvoicePayees.cs" />
+    <Compile Include="ExtendedTreeViewDropDown.cs" />
+    <Compile Include="ExtendedDropTree_EventArgs.cs" />
+    <Compile Include="ContextMenuItemClicked_EventArgs.cs" />
+    <Compile Include="GLTreeNode.cs" />
+    <Compile Include="formGLAccountSelection.cs" />
+    <Compile Include="GLAccountDropTree.cs" />
+    <Compile Include="InvoicePayeeBreakout.cs" />
+    <Compile Include="MultipleExtendedTreeViewDropDown.cs" />
+    <Compile Include="PayablesInformationViewer.cs" />
+    <Compile Include="WriteOffPayableClickedEventArgs.cs" />
+    <Compile Include="PolicyReinstatement.cs" />
+    <Compile Include="ReceivablesInformationViewer.cs" />
+    <Compile Include="ViewPolicyClickedEventArgs.cs" />
+    <Compile Include="WriteOffReceivableClickedEventArgs.cs" />
+    <Compile Include="AssignFinanceCompanyClickedEventArgs.cs" />
+    <Compile Include="TestForm.cs" />
+    <Compile Include="TransactionCommentsViewer.cs" />
+    <Compile Include="My\MyApplication.cs" />
+    <Compile Include="My\MyComputer.cs" />
+    <Compile Include="My\MyProject.cs" />
+    <Compile Include="My\Resources\Resources.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CashFlow_DashBoard.resx" />
+    <EmbeddedResource Include="DateRangeOptionPicker.resx" />
+    <EmbeddedResource Include="dll.licenses" />
+    <EmbeddedResource Include="ExtendedTreeViewDropDown.resx" />
+    <EmbeddedResource Include="formGLAccountSelection.resx" />
+    <EmbeddedResource Include="GLAccountDropTree.resx" />
+    <EmbeddedResource Include="InvoicePayeeBreakout.resx" />
+    <EmbeddedResource Include="MultipleExtendedTreeViewDropDown.resx" />
+    <EmbeddedResource Include="PayablesInformationViewer.resx" />
+    <EmbeddedResource Include="PolicyReinstatement.resx" />
+    <EmbeddedResource Include="ReceivablesInformationViewer.resx" />
+    <EmbeddedResource Include="Resources.resx" />
+    <EmbeddedResource Include="TestForm.resx" />
+    <EmbeddedResource Include="TransactionCommentsViewer.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

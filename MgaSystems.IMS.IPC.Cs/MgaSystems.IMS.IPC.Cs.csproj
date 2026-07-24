@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: D:\augusta\fortegra\IMS Project\MgaSystems.IMS.IPC.Cs.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{610EE126-1DBB-4BA1-B04F-D551963F96C5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>MgaSystems.IMS.IPC.Cs</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>MGASystems.IMS.InsuredsProducersCompanies</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MgaSystems.IMS.Common">
+      <HintPath>lib\MgaSystems.IMS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Common.Cs">
+      <HintPath>lib\MgaSystems.IMS.Common.Cs.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Security">
+      <HintPath>lib\MgaSystems.IMS.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dsSirconDataSet.cs" />
+    <Compile Include="frmSirconIndividual.cs" />
+    <Compile Include="Sircon\LicenseData.cs" />
+    <Compile Include="Sircon\LOAData.cs" />
+    <Compile Include="Sircon\ProducerData.cs" />
+    <Compile Include="Sircon\ProducerDataRetriever.cs" />
+    <Compile Include="Sircon\ProducerResponse.cs" />
+    <Compile Include="Sircon\SirconLog.cs" />
+    <Compile Include="Sircon\Utilities.cs" />
+    <Compile Include="SirconProducerDataService\ProducerLifecycleServicePortType.cs" />
+    <Compile Include="SirconProducerDataService\AvailableAppointmentProfilesRequest.cs" />
+    <Compile Include="SirconProducerDataService\EntityType.cs" />
+    <Compile Include="SirconProducerDataService\StateCodeType.cs" />
+    <Compile Include="SirconProducerDataService\AppointmentTransactionType.cs" />
+    <Compile Include="SirconProducerDataService\AppointmentType.cs" />
+    <Compile Include="SirconProducerDataService\AppointmentTypeType.cs" />
+    <Compile Include="SirconProducerDataService\GeneralStatusType.cs" />
+    <Compile Include="SirconProducerDataService\AppointmentStatusType.cs" />
+    <Compile Include="SirconProducerDataService\CompanyType.cs" />
+    <Compile Include="SirconProducerDataService\CodeType.cs" />
+    <Compile Include="SirconProducerDataService\AppointmentMethodType.cs" />
+    <Compile Include="SirconProducerDataService\AppointmentTransactionTypeType.cs" />
+    <Compile Include="SirconProducerDataService\AppointmentTransactionTypeTransactionMessage.cs" />
+    <Compile Include="SirconProducerDataService\TransactionResponseType.cs" />
+    <Compile Include="SirconProducerDataService\StatusType.cs" />
+    <Compile Include="SirconProducerDataService\CarrierType.cs" />
+    <Compile Include="SirconProducerDataService\CompaniesType.cs" />
+    <Compile Include="SirconProducerDataService\TransactionResponseTypeCurrentMilestone.cs" />
+    <Compile Include="SirconProducerDataService\IndividualType.cs" />
+    <Compile Include="SirconProducerDataService\WritingNumberType.cs" />
+    <Compile Include="SirconProducerDataService\IndividualTypeProducerRating.cs" />
+    <Compile Include="SirconProducerDataService\OrganizationType.cs" />
+    <Compile Include="SirconProducerDataService\OrganizationTypeProducerRating.cs" />
+    <Compile Include="SirconProducerDataService\TransactionResponseTypeProcessingMessage.cs" />
+    <Compile Include="SirconProducerDataService\CodeDomainValueType.cs" />
+    <Compile Include="SirconProducerDataService\ContentType.cs" />
+    <Compile Include="SirconProducerDataService\MimeType.cs" />
+    <Compile Include="SirconProducerDataService\SignatureContentType.cs" />
+    <Compile Include="SirconProducerDataService\MethodType.cs" />
+    <Compile Include="SirconProducerDataService\DocumentType.cs" />
+    <Compile Include="SirconProducerDataService\DocumentTypeForm.cs" />
+    <Compile Include="SirconProducerDataService\FieldsTypeField.cs" />
+    <Compile Include="SirconProducerDataService\DocumentTypeFormSignature.cs" />
+    <Compile Include="SirconProducerDataService\DocumentTypeFormSignatureSignatureContent.cs" />
+    <Compile Include="SirconProducerDataService\TransactionType.cs" />
+    <Compile Include="SirconProducerDataService\DistributorType.cs" />
+    <Compile Include="SirconProducerDataService\TransactionTypeDisbursee.cs" />
+    <Compile Include="SirconProducerDataService\TransactionTypeDisburseeType.cs" />
+    <Compile Include="SirconProducerDataService\ProducerType.cs" />
+    <Compile Include="SirconProducerDataService\ProducerTypeIndividual.cs" />
+    <Compile Include="SirconProducerDataService\ProducerTypeOrganization.cs" />
+    <Compile Include="SirconProducerDataService\LicenseType.cs" />
+    <Compile Include="SirconProducerDataService\LOAType.cs" />
+    <Compile Include="SirconProducerDataService\AddressType.cs" />
+    <Compile Include="SirconProducerDataService\ProducerTypeResidentState.cs" />
+    <Compile Include="SirconProducerDataService\AgreementType.cs" />
+    <Compile Include="SirconProducerDataService\HierarchyTemplateType.cs" />
+    <Compile Include="SirconProducerDataService\ExternalSystemIdType.cs" />
+    <Compile Include="SirconProducerDataService\ParentAgreementType.cs" />
+    <Compile Include="SirconProducerDataService\BusinessUnit.cs" />
+    <Compile Include="SirconProducerDataService\ProducerTypeAppointmentState.cs" />
+    <Compile Include="SirconProducerDataService\ProducerTypeDirectDeposit.cs" />
+    <Compile Include="SirconProducerDataService\ProducerTypeDirectDepositAccountType.cs" />
+    <Compile Include="SirconProducerDataService\ProducerTypeDirectDepositInstitutionType.cs" />
+    <Compile Include="SirconProducerDataService\ProducerTypeBackgroundInvestigation.cs" />
+    <Compile Include="SirconProducerDataService\ProducerTypeBackgroundInvestigationFirm.cs" />
+    <Compile Include="SirconProducerDataService\ProducerTypeBackgroundInvestigationIncident.cs" />
+    <Compile Include="SirconProducerDataService\ProducerTypeProduct.cs" />
+    <Compile Include="SirconProducerDataService\ProducerTypeCoveragePolicy.cs" />
+    <Compile Include="SirconProducerDataService\CourseRequirementType.cs" />
+    <Compile Include="SirconProducerDataService\CourseRequirementTypeAppliedCourses.cs" />
+    <Compile Include="SirconProducerDataService\AppliedCourseType.cs" />
+    <Compile Include="SirconProducerDataService\CourseType.cs" />
+    <Compile Include="SirconProducerDataService\ProviderType.cs" />
+    <Compile Include="SirconProducerDataService\EducationCredentialType.cs" />
+    <Compile Include="SirconProducerDataService\EducationCredentialTypeRegulatoryBody.cs" />
+    <Compile Include="SirconProducerDataService\ProducerTypeTelephoneNumbers.cs" />
+    <Compile Include="SirconProducerDataService\TelephoneNumberType.cs" />
+    <Compile Include="SirconProducerDataService\BusinessRuleType.cs" />
+    <Compile Include="SirconProducerDataService\AssociationType.cs" />
+    <Compile Include="SirconProducerDataService\AssociationStateType.cs" />
+    <Compile Include="SirconProducerDataService\ProducerTypeRequiredItem.cs" />
+    <Compile Include="SirconProducerDataService\RequiredItemType.cs" />
+    <Compile Include="SirconProducerDataService\ProducerTypeFinraExams.cs" />
+    <Compile Include="SirconProducerDataService\ProducerTypeSection.cs" />
+    <Compile Include="SirconProducerDataService\ValidationSectionType.cs" />
+    <Compile Include="SirconProducerDataService\ProducerTypeSection1.cs" />
+    <Compile Include="SirconProducerDataService\ProducerBusinessUnit.cs" />
+    <Compile Include="SirconProducerDataService\SecuritiesType.cs" />
+    <Compile Include="SirconProducerDataService\StateRegistrationType.cs" />
+    <Compile Include="SirconProducerDataService\SroRegistrationType.cs" />
+    <Compile Include="SirconProducerDataService\FinraExamType.cs" />
+    <Compile Include="SirconProducerDataService\AuthorizationOverrideType.cs" />
+    <Compile Include="SirconProducerDataService\AuthorizationOverrideResultType.cs" />
+    <Compile Include="SirconProducerDataService\TransactionTypePacket.cs" />
+    <Compile Include="SirconProducerDataService\TransactionTypePacketDocument.cs" />
+    <Compile Include="SirconProducerDataService\TransactionTypePacketSignature.cs" />
+    <Compile Include="SirconProducerDataService\SecurityHeaderType.cs" />
+    <Compile Include="SirconProducerDataService\RelationshipRepresentationType.cs" />
+    <Compile Include="SirconProducerDataService\GenericResponseType.cs" />
+    <Compile Include="SirconProducerDataService\GenericResponseTypeProcessingMessage.cs" />
+    <Compile Include="SirconProducerDataService\RelationshipRepresentationTypeAgreements.cs" />
+    <Compile Include="SirconProducerDataService\RelationshipRepresentationTypeAssociations.cs" />
+    <Compile Include="SirconProducerDataService\RelationshipRepresentationTypeType.cs" />
+    <Compile Include="SirconProducerDataService\CompanyCriteriaType.cs" />
+    <Compile Include="SirconProducerDataService\ItemChoiceType1.cs" />
+    <Compile Include="SirconProducerDataService\ProducerCriteriaType.cs" />
+    <Compile Include="SirconProducerDataService\ProducerCriteriaTypeCustomerId.cs" />
+    <Compile Include="SirconProducerDataService\ItemChoiceType.cs" />
+    <Compile Include="SirconProducerDataService\PotentialAppointingTransactionType.cs" />
+    <Compile Include="SirconProducerDataService\PotentialAppointingTransactionTypeAvailableMethod.cs" />
+    <Compile Include="SirconProducerDataService\PotentialAppointingTransactionTypeAvailability.cs" />
+    <Compile Include="SirconProducerDataService\PotentialAppointingTransactionTypeAvailabilityReas.cs" />
+    <Compile Include="SirconProducerDataService\PotentialAppointingTransactionTypeMessage.cs" />
+    <Compile Include="SirconProducerDataService\AppointmentProfileType.cs" />
+    <Compile Include="SirconProducerDataService\availableAppointmentProfilesRequest1.cs" />
+    <Compile Include="SirconProducerDataService\availableAppointmentProfilesResponse.cs" />
+    <Compile Include="SirconProducerDataService\BuildPotentialAppointmentsRequest.cs" />
+    <Compile Include="SirconProducerDataService\BuildPotentialAppointmentsRequestAssociatedFirm.cs" />
+    <Compile Include="SirconProducerDataService\buildPotentialAppointmentsRequest1.cs" />
+    <Compile Include="SirconProducerDataService\buildPotentialAppointmentsResponse.cs" />
+    <Compile Include="SirconProducerDataService\RequestStatusNotificationRequest.cs" />
+    <Compile Include="SirconProducerDataService\RequestStatusNotificationResponse.cs" />
+    <Compile Include="SirconProducerDataService\requestStatusNotificationRequest1.cs" />
+    <Compile Include="SirconProducerDataService\requestStatusNotificationResponse1.cs" />
+    <Compile Include="SirconProducerDataService\BuildPotentialTerminationsRequest.cs" />
+    <Compile Include="SirconProducerDataService\buildPotentialTerminationsRequest1.cs" />
+    <Compile Include="SirconProducerDataService\buildPotentialTerminationsResponse.cs" />
+    <Compile Include="SirconProducerDataService\HierarchyTemplateRequest.cs" />
+    <Compile Include="SirconProducerDataService\HierarchyTemplateResponse.cs" />
+    <Compile Include="SirconProducerDataService\createAgreementRequest.cs" />
+    <Compile Include="SirconProducerDataService\createAgreementResponse.cs" />
+    <Compile Include="SirconProducerDataService\VersionType.cs" />
+    <Compile Include="SirconProducerDataService\RelationshipCriteria.cs" />
+    <Compile Include="SirconProducerDataService\RelationshipCriteriaOverrideValues.cs" />
+    <Compile Include="SirconProducerDataService\RelationshipCriteriaOverrideValuesCustomerId.cs" />
+    <Compile Include="SirconProducerDataService\RelationshipCriteriaOverrideValuesHandleExistingRe.cs" />
+    <Compile Include="SirconProducerDataService\RelationshipResponse.cs" />
+    <Compile Include="SirconProducerDataService\createRelationshipRequest.cs" />
+    <Compile Include="SirconProducerDataService\createRelationshipResponse.cs" />
+    <Compile Include="SirconProducerDataService\InactivateLicenseStateRequest.cs" />
+    <Compile Include="SirconProducerDataService\InactivateLicenseStateResponse.cs" />
+    <Compile Include="SirconProducerDataService\InactivateLicenseStateResponseStateResponse.cs" />
+    <Compile Include="SirconProducerDataService\InactivateLicenseStateResponseResidentState.cs" />
+    <Compile Include="SirconProducerDataService\inactivateLicenseStateRequest1.cs" />
+    <Compile Include="SirconProducerDataService\inactivateLicenseStateResponse1.cs" />
+    <Compile Include="SirconProducerDataService\inactivateRelationshipResponse.cs" />
+    <Compile Include="SirconProducerDataService\Transactions.cs" />
+    <Compile Include="SirconProducerDataService\TransactionResponses.cs" />
+    <Compile Include="SirconProducerDataService\newProducerRequest.cs" />
+    <Compile Include="SirconProducerDataService\newProducerResponse.cs" />
+    <Compile Include="SirconProducerDataService\ProducerQuery.cs" />
+    <Compile Include="SirconProducerDataService\ProducerQuerySectionType.cs" />
+    <Compile Include="SirconProducerDataService\SectionType.cs" />
+    <Compile Include="SirconProducerDataService\ProducerQueryResponse.cs" />
+    <Compile Include="SirconProducerDataService\ProducerQueryResponseGenericResponse.cs" />
+    <Compile Include="SirconProducerDataService\producerQueryRequest.cs" />
+    <Compile Include="SirconProducerDataService\producerQueryResponse1.cs" />
+    <Compile Include="SirconProducerDataService\RetrieveRelationshipsResponse.cs" />
+    <Compile Include="SirconProducerDataService\RetrieveRelationshipsResponseRelationship.cs" />
+    <Compile Include="SirconProducerDataService\retrieveRelationshipResponse.cs" />
+    <Compile Include="SirconProducerDataService\selectHierarchyTemplateResponse.cs" />
+    <Compile Include="SirconProducerDataService\selectLooseHierarchyTemplateResponse.cs" />
+    <Compile Include="SirconProducerDataService\SubmitAppointmentsRequest.cs" />
+    <Compile Include="SirconProducerDataService\SubmitAppointmentsRequestAction.cs" />
+    <Compile Include="SirconProducerDataService\SubmitAppointmentsRequestAssociatedFirm.cs" />
+    <Compile Include="SirconProducerDataService\SentAppointmentsResponse.cs" />
+    <Compile Include="SirconProducerDataService\submitAppointmentsRequest1.cs" />
+    <Compile Include="SirconProducerDataService\submitAppointmentsResponse.cs" />
+    <Compile Include="SirconProducerDataService\UpdateProducerRecordRequest.cs" />
+    <Compile Include="SirconProducerDataService\UpdateProducerRecordResponse.cs" />
+    <Compile Include="SirconProducerDataService\updateProducerRecordRequest1.cs" />
+    <Compile Include="SirconProducerDataService\updateProducerRecordResponse1.cs" />
+    <Compile Include="SirconProducerDataService\validateHierarchyTemplateResponse.cs" />
+    <Compile Include="SirconProducerDataService\ProducerLifecycleServicePortTypeChannel.cs" />
+    <Compile Include="SirconProducerDataService\ProducerLifecycleServicePortTypeClient.cs" />
+    <Compile Include="SirconProducerDataService\UsernameToken.cs" />
+    <Compile Include="SirconProducerDataService\PasswordDigest.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmSirconIndividual.resx" />
+    <EmbeddedResource Include="MgaSystems\IMS\IPC\Cs\dll.licenses" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

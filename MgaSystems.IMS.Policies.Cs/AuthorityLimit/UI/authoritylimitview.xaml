@@ -1,0 +1,407 @@
+<local:AuthorityLimitView x:Class="MgaSystems.IMS.Policies.AuthorityLimit.UI.AuthorityLimitView"
+                          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                          xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                          xmlns:local="clr-namespace:MgaSystems.IMS.Policies.AuthorityLimit.UI"
+                          xmlns:mgaWpf="clr-namespace:Mga.Wpf.Ims.Controls;assembly=Mga.Wpf.Ims"
+                          xmlns:mgaInterop="clr-namespace:Mga.Wpf.Ims.Interop;assembly=Mga.Wpf.Ims"
+                          xmlns:baseWpfBehaviors="clr-namespace:Mga.Wpf.Ims.Controls;assembly=Mga.Wpf.Ims"
+                          x:Name="mainWindow" FrameworkElement.Height="750" FrameworkElement.Width="1000"
+                          Title="Authority Limits" WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip"
+                          TransactionLogFilter="4D7F829E-863E-4E79-B24D-AC0DB509481B"
+                          PromptOnCloseIfDataContextHasChanges="true">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/CommonResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/DatagridResources2.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Mga.Wpf.Ims;component/Resources/ToolBarResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/TreeViewResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/ListViewResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter"/>
+      <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource textBoxStyleMain}">
+        <Style.Triggers>
+          <Trigger Property="TextBoxBase.IsReadOnly" Value="true">
+            <Setter Property="Control.Background" Value="LightGray"/>
+          </Trigger>
+        </Style.Triggers>
+      </Style>
+      <Style TargetType="{x:Type DataGrid}" BasedOn="{StaticResource dataGridStyle}"/>
+      <Style TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.MinWidth" Value="80"/>
+      </Style>
+      <Style x:Key="SearchBtnStyle" TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.Margin" Value="2"/>
+      </Style>
+      <Style TargetType="{x:Type TextBlock}">
+        <Setter Property="FrameworkElement.Margin" Value="2"/>
+        <Setter Property="TextBlock.Foreground" Value="{StaticResource standardTextForegroundColor}"/>
+      </Style>
+      <DataTemplate x:Key="lbiTemplate">
+        <TextBlock Grid.Column="1" Margin="0,2,2,2" Text="{Binding RatingType}"/>
+      </DataTemplate>
+      <Style TargetType="{x:Type ListBoxItem}">
+        <Setter Property="Control.HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="ContentControl.ContentTemplate" Value="{StaticResource lbiTemplate}"/>
+        <Style.Triggers>
+          <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+            <Setter Property="Control.Background" Value="White"/>
+          </Trigger>
+          <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+            <Setter Property="Control.Background" Value="{StaticResource alternateRowBrush}"/>
+          </Trigger>
+          <Trigger Property="ListBoxItem.IsSelected" Value="true">
+            <Trigger.Setters>
+              <Setter Property="Control.Background" Value="{StaticResource selectedItemBrush}"/>
+            </Trigger.Setters>
+          </Trigger>
+        </Style.Triggers>
+      </Style>
+      <SolidColorBrush x:Key="SelectedBrush" Color="{DynamicResource {x:Static JetSystemColors.HighlightColorKey}}"/>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <DockPanel>
+    <ToolBarTray DockPanel.Dock="Top">
+      <FrameworkElement.Resources>
+        <Style TargetType="{x:Type ToolBarTray}" BasedOn="{StaticResource toolBarTrayStyle}"/>
+        <Style TargetType="{x:Type Image}" BasedOn="{StaticResource verticalToolbarImageStyle}"/>
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource toolbarButtonStyle}"/>
+        <Style TargetType="{x:Type StackPanel}" BasedOn="{StaticResource toolbarStackPanelStyle}"/>
+        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource verticalToolbarTextBlockStyle}"/>
+        <Style TargetType="{x:Type AccessText}" BasedOn="{StaticResource verticalToolbarAccessTextStyle}"/>
+      </FrameworkElement.Resources>
+      <ToolBar>
+        <Button ToolTip="Save" Command="{Binding SaveCommand}">
+          <StackPanel>
+            <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/saveHS.png"/>
+            <AccessText Text="_Save"/>
+          </StackPanel>
+        </Button>
+        <Separator/>
+        <baseWpfBehaviors:UndoButton ChangeManager="{Binding AuthorityManager.ChangeManager, Mode=OneWay}"/>
+        <baseWpfBehaviors:RedoButton ChangeManager="{Binding AuthorityManager.ChangeManager, Mode=OneWay}"/>
+        <Separator/>
+        <Button ToolTip="Add User" Command="{Binding AddUserCommand}">
+          <StackPanel>
+            <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/add.png"/>
+            <AccessText Text="Add User"/>
+          </StackPanel>
+        </Button>
+        <Separator/>
+        <Button ToolTip="Add Field" Command="{Binding AddFieldCommand}">
+          <StackPanel>
+            <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/add.png"/>
+            <AccessText Text="Add Field"/>
+          </StackPanel>
+        </Button>
+        <Separator/>
+        <Button ToolTip="Delete Field" Command="{Binding RemoveFieldCommand}"
+                CommandParameter="{Binding SelectedItem.DatabaseFields}">
+          <StackPanel>
+            <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/delete.png"/>
+            <AccessText Text="Delete Field"/>
+          </StackPanel>
+        </Button>
+        <Separator/>
+        <Button ToolTip="Add Line" Command="{Binding AddLineCommand}">
+          <StackPanel>
+            <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/add.png"/>
+            <AccessText Text="Add Line"/>
+          </StackPanel>
+        </Button>
+        <Separator/>
+        <Button ToolTip="Delete Line" Command="{Binding RemoveLineCommand}"
+                CommandParameter="{Binding SelectedField.Lines}">
+          <StackPanel>
+            <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/delete.png"/>
+            <AccessText Text="Delete Line"/>
+          </StackPanel>
+        </Button>
+        <Separator/>
+      </ToolBar>
+    </ToolBarTray>
+    <Grid DockPanel.Dock="Top">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="auto"/>
+        <ColumnDefinition Width="auto"/>
+        <ColumnDefinition/>
+      </Grid.ColumnDefinitions>
+      <ListBox Grid.Column="0" MinWidth="100" AlternationCount="2" IsSynchronizedWithCurrentItem="True" Margin="2"
+               ItemsSource="{Binding AuthorityManager.AuthorityLimitList, UpdateSourceTrigger=PropertyChanged}"
+               SelectedItem="{Binding SelectedItem, UpdateSourceTrigger=PropertyChanged}"/>
+      <Separator Grid.Column="1" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"/>
+      <Grid Column="2">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="auto"/>
+          <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition/>
+          <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Limits:"/>
+        <Grid Column="0" Row="1">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+          </Grid.RowDefinitions>
+          <DataGrid Grid.Row="0" CanUserAddRows="false" CanUserDeleteRows="false" IsSynchronizedWithCurrentItem="True"
+                    SelectionMode="Extended" Height="275" Margin="2"
+                    ItemsSource="{Binding UserCSV.View, UpdateSourceTrigger=PropertyChanged}"
+                    SelectedItem="{Binding SelectedLimitUser, UpdateSourceTrigger=PropertyChanged}">
+            <ItemsControl.GroupStyle>
+              <GroupStyle>
+                <GroupStyle.ContainerStyle>
+                  <Style TargetType="{x:Type GroupItem}">
+                    <Setter Property="Control.Template">
+                      <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type GroupItem}">
+                          <Border BorderThickness="1" BorderBrush="Black" Margin="2">
+                            <StackPanel Background="AliceBlue">
+                              <Grid>
+                                <Grid.ColumnDefinitions>
+                                  <ColumnDefinition Width="250"/>
+                                  <ColumnDefinition Width="auto"/>
+                                  <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" FontWeight="Bold" VerticalAlignment="Center" Margin="2"
+                                           Text="{Binding Path=Items[0].UserName}"/>
+                                <Button Grid.Column="1" VerticalAlignment="Bottom" Height="20" Width="80"
+                                        Style="{StaticResource SearchBtnStyle}"
+                                        Command="{Binding DataContext.AddLimitToUserCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}}"
+                                        CommandParameter="{Binding Path=Name}">
+                                  <StackPanel Orientation="Horizontal">
+                                    <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/add.png"/>
+                                    <AccessText Text="Add Limit"/>
+                                  </StackPanel>
+                                </Button>
+                                <Button Grid.Column="3" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="20" Width="95"
+                                        Style="{StaticResource SearchBtnStyle}"
+                                        Command="{Binding DataContext.RemoveUserCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}}"
+                                        CommandParameter="{Binding Path=Items[0]}">
+                                  <StackPanel Orientation="Horizontal">
+                                    <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/delete.png"/>
+                                    <AccessText Text="Remove User"/>
+                                  </StackPanel>
+                                </Button>
+                              </Grid>
+                              <ItemsPresenter/>
+                            </StackPanel>
+                          </Border>
+                        </ControlTemplate>
+                      </Setter.Value>
+                    </Setter>
+                  </Style>
+                </GroupStyle.ContainerStyle>
+              </GroupStyle>
+              <GroupStyle>
+                <GroupStyle.HeaderTemplate>
+                  <DataTemplate>
+                    <DockPanel Background="LightBlue">
+                      <TextBlock Foreground="Blue" Text="{Binding Path=Items[0].UserName}"/>
+                    </DockPanel>
+                  </DataTemplate>
+                </GroupStyle.HeaderTemplate>
+              </GroupStyle>
+            </ItemsControl.GroupStyle>
+            <DataGrid.Columns>
+              <DataGridTextColumn Header="Field " Width="Auto" IsReadOnly="true"
+                                  Binding="{Binding DatabaseField, UpdateSourceTrigger=PropertyChanged}"/>
+              <DataGridTextColumn Header="Cell Type " Width="Auto" IsReadOnly="true"
+                                  Binding="{Binding CellType, UpdateSourceTrigger=PropertyChanged}"/>
+              <DataGridTemplateColumn>
+                <DataGridTemplateColumn.CellTemplate>
+                  <DataTemplate>
+                    <StackPanel>
+                      <Button Style="{StaticResource SearchBtnStyle}"
+                              Command="{Binding Path=DataContext.RemoveLimitFromUserCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"
+                              CommandParameter="{Binding DataContext.SelectedLimitUser, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}">
+                        <StackPanel Orientation="Horizontal">
+                          <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/delete.png"/>
+                        </StackPanel>
+                      </Button>
+                    </StackPanel>
+                  </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+              </DataGridTemplateColumn>
+            </DataGrid.Columns>
+          </DataGrid>
+          <Separator Grid.Row="1"/>
+          <Grid Row="3" IsEnabled="{Binding IsUserSelected, UpdateSourceTrigger=PropertyChanged}">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="auto"/>
+              <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition/>
+              <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="0">
+              <TextBlock Text="Field:"/>
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition/>
+                  <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBox IsReadOnly="true"
+                         Text="{Binding SelectedLimitUser.DatabaseField, UpdateSourceTrigger=PropertyChanged}"/>
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                  <Button VerticalAlignment="Bottom" IsDefault="true" Height="20" Width="20"
+                          Style="{StaticResource SearchBtnStyle}" ToolTip="Fund Assign Task To User"
+                          Command="{Binding FindDBFieldCommand}">
+                    <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/magnifier.png"/>
+                  </Button>
+                  <Button VerticalAlignment="Bottom" IsDefault="true" Height="20" Width="20"
+                          Style="{StaticResource SearchBtnStyle}" ToolTip="Clear Assign Task To User"
+                          Command="{Binding ClearDBFieldCommand}">
+                    <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/deleteHS.png"/>
+                  </Button>
+                </StackPanel>
+              </Grid>
+            </StackPanel>
+            <Grid Row="0" Column="1" Margin="2">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+              </Grid.ColumnDefinitions>
+              <StackPanel Grid.Column="0">
+                <TextBlock Text="Cell Type:"/>
+                <ComboBox DisplayMemberPath="CellType" SelectedValuePath="CellTypeID" MinWidth="125"
+                          ItemsSource="{Binding AuthorityManager.CellTypeList}"
+                          SelectedValue="{Binding SelectedLimitUser.CellTypeID, UpdateSourceTrigger=PropertyChanged}"/>
+              </StackPanel>
+              <StackPanel Grid.Column="1">
+                <CheckBox Content="New"
+                          IsChecked="{Binding SelectedLimitUser.ForNewPolicy, UpdateSourceTrigger=PropertyChanged}"
+                          IsEnabled="{Binding IsUserSelected, UpdateSourceTrigger=PropertyChanged}"/>
+                <CheckBox Content="Renewal"
+                          IsChecked="{Binding SelectedLimitUser.ForRenewalPolicy, UpdateSourceTrigger=PropertyChanged}"
+                          IsEnabled="{Binding IsUserSelected, UpdateSourceTrigger=PropertyChanged}"/>
+              </StackPanel>
+            </Grid>
+            <StackPanel Grid.Row="1" Grid.Column="0">
+              <TextBlock Text="Min:"/>
+              <baseWpfBehaviors:NumericTextBox FrameworkElement.HorizontalAlignment="Stretch"
+                                               TextBox.Text="{Binding SelectedLimitUser.MinValue, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="1">
+              <TextBlock Text="Max:"/>
+              <baseWpfBehaviors:NumericTextBox FrameworkElement.HorizontalAlignment="Stretch"
+                                               TextBox.Text="{Binding SelectedLimitUser.MaxValue, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+          </Grid>
+          <Grid Row="4">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="auto"/>
+              <RowDefinition Height="auto"/>
+              <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition/>
+              <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <CheckBox Grid.Row="0" Grid.Column="0" Content="Stop Quote (Hard)"
+                      IsChecked="{Binding SelectedLimitUser.StopQuote, UpdateSourceTrigger=PropertyChanged}"
+                      IsEnabled="{Binding IsUserSelected, UpdateSourceTrigger=PropertyChanged}"/>
+            <CheckBox Grid.Row="0" Grid.Column="1" Content="Stop Quote (Soft)"
+                      IsChecked="{Binding SelectedLimitUser.StopQuoteSoft, UpdateSourceTrigger=PropertyChanged}"
+                      IsEnabled="{Binding IsUserSelected, UpdateSourceTrigger=PropertyChanged}"/>
+            <CheckBox Grid.Row="1" Grid.Column="0" Content="Stop Bind (Hard)"
+                      IsChecked="{Binding SelectedLimitUser.StopBind, UpdateSourceTrigger=PropertyChanged}"
+                      IsEnabled="{Binding IsUserSelected, UpdateSourceTrigger=PropertyChanged}"/>
+            <CheckBox Grid.Row="1" Grid.Column="1" Content="Stop Bind (Soft)"
+                      IsChecked="{Binding SelectedLimitUser.StopBindSoft, UpdateSourceTrigger=PropertyChanged}"
+                      IsEnabled="{Binding IsUserSelected, UpdateSourceTrigger=PropertyChanged}"/>
+            <CheckBox Grid.Row="2" Grid.Column="0"
+                      Content="{Binding SendTaskContent, UpdateSourceTrigger=PropertyChanged}"
+                      IsChecked="{Binding SelectedLimitUser.SendTask, UpdateSourceTrigger=PropertyChanged}"
+                      IsEnabled="{Binding IsUserSelected, UpdateSourceTrigger=PropertyChanged}"/>
+            <CheckBox Grid.Row="2" Grid.Column="1" Content="Send Task (Quote)"
+                      IsChecked="{Binding SelectedLimitUser.SendTaskQuote, UpdateSourceTrigger=PropertyChanged}"
+                      IsEnabled="{Binding IsUserSelected, UpdateSourceTrigger=PropertyChanged}"
+                      Visibility="{Binding ShowSendTaskQuote, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booleanToVisibilityConverter}}"/>
+          </Grid>
+          <Grid Row="5">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="auto"/>
+              <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition/>
+              <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Text="Assign Task To:"/>
+            <TextBox Grid.Row="1" Grid.Column="0" IsReadOnly="true"
+                     Text="{Binding SelectedLimitUser.SendTaskUserName, UpdateSourceTrigger=PropertyChanged}"/>
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+              <Button VerticalAlignment="Bottom" IsDefault="true" Height="20" Width="20"
+                      Style="{StaticResource SearchBtnStyle}" ToolTip="Find Assign Task To User"
+                      Command="{Binding FindUserCommand}">
+                <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/magnifier.png"/>
+              </Button>
+              <Button VerticalAlignment="Bottom" IsDefault="true" Height="20" Width="20"
+                      Style="{StaticResource SearchBtnStyle}" ToolTip="Clear Assign Task To User"
+                      Command="{Binding ClearUserCommand}">
+                <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/deleteHS.png"/>
+              </Button>
+            </StackPanel>
+          </Grid>
+          <Border Grid.Row="6" BorderBrush="Navy" BorderThickness="1" Margin="2">
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+              </Grid.ColumnDefinitions>
+              <TextBlock Grid.Row="0" Text="Approval Limits" FontWeight="Bold"/>
+              <StackPanel Grid.Row="1" Grid.Column="0">
+                <TextBlock Text="Min:"/>
+                <baseWpfBehaviors:NumericTextBox FrameworkElement.HorizontalAlignment="Stretch"
+                                                 TextBox.Text="{Binding SelectedLimitUser.MinApprovalValue, UpdateSourceTrigger=PropertyChanged}"/>
+              </StackPanel>
+              <StackPanel Grid.Row="1" Grid.Column="1">
+                <TextBlock Text="Max:"/>
+                <baseWpfBehaviors:NumericTextBox FrameworkElement.HorizontalAlignment="Stretch"
+                                                 TextBox.Text="{Binding SelectedLimitUser.MaxApprovalValue, UpdateSourceTrigger=PropertyChanged}"/>
+              </StackPanel>
+            </Grid>
+          </Border>
+        </Grid>
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="Line of Businesses for Field (if empty, applies to all lines):"
+                   TextWrapping="Wrap" Width="225"/>
+        <Grid Column="1" Row="1" Margin="2" Width="225">
+          <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+          </Grid.RowDefinitions>
+          <DataGrid Grid.Row="0" CanUserAddRows="false" CanUserDeleteRows="false" IsSynchronizedWithCurrentItem="True"
+                    ItemsSource="{Binding SelectedItem.DatabaseFields, UpdateSourceTrigger=PropertyChanged}"
+                    SelectedItem="{Binding SelectedField, UpdateSourceTrigger=PropertyChanged}">
+            <DataGrid.Columns>
+              <DataGridTextColumn Header="Field " Width="Auto" IsReadOnly="true"
+                                  Binding="{Binding DatabaseField, UpdateSourceTrigger=PropertyChanged}"/>
+            </DataGrid.Columns>
+          </DataGrid>
+          <DataGrid Grid.Row="1" CanUserAddRows="false" CanUserDeleteRows="false" IsSynchronizedWithCurrentItem="True"
+                    ItemsSource="{Binding SelectedField.Lines, UpdateSourceTrigger=PropertyChanged}"
+                    SelectedItem="{Binding SelectedLine, UpdateSourceTrigger=PropertyChanged}">
+            <DataGrid.Columns>
+              <DataGridTextColumn Header="Line " Width="Auto" IsReadOnly="true"
+                                  Binding="{Binding LineName, UpdateSourceTrigger=PropertyChanged}"/>
+            </DataGrid.Columns>
+          </DataGrid>
+        </Grid>
+      </Grid>
+    </Grid>
+  </DockPanel>
+</local:AuthorityLimitView>

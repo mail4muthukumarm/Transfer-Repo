@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: D:\augusta\fortegra\IMS Project\MgaSystems.IMS.Accounting.Core.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AF5806A9-F9F8-40F2-AEC0-CC1E46B15D5F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>MgaSystems.IMS.Accounting.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <ApplicationVersion>2.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>MGASystems.IMS.Accounting</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MgaSystems.IMS.Accounting.Controls">
+      <HintPath>lib\MgaSystems.IMS.Accounting.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Accounting.Datasets">
+      <HintPath>lib\MgaSystems.IMS.Accounting.Datasets.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Accounting.GeneralLedger">
+      <HintPath>lib\MgaSystems.IMS.Accounting.GeneralLedger.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Accounting.Reports">
+      <HintPath>lib\MgaSystems.IMS.Accounting.Reports.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Accounting.Services">
+      <HintPath>lib\MgaSystems.IMS.Accounting.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Accounting.Shared">
+      <HintPath>lib\MgaSystems.IMS.Accounting.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Accounting.Utilities">
+      <HintPath>lib\MgaSystems.IMS.Accounting.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.BusinessObjects">
+      <HintPath>lib\MgaSystems.IMS.BusinessObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.CancellationNotices">
+      <HintPath>lib\MgaSystems.IMS.CancellationNotices.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Common">
+      <HintPath>lib\MgaSystems.IMS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Common.Cs">
+      <HintPath>lib\MgaSystems.IMS.Common.Cs.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Forms">
+      <HintPath>lib\MgaSystems.IMS.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.NotesDocuments">
+      <HintPath>lib\MgaSystems.IMS.NotesDocuments.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Policies">
+      <HintPath>lib\MgaSystems.IMS.Policies.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Reporting">
+      <HintPath>lib\MgaSystems.IMS.Reporting.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Security">
+      <HintPath>lib\MgaSystems.IMS.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Tools">
+      <HintPath>lib\MgaSystems.IMS.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ARreport.cs" />
+    <Compile Include="APreport.cs" />
+    <Compile Include="AccountingProvider.cs" />
+    <Compile Include="AccountsPayable\AppliedGridValue.cs" />
+    <Compile Include="AccountsPayable\AppliedGridValueCollection.cs" />
+    <Compile Include="AccountsPayable\DirectBillPayable.cs" />
+    <Compile Include="AccountsPayable\DirectBillPayablesCollection.cs" />
+    <Compile Include="AccountsPayable\DirectBillPayableDetail.cs" />
+    <Compile Include="AccountsPayable\DirectBillPayablesDetailCollection.cs" />
+    <Compile Include="AccountsPayable\NonPayableFee.cs" />
+    <Compile Include="AccountsPayable\NonPayableFeeCollection.cs" />
+    <Compile Include="AccountsPayable\PayableServices.cs" />
+    <Compile Include="AccountsPayable\DirectBillUtility.cs" />
+    <Compile Include="AccountsPayable\DirectBillInvoiceCollection.cs" />
+    <Compile Include="AccountsPayable\DirectBillInvoice.cs" />
+    <Compile Include="AccountsPayable\DirectBillPayee.cs" />
+    <Compile Include="AccountsPayable\DirectBillPayeeCollection.cs" />
+    <Compile Include="AccountsPayable\DirectBillCheckCreatedEventArgs.cs" />
+    <Compile Include="AccountsPayable\DirectBillCheckInvalidEventArgs.cs" />
+    <Compile Include="AccountsPayable\PayableTransaction.cs" />
+    <Compile Include="AccountsPayable\formDirectBillPayables.cs" />
+    <Compile Include="AccountsPayable\formViewNonPayableFees.cs" />
+    <Compile Include="AccountsReceivable\DirectBillReceivable.cs" />
+    <Compile Include="AccountsReceivable\DirectBillReceivableCollection.cs" />
+    <Compile Include="AccountsReceivable\DirectBillReceivableDetail.cs" />
+    <Compile Include="AccountsReceivable\DirectBillReceivableDetailCollection.cs" />
+    <Compile Include="AccountsReceivable\FinancedReturn.cs" />
+    <Compile Include="AccountsReceivable\FinancedReturnCollection.cs" />
+    <Compile Include="AccountsReceivable\FinancedReturnDetail.cs" />
+    <Compile Include="AccountsReceivable\FinancedReturnDetailCollection.cs" />
+    <Compile Include="AccountsReceivable\AppliedGridValue.cs" />
+    <Compile Include="AccountsReceivable\AppliedGridValueCollection.cs" />
+    <Compile Include="AccountsReceivable\ReceivableServices.cs" />
+    <Compile Include="AccountsReceivable\ReceivableTransaction.cs" />
+    <Compile Include="AccountsReceivable\formFinancedReceivables.cs" />
+    <Compile Include="AccountsReceivable\formReceivableReinstatements.cs" />
+    <Compile Include="SharedServices\formEntityAccountsBreakdown.cs" />
+    <Compile Include="DirectBill\BaseClasses\DirectBillObject.cs" />
+    <Compile Include="SharedForms\formChangeTransactionDate.cs" />
+    <Compile Include="SharedForms\formLoadWorksheetErrors.cs" />
+    <Compile Include="SharedForms\formPayeeAddressSelection.cs" />
+    <Compile Include="SharedForms\formTransactionViewer.cs" />
+    <Compile Include="SharedForms\formVoidTransaction.cs" />
+    <Compile Include="Services\dsACHStatements.cs" />
+    <Compile Include="Services\ACH\dsACHSettings.cs" />
+    <Compile Include="PolicyServices\NoticeOfCancellation.cs" />
+    <Compile Include="PolicyServices\formCancellationDateOverride.cs" />
+    <Compile Include="PolicyServices\formFindPolicy.cs" />
+    <Compile Include="PolicyServices\formForceComm.cs" />
+    <Compile Include="PolicyServices\formPolicyInquiry.cs" />
+    <Compile Include="PolicyServices\formPolicyInquiryComment.cs" />
+    <Compile Include="Interfaces\IExcelAutomation.cs" />
+    <Compile Include="Core\AccountsReceivableFilterCondition.cs" />
+    <Compile Include="Core\HelperExtensions.cs" />
+    <Compile Include="Core\MessageBoxProperties.cs" />
+    <Compile Include="Core\Strings.cs" />
+    <Compile Include="Core\Unaccounted_Management\FormUnaccountedManagement.cs" />
+    <Compile Include="Core\TransactionModification\dsModifyInvoice.cs" />
+    <Compile Include="Core\TransactionModification\dsModifyTransaction.cs" />
+    <Compile Include="Core\TransactionModification\FormModifyTransaction.cs" />
+    <Compile Include="Core\TransactionModification\FormModifyInvoice.cs" />
+    <Compile Include="Core\Properties\Resources.cs" />
+    <Compile Include="Core\Utilities\formSelectDate.cs" />
+    <Compile Include="Core\Forms\AccountingCore_frmInvoiceLookup.cs" />
+    <Compile Include="Core\Forms\dsAppliedUnaccounted.cs" />
+    <Compile Include="Core\Forms\dsPolicyInquiry.cs" />
+    <Compile Include="Core\Forms\formAccessDenied.cs" />
+    <Compile Include="Core\Forms\formAccountingPrinters.cs" />
+    <Compile Include="Core\Forms\formAdditionalOffsets.cs" />
+    <Compile Include="Core\Forms\FormAppliedUnaccounted.cs" />
+    <Compile Include="Core\Forms\FormClearFinanceCompany.cs" />
+    <Compile Include="Core\Forms\formCloseAccountingPeriod.cs" />
+    <Compile Include="Core\Forms\formConfirmBankAccount.cs" />
+    <Compile Include="Core\Forms\formCostCenterDataService.cs" />
+    <Compile Include="Core\Forms\FormDirectBillExcelImport.cs" />
+    <Compile Include="Core\Forms\FormDirectBillExcelImportMappings.cs" />
+    <Compile Include="Core\Forms\FormDirectBillPayablesUtility.cs" />
+    <Compile Include="Core\Forms\formEditTransactionComment.cs" />
+    <Compile Include="Core\Forms\FormExcelImport.cs" />
+    <Compile Include="Core\Forms\formExcelImportWizard.cs" />
+    <Compile Include="Core\Forms\formExtendedSettings.cs" />
+    <Compile Include="Core\Forms\formFinanceCompany.cs" />
+    <Compile Include="Core\Forms\formFlatCancelConfiguration.cs" />
+    <Compile Include="Core\Forms\formFlatCancelEditSetting.cs" />
+    <Compile Include="Core\Forms\formInterCompanyTransfer.cs" />
+    <Compile Include="Core\Forms\formLoadWorksheet.cs" />
+    <Compile Include="Core\Forms\formOpenSavedWorksheet.cs" />
+    <Compile Include="Core\Forms\FormRebuildEntityLookup.cs" />
+    <Compile Include="Core\Forms\formRebuildWorkingTables.cs" />
+    <Compile Include="Core\Forms\formSaveWorksheet.cs" />
+    <Compile Include="Core\Forms\FormSearchEntity.cs" />
+    <Compile Include="Core\Forms\formSearchTransaction.cs" />
+    <Compile Include="Core\Forms\formTransactionBuilder.cs" />
+    <Compile Include="Core\Forms\formTransactionSearch.cs" />
+    <Compile Include="Core\Forms\formEditWriteOffSettings.cs" />
+    <Compile Include="Core\Forms\formWriteOffSettings.cs" />
+    <Compile Include="Core\Forms\WriteOffSettings\dsWriteOffSettings.cs" />
+    <Compile Include="Core\Forms\Mvc\SettlementApproval\PendingApprovalSettlementEditor.cs" />
+    <Compile Include="Core\Forms\Mvc\SettlementApproval\Model\IPendingApprovalSettlementModel.cs" />
+    <Compile Include="Core\Forms\Mvc\SettlementApproval\Model\PendingApprovalSettlementGridModel.cs" />
+    <Compile Include="Core\Forms\Mvc\SettlementApproval\Model\PendingApprovalSettlementModel.cs" />
+    <Compile Include="Core\Forms\Mvc\SettlementApproval\Controller\IPendingApprovalSettlementGridController.cs" />
+    <Compile Include="Core\Forms\Mvc\SettlementApproval\Controller\PendingApprovalSettlementGridController.cs" />
+    <Compile Include="Core\Forms\Mvc\SearchSelect\DocumentTemplateMetaData\ISearchSelectDocumentTemplateController.cs" />
+    <Compile Include="Core\Forms\Mvc\SearchSelect\DocumentTemplateMetaData\SearchSelectDocumentTemplateForm.cs" />
+    <Compile Include="Core\Forms\Mvc\SearchSelect\DocumentTemplateMetaData\SearchSelectDocumentTemplateController.cs" />
+    <Compile Include="Core\Forms\Mvc\DatabaseRecords\W9\View\IW9View.cs" />
+    <Compile Include="Core\Forms\Mvc\DatabaseRecords\W9\View\W9View.cs" />
+    <Compile Include="Core\Forms\Mvc\DatabaseRecords\W9\UserInterface\W9Editor.cs" />
+    <Compile Include="Core\Forms\Mvc\DatabaseRecords\W9\Model\IW9Model.cs" />
+    <Compile Include="Core\Forms\Mvc\DatabaseRecords\W9\Model\W9Model.cs" />
+    <Compile Include="Core\Forms\Mvc\DatabaseRecords\W9\Controller\IW9Controller.cs" />
+    <Compile Include="Core\Forms\Mvc\DatabaseRecords\W9\Controller\W9Controller.cs" />
+    <Compile Include="Core\Forms\Mvc\ChargeCodeGLAccountMapping\UserInterface\ChargeCodeGLAccountMappingEditor.cs" />
+    <Compile Include="Core\Forms\Mvc\ChargeCodeGLAccountMapping\Model\ChargeCodeGLAccountMappingGridModel.cs" />
+    <Compile Include="Core\Forms\Mvc\ChargeCodeGLAccountMapping\Model\ChargeCodeGLAccountMappingModel.cs" />
+    <Compile Include="Core\Forms\Mvc\ChargeCodeGLAccountMapping\Model\IChargeCodeGLAccountMappingGridModel.cs" />
+    <Compile Include="Core\Forms\Mvc\ChargeCodeGLAccountMapping\Model\IChargeCodeGLAccountMappingModel.cs" />
+    <Compile Include="Core\Forms\Mvc\ChargeCodeGLAccountMapping\Model\OfficeGlMapping.cs" />
+    <Compile Include="Core\Forms\Mvc\ChargeCodeGLAccountMapping\Data\ChargeCodeGLAccountMappingDto.cs" />
+    <Compile Include="Core\Forms\Mvc\ChargeCodeGLAccountMapping\Data\ChargeCodeGLAccountMappingRepository.cs" />
+    <Compile Include="Core\Forms\Mvc\ChargeCodeGLAccountMapping\Data\IChargeCodeGLAccountMappingRepository.cs" />
+    <Compile Include="Core\Forms\Mvc\ChargeCodeGLAccountMapping\Controller\ChargeCodeGLAccountMappingGridController.cs" />
+    <Compile Include="Core\Forms\Mvc\ChargeCodeGLAccountMapping\Controller\IChargeCodeGLAccountMappingGridController.cs" />
+    <Compile Include="Core\Forms\ACH\ACHEntry.cs" />
+    <Compile Include="Core\Forms\ACH\ACHSaveCompleteArgs.cs" />
+    <Compile Include="Core\Forms\ACH\ACHSettingsAccountDetails.cs" />
+    <Compile Include="Core\Forms\ACH\ACHSettingsBankDetails.cs" />
+    <Compile Include="Core\Forms\ACH\ACHStatementReportOption.cs" />
+    <Compile Include="Core\Forms\ACH\ACHStatementServices.cs" />
+    <Compile Include="Core\Forms\ACH\dsACHPayablesExport.cs" />
+    <Compile Include="Core\Forms\ACH\dsACHSettings.cs" />
+    <Compile Include="Core\Forms\ACH\dsACHStatements.cs" />
+    <Compile Include="Core\Forms\ACH\formACHSettingsManagement.cs" />
+    <Compile Include="Core\Forms\ACH\formACHStatementEmailUtility.cs" />
+    <Compile Include="Core\Forms\ACH\FormACHWireExport.cs" />
+    <Compile Include="Core\Forms\ACH\formMultiACHSettingsEditor.cs" />
+    <Compile Include="Core\Forms\ACH\formMultiACHSettingsManagement.cs" />
+    <Compile Include="Core\Forms\ACH\formMultiACHSettingsPending.cs" />
+    <Compile Include="Core\Forms\ACH\MGANACHAConfigCollection.cs" />
+    <Compile Include="Core\Forms\ACH\MultiACHSettingsSecurity.cs" />
+    <Compile Include="Core\Forms\ACH\PayeeMissingBankAccount\PayeeMissingBankAccountSelector.cs" />
+    <Compile Include="Core\Forms\ACH\PayeeMissingBankAccount\Model\PayeeMissingBankAccountGridModel.cs" />
+    <Compile Include="Core\Forms\ACH\PayeeMissingBankAccount\DataAccess\IPayeeMissingBankAccountRepository.cs" />
+    <Compile Include="Core\Forms\ACH\PayeeMissingBankAccount\DataAccess\PayeeMissingBankAccountDto.cs" />
+    <Compile Include="Core\Forms\ACH\PayeeMissingBankAccount\DataAccess\PayeeMissingBankAccountRepository.cs" />
+    <Compile Include="Core\Forms\ACH\PayeeMissingBankAccount\Controller\PayeeMissingBankAccountGridController.cs" />
+    <Compile Include="Core\Forms\ACH\DataAccess\ACHBankDto.cs" />
+    <Compile Include="Core\Forms\ACH\DataAccess\IMultiACHBankRepository.cs" />
+    <Compile Include="Core\Forms\ACH\DataAccess\MultiACHBankRepository.cs" />
+    <Compile Include="Core\ForceCommissions\dsForceComm.cs" />
+    <Compile Include="Core\Exceptions\ReceivedDateNotDefinedException.cs" />
+    <Compile Include="Core\Exceptions\DepositDateNotDefinedException.cs" />
+    <Compile Include="Core\Exceptions\GLCompanyMissingException.cs" />
+    <Compile Include="Core\Exceptions\CheckInformationMissingException.cs" />
+    <Compile Include="Core\Exceptions\ZeroCheckException.cs" />
+    <Compile Include="Core\Exceptions\NegativeCheckException.cs" />
+    <Compile Include="Core\Exceptions\CheckNumberNotDefinedException.cs" />
+    <Compile Include="Core\Exceptions\EntityNotDefinedException.cs" />
+    <Compile Include="Core\Exceptions\TransactionDetailCollectionEmptyException.cs" />
+    <Compile Include="Core\Exceptions\TransactionTypeNotSetException.cs" />
+    <Compile Include="Core\Exceptions\SearchTypeNotDefinedException.cs" />
+    <Compile Include="Core\Exceptions\TransactionDetailNotFound.cs" />
+    <Compile Include="Core\Exceptions\AccountingTransactionNotFound.cs" />
+    <Compile Include="Core\Exceptions\AccountingCoreGeneralError.cs" />
+    <Compile Include="Core\Exceptions\DirectBillInvoicesNotFoundException.cs" />
+    <Compile Include="Core\Exceptions\PayeeNotSpecifedException.cs" />
+    <Compile Include="Core\Exceptions\BankGlNotSpecifiedException.cs" />
+    <Compile Include="Core\Exceptions\PaymentMethodNotSupportedException.cs" />
+    <Compile Include="Core\Exceptions\TransactionOutOfBalanceException.cs" />
+    <Compile Include="Core\Exceptions\FinancedReturnDetailNotFoundException.cs" />
+    <Compile Include="Core\Exceptions\FinancedReturnObjectNotFoundException.cs" />
+    <Compile Include="Core\Exceptions\UserCancelledProcessException.cs" />
+    <Compile Include="Core\Exceptions\DirectBillReceivableObjectNotFoundException.cs" />
+    <Compile Include="Core\Exceptions\ObjectNotFoundException.cs" />
+    <Compile Include="Core\Exceptions\DirectBillPayableObjectNotFoundException.cs" />
+    <Compile Include="Core\Exceptions\NonPayableFeeObjectNotFoundException.cs" />
+    <Compile Include="Core\EnhancedPolicyInquiry\dsExtendedPolicyInquiry.cs" />
+    <Compile Include="Core\EnhancedPolicyInquiry\FormPolicyInquiryDrillDown.cs" />
+    <Compile Include="Core\EnhancedPolicyInquiry\FormSavedQueries.cs" />
+    <Compile Include="Core\EnhancedPolicyInquiry\PolicyInquirySearchCriteria.cs" />
+    <Compile Include="Core\EnhancedPolicyInquiry\SelectedEntity.cs" />
+    <Compile Include="Core\DataAccess\W9\IW9Repository.cs" />
+    <Compile Include="Core\DataAccess\W9\IW9Repository`1.cs" />
+    <Compile Include="Core\DataAccess\W9\W9Dto.cs" />
+    <Compile Include="Core\DataAccess\W9\W9Repository`1.cs" />
+    <Compile Include="Core\DataAccess\W9\W9Repository.cs" />
+    <Compile Include="Core\DataAccess\W9EntityType\IW9EntityTypeRepositoryReadOnly.cs" />
+    <Compile Include="Core\DataAccess\W9EntityType\W9EntityTypeDto.cs" />
+    <Compile Include="Core\DataAccess\W9EntityType\W9EntityTypeRepository.cs" />
+    <Compile Include="Core\DataAccess\VoidTransaction\VoidTransactionRepository.cs" />
+    <Compile Include="Core\DataAccess\SettlementApproval\PendingApprovalSettlement\PendingApprovalSettlementRepository`1.cs" />
+    <Compile Include="Core\DataAccess\SettlementApproval\PendingApprovalSettlement\PendingApprovalSettlementRepository.cs" />
+    <Compile Include="Core\DataAccess\SettlementApproval\PendingApprovalSettlement\IPendingApprovalSettlementRepository.cs" />
+    <Compile Include="Core\DataAccess\SettlementApproval\PendingApprovalSettlement\IPendingApprovalSettlementRepository`1.cs" />
+    <Compile Include="Core\DataAccess\SettlementApproval\PendingApprovalSettlement\PendingApprovalSettlementDto.cs" />
+    <Compile Include="Core\DataAccess\SettlementApproval\PendingApprovalSettlementDecision\IPendingApprovalSettlementDecisionRepository.cs" />
+    <Compile Include="Core\DataAccess\SettlementApproval\PendingApprovalSettlementDecision\PendingApprovalSettlementDecisionDto.cs" />
+    <Compile Include="Core\DataAccess\SettlementApproval\PendingApprovalSettlementDecision\PendingApprovalSettlementDecisionRepository.cs" />
+    <Compile Include="Core\DataAccess\PaymentMethod\PaymentMethodRepositoryCache.cs" />
+    <Compile Include="Core\DataAccess\PaymentMethod\IPaymentMethodRepository.cs" />
+    <Compile Include="Core\DataAccess\PaymentMethod\IPaymentMethodRepositoryCache.cs" />
+    <Compile Include="Core\DataAccess\PaymentMethod\PaymentMethodDto.cs" />
+    <Compile Include="Core\DataAccess\PaymentMethod\PaymentMethodRepository.cs" />
+    <Compile Include="Core\DataAccess\GLAccount\GLAccountDto.cs" />
+    <Compile Include="Core\DataAccess\GLAccount\GLAccountRepository.cs" />
+    <Compile Include="Core\DataAccess\GLAccount\IGLAccountRepository.cs" />
+    <Compile Include="Core\DataAccess\DocumentTemplateMetaData\DocumentTemplateMetaDataDto.cs" />
+    <Compile Include="Core\DataAccess\DocumentTemplateMetaData\DocumentTemplateMetaDataRepository.cs" />
+    <Compile Include="Core\DataAccess\DocumentTemplateMetaData\IDocumentTemplateMetaDataRepository.cs" />
+    <Compile Include="Core\DataAccess\DocumentStore\DocumentStoreDto.cs" />
+    <Compile Include="Core\DataAccess\DocumentStore\DocumentStoreRepository.cs" />
+    <Compile Include="Core\DataAccess\DocumentStore\IDocumentStoreRepository.cs" />
+    <Compile Include="Core\DataAccess\ClientOffice\ClientOfficeDto.cs" />
+    <Compile Include="Core\DataAccess\ClientOffice\ClientOfficeRepository.cs" />
+    <Compile Include="Core\DataAccess\ClientOffice\IClientOfficeRepository.cs" />
+    <Compile Include="Core\DataAccess\ChargeCode\ChargeCodeDto.cs" />
+    <Compile Include="Core\DataAccess\ChargeCode\ChargeCodeRepository.cs" />
+    <Compile Include="Core\DataAccess\ChargeCode\IChargeCodeRepository.cs" />
+    <Compile Include="Core\DataAccess\BankAccount\BankAccountDto.cs" />
+    <Compile Include="Core\DataAccess\BankAccount\BankAccountKey.cs" />
+    <Compile Include="Core\DataAccess\BankAccount\BankAccountRepository.cs" />
+    <Compile Include="Core\DataAccess\BankAccount\IBankAccountRepository.cs" />
+    <Compile Include="Core\DataAccess\BankAccountPaymentType\BankAccountPaymentTypeDto.cs" />
+    <Compile Include="Core\DataAccess\BankAccountPaymentType\BankAccountPaymentTypeRepository.cs" />
+    <Compile Include="Core\DataAccess\BankAccountPaymentType\IBankAccountPaymentTypeRepository.cs" />
+    <Compile Include="Core\Controls\UC_BankAccounts.cs" />
+    <Compile Include="Core\Controls\UC_OfficeLocation.cs" />
+    <Compile Include="Core\Controls\UC_WorksheetList.cs" />
+    <Compile Include="Core\ClassObjects\AccountingProviderExtensions.cs" />
+    <Compile Include="Core\ClassObjects\AccountingTransaction.cs" />
+    <Compile Include="Core\ClassObjects\CheckInformation.cs" />
+    <Compile Include="Core\ClassObjects\CommissionTransaction.cs" />
+    <Compile Include="Core\ClassObjects\InsuranceTransaction.cs" />
+    <Compile Include="Core\ClassObjects\InsuranceWorksheet.cs" />
+    <Compile Include="Core\ClassObjects\InterCompanyTransfer.cs" />
+    <Compile Include="Core\ClassObjects\InterCompanyTransferCollection.cs" />
+    <Compile Include="Core\ClassObjects\AccountingCoreUtilityOverrides.cs" />
+    <Compile Include="Core\ClassObjects\NoticeOfCancellationInstance.cs" />
+    <Compile Include="Core\ClassObjects\OperatingTransaction.cs" />
+    <Compile Include="Core\ClassObjects\SearchCriteria.cs" />
+    <Compile Include="Core\ClassObjects\SearchCriteriaCollection.cs" />
+    <Compile Include="Core\ClassObjects\StringResourceManager.cs" />
+    <Compile Include="Core\ClassObjects\TransactionDetail.cs" />
+    <Compile Include="Core\ClassObjects\TransactionDetailCollection.cs" />
+    <Compile Include="Core\ClassObjects\TransactionSet.cs" />
+    <Compile Include="Core\ClassObjects\Utility.cs" />
+    <Compile Include="Core\ClassObjects\WorksheetAppliedValue.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AccountsPayable\formDirectBillPayables.resx" />
+    <EmbeddedResource Include="AccountsPayable\formViewNonPayableFees.resx" />
+    <EmbeddedResource Include="AccountsReceivable\formFinancedReceivables.resx" />
+    <EmbeddedResource Include="AccountsReceivable\formReceivableReinstatements.resx" />
+    <EmbeddedResource Include="APreport.resx" />
+    <EmbeddedResource Include="ARreport.resx" />
+    <EmbeddedResource Include="Core\Controls\UC_BankAccounts.resx" />
+    <EmbeddedResource Include="Core\Controls\UC_OfficeLocation.resx" />
+    <EmbeddedResource Include="Core\Controls\UC_WorksheetList.resx" />
+    <EmbeddedResource Include="Core\dll.licenses" />
+    <EmbeddedResource Include="Core\EnhancedPolicyInquiry\FormPolicyInquiryDrillDown.resx" />
+    <EmbeddedResource Include="Core\EnhancedPolicyInquiry\FormSavedQueries.resx" />
+    <EmbeddedResource Include="Core\EnhancedPolicyInquiry\PolicyInquirySearchCriteria.resx" />
+    <EmbeddedResource Include="Core\Forms\ACH\ACHEntry.resx" />
+    <EmbeddedResource Include="Core\Forms\ACH\ACHSettingsAccountDetails.resx" />
+    <EmbeddedResource Include="Core\Forms\ACH\ACHSettingsBankDetails.resx" />
+    <EmbeddedResource Include="Core\Forms\ACH\formACHSettingsManagement.resx" />
+    <EmbeddedResource Include="Core\Forms\ACH\formACHStatementEmailUtility.resx" />
+    <EmbeddedResource Include="Core\Forms\ACH\FormACHWireExport.resx" />
+    <EmbeddedResource Include="Core\Forms\ACH\formMultiACHSettingsEditor.resx" />
+    <EmbeddedResource Include="Core\Forms\ACH\formMultiACHSettingsManagement.resx" />
+    <EmbeddedResource Include="Core\Forms\ACH\formMultiACHSettingsPending.resx" />
+    <EmbeddedResource Include="Core\Forms\formAccessDenied.resx" />
+    <EmbeddedResource Include="Core\Forms\formAccountingPrinters.resx" />
+    <EmbeddedResource Include="Core\Forms\formAdditionalOffsets.resx" />
+    <EmbeddedResource Include="Core\Forms\FormAppliedUnaccounted.resx" />
+    <EmbeddedResource Include="Core\Forms\FormClearFinanceCompany.resx" />
+    <EmbeddedResource Include="Core\Forms\formCloseAccountingPeriod.resx" />
+    <EmbeddedResource Include="Core\Forms\formConfirmBankAccount.resx" />
+    <EmbeddedResource Include="Core\Forms\formCostCenterDataService.resx" />
+    <EmbeddedResource Include="Core\Forms\FormDirectBillExcelImport.resx" />
+    <EmbeddedResource Include="Core\Forms\FormDirectBillExcelImportMappings.resx" />
+    <EmbeddedResource Include="Core\Forms\FormDirectBillPayablesUtility.resx" />
+    <EmbeddedResource Include="Core\Forms\formEditTransactionComment.resx" />
+    <EmbeddedResource Include="Core\Forms\formEditWriteOffSettings.resx" />
+    <EmbeddedResource Include="Core\Forms\FormExcelImport.resx" />
+    <EmbeddedResource Include="Core\Forms\formExcelImportWizard.resx" />
+    <EmbeddedResource Include="Core\Forms\formExtendedSettings.resx" />
+    <EmbeddedResource Include="Core\Forms\formFinanceCompany.resx" />
+    <EmbeddedResource Include="Core\Forms\formFlatCancelConfiguration.resx" />
+    <EmbeddedResource Include="Core\Forms\formFlatCancelEditSetting.resx" />
+    <EmbeddedResource Include="Core\Forms\formInterCompanyTransfer.resx" />
+    <EmbeddedResource Include="Core\Forms\formLoadWorksheet.resx" />
+    <EmbeddedResource Include="Core\Forms\formOpenSavedWorksheet.resx" />
+    <EmbeddedResource Include="Core\Forms\FormRebuildEntityLookup.resx" />
+    <EmbeddedResource Include="Core\Forms\formRebuildWorkingTables.resx" />
+    <EmbeddedResource Include="Core\Forms\formSaveWorksheet.resx" />
+    <EmbeddedResource Include="Core\Forms\FormSearchEntity.resx" />
+    <EmbeddedResource Include="Core\Forms\formSearchTransaction.resx" />
+    <EmbeddedResource Include="Core\Forms\formTransactionBuilder.resx" />
+    <EmbeddedResource Include="Core\Forms\formTransactionSearch.resx" />
+    <EmbeddedResource Include="Core\Forms\formWriteOffSettings.resx" />
+    <EmbeddedResource Include="Core\Forms\Mvc\DatabaseRecords\W9\View\W9View.resx" />
+    <EmbeddedResource Include="Core\Properties\Resources.resx" />
+    <EmbeddedResource Include="Core\Resources\AccountingPrinters.png" />
+    <EmbeddedResource Include="Core\Resources\CloseAccountingPeriod.png" />
+    <EmbeddedResource Include="Core\Resources\DirectBillPayables.png" />
+    <EmbeddedResource Include="Core\Resources\ExcelImport.png" />
+    <EmbeddedResource Include="Core\Resources\ExtendedSettings.gif" />
+    <EmbeddedResource Include="Core\Resources\PolicyInquiry.png" />
+    <EmbeddedResource Include="Core\Resources\SearchTransaction.png" />
+    <EmbeddedResource Include="Core\Resources\transactionBuilder.png" />
+    <EmbeddedResource Include="Core\Strings.resx" />
+    <EmbeddedResource Include="Core\TransactionModification\FormModifyInvoice.resx" />
+    <EmbeddedResource Include="Core\TransactionModification\FormModifyTransaction.resx" />
+    <EmbeddedResource Include="Core\Unaccounted_Management\FormUnaccountedManagement.resx" />
+    <EmbeddedResource Include="Core\Utilities\formSelectDate.resx" />
+    <EmbeddedResource Include="PolicyServices\formCancellationDateOverride.resx" />
+    <EmbeddedResource Include="PolicyServices\formFindPolicy.resx" />
+    <EmbeddedResource Include="PolicyServices\formForceComm.resx" />
+    <EmbeddedResource Include="PolicyServices\formPolicyInquiry.resx" />
+    <EmbeddedResource Include="PolicyServices\formPolicyInquiryComment.resx" />
+    <EmbeddedResource Include="SharedForms\formChangeTransactionDate.resx" />
+    <EmbeddedResource Include="SharedForms\formLoadWorksheetErrors.resx" />
+    <EmbeddedResource Include="SharedForms\formPayeeAddressSelection.resx" />
+    <EmbeddedResource Include="SharedForms\formTransactionViewer.resx" />
+    <EmbeddedResource Include="SharedForms\formVoidTransaction.resx" />
+    <EmbeddedResource Include="SharedServices\formEntityAccountsBreakdown.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

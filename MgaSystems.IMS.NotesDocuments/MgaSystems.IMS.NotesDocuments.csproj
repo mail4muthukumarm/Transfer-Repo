@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: D:\augusta\fortegra\IMS Project\MgaSystems.IMS.NotesDocuments.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{548784E1-62E6-42F1-839B-8637BD9B4720}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>MgaSystems.IMS.NotesDocuments</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <ApplicationVersion>2.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MGASystems.IMS.DocumentStorage">
+      <HintPath>lib\MGASystems.IMS.DocumentStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="MGASystems.IMS.Logging">
+      <HintPath>lib\MGASystems.IMS.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Common">
+      <HintPath>lib\MgaSystems.IMS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Common.Cs">
+      <HintPath>lib\MgaSystems.IMS.Common.Cs.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Editors">
+      <HintPath>lib\MgaSystems.IMS.Editors.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Security">
+      <HintPath>lib\MgaSystems.IMS.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Tools">
+      <HintPath>lib\MgaSystems.IMS.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Microsoft\VisualBasic\Embedded.cs" />
+    <Compile Include="Microsoft\Office\Interop\Outlook\ItemEvents_10.cs" />
+    <Compile Include="Microsoft\Office\Interop\Outlook\ItemEvents_10_Event.cs" />
+    <Compile Include="Microsoft\Office\Interop\Outlook\MailItem.cs" />
+    <Compile Include="Microsoft\Office\Interop\Outlook\_MailItem.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\ColumnChooserController.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\Common.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\NotInitializedException.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\adobeConcatenationForm.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\AssociatedEntity.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\MGADataObject.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DelayLoadUserControl.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocumentBoundContext.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocumentEmailsContext.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocumentFilterType.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocumentFolderAssociationController.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocumentFolderFilterAttribute.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\INoteForm.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocumentSystemContextImageRightMenuOverride.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocumentUploadingContext.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsDocumentFolderTypes.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsDocumentOwnershipTransfer.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsDocumentPanel.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsDocuments.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsDocumentSearch.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsDocumentTypes.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsFetchDoc.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DSFolderList.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\EmailSubjectResolver.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\FolderInfo.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\FolderManager.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmDocumentFolderBulkTransfer.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\FormTaskAdmin.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmAdminDocumentType.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocumentType.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmAdobeSplitPages.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmAssociatedEntities.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmChooseDocType.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmDocumentEmail.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmDocumentExplorer.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmDocumentFolderAssociations.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmDocumentMoveProgress.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmDocumentOwnershipTransfer.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmDocumentProperties.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmDocumentSearchResults.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmDownloadDocumentNonThreaded.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmFetchDoc.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmMessageDropOptions.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmShouldSplitAdobeDoc.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\InsertPDFController.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\InsertPDFInfo.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\ISupportDocumentSystem.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\MenuManager.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\ReplacePDFInfo.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\SelectedDocInfo.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\AcordParserControlOverride.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\MailMetaData.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\OutlookMessageHandler.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\TabDocumentPanel.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\TabDocumentSearch.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\TreeNodeStructureSerializer.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\UploadPacketSize.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\VerifyFile.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocuSignDocument.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsGlobalNotePrefillingOptions.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsIMSTaskManagement.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\ShortcutResolutionMethod.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\AdditionalRecipientController.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\GlobalNoteAutomationRecipient.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\GlobalNotesSetupFormML.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsAdminGlobalNotes.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\IRecreatableEntity.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DiaryStartType.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\GlobalEventInfo.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\NativeMethods.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\NoteDocumentToolBarManager.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\EntityNotePanel.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\EntityListItem.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsCopyNotesToCompanyLine.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsPendingNotes.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmApplyEventInfo.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmCopyNotesToCompanyLines.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmViewAutomationEvents.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\NoteAutomation.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\NoteAutomationEventManagementForm.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\NoteAutomationMenuManager.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\NoteAutomationRecipientManager.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\PendingNote.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\PendingNoteForm.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\PendingNotePostProcessorOverride.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\BullPenForm.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DataGridColumnInfo.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\BullPenMenuManager.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\CompleteDiaryMultiForm.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsMultiRecipientDiary.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsNoteEditLog.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsNoteForm.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsNotes.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsNotesByEntity.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsNoteSystem.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsNoteThread.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsNoteTypes.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsNoteView.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsPolicyPopups.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsQuickNote.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsTabNotePanel.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsTabNotePanelNote.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsTabNoteSearch.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsTabUserNotePanelMT.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsUserSelection.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DsUserSelectionEx.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmAdminNoteTypes.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmNote.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmNoteEditLog.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmNoteResolveEntity.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmNoteSearchResults.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmNoteUserSelect.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmNoteUserSelectEx.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmPopupNotes.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\GlobalNotesSetupForm.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\IPopupNoteForm.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\ISupportNoteDocumentBinding.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\ISupportNoteSystem.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\MGANoteDataObject.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\PendingNoteUIOverride.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\QuickNoteHotKey.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\SummaryOverride.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\TabNotePanel.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\TabNotePanelQuickNote.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\TabNoteSearch.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\VerifyNotesOnPolicyOverride.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsLocalPreferences.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmAllPreferences.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmModifyPreference.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\SystemSettings.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\ReplacePDFController.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\SendProducerDiaries.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\SR.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\strings.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\dsToday.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\frmToday.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\TaskDisplayStyle.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\Utility.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\NoteOverrideInformation.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\My\MyApplication.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\My\MyComputer.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\My\MyProject.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\My\InternalXmlHelper.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\My\MySettings.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\My\MySettingsProperty.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\My\Resources\Resources.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\ChangePassword\ChangePasswordController.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocumentSystem\AdvancedPrintOptions.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocumentSystem\Document.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocumentSystem\DocumentPanel.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocumentSystem\QueryEntityHandler.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocumentSystem\DocumentAddedHandler.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocumentSystem\DocumentAddedEventArgs.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocumentSystem\ISupportDocumentPanel.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocumentSystem\QueryEntityEventArgs.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocumentSystem\DocSupportCache.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocumentSystem\DocumentManager.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocumentSystem\dsDocument.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocumentSystem\FileAddQueryThread.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocumentSystem\DocumentSystemFileAdditonalDataOverride.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocumentSystem\frmDownloadDocument.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocumentSystem\frmDownloadDocumentNonThreaded.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocumentSystem\frmUploadDocument.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocumentSystem\ShellOperations.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocuSign\DocuSignUtil.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\DocuSign\SendToDocuSignController.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\Email\UI.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\NoteDiarySystem\MenuManager.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\NoteDiarySystem\NoteBindRequirement.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\NoteDiarySystem\NoteBindFailureReason.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\NoteDiarySystem\NoteCollections.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\NoteDiarySystem\NoteCollectionModifiedEventArgs.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\NoteDiarySystem\NoteDeletedEventArgs.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\NoteDiarySystem\NotesFoundEventArgs.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\NoteDiarySystem\Note_System.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\NoteDiarySystem\NoteSupportCache.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\Serialization\RemoteObjects.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\Serialization\Preferences.cs" />
+    <Compile Include="MGASystems\IMS\NoteDocuments\Serialization\PreferenceException.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\adobeConcatenationForm.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\BullPenForm.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\CompleteDiaryMultiForm.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\DelayLoadUserControl.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\DocumentSystem\AdvancedPrintOptions.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\DocumentSystem\DocumentPanel.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\DocumentSystem\frmDownloadDocument.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\DocumentSystem\frmDownloadDocumentNonThreaded.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\DocumentSystem\frmUploadDocument.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\EntityNotePanel.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\FormTaskAdmin.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmAdminDiaryTextInsertion.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmAdminDocumentType.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmAdminNoteTypes.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmAdobeSplitPages.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmAllPreferences.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmApplyEventInfo.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmAssociatedEntities.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmChooseDocType.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmCopyNotesToCompanyLines.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmDocumentEmail.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmDocumentExplorer.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmDocumentFolderAssociations.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmDocumentFolderBulkTransfer.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmDocumentMoveProgress.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmDocumentOwnershipTransfer.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmDocumentProperties.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmDocumentSearchResults.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmFetchDoc.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmMessageDropOptions.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmModifyPreference.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmNote.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmNoteEditLog.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmNoteResolveEntity.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmNoteSearchResults.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmNoteUserSelect.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmNoteUserSelectEx.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmPopupNotes.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmShouldSplitAdobeDoc.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmToday.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\frmViewAutomationEvents.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\GlobalNotesSetupForm.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\GlobalNotesSetupFormML.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\NoteAutomationEventManagementForm.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\NoteAutomationRecipientManager.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\PendingNoteForm.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\Resources.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\strings.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\TabDocumentPanel.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\TabDocumentSearch.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\TabNotePanel.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\TabNotePanelQuickNote.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\NoteDocuments\TabNoteSearch.resx" />
+    <EmbeddedResource Include="MgaSystems\IMS\NotesDocuments\dll.licenses" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

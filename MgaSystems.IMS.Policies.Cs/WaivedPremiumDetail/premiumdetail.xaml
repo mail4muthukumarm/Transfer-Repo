@@ -1,0 +1,27 @@
+<local:PremiumDetail x:Class="MgaSystems.IMS.Policies.WaivedPremiumDetail.PremiumDetail"
+                     xmlns:interop="clr-namespace:Mga.Wpf.Ims.Interop;assembly=Mga.Wpf.Ims"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                     xmlns:dg="http://schemas.microsoft.com/wpf/2008/toolkit"
+                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                     xmlns:local="clr-namespace:MgaSystems.IMS.Policies.WaivedPremiumDetail"
+                     xmlns:dg1="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
+                     FrameworkElement.Height="440" FrameworkElement.Width="650">
+  <StackPanel Name="MainPanel" RenderTransformOrigin="0.835,0.492">
+    <Label Content="Waive Premiums by Detail Lines" HorizontalAlignment="Center" FontWeight="Bold"/>
+    <DataGrid Name="dgTest" AutoGenerateColumns="false" Width="740" Height="380" IsReadOnly="false"
+              CanUserResizeColumns="true" SelectionMode="Single" SelectionUnit="Cell" CanUserAddRows="false"
+              CanUserSortColumns="true" Margin="0,10,0,0" ItemsSource="{Binding WaivedPremiumList}">
+      <DataGrid.Columns>
+        <DataGridTextColumn Header="QuoteGuid" Visibility="Hidden" IsReadOnly="true" Binding="{Binding QuoteGuid}"/>
+        <DataGridTextColumn Header="CompanyLineGuid" Visibility="Hidden" IsReadOnly="true" Binding="{Binding CompanyLineGuid}"/>
+        <DataGridTextColumn Header="Company / Line" IsReadOnly="true" Width="260" Binding="{Binding CompanyLine}"/>
+        <DataGridTextColumn Header="Premium" IsReadOnly="true" Width="140" Binding="{Binding Path=Premium, StringFormat=C}"/>
+        <DataGridTextColumn Header="Min Premium" IsReadOnly="true" Width="120" Binding="{Binding MinWaivePremium}"/>
+        <DataGridTextColumn Header="Max Premium" IsReadOnly="true" Width="120" Binding="{Binding MaxWaivePremium}"/>
+        <DataGridCheckBoxColumn Header="Waive" Width="120" Binding="{Binding WaivePremium}"/>
+      </DataGrid.Columns>
+    </DataGrid>
+  </StackPanel>
+</local:PremiumDetail>

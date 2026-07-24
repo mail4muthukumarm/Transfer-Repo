@@ -1,0 +1,239 @@
+<local:ThresholdLimitAdminView x:Class="MgaSystems.IMS.Policies.ThresholdLimit.UI.ThresholdLimitAdminView"
+                               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                               xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                               xmlns:local="clr-namespace:MgaSystems.IMS.Policies.ThresholdLimit.UI"
+                               xmlns:mgaWpf="clr-namespace:Mga.Wpf.Ims.Controls;assembly=Mga.Wpf.Ims"
+                               xmlns:mgaInterop="clr-namespace:Mga.Wpf.Ims.Interop;assembly=Mga.Wpf.Ims"
+                               xmlns:baseWpfBehaviors="clr-namespace:Mga.Wpf.Ims.Controls;assembly=Mga.Wpf.Ims"
+                               xmlns:wpfToolKit="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+                               x:Name="mainWindow" FrameworkElement.Height="675" FrameworkElement.Width="775"
+                               Title="Threshold Limits" WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip"
+                               TransactionLogFilter="F0BA6E99-2AA2-4179-882E-390ADB05C5D4"
+                               PromptOnCloseIfDataContextHasChanges="true">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/CommonResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/DatagridResources2.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Mga.Wpf.Ims;component/Resources/ToolBarResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/TreeViewResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/ListViewResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter"/>
+      <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource textBoxStyleMain}">
+        <Style.Triggers>
+          <Trigger Property="TextBoxBase.IsReadOnly" Value="true">
+            <Setter Property="Control.Background" Value="LightGray"/>
+          </Trigger>
+        </Style.Triggers>
+      </Style>
+      <Style TargetType="{x:Type DataGrid}" BasedOn="{StaticResource dataGridStyle}"/>
+      <Style TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.MinWidth" Value="80"/>
+      </Style>
+      <Style x:Key="SearchBtnStyle" TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.Margin" Value="2"/>
+      </Style>
+      <Style TargetType="{x:Type TextBlock}">
+        <Setter Property="FrameworkElement.Margin" Value="2"/>
+        <Setter Property="TextBlock.Foreground" Value="{StaticResource standardTextForegroundColor}"/>
+      </Style>
+      <DataTemplate x:Key="lbiTemplate">
+        <TextBlock Grid.Column="1" Margin="0,2,2,2" Text="{Binding RatingType}"/>
+      </DataTemplate>
+      <Style TargetType="{x:Type ListBoxItem}">
+        <Setter Property="Control.HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="ContentControl.ContentTemplate" Value="{StaticResource lbiTemplate}"/>
+        <Style.Triggers>
+          <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+            <Setter Property="Control.Background" Value="White"/>
+          </Trigger>
+          <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+            <Setter Property="Control.Background" Value="{StaticResource alternateRowBrush}"/>
+          </Trigger>
+          <Trigger Property="ListBoxItem.IsSelected" Value="true">
+            <Trigger.Setters>
+              <Setter Property="Control.Background" Value="{StaticResource selectedItemBrush}"/>
+            </Trigger.Setters>
+          </Trigger>
+        </Style.Triggers>
+      </Style>
+      <SolidColorBrush x:Key="SelectedBrush" Color="{DynamicResource {x:Static JetSystemColors.HighlightColorKey}}"/>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <DockPanel>
+    <ToolBarTray DockPanel.Dock="Top">
+      <FrameworkElement.Resources>
+        <Style TargetType="{x:Type ToolBarTray}" BasedOn="{StaticResource toolBarTrayStyle}"/>
+        <Style TargetType="{x:Type Image}" BasedOn="{StaticResource verticalToolbarImageStyle}"/>
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource toolbarButtonStyle}"/>
+        <Style TargetType="{x:Type StackPanel}" BasedOn="{StaticResource toolbarStackPanelStyle}"/>
+        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource verticalToolbarTextBlockStyle}"/>
+        <Style TargetType="{x:Type AccessText}" BasedOn="{StaticResource verticalToolbarAccessTextStyle}"/>
+      </FrameworkElement.Resources>
+      <ToolBar>
+        <Button ToolTip="Save" Command="{Binding SaveCommand}">
+          <StackPanel>
+            <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/saveHS.png"/>
+            <AccessText Text="_Save"/>
+          </StackPanel>
+        </Button>
+        <Separator/>
+        <baseWpfBehaviors:UndoButton ChangeManager="{Binding ThresholdManager.ChangeManager, Mode=OneWay}"/>
+        <baseWpfBehaviors:RedoButton ChangeManager="{Binding ThresholdManager.ChangeManager, Mode=OneWay}"/>
+        <Separator/>
+        <Button ToolTip="Add Thresold" Command="{Binding AddThresholdCommand}">
+          <StackPanel>
+            <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/add.png"/>
+            <AccessText Text="Add Threshold"/>
+          </StackPanel>
+        </Button>
+        <Separator/>
+        <Button ToolTip="Delete Threshold" Command="{Binding RemoveThresholdCommand}"
+                CommandParameter="{Binding SelectedRater.Thresholds}">
+          <StackPanel>
+            <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/delete.png"/>
+            <AccessText Text="Delete Threshold"/>
+          </StackPanel>
+        </Button>
+        <Separator/>
+        <Button ToolTip="Add Line" Command="{Binding AddLineCommand}">
+          <StackPanel>
+            <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/add.png"/>
+            <AccessText Text="Add Line"/>
+          </StackPanel>
+        </Button>
+        <Separator/>
+        <Button ToolTip="Delete Line" Command="{Binding RemoveLineCommand}"
+                CommandParameter="{Binding SelectedLimit.ThresholdLimitLineList}">
+          <StackPanel>
+            <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/delete.png"/>
+            <AccessText Text="Delete Line"/>
+          </StackPanel>
+        </Button>
+        <Separator/>
+      </ToolBar>
+    </ToolBarTray>
+    <Grid DockPanel.Dock="Top">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="auto"/>
+        <ColumnDefinition Width="auto"/>
+        <ColumnDefinition/>
+      </Grid.ColumnDefinitions>
+      <DockPanel Grid.Column="0" LastChildFill="true">
+        <wpfToolKit:WatermarkTextBox DockPanel.Dock="Top" Watermark="Filter Rater"
+                                     TextBox.Text="{Binding FilterRater, UpdateSourceTrigger=PropertyChanged}"/>
+        <ListBox DockPanel.Dock="Top" MinWidth="100" AlternationCount="2" IsSynchronizedWithCurrentItem="True"
+                 Margin="2" ItemsSource="{Binding RaterCSV.View, UpdateSourceTrigger=PropertyChanged}"
+                 SelectedItem="{Binding SelectedRater, UpdateSourceTrigger=PropertyChanged}"/>
+      </DockPanel>
+      <Separator Grid.Column="1" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"/>
+      <Grid Column="2">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="auto"/>
+          <RowDefinition Height="auto"/>
+          <RowDefinition Height="auto"/>
+          <RowDefinition Height="auto"/>
+          <RowDefinition Height="auto"/>
+          <RowDefinition Height="auto"/>
+          <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Row="0" DockPanel.Dock="Top" CanUserAddRows="false" CanUserDeleteRows="false"
+                  IsSynchronizedWithCurrentItem="True" SelectionMode="Extended" Height="275" Margin="2"
+                  ItemsSource="{Binding ThresholdCSV.View, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItem="{Binding SelectedLimit, UpdateSourceTrigger=PropertyChanged}">
+          <DataGrid.Columns>
+            <DataGridTextColumn Header="Database Field " Width="Auto" IsReadOnly="true" Binding="{Binding DatabaseField}"/>
+            <DataGridTextColumn Header="Max Value " Width="Auto" IsReadOnly="true" Binding="{Binding MaxValue}"/>
+          </DataGrid.Columns>
+        </DataGrid>
+        <Separator Grid.Row="1"/>
+        <Grid Row="3" IsEnabled="{Binding IsThresholdSelected, UpdateSourceTrigger=PropertyChanged}">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+          </Grid.ColumnDefinitions>
+          <StackPanel Grid.Row="0" Grid.Column="0">
+            <TextBlock Text="Field:"/>
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+              </Grid.ColumnDefinitions>
+              <TextBox IsReadOnly="true" Text="{Binding SelectedLimit.DatabaseField, UpdateSourceTrigger=PropertyChanged}"/>
+              <StackPanel Grid.Column="1" Orientation="Horizontal">
+                <Button VerticalAlignment="Bottom" IsDefault="true" Height="20" Width="20"
+                        Style="{StaticResource SearchBtnStyle}" ToolTip="Fund Assign Task To User"
+                        Command="{Binding FindDBFieldCommand}">
+                  <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/magnifier.png"/>
+                </Button>
+                <Button VerticalAlignment="Bottom" IsDefault="true" Height="20" Width="20"
+                        Style="{StaticResource SearchBtnStyle}" ToolTip="Clear Assign Task To User"
+                        Command="{Binding ClearDBFieldCommand}">
+                  <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/deleteHS.png"/>
+                </Button>
+              </StackPanel>
+            </Grid>
+          </StackPanel>
+          <Grid Row="0" Column="1" Margin="2">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="auto"/>
+              <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1">
+              <CheckBox Content="New" IsChecked="{Binding SelectedLimit.ForNewPolicy, UpdateSourceTrigger=PropertyChanged}"
+                        IsEnabled="{Binding IsThresholdSelected, UpdateSourceTrigger=PropertyChanged}"/>
+              <CheckBox Content="Renewal"
+                        IsChecked="{Binding SelectedLimit.ForRenewalPolicy, UpdateSourceTrigger=PropertyChanged}"
+                        IsEnabled="{Binding IsThresholdSelected, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+          </Grid>
+          <StackPanel Grid.Row="1" Grid.Column="0">
+            <TextBlock Text="Max:"/>
+            <baseWpfBehaviors:NumericTextBox FrameworkElement.HorizontalAlignment="Stretch"
+                                             TextBox.Text="{Binding SelectedLimit.MaxValue, UpdateSourceTrigger=PropertyChanged}"/>
+          </StackPanel>
+        </Grid>
+        <Grid Row="4">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+          </Grid.ColumnDefinitions>
+          <CheckBox Grid.Row="0" Grid.Column="0" Content="Stop Quote (Hard)"
+                    IsChecked="{Binding SelectedLimit.StopQuote, UpdateSourceTrigger=PropertyChanged}"
+                    IsEnabled="{Binding IsThresholdSelected, UpdateSourceTrigger=PropertyChanged}"/>
+          <CheckBox Grid.Row="0" Grid.Column="1" Content="Stop Quote (Soft)"
+                    IsChecked="{Binding SelectedLimit.StopQuoteSoft, UpdateSourceTrigger=PropertyChanged}"
+                    IsEnabled="{Binding IsThresholdSelected, UpdateSourceTrigger=PropertyChanged}"/>
+          <CheckBox Grid.Row="1" Grid.Column="0" Content="Stop Bind (Hard)"
+                    IsChecked="{Binding SelectedLimit.StopBind, UpdateSourceTrigger=PropertyChanged}"
+                    IsEnabled="{Binding IsThresholdSelected, UpdateSourceTrigger=PropertyChanged}"/>
+          <CheckBox Grid.Row="1" Grid.Column="1" Content="Stop Bind (Soft)"
+                    IsChecked="{Binding SelectedLimit.StopBindSoft, UpdateSourceTrigger=PropertyChanged}"
+                    IsEnabled="{Binding IsThresholdSelected, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
+        <DockPanel Grid.Row="5" LastChildFill="true">
+          <TextBlock DockPanel.Dock="Top" Text="Line of Businesses for Field (if empty, applies to all lines):"/>
+          <DataGrid DockPanel.Dock="Top" SelectionMode="Single" AutoGenerateColumns="false" CanUserAddRows="false"
+                    CanUserDeleteRows="false" Margin="2" MinHeight="200"
+                    ItemsSource="{Binding SelectedLimit.ThresholdLimitLineList, UpdateSourceTrigger=PropertyChanged}">
+            <DataGrid.Columns>
+              <DataGridTextColumn Header="Line " Width="Auto" IsReadOnly="true" Binding="{Binding LineName}"/>
+            </DataGrid.Columns>
+          </DataGrid>
+        </DockPanel>
+      </Grid>
+    </Grid>
+  </DockPanel>
+</local:ThresholdLimitAdminView>

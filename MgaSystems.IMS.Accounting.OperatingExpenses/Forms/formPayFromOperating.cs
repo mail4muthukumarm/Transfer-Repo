@@ -1,0 +1,236 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: MGASystems.IMS.Accounting.OperatingExpenses.Forms.formPayFromOperating
+// Assembly: MgaSystems.IMS.Accounting.OperatingExpenses, Version=2.0.0.0, Culture=neutral, PublicKeyToken=e175cb7c4ce15bbd
+// MVID: 77B4DED4-9019-44D3-8D52-4669B0CA70E1
+// Assembly location: D:\augusta\fortegra\IMS Project\MgaSystems.IMS.Accounting.OperatingExpenses.dll
+
+using Infragistics.Win;
+using Infragistics.Win.Misc;
+using Infragistics.Win.UltraWinGrid;
+using MGASystems.IMS.Accounting.Services;
+using MGASystems.Tools;
+using System.ComponentModel;
+using System.Drawing;
+using System.Resources;
+using System.Windows.Forms;
+
+#nullable disable
+namespace MGASystems.IMS.Accounting.OperatingExpenses.Forms;
+
+public class formPayFromOperating : AccountingNoteDocumentSupport
+{
+  private MGAButton btnSearch;
+  private Label label1;
+  private Label label2;
+  private Label label3;
+  private Panel panel1;
+  private Panel panel2;
+  private Label label4;
+  private Label label5;
+  private PictureBox pictureBox1;
+  private UltraLabel ultraLabel1;
+  private Panel panel3;
+  private MGASimpleComboBox comboCommissionableEntity;
+  private MGADateTimePicker dateDateFrom;
+  private MGADateTimePicker dateDateTo;
+  private MGAGrid gridPayFromOperating;
+  private System.ComponentModel.Container components;
+
+  public formPayFromOperating() => this.InitializeComponent();
+
+  protected override void Dispose(bool disposing)
+  {
+    if (disposing && this.components != null)
+      this.components.Dispose();
+    base.Dispose(disposing);
+  }
+
+  private void InitializeComponent()
+  {
+    Appearance appearance1 = new Appearance();
+    Appearance appearance2 = new Appearance();
+    Appearance appearance3 = new Appearance();
+    Appearance appearance4 = new Appearance();
+    Appearance appearance5 = new Appearance();
+    ResourceManager resourceManager = new ResourceManager(typeof (formPayFromOperating));
+    Appearance appearance6 = new Appearance();
+    this.dateDateFrom = new MGADateTimePicker();
+    this.gridPayFromOperating = new MGAGrid();
+    this.btnSearch = new MGAButton();
+    this.comboCommissionableEntity = new MGASimpleComboBox();
+    this.label1 = new Label();
+    this.label2 = new Label();
+    this.dateDateTo = new MGADateTimePicker();
+    this.label3 = new Label();
+    this.panel1 = new Panel();
+    this.panel2 = new Panel();
+    this.label4 = new Label();
+    this.label5 = new Label();
+    this.pictureBox1 = new PictureBox();
+    this.ultraLabel1 = new UltraLabel();
+    this.panel3 = new Panel();
+    ((ISupportInitialize) this.dateDateFrom).BeginInit();
+    ((ISupportInitialize) this.gridPayFromOperating).BeginInit();
+    ((ISupportInitialize) this.btnSearch).BeginInit();
+    ((ISupportInitialize) this.comboCommissionableEntity).BeginInit();
+    ((ISupportInitialize) this.dateDateTo).BeginInit();
+    this.panel2.SuspendLayout();
+    this.panel3.SuspendLayout();
+    this.SuspendLayout();
+    ((AppearanceBase) appearance1).BorderColor = Color.FromArgb((int) sbyte.MaxValue, 157, 185);
+    this.dateDateFrom.Appearance = (AppearanceBase) appearance1;
+    ((AppearanceBase) appearance2).AlphaLevel = (short) 14;
+    ((AppearanceBase) appearance2).BackColor = Color.FromArgb(0, 0, 246, 253);
+    ((AppearanceBase) appearance2).BackColor2 = Color.FromArgb(133, 162, 221);
+    ((AppearanceBase) appearance2).BackColorAlpha = (Alpha) 2;
+    ((AppearanceBase) appearance2).BackGradientAlignment = (GradientAlignment) 4;
+    ((AppearanceBase) appearance2).BackGradientStyle = (GradientStyle) 5;
+    ((AppearanceBase) appearance2).BorderAlpha = (Alpha) 1;
+    ((AppearanceBase) appearance2).BorderColor = Color.FromArgb(78, 122, 171);
+    ((AppearanceBase) appearance2).ForeColor = Color.FromArgb(49, 85, 153);
+    ((AppearanceBase) appearance2).ForegroundAlpha = (Alpha) 2;
+    this.dateDateFrom.ButtonAppearance = (AppearanceBase) appearance2;
+    ((Control) this.dateDateFrom).Location = new Point(152, 32 /*0x20*/);
+    this.dateDateFrom.MGAStyle = MGAStyles.Blue;
+    ((Control) this.dateDateFrom).Name = "dateDateFrom";
+    ((Control) this.dateDateFrom).Size = new Size(104, 20);
+    ((Control) this.dateDateFrom).TabIndex = 1;
+    ((Control) this.gridPayFromOperating).Location = new Point(32 /*0x20*/, 72);
+    ((Control) this.gridPayFromOperating).Name = "gridPayFromOperating";
+    ((Control) this.gridPayFromOperating).Size = new Size(576, 272);
+    ((Control) this.gridPayFromOperating).TabIndex = 2;
+    ((AppearanceBase) appearance3).BackColor = Color.FromArgb(248, 248, 248);
+    ((AppearanceBase) appearance3).BackColor2 = Color.FromArgb(250, 250, 250);
+    ((AppearanceBase) appearance3).BackGradientStyle = (GradientStyle) 2;
+    ((AppearanceBase) appearance3).BorderColor = Color.DarkGray;
+    ((AppearanceBase) appearance3).ImageHAlign = (HAlign) 2;
+    ((AppearanceBase) appearance3).ImageVAlign = (VAlign) 2;
+    ((ControlBase) this.btnSearch).Appearance = (AppearanceBase) appearance3;
+    ((Control) this.btnSearch).Location = new Point(456, 8);
+    ((Control) this.btnSearch).Name = "btnSearch";
+    ((Control) this.btnSearch).Size = new Size(48 /*0x30*/, 40);
+    ((Control) this.btnSearch).TabIndex = 3;
+    ((Control) this.btnSearch).Text = "mgaButton1";
+    this.comboCommissionableEntity.BorderStyle = (UIElementBorderStyle) 4;
+    this.comboCommissionableEntity.CharacterCasing = CharacterCasing.Normal;
+    ((UltraDropDownBase) this.comboCommissionableEntity).DisplayMember = "";
+    this.comboCommissionableEntity.DropDownStyle = (UltraComboStyle) 1;
+    ((Control) this.comboCommissionableEntity).Location = new Point(152, 8);
+    this.comboCommissionableEntity.MGAStyle = MGAStyles.Blue;
+    ((Control) this.comboCommissionableEntity).Name = "comboCommissionableEntity";
+    ((Control) this.comboCommissionableEntity).Size = new Size(288, 20);
+    ((Control) this.comboCommissionableEntity).TabIndex = 4;
+    ((UltraDropDownBase) this.comboCommissionableEntity).ValueMember = "";
+    this.label1.Location = new Point(32 /*0x20*/, 8);
+    this.label1.Name = "label1";
+    this.label1.Size = new Size(120, 16 /*0x10*/);
+    this.label1.TabIndex = 5;
+    this.label1.Text = "Commissionable Entity";
+    this.label2.AutoSize = true;
+    this.label2.Location = new Point(32 /*0x20*/, 32 /*0x20*/);
+    this.label2.Name = "label2";
+    this.label2.Size = new Size(61, 17);
+    this.label2.TabIndex = 6;
+    this.label2.Text = "Date From:";
+    ((AppearanceBase) appearance4).BorderColor = Color.FromArgb((int) sbyte.MaxValue, 157, 185);
+    this.dateDateTo.Appearance = (AppearanceBase) appearance4;
+    ((AppearanceBase) appearance5).AlphaLevel = (short) 14;
+    ((AppearanceBase) appearance5).BackColor = Color.FromArgb(0, 0, 246, 253);
+    ((AppearanceBase) appearance5).BackColor2 = Color.FromArgb(133, 162, 221);
+    ((AppearanceBase) appearance5).BackColorAlpha = (Alpha) 2;
+    ((AppearanceBase) appearance5).BackGradientAlignment = (GradientAlignment) 4;
+    ((AppearanceBase) appearance5).BackGradientStyle = (GradientStyle) 5;
+    ((AppearanceBase) appearance5).BorderAlpha = (Alpha) 1;
+    ((AppearanceBase) appearance5).BorderColor = Color.FromArgb(78, 122, 171);
+    ((AppearanceBase) appearance5).ForeColor = Color.FromArgb(49, 85, 153);
+    ((AppearanceBase) appearance5).ForegroundAlpha = (Alpha) 2;
+    this.dateDateTo.ButtonAppearance = (AppearanceBase) appearance5;
+    ((Control) this.dateDateTo).Location = new Point(336, 32 /*0x20*/);
+    this.dateDateTo.MGAStyle = MGAStyles.Blue;
+    ((Control) this.dateDateTo).Name = "dateDateTo";
+    ((Control) this.dateDateTo).Size = new Size(104, 20);
+    ((Control) this.dateDateTo).TabIndex = 7;
+    this.label3.AutoSize = true;
+    this.label3.Location = new Point(272, 32 /*0x20*/);
+    this.label3.Name = "label3";
+    this.label3.Size = new Size(48 /*0x30*/, 17);
+    this.label3.TabIndex = 8;
+    this.label3.Text = "Date To:";
+    this.panel1.BackColor = Color.FromArgb((int) sbyte.MaxValue, 157, 185);
+    this.panel1.Dock = DockStyle.Bottom;
+    this.panel1.Location = new Point(0, 429);
+    this.panel1.Name = "panel1";
+    this.panel1.Size = new Size(760, 48 /*0x30*/);
+    this.panel1.TabIndex = 9;
+    this.panel2.BackColor = Color.White;
+    this.panel2.Controls.Add((Control) this.pictureBox1);
+    this.panel2.Controls.Add((Control) this.label5);
+    this.panel2.Controls.Add((Control) this.label4);
+    this.panel2.Dock = DockStyle.Top;
+    this.panel2.Location = new Point(0, 0);
+    this.panel2.Name = "panel2";
+    this.panel2.Size = new Size(760, 72);
+    this.panel2.TabIndex = 10;
+    this.label4.AutoSize = true;
+    this.label4.Font = new Font("Tahoma", 12f, FontStyle.Bold, GraphicsUnit.Point, (byte) 0);
+    this.label4.ForeColor = Color.FromArgb((int) sbyte.MaxValue, 157, 185);
+    this.label4.Location = new Point(528, 40);
+    this.label4.Name = "label4";
+    this.label4.Size = new Size(223, 23);
+    this.label4.TabIndex = 0;
+    this.label4.Text = "Pay from Operating Utility";
+    this.label5.BackColor = Color.FromArgb((int) sbyte.MaxValue, 157, 185);
+    this.label5.Dock = DockStyle.Bottom;
+    this.label5.Location = new Point(0, 71);
+    this.label5.Name = "label5";
+    this.label5.Size = new Size(760, 1);
+    this.label5.TabIndex = 1;
+    this.pictureBox1.Image = (Image) resourceManager.GetObject("pictureBox1.Image");
+    this.pictureBox1.Location = new Point(24, 8);
+    this.pictureBox1.Name = "pictureBox1";
+    this.pictureBox1.Size = new Size(48 /*0x30*/, 48 /*0x30*/);
+    this.pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+    this.pictureBox1.TabIndex = 2;
+    this.pictureBox1.TabStop = false;
+    ((AppearanceBase) appearance6).BackColor = Color.White;
+    ((AppearanceBase) appearance6).BackColor2 = Color.FromArgb(239, 247, 253);
+    ((AppearanceBase) appearance6).BackGradientStyle = (GradientStyle) 2;
+    ((ControlBase) this.ultraLabel1).Appearance = (AppearanceBase) appearance6;
+    ((Control) this.ultraLabel1).Dock = DockStyle.Left;
+    ((Control) this.ultraLabel1).Location = new Point(0, 72);
+    ((Control) this.ultraLabel1).Name = "ultraLabel1";
+    ((Control) this.ultraLabel1).Size = new Size(136, 357);
+    ((Control) this.ultraLabel1).TabIndex = 11;
+    this.panel3.Controls.Add((Control) this.dateDateTo);
+    this.panel3.Controls.Add((Control) this.btnSearch);
+    this.panel3.Controls.Add((Control) this.comboCommissionableEntity);
+    this.panel3.Controls.Add((Control) this.label1);
+    this.panel3.Controls.Add((Control) this.label2);
+    this.panel3.Controls.Add((Control) this.dateDateFrom);
+    this.panel3.Controls.Add((Control) this.label3);
+    this.panel3.Controls.Add((Control) this.gridPayFromOperating);
+    this.panel3.Dock = DockStyle.Fill;
+    this.panel3.Location = new Point(136, 72);
+    this.panel3.Name = "panel3";
+    this.panel3.Size = new Size(624, 357);
+    this.panel3.TabIndex = 12;
+    this.AutoScaleBaseSize = new Size(5, 14);
+    this.BackColor = Color.White;
+    this.ClientSize = new Size(760, 477);
+    this.Controls.Add((Control) this.panel3);
+    this.Controls.Add((Control) this.ultraLabel1);
+    this.Controls.Add((Control) this.panel2);
+    this.Controls.Add((Control) this.panel1);
+    this.Font = new Font("Tahoma", 8.25f, FontStyle.Regular, GraphicsUnit.Point, (byte) 0);
+    this.Name = nameof (formPayFromOperating);
+    this.Text = nameof (formPayFromOperating);
+    ((ISupportInitialize) this.dateDateFrom).EndInit();
+    ((ISupportInitialize) this.gridPayFromOperating).EndInit();
+    ((ISupportInitialize) this.btnSearch).EndInit();
+    ((ISupportInitialize) this.comboCommissionableEntity).EndInit();
+    ((ISupportInitialize) this.dateDateTo).EndInit();
+    this.panel2.ResumeLayout(false);
+    this.panel3.ResumeLayout(false);
+    this.ResumeLayout(false);
+  }
+}

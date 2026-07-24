@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: D:\augusta\fortegra\IMS Project\MgaSystems.IMS.Accounting.Services.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4049B104-E750-4DA8-BB86-8427092DC40E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>MgaSystems.IMS.Accounting.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <ApplicationVersion>2.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>MGASystems</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MgaSystems.IMS.Accounting.Datasets">
+      <HintPath>lib\MgaSystems.IMS.Accounting.Datasets.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Accounting.Shared">
+      <HintPath>lib\MgaSystems.IMS.Accounting.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.BusinessObjects">
+      <HintPath>lib\MgaSystems.IMS.BusinessObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.CancellationNotices">
+      <HintPath>lib\MgaSystems.IMS.CancellationNotices.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Common">
+      <HintPath>lib\MgaSystems.IMS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Common.Cs">
+      <HintPath>lib\MgaSystems.IMS.Common.Cs.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Forms">
+      <HintPath>lib\MgaSystems.IMS.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.NotesDocuments">
+      <HintPath>lib\MgaSystems.IMS.NotesDocuments.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Reporting">
+      <HintPath>lib\MgaSystems.IMS.Reporting.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Tools">
+      <HintPath>lib\MgaSystems.IMS.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IMS\Accounting\CheckPrinting\CheckPrintingSettings.cs" />
+    <Compile Include="IMS\Accounting\Services\DocumentHandlerAdder.cs" />
+    <Compile Include="IMS\Accounting\Services\AccountingNoteDocumentSupport.cs" />
+    <Compile Include="IMS\Accounting\Services\GridExtensions.cs" />
+    <Compile Include="IMS\Accounting\Services\GridSummaryDefinition.cs" />
+    <Compile Include="IMS\Accounting\Services\PolicyServicesInstance.cs" />
+    <Compile Include="IMS\Accounting\Services\dsBlackoutDates.cs" />
+    <Compile Include="IMS\Accounting\Services\FormNOCDeactivation.cs" />
+    <Compile Include="IMS\Accounting\Services\FormNOCSundayStateDisable.cs" />
+    <Compile Include="IMS\Accounting\Services\dsOverdueInvoices.cs" />
+    <Compile Include="IMS\Accounting\Services\FormOverdueInvoices.cs" />
+    <Compile Include="IMS\Accounting\Services\OverdueInvoiceServices.cs" />
+    <Compile Include="IMS\Accounting\Services\PolicyServices.cs" />
+    <Compile Include="IMS\Accounting\Services\StringResourceManager.cs" />
+    <Compile Include="IMS\Accounting\Services\Strings.cs" />
+    <Compile Include="IMS\Accounting\Services\Properties\Resources.cs" />
+    <Compile Include="IMS\Accounting\Services\PolicyReceivablesImport\PolicyReceivableImport.cs" />
+    <Compile Include="IMS\Accounting\Services\Overdue_Invoice_Services\OverdueInvoiceDateRange.cs" />
+    <Compile Include="IMS\Accounting\Services\HelperBaseForms\AccountingSaveCancelDialog.cs" />
+    <Compile Include="IMS\Accounting\Services\Utility\CurrentUserProvider.cs" />
+    <Compile Include="IMS\Accounting\Services\Utility\EmailBodyUtility.cs" />
+    <Compile Include="IMS\Accounting\Services\Utility\LastEdit\ILastEditData.cs" />
+    <Compile Include="IMS\Accounting\Services\Utility\LastEdit\LastEditData.cs" />
+    <Compile Include="IMS\Accounting\Services\Utility\EntityTypes\AccountingEntityType.cs" />
+    <Compile Include="IMS\Accounting\Services\Utility\EntityTypes\AccountingEntityTypeProvider.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\UltraToolBarSettings\ButtonToolbarControl.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\UltraToolBarSettings\CheckboxToolbarControl.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\UltraToolBarSettings\ToggleButtonToolbarControl.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\UltraToolBarSettings\ToolbarGroup.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\UltraToolBarSettings\Utility\ToolbarItemFactory.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\UltraToolBarSettings\BaseClasses\ButtonBaseToolbarControl`1.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\UltraToolBarSettings\BaseClasses\IToolbarItem.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\UltraToolBarSettings\BaseClasses\IToolbarControl.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\UltraToolBarSettings\BaseClasses\IToolbarControl`1.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\UltraToolBarSettings\BaseClasses\IToolbarSettings.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\UltraToolBarSettings\BaseClasses\ToolbarControlBase`1.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\UltraToolBarSettings\BaseClasses\ToolbarSettings.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\GridRowModelObserver.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\IUltraGridAdapter.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\IUltraGridAdapter`1.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\IUltraGridTableAdapter.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\IUltraGridTableAdapter`1.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\IUltraGridTableSettings.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\IUltraGridTableSettings`1.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\UltraGridSettingsAdapter`1.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\UltraGridTableSettings`1.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Utility\SimpleTreeNode`1.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Utility\SimpleTreeExtensions.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Addons\PopupMenu\RightClickMenu.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Addons\Filter\CustomUltraGridFilterCondition.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Addons\Filter\CustomUltraGridFilterCondition`1.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Addons\Filter\UltraGridFilterAdapter`1.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Columns\ComboBoxColumnBase`2.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Columns\ComboBoxSelection`1.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Columns\IComboBoxSelection.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Columns\IComboBoxSelection`1.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Columns\CheckBoxReadOnlyColumn`1.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Columns\DisplayItemColumn`1.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Columns\TextEditButtonColumn`1.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Columns\TextReadOnlyButtonColumn`1.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Columns\UniqueComboBoxColumn`2.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Columns\ButtonColumn`1.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Columns\CheckBoxColumn`1.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Columns\BaseClasses\IComboBoxColumn.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Columns\BaseClasses\IComboBoxColumn`1.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Columns\BaseClasses\IReadOnlyColumn.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Columns\BaseClasses\IReadOnlyColumn`1.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Columns\BaseClasses\IDisplayColumn`2.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Columns\BaseClasses\IDisplayColumn`1.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Columns\BaseClasses\IEditColumn`1.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Columns\BaseClasses\IEditColumn`2.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Columns\BaseClasses\DisplayColumn`2.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Columns\BaseClasses\EditColumn`2.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Columns\BaseClasses\IUltraGridColumnSettings.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Columns\BaseClasses\IUltraGridColumnSettings`1.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Columns\BaseClasses\INumberColumn`1.cs" />
+    <Compile Include="IMS\Accounting\Services\InfragisticsWrappers\GridDisplaySettings\Columns\BaseClasses\ColumnBase`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\FormAllocations.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\Allocation.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\formChangeCostCenter.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\FormChangeCostCenterAmounts.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\formChangeSecondCostCenter.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\formChangeTransactionDate.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\formCostCenterAllocation.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\formPurchaseOrderCostCenterSplit.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\formReinstatementDatesOverRide.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\formVoidTransaction.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\formWSDefaultBankSettings.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\Utility\ControlExtensionMethods.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\Utility\IImsClientNameProvider.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\Utility\IExcelExporter.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\Utility\ExcelExporter`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\Utility\TextHider.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\EditDataGridControl\View\GridDisplaySettings\Columns\DateReadOnlyColumn`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\EditDataGridControl\View\GridDisplaySettings\Columns\IntegerEditColumn`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\EditDataGridControl\View\GridDisplaySettings\Columns\NullableIntegerEditColumn`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\EditDataGridControl\View\GridDisplaySettings\Columns\IntegerReadOnlyColumn`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\EditDataGridControl\View\GridDisplaySettings\Columns\ComboBoxColumn`2.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\EditDataGridControl\View\GridDisplaySettings\Columns\CurrencyReadOnlyColumn`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\EditDataGridControl\View\GridDisplaySettings\Columns\TextReadOnlyColumn`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\EditDataGridControl\View\GridDisplaySettings\Columns\TextEditColumn`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\MultiLineEdit\MultiLineTextEditView.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\MultiLineEdit\MultiLineTextEditController.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\MultiLineEdit\MultiLineTextEditForm.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\MultiLineEdit\MultiLineTextEditModel.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\RecordEditor\Model\RecordEditorModel.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\RecordEditor\Model\IRecordEditorModel.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\RecordEditor\Controller\RecordEditorController.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\RecordEditor\Controller\IRecordEditorController.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\RecordEditor\View\RecordEditorView_Right.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\RecordEditor\View\RecordEditorView.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\RecordEditor\View\IRecordEditorView.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\UserInterface\RecordEditorForm_Right.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\UserInterface\RecordEditorForm.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\WrappedUltraGridControl\GridForm`3.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\WrappedUltraGridControl\View\IWrappedUltraGridView.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\WrappedUltraGridControl\View\IWrappedUltraGridView`2.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\WrappedUltraGridControl\View\WrappedUltraGridView.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\WrappedUltraGridControl\Model\IEditCollection`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\WrappedUltraGridControl\Model\UltraGridBulkCrudDataModel`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\WrappedUltraGridControl\Model\UltraGridDataBulkEditModel`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\WrappedUltraGridControl\Model\BasicUltraGridDataModel`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\WrappedUltraGridControl\Model\IUltraGridDataModel.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\WrappedUltraGridControl\Model\IUltraGridDataModel`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\WrappedUltraGridControl\Model\UltraGridDataModel`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\WrappedUltraGridControl\Controller\IAddDeleteController.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\WrappedUltraGridControl\Controller\WrappedUltraGridDatabaseBulkCrudController`2.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\WrappedUltraGridControl\Controller\IWrappedUltraGridController.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\WrappedUltraGridControl\Controller\IWrappedUltraGridController`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\WrappedUltraGridControl\Controller\WrappedUltraGridController`3.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\WrappedUltraGridControl\Controller\WrappedUltraGridDatabaseBulkEditController`2.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ToolbarEdit\IParentFormSettings.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ToolbarEdit\IRequestParentSize.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ToolbarEdit\ISizeSettings.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ToolbarEdit\ITopControlController.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ToolbarEdit\ILoadable.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ToolbarEdit\ParentFormSettings.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ToolbarEdit\PlaceholderSizeSettings.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ToolbarEdit\ToolbarForm`3.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ToolbarEdit\ToolbarEditControl.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ToolbarEdit\ParentFormSettingsOptions\ShortcutAction.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ToolbarEdit\FormActionDurationStatistics\FormActionDurationDto.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ToolbarEdit\FormActionDurationStatistics\FormActionDurationRepository.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ToolbarEdit\FormActionDurationStatistics\FormActionDurationStatisticsKeeper.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ToolbarEdit\FormActionDurationStatistics\IFormActionDurationRepository.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ToolbarEdit\FormActionDurationStatistics\IFormActionDurationStatisticsKeeper.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ToolbarEdit\FormActionDurationStatistics\ILoadable.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\SelectSearch\View\ISearchSelectView.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\SelectSearch\View\ISearchSelectView`2.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\SelectSearch\View\SearchSelectView.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\SelectSearch\UserInterface\SelectSearchForm`3.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\SelectSearch\Model\ISearchSelectModel.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\SelectSearch\Model\ISearchSelectModel`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\SelectSearch\Model\SearchSelectModel`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\SelectSearch\Controller\ISearchSelectController.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\SelectSearch\Controller\ISearchSelectController`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\SelectSearch\Controller\SearchSelectController`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\OptionStack\IOptionStackController.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\OptionStack\IOptionStackController`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\OptionStack\IOptionStackModel.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\OptionStack\IOptionStackModel`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\OptionStack\IOptionStackView.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\OptionStack\IOptionStackView`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\OptionStack\OptionStackController`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\OptionStack\OptionStackSetSettings`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\OptionStack\OptionStackView`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\OptionStack\OptionStackOptionControl.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\OptionStack\OptionStackModel`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\OptionStack\SingleStackForm`2.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\OptionStack\Options\DateRangeOption`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\OptionStack\Options\CheckBoxOption`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\OptionStack\Options\DateOption`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\OptionStack\Options\SelectableValueOption`3.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\OptionStack\Options\TextBoxOption`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\OptionStack\Options\BaseClasses\NamedValueSackOptionSetting`2.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\OptionStack\Options\BaseClasses\DisplayOptionStackOption`3.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\OptionStack\Options\BaseClasses\EditOptionStackOption`3.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\OptionStack\Options\BaseClasses\IOptionStackOptionSetting.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\OptionStack\Options\BaseClasses\IOptionStackOptionSetting`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\MvcComboBox\View\IMvcComboBoxView.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\MvcComboBox\View\MvcComboBoxView.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\MvcComboBox\Model\IMvcComboBoxModel.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\MvcComboBox\Model\IMvcComboBoxModel`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\MvcComboBox\Model\EventHandlers.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\MvcComboBox\Model\MvcComboBoxModel`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\MvcComboBox\Controller\IMvcComboBoxController.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\MvcComboBox\Controller\IMvcComboBoxController`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\MvcComboBox\Controller\IMvcNamedValueComboBoxController`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\MvcComboBox\Controller\IMvcNamedValueComboBoxController`2.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\MvcComboBox\Controller\MvcComboBoxController`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\MvcComboBox\Controller\MvcNamedValueComboBoxController`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\MvcComboBox\Controller\MvcNamedValueComboBoxController`2.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ImsUser\SearchSelect\ISearchSelectImsUserController.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ImsUser\SearchSelect\SearchSelectUserController.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ImsUser\SearchSelect\SelectSearchUserForm.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ImsUser\Repository\IImsUserRepository.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ImsUser\Repository\ImsUserDto.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ImsUser\Repository\ImsUserRepository.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataGridControl\Model\IDataGridModel.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataGridControl\Model\DataGridModel.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataGridControl\Controller\IDataGridController.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataGridControl\Controller\DataGridController.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataGridControl\View\DataGridView.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataGridControl\View\IDataGridView.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataGridControl\View\UltragridViewAdapters\CheckboxColumn.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataGridControl\View\UltragridViewAdapters\DisplayColumn.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataGridControl\View\UltragridViewAdapters\DataGridDisplaySettings.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataGridControl\View\UltragridViewAdapters\IDisplayColumnSettings.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataGridControl\View\UltragridViewAdapters\IDataGridDisplaySettings.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataGridControl\View\UltragridViewAdapters\TextAlignment.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataGridControl\View\UltragridViewAdapters\TextAlignmentExtensions.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataDrivenComboOtherEdit\Model\SelectableValueWithOtherModel`2.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataDrivenComboOtherEdit\Model\ISelectableValueWithOtherModel.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataDrivenComboOtherEdit\Model\ISelectableValueWithOtherModel`2.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataDrivenComboOtherEdit\View\DataDrivenComboOtherEditView.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataDrivenComboOtherEdit\View\IDataDrivenComboOtherEditView.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataDrivenComboOtherEdit\Controller\DataDrivenComboOtherEditController.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataDrivenComboOtherEdit\Controller\IDataDrivenComboOtherEditController.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataDrivenComboBox\Model\SelectableValueModel`2.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataDrivenComboBox\Model\ISelectableValueModel.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataDrivenComboBox\Model\ISelectableValueModel`2.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataDrivenComboBox\View\DataDrivenComboBoxView.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataDrivenComboBox\View\IDataDrivenComboBoxView.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataDrivenComboBox\Controller\DataDrivenComboBoxController.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\DataDrivenComboBox\Controller\IDataDrivenComboBoxController.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\Model\ControlStackObjectAdapterModel`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\Model\IControlStackObjectAdapterModel.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\Model\IControlStackObjectAdapterModel`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\Forms\SingleStackForm`2.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\ControlStackAdapter`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\TabOrderTracker.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\IControlStackAdapter.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\IControlStackAdapter`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\IControlStackSettings.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\IControlStackSettings`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\ControlStackSettings`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\IControlStackView.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\StackEntry\FullWidthStackEntryControl.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\StackEntry\IStackEntryControl.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\StackEntry\HorizontalSplitStackEntryControl.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\Controls\ControlStackView.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\Controls\FullWidth\FullWidthMultiLineTextBox`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\Controls\HorizontalSplit\CheckBoxEntry`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\Controls\HorizontalSplit\DateEntry`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\Controls\HorizontalSplit\MultiLineTextBoxEntry`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\Controls\HorizontalSplit\SingleLineTextBoxEntry`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\Controls\HorizontalSplit\ComplexFormat\DateRangeEntry`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\Controls\HorizontalSplit\ComplexFormat\SearchClearField\SearchClearFieldControl.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\Controls\HorizontalSplit\ComplexFormat\SearchClearField\SearchClearFieldEntry`2.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\Controls\BaseClasses\FullWidthNamedValueControlStackEntry`3.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\Controls\BaseClasses\NamedValueControlStackEntry`3.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\Controls\BaseClasses\IControlStackEntry.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\Controls\BaseClasses\IControlStackEntry`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\Controls\BaseClasses\HorizontalNamedValueControlStackEntry`3.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\Controller\AutoSizingControlStackNonModelController`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\Controller\AutoSizingControlStackValueController`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\Controller\ControlStackController`2.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\Controller\ValueContainer`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\Controller\ControlStackNonModelController`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\Controller\IControlStackController.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\ControlStack\Controller\IControlStackController`1.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\Address\Model\W9AddressModel.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\Address\Model\IAddressModel.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\Address\Controller\AddressController.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\Address\Controller\IAddressController.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\Address\View\IAddressView.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\MVC\Address\View\AddressView.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\Controls\DateSpanPicker.cs" />
+    <Compile Include="IMS\Accounting\Services\Forms\Controls\HiddenValueMgaTextBox.cs" />
+    <Compile Include="IMS\Accounting\Services\ExcelImport\ExcelDataLoadedEventArgs.cs" />
+    <Compile Include="IMS\Accounting\Services\ExcelImport\ExcelImportMapping.cs" />
+    <Compile Include="IMS\Accounting\Services\ExcelImport\ExcelImportUtility.cs" />
+    <Compile Include="IMS\Accounting\Services\ExcelImport\ExcelImport_IMSField.cs" />
+    <Compile Include="IMS\Accounting\Services\ExcelImport\FormExcelFileMappings.cs" />
+    <Compile Include="IMS\Accounting\Services\ExcelImport\FormExcelImportBase.cs" />
+    <Compile Include="IMS\Accounting\Services\ExcelImport\FormExcelImportTest.cs" />
+    <Compile Include="IMS\Accounting\Services\ExcelImport\UC_BankAccounts.cs" />
+    <Compile Include="IMS\Accounting\Services\ExcelImport\UC_OfficeLocation.cs" />
+    <Compile Include="IMS\Accounting\Services\ExcelImport\UC_WorksheetList.cs" />
+    <Compile Include="IMS\Accounting\Services\EditCostCenterDetail\dsCostCenterAllocations.cs" />
+    <Compile Include="IMS\Accounting\Services\ClassObjects\AccountingProvider.cs" />
+    <Compile Include="IMS\Accounting\Services\ClassObjects\ProviderExtension.cs" />
+    <Compile Include="IMS\Accounting\Services\ClassObjects\Utility.cs" />
+    <Compile Include="Common\MVC\BaseClasses\View\LoadingPanelControl.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Common\MVC\BaseClasses\View\LoadingPanelControl.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\dll.licenses" />
+    <EmbeddedResource Include="IMS\Accounting\Services\ExcelImport\FormExcelFileMappings.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\ExcelImport\FormExcelImportBase.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\ExcelImport\FormExcelImportTest.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\ExcelImport\UC_BankAccounts.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\ExcelImport\UC_OfficeLocation.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\ExcelImport\UC_WorksheetList.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\FormNOCDeactivation.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\FormNOCSundayStateDisable.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\FormOverdueInvoices.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\Controls\DateSpanPicker.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\Controls\HiddenValueMgaTextBox.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\FormAllocations.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\formChangeCostCenter.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\FormChangeCostCenterAmounts.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\formChangeSecondCostCenter.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\formChangeTransactionDate.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\formCostCenterAllocation.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\formPurchaseOrderCostCenterSplit.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\formReinstatementDatesOverRide.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\formVoidTransaction.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\formWSDefaultBankSettings.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\MVC\Address\View\AddressView.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\Controls\ControlStackView.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\Controls\HorizontalSplit\ComplexFormat\SearchClearField\SearchClearFieldControl.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\StackEntry\FullWidthStackEntryControl.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\MVC\ControlStack\View\StackEntry\HorizontalSplitStackEntryControl.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\MVC\DataDrivenComboBox\View\DataDrivenComboBoxView.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\MVC\DataDrivenComboOtherEdit\View\DataDrivenComboOtherEditView.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\MVC\DataGridControl\View\DataGridView.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\MVC\MultiLineEdit\MultiLineTextEditView.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\MVC\MvcComboBox\View\MvcComboBoxView.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\MVC\OptionStack\OptionStackOptionControl.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\MVC\OptionStack\OptionStackView.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\MVC\RecordEditor\View\RecordEditorView.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\MVC\RecordEditor\View\RecordEditorView_Right.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\MVC\SelectSearch\View\SearchSelectView.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\MVC\ToolbarEdit\ToolbarEditControl.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\MVC\UserInterface\RecordEditorForm.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\MVC\UserInterface\RecordEditorForm_Right.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Forms\MVC\WrappedUltraGridControl\View\WrappedUltraGridView.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\HelperBaseForms\AccountingSaveCancelDialog.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Images\menuicon.png" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Overdue_Invoice_Services\OverdueInvoiceDateRange.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\PolicyReceivablesImport\PolicyReceivableImport.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Properties\Resources.resx" />
+    <EmbeddedResource Include="IMS\Accounting\Services\Strings.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

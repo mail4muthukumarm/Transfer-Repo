@@ -1,0 +1,35 @@
+<local:ChildNumberInterface x:Class="MgaSystems.IMS.Policies.PolicyNumberHistory.ChildNumberInterface"
+                            xmlns:interop="clr-namespace:Mga.Wpf.Ims.Interop;assembly=Mga.Wpf.Ims"
+                            xmlns="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:local="clr-namespace:MgaSystems.IMS.Policies.PolicyNumberHistory"
+                            FrameworkElement.Height="435" FrameworkElement.Width="735">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/CommonResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/DatagridResources2.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Mga.Wpf.Ims;component/Resources/ToolBarResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/TreeViewResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/ListViewResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <Style TargetType="{x:Type DataGrid}" BasedOn="{StaticResource dataGridStyle}"/>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <StackPanel Name="MainPanel" RenderTransformOrigin="0.835,0.492">
+    <Label Content="Child Policy #s on Previous Transactions"/>
+    <DataGrid Name="dgPolNumbers" AutoGenerateColumns="false" Width="700" Height="400" IsReadOnly="true"
+              CanUserResizeColumns="true" SelectionMode="Single" SelectionUnit="Cell" CanUserAddRows="false"
+              CanUserSortColumns="true" Margin="0,10,0,0" ItemsSource="{Binding DetailPolicyNumList}">
+      <DataGrid.Columns>
+        <DataGridTextColumn Header="QuoteID" IsReadOnly="true" Width="80" Binding="{Binding QuoteID}"/>
+        <DataGridTextColumn Header="Location Name" IsReadOnly="true" Width="260" Binding="{Binding LocationName}"/>
+        <DataGridTextColumn Header="Endorsement #" IsReadOnly="true" Width="100" Binding="{Binding EndorsementNum}"/>
+        <DataGridTextColumn Header="Policy #" IsReadOnly="true" Width="100" Binding="{Binding PolicyNumber}"/>
+        <DataGridTextColumn Header="Rule Name" IsReadOnly="true" Width="200" Binding="{Binding RuleName}"/>
+      </DataGrid.Columns>
+    </DataGrid>
+  </StackPanel>
+</local:ChildNumberInterface>

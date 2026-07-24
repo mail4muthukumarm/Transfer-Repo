@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: D:\augusta\fortegra\IMS Project\MGASystems.IMS.Accounting.Reporting.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2C9D857B-146D-4325-A7C9-EBC280FF9B9D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>MGASystems.IMS.Accounting.Reporting</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <ApplicationVersion>2.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>MGASystems.IMS.Accounting.Reporting</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MgaSystems.IMS.Accounting.Reports">
+      <HintPath>lib\MgaSystems.IMS.Accounting.Reports.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Common">
+      <HintPath>lib\MgaSystems.IMS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Forms">
+      <HintPath>lib\MgaSystems.IMS.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Reporting">
+      <HintPath>lib\MgaSystems.IMS.Reporting.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Security">
+      <HintPath>lib\MgaSystems.IMS.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Tools">
+      <HintPath>lib\MgaSystems.IMS.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="YearMonthPicker.cs" />
+    <Compile Include="frmReportsTest.cs" />
+    <Compile Include="Reports\Documents\rptJournalHistory.cs" />
+    <Compile Include="Reports\Documents\rptAdvancedToBroker.cs" />
+    <Compile Include="Reports\Documents\rptAdvancedToCarrier.cs" />
+    <Compile Include="Reports\Documents\rptBankReconciliation.cs" />
+    <Compile Include="Reports\Documents\rptBankReconciliation_Checks.cs" />
+    <Compile Include="Reports\Documents\rptBankReconciliation_Deposits.cs" />
+    <Compile Include="Reports\Documents\rptBankReconciliation_Misc.cs" />
+    <Compile Include="Reports\Documents\rptExpenseHistory.cs" />
+    <Compile Include="Reports\Documents\rptOpenExpenses.cs" />
+    <Compile Include="Reports\Documents\rptPreBindInvoice.cs" />
+    <Compile Include="Reports\Documents\rptPreBindInvoice_Details.cs" />
+    <Compile Include="Reports\Documents\rptPreBindInvoice_Payees.cs" />
+    <Compile Include="Reports\Documents\rptPreBindInvoice_Summary.cs" />
+    <Compile Include="Financial_Reports\Trial_Balances\rptTrialBalance.cs" />
+    <Compile Include="Financial_Reports\Income_Statements\dsIncomeStatementByCostCenter.cs" />
+    <Compile Include="Financial_Reports\Income_Statements\rptConsolidatedIncomeStmtByCostCenter.cs" />
+    <Compile Include="Financial_Reports\Income_Statements\rptIncomeStatementByCostCenter.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="dll.licenses" />
+    <EmbeddedResource Include="Financial_Reports\Income_Statements\rptConsolidatedIncomeStmtByCostCenter.resx" />
+    <EmbeddedResource Include="Financial_Reports\Income_Statements\rptIncomeStatementByCostCenter.resx" />
+    <EmbeddedResource Include="frmReportsTest.resx" />
+    <EmbeddedResource Include="Reports\Documents\rptAdvancedToBroker.resx" />
+    <EmbeddedResource Include="Reports\Documents\rptAdvancedToCarrier.resx" />
+    <EmbeddedResource Include="Reports\Documents\rptBankReconciliation.resx" />
+    <EmbeddedResource Include="Reports\Documents\rptBankReconciliation_Checks.resx" />
+    <EmbeddedResource Include="Reports\Documents\rptBankReconciliation_Deposits.resx" />
+    <EmbeddedResource Include="Reports\Documents\rptBankReconciliation_Misc.resx" />
+    <EmbeddedResource Include="Reports\Documents\rptExpenseHistory.resx" />
+    <EmbeddedResource Include="Reports\Documents\rptJournalHistory.resx" />
+    <EmbeddedResource Include="Reports\Documents\rptOpenExpenses.resx" />
+    <EmbeddedResource Include="Reports\Documents\rptPreBindInvoice.resx" />
+    <EmbeddedResource Include="Reports\Documents\rptPreBindInvoice_Details.resx" />
+    <EmbeddedResource Include="Reports\Documents\rptPreBindInvoice_Payees.resx" />
+    <EmbeddedResource Include="Reports\Documents\rptPreBindInvoice_Summary.resx" />
+    <EmbeddedResource Include="YearMonthPicker.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

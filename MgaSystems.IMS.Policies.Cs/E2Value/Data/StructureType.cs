@@ -1,0 +1,95 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: MgaSystems.IMS.Policies.E2Value.Data.StructureType
+// Assembly: MgaSystems.IMS.Policies.Cs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e175cb7c4ce15bbd
+// MVID: 0490D932-1980-4BA9-8AB9-51DC95793BA0
+// Assembly location: D:\augusta\fortegra\IMS Project\MgaSystems.IMS.Policies.Cs.dll
+
+using System;
+using System.Xml.Serialization;
+
+#nullable disable
+namespace MgaSystems.IMS.Policies.E2Value.Data;
+
+[XmlRoot("structureType")]
+[XmlType("tSTRUCTURETYPE")]
+[Serializable]
+public enum StructureType
+{
+  Apartment,
+  Auditorium,
+  [XmlEnum("Auto, mini-lube")] Autominilube,
+  [XmlEnum("Auto, sales")] Autosales,
+  [XmlEnum("Auto, service center")] Autoservicecenter,
+  [XmlEnum("Auto, service repair")] Autoservicerepair,
+  [XmlEnum("Bank, branch")] Bankbranch,
+  [XmlEnum("Bar/Tavern")] BarTavern,
+  [XmlEnum("Beauty Salon/Barber Shop")] BeautySalonBarberShop,
+  [XmlEnum("Bowling alley")] Bowlingalley,
+  [XmlEnum("Car wash, automatic")] Carwashautomatic,
+  Church,
+  [XmlEnum("Cold storage facility")] Coldstoragefacility,
+  [XmlEnum("College, dormitory")] Collegedormitory,
+  [XmlEnum("Community Center")] CommunityCenter,
+  [XmlEnum("Concession stand")] Concessionstand,
+  Condominium,
+  [XmlEnum("Convenience market")] Conveniencemarket,
+  [XmlEnum("Country club")] Countryclub,
+  Courthouse,
+  [XmlEnum("Day care center")] Daycarecenter,
+  [XmlEnum("Dispensary/urgent care")] Dispensaryurgentcare,
+  [XmlEnum("Dressing and shower facility")] Dressingandshowerfacility,
+  [XmlEnum("Fire station, paid")] Firestationpaid,
+  [XmlEnum("Fire station, volunteer")] Firestationvolunteer,
+  [XmlEnum("Fraternal building")] Fraternalbuilding,
+  [XmlEnum("Funeral home")] Funeralhome,
+  [XmlEnum("Garage, parking")] Garageparking,
+  [XmlEnum("Garage, underground parking")] Garageundergroundparking,
+  [XmlEnum("Government building")] Governmentbuilding,
+  Greenhouse,
+  [XmlEnum("Handball/racquetball club")] Handballracquetballclub,
+  [XmlEnum("Hangar, aircraft")] Hangaraircraft,
+  [XmlEnum("Health club")] Healthclub,
+  [XmlEnum("Home improvement center")] Homeimprovementcenter,
+  [XmlEnum("Hospital, convalescent")] Hospitalconvalescent,
+  [XmlEnum("Hospital, general")] Hospitalgeneral,
+  [XmlEnum("Hospital, veterinary")] Hospitalveterinary,
+  Hotel,
+  [XmlEnum("Indoor tennis club")] Indoortennisclub,
+  Jail,
+  Laboratory,
+  Laundromat,
+  [XmlEnum("Library, public")] Librarypublic,
+  [XmlEnum("Manufacturing, heavy")] Manufacturingheavy,
+  [XmlEnum("Manufacturing, light")] Manufacturinglight,
+  [XmlEnum("Medical office")] Medicaloffice,
+  [XmlEnum("Mini-storage, steel")] Ministoragesteel,
+  Motel,
+  [XmlEnum("Multi-family residence")] Multifamilyresidence,
+  [XmlEnum("Multiple residence, elderly")] Multipleresidenceelderly,
+  Office,
+  [XmlEnum("Pavilion, open")] Pavilionopen,
+  [XmlEnum("Post office, branch")] Postofficebranch,
+  [XmlEnum("Post office, main")] Postofficemain,
+  Prison,
+  Restaurant,
+  [XmlEnum("Restaurant, fast food")] Restaurantfastfood,
+  [XmlEnum("Restroom building")] Restroombuilding,
+  [XmlEnum("Rink, hockey")] Rinkhockey,
+  [XmlEnum("School, elementary")] Schoolelementary,
+  [XmlEnum("School, gymnasium")] Schoolgymnasium,
+  [XmlEnum("School, secondary")] Schoolsecondary,
+  [XmlEnum("School, vocational")] Schoolvocational,
+  [XmlEnum("Shopping center, strip")] Shoppingcenterstrip,
+  [XmlEnum("Social club")] Socialclub,
+  [XmlEnum("Store, department")] Storedepartment,
+  [XmlEnum("Store, discount")] Storediscount,
+  [XmlEnum("Store, retail")] Storeretail,
+  Supermarket,
+  [XmlEnum("Surgical center")] Surgicalcenter,
+  [XmlEnum("Swimming pool, enclosed")] Swimmingpoolenclosed,
+  [XmlEnum("Terminal, airport")] Terminalairport,
+  [XmlEnum("Terminal, bus")] Terminalbus,
+  [XmlEnum("Theater, movie")] Theatermovie,
+  Warehouse,
+  [XmlEnum("Warehouse, self storage")] Warehouseselfstorage,
+}

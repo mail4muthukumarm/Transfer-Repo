@@ -1,0 +1,35 @@
+﻿using MGASystems.Common;
+using System.Diagnostics.CodeAnalysis;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Security.Permissions;
+
+[assembly: AssemblyTitle("IMS Business Objects")]
+[assembly: AssemblyDescription("Business objects library for the MGA Systems IMS product.")]
+[assembly: AssemblyCompany("MGA Systems")]
+[assembly: AssemblyProduct("IMS")]
+[assembly: AssemblyCopyright("Copyright 2003-2007 MGA Systems")]
+[assembly: ImsVisible]
+[assembly: ComVisible(false)]
+[assembly: SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", Scope = "member", Target = "MGASystems.BusinessObjects.QuoteOptionIDNotFoundException..ctor(System.Int32)", MessageId = "quoteOptionID")]
+[assembly: SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", Scope = "member", Target = "MGASystems.BusinessObjects.Quote.LogPolicyReinstatementDates(System.DateTime,System.DateTime,System.Int32):System.Void", MessageId = "2#")]
+[assembly: SuppressMessage("Microsoft.Naming", "CA1706:ShortAcronymsShouldBeUppercase", Scope = "member", Target = "MGASystems.BusinessObjects.Quote.ChangeStatus(System.Int32,System.String):System.Void", MessageId = "0#")]
+[assembly: SuppressMessage("Microsoft.Naming", "CA1706:ShortAcronymsShouldBeUppercase", Scope = "member", Target = "MGASystems.BusinessObjects.Quote.ChangeStatus(System.Int32,System.Int32,System.String):System.Void", MessageId = "0#")]
+[assembly: SuppressMessage("Microsoft.Naming", "CA1706:ShortAcronymsShouldBeUppercase", Scope = "member", Target = "MGASystems.BusinessObjects.Quote.ChangeStatus(System.Int32,System.Int32):System.Void", MessageId = "0#")]
+[assembly: SuppressMessage("Microsoft.Naming", "CA1706:ShortAcronymsShouldBeUppercase", Scope = "member", Target = "MGASystems.BusinessObjects.Quote.ChangeStatus(System.Int32,System.Int32,System.String):System.Void", MessageId = "1#")]
+[assembly: SuppressMessage("Microsoft.Naming", "CA1706:ShortAcronymsShouldBeUppercase", Scope = "member", Target = "MGASystems.BusinessObjects.Quote.ChangeStatus(System.Int32,System.Int32):System.Void", MessageId = "1#")]
+[assembly: SuppressMessage("Microsoft.Naming", "CA1706:ShortAcronymsShouldBeUppercase", Scope = "member", Target = "MGASystems.BusinessObjects.Quote.CreateEndorsement(System.Data.SqlClient.SqlTransaction,MGASystems.Common.Enums.TransactionTypes,MGASystems.Common.Enums.QuoteStatus,System.DateTime,System.String,MGASystems.Common.Enums.EndorsementCalcTypes,System.Int32):System.Guid", MessageId = "6#")]
+[assembly: SuppressMessage("Microsoft.Naming", "CA1706:ShortAcronymsShouldBeUppercase", Scope = "member", Target = "MGASystems.BusinessObjects.Quote.LogPolicyReinstatementDates(System.DateTime,System.DateTime,System.Int32):System.Void", MessageId = "2#")]
+[assembly: SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Scope = "member", Target = "MGASystems.BusinessObjects.ProducerLine..ctor(MGASystems.BusinessObjects.Quote)")]
+[assembly: SuppressMessage("Microsoft.Design", "CA1020:AvoidNamespacesWithFewTypes", Scope = "namespace", Target = "MGASystems.BusinessObjects.UI")]
+[assembly: SuppressMessage("Microsoft.Design", "CA1003:UseGenericEventHandlerInstances", Scope = "type", Target = "MGASystems.BusinessObjects.Quote+QuoteDeletedEventHandler")]
+[assembly: SuppressMessage("Microsoft.Design", "CA1003:UseGenericEventHandlerInstances", Scope = "type", Target = "MGASystems.BusinessObjects.Quote+PolicyUnboundEventHandler")]
+[assembly: SuppressMessage("Microsoft.Naming", "CA1705:LongAcronymsShouldBePascalCased", Scope = "namespace", Target = "MGASystems.BusinessObjects.UI")]
+[assembly: SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields", Scope = "member", Target = "MGASystems.BusinessObjects.Quote.ConvertQuickToFullContact.CompanyLineGuid")]
+[assembly: SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields", Scope = "member", Target = "MGASystems.BusinessObjects.Quote.ConvertQuickToFullContact.ContactGuid")]
+[assembly: SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields", Scope = "member", Target = "MGASystems.BusinessObjects.Quote.AffidavitNumber.StateID")]
+[assembly: SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields", Scope = "member", Target = "MGASystems.BusinessObjects.Quote.ConvertQuickToFullContact.IsIntermediaryContact")]
+[assembly: SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields", Scope = "member", Target = "MGASystems.BusinessObjects.QuoteDeletedContext.QuoteGuid")]
+[assembly: SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields", Scope = "member", Target = "MGASystems.BusinessObjects.QuoteDeletedContext.ControlNo")]
+[assembly: AssemblyVersion("2.0.0.0")]
+[assembly: EnvironmentPermission(SecurityAction.RequestMinimum)]

@@ -1,0 +1,119 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: MGASystems.IMS.Accounting.AccountsPayable.DirectBillPayablesDetailCollection
+// Assembly: MgaSystems.IMS.Accounting.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=e175cb7c4ce15bbd
+// MVID: 923053EF-B70A-44B5-B8DA-B227263F4FD2
+// Assembly location: D:\augusta\fortegra\IMS Project\MgaSystems.IMS.Accounting.Core.dll
+
+using System;
+using System.Collections;
+using System.ComponentModel;
+
+#nullable disable
+namespace MGASystems.IMS.Accounting.AccountsPayable;
+
+public class DirectBillPayablesDetailCollection : 
+  CollectionBase,
+  IBindingList,
+  IList,
+  ICollection,
+  IEnumerable
+{
+  public DirectBillPayableDetail this[int index] => (DirectBillPayableDetail) this.List[index];
+
+  public int IndexOf(DirectBillPayableDetail value) => this.InnerList.IndexOf((object) value);
+
+  public void Insert(int index, DirectBillPayableDetail value)
+  {
+    this.InnerList.Insert(index, (object) value);
+  }
+
+  public bool Contains(DirectBillPayableDetail value) => this.Contains(value);
+
+  public void CopyTo(
+    DirectBillPayablesDetailCollection detailCollection,
+    int index)
+  {
+  }
+
+  protected override void OnInsertComplete(int index, object value)
+  {
+    base.OnInsertComplete(index, value);
+    if (this.ListChanged == null)
+      return;
+    this.ListChanged((object) this, new ListChangedEventArgs(ListChangedType.ItemAdded, index));
+  }
+
+  protected override void OnRemoveComplete(int index, object value)
+  {
+    base.OnRemoveComplete(index, value);
+    if (this.ListChanged == null)
+      return;
+    this.ListChanged((object) this, new ListChangedEventArgs(ListChangedType.ItemDeleted, index));
+  }
+
+  public void AddIndex(PropertyDescriptor property)
+  {
+  }
+
+  public bool AllowNew => false;
+
+  public void ApplySort(PropertyDescriptor property, ListSortDirection direction)
+  {
+  }
+
+  public PropertyDescriptor SortProperty => (PropertyDescriptor) null;
+
+  public int Find(PropertyDescriptor property, object key) => 0;
+
+  public bool SupportsSorting => false;
+
+  public bool IsSorted => false;
+
+  public bool AllowRemove => true;
+
+  public bool SupportsSearching => false;
+
+  public ListSortDirection SortDirection => ListSortDirection.Ascending;
+
+  public event ListChangedEventHandler ListChanged;
+
+  public bool SupportsChangeNotification => true;
+
+  public void RemoveSort()
+  {
+  }
+
+  public object AddNew() => (object) null;
+
+  public bool AllowEdit => false;
+
+  public void RemoveIndex(PropertyDescriptor property)
+  {
+  }
+
+  public void Add(DirectBillPayableDetail directBillPayableDetail)
+  {
+    this.List.Add((object) directBillPayableDetail);
+  }
+
+  public void Remove(int index)
+  {
+    if (index > this.Count - 1 || index < 0)
+      return;
+    this.List.RemoveAt(index);
+  }
+
+  public int GetDetailIndex(int invoiceNumber, int chargeCode, Guid companyLineGuid)
+  {
+    int detailIndex = -1;
+    for (int index = 0; index < this.Count; ++index)
+    {
+      if (this[index].InvoiceNumber == invoiceNumber && this[index].ChargeCode == chargeCode && this[index].CompanyLineGuid.Equals(companyLineGuid))
+      {
+        detailIndex = index;
+        break;
+      }
+    }
+    return detailIndex;
+  }
+}
