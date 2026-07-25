@@ -1,0 +1,32 @@
+<Window x:Class="MGASystems.IMS.Excel.Rating.ImportSheetWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        DragOver="Window_DragOver" Drop="Window_Drop" Title="Want to import your own rating sheet?"
+        WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" ResizeMode="NoResize"
+        AllowDrop="true">
+  <Grid>
+    <FrameworkElement.Resources>
+      <Style TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.Margin" Value="5"/>
+        <Setter Property="Control.Padding" Value="5"/>
+      </Style>
+    </FrameworkElement.Resources>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="auto"/>
+      <RowDefinition Height="auto"/>
+      <RowDefinition/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="auto"/>
+      <ColumnDefinition Width="auto"/>
+      <ColumnDefinition/>
+    </Grid.ColumnDefinitions>
+    <Button Click="Button_Click" Name="ImportFromWindowsButton" Content="Import From Windows File System"/>
+    <Button Click="Button_Click" Name="ImportFromIMSButton" Grid.Row="1"
+            Content="Import From IMS Document Handler" Visibility="Hidden"/>
+    <Button Click="Button_Click" Name="EditExistingFileButton" Grid.Column="1"
+            Content="Edit Currently Existing Sheet" IsDefault="true"/>
+    <Button Click="Button_Click" Name="CancelButton" Grid.Row="1" Grid.Column="1" Content="Cancel"
+            IsCancel="true"/>
+  </Grid>
+</Window>

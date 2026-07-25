@@ -1,0 +1,87 @@
+<local:DocAutomationConditional x:Class="MGASystems.IMS.DocumentAutomation.DocAutomationConditional"
+                                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                                xmlns:local="clr-namespace:MGASystems.IMS.DocumentAutomation"
+                                xmlns:mgaWpf="clr-namespace:Mga.Wpf.Ims.Controls;assembly=Mga.Wpf.Ims"
+                                xmlns:mgaInterop="clr-namespace:Mga.Wpf.Ims.Interop;assembly=Mga.Wpf.Ims"
+                                x:Name="mainWindow" FrameworkElement.Height="150" FrameworkElement.Width="350"
+                                Title="Document Automation Conditional" ResizeMode="CanResizeWithGrip">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/CommonResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <Style x:Key="btnStyle" TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.MinWidth" Value="80"/>
+      </Style>
+      <XmlDataProvider x:Key="operatorData" XPath="operatorInfo">
+        <x:XData>
+          <operatorInfo xmlns="">
+                        <!--<operator>
+                            <ID>&lt;=</ID>
+                            <Operator>&lt;=</Operator>
+                        </operator>-->
+                        <operator>
+                            <ID>=</ID>
+                            <Operator>=</Operator>
+                        </operator>
+                        <!--<operator>
+                            <ID>&gt;=</ID>
+                            <Operator>&gt;=</Operator>
+                        </operator>-->
+                        <operator>
+                            <ID>&lt;&gt;</ID>
+                            <Operator>&lt;&gt;</Operator>
+                        </operator>
+                    </operatorInfo>
+        </x:XData>
+      </XmlDataProvider>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <Grid Row="0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+      <TextBlock Grid.Row="0" Grid.Column="0" Text="Tag Name:" Margin="2,2,0,2"/>
+      <TextBox Grid.Row="1" Grid.Column="0" IsReadOnly="true" Margin="2,2,0,2"
+               Text="{Binding DocConditional.TagName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true}"/>
+      <Button Grid.Row="1" Grid.Column="2" Margin="2" Height="20" Width="20" Command="{Binding GetTagCommand}">
+        <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/magnifier.png"/>
+      </Button>
+      <TextBlock Grid.Row="2" Grid.Column="0" Text="Operator:" Margin="2"/>
+      <ComboBox Grid.Row="3" Grid.Column="0" DisplayMemberPath="Operator" SelectedValuePath="ID" MinWidth="50"
+                Margin="2,0,2,0"
+                ItemsSource="{Binding Source={StaticResource operatorData}, XPath=/operatorInfo/operator}"
+                SelectedValue="{Binding DocConditional.CheckOperator, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true}"/>
+      <TextBlock Grid.Row="4" Grid.Column="0" Text="Value:" Margin="2"/>
+      <TextBox Grid.Row="5" Grid.Column="0" Height="20" Margin="2,0,2,0"
+               Text="{Binding DocConditional.CheckValue, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true}"/>
+    </Grid>
+    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+      <Button Content="Copy" Style="{StaticResource btnStyle}" Margin="2" Command="{Binding CopyCommand}"
+              CommandParameter="{Binding ElementName=mainWindow}"/>
+      <Button Content="Delete" Style="{StaticResource btnStyle}" Margin="2" Command="{Binding DeleteCommand}"
+              CommandParameter="{Binding ElementName=mainWindow}"/>
+      <Button Content="Save" Style="{StaticResource btnStyle}" Margin="2" Command="{Binding OKCommand}"
+              CommandParameter="{Binding ElementName=mainWindow}"/>
+      <Button Content="Cancel" Style="{StaticResource btnStyle}" Margin="0,2,2,2"
+              Command="{Binding CancelCommand}" CommandParameter="{Binding ElementName=mainWindow}"/>
+    </StackPanel>
+  </Grid>
+</local:DocAutomationConditional>

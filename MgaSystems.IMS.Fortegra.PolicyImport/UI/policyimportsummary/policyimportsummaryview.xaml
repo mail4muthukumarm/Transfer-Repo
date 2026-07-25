@@ -1,0 +1,93 @@
+<PolicyImportSummaryView x:Class="MgaSystems.Ims.Fortegra.PolicyImport.UI.PolicyImportSummaryView"
+                         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                         xmlns:mgaInterop="clr-namespace:Mga.Wpf.Ims.Interop;assembly=Mga.Wpf.Ims"
+                         xmlns:wpfToolKit="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+                         Loaded="MgaMdiChild_Loaded" FrameworkElement.Height="750" FrameworkElement.Width="898"
+                         Title="Policy Import Admin" PromptOnCloseIfDataContextHasChanges="true" ResizeMode="NoResize">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/CommonResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/DatagridResources2.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Mga.Wpf.Ims;component/Resources/ToolBarResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/TreeViewResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/ListViewResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter"/>
+      <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource textBoxStyleMain}">
+        <Setter Property="FrameworkElement.Height" Value="20"/>
+        <Style.Triggers>
+          <Trigger Property="TextBoxBase.IsReadOnly" Value="true">
+            <Setter Property="Control.Background" Value="LightGray"/>
+          </Trigger>
+        </Style.Triggers>
+      </Style>
+      <Style TargetType="{x:Type DataGrid}" BasedOn="{StaticResource dataGridStyle}"/>
+      <Style TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.MinWidth" Value="80"/>
+      </Style>
+      <Style x:Key="SearchBtnStyle" TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.Margin" Value="2"/>
+      </Style>
+      <Style TargetType="{x:Type TextBlock}">
+        <Setter Property="FrameworkElement.Margin" Value="2"/>
+        <Setter Property="TextBlock.Foreground" Value="{StaticResource standardTextForegroundColor}"/>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid HorizontalAlignment="Left" Width="898">
+    <DockPanel HorizontalAlignment="Left">
+      <DataGrid x:Name="ImportSourceGrid" Width="161" CanUserAddRows="false" CanUserDeleteRows="false"
+                IsSynchronizedWithCurrentItem="True" SelectionMode="Single"
+                ItemsSource="{Binding PolicyImportDataManager.ImportSourceList, UpdateSourceTrigger=PropertyChanged}"
+                SelectedItem="{Binding SelectedImportSource, UpdateSourceTrigger=PropertyChanged}">
+        <FrameworkElement.ContextMenu>
+          <ContextMenu>
+            <MenuItem Header="Show Import Summary" Command="{Binding RefreshImportLogList}"/>
+            <MenuItem Header="Import New File" Command="{Binding ShowImportScreen}"/>
+          </ContextMenu>
+        </FrameworkElement.ContextMenu>
+        <DataGrid.Columns>
+          <DataGridTextColumn Header="Import Source Name " Width="*" IsReadOnly="true"
+                              Binding="{Binding SourceName, UpdateSourceTrigger=PropertyChanged}"/>
+        </DataGrid.Columns>
+      </DataGrid>
+      <wpfToolKit:BusyIndicator IsBusy="{Binding IsBusy}">
+        <DataGrid x:Name="ImportSummaryGrid" Margin="0,2,0,2" CanUserAddRows="false" CanUserDeleteRows="false"
+                  IsSynchronizedWithCurrentItem="True" ColumnHeaderHeight="18" DockPanel.Dock="Left" Width="731"
+                  ItemsSource="{Binding PolicyImportDataManager.ImportLogItemList, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItem="{Binding SelectedImportLogItem, UpdateSourceTrigger=PropertyChanged}">
+          <FrameworkElement.ContextMenu>
+            <ContextMenu>
+              <MenuItem Header="Show Import Details" Command="{Binding ShowExistingImport}"/>
+            </ContextMenu>
+          </FrameworkElement.ContextMenu>
+          <DataGrid.Columns>
+            <DataGridTextColumn Header="Import Log ID " Width="Auto" IsReadOnly="true"
+                                Binding="{Binding ID, UpdateSourceTrigger=PropertyChanged}"/>
+            <DataGridTextColumn Header="Import Date " Width="Auto" IsReadOnly="true"
+                                Binding="{Binding ImportDate, UpdateSourceTrigger=PropertyChanged}"/>
+            <DataGridTextColumn Header="Transaction Count " Width="Auto" IsReadOnly="true"
+                                Binding="{Binding TransactionCount, UpdateSourceTrigger=PropertyChanged}"/>
+            <DataGridTextColumn Header="Transactions Pending " Width="Auto" IsReadOnly="true"
+                                Binding="{Binding TransactionsPendingCount, UpdateSourceTrigger=PropertyChanged}"/>
+            <DataGridTextColumn Header="Transactions Processed " Width="Auto" IsReadOnly="true"
+                                Binding="{Binding TransactionsProcessedCount, UpdateSourceTrigger=PropertyChanged}"/>
+            <DataGridTextColumn Header="Transactions Errored " Width="Auto" IsReadOnly="true"
+                                Binding="{Binding TransactionsErroredCount, UpdateSourceTrigger=PropertyChanged}"/>
+            <DataGridHyperlinkColumn Header="Pre-processing Errors " Width="Auto" IsReadOnly="true"
+                                     Binding="{Binding HasImportErrorXML, UpdateSourceTrigger=PropertyChanged}">
+              <DataGridBoundColumn.ElementStyle>
+                <Style>
+                </Style>
+              </DataGridBoundColumn.ElementStyle>
+            </DataGridHyperlinkColumn>
+          </DataGrid.Columns>
+        </DataGrid>
+      </wpfToolKit:BusyIndicator>
+    </DockPanel>
+  </Grid>
+</PolicyImportSummaryView>

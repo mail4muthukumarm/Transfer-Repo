@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DbUpdateCommand1.CommandText" xml:space="preserve">
+    <value>UPDATE       tblQuotes
+SET                StateID = @StateID, UnderwriterUserGuid = @UnderwriterUserGuid, LineGUID = @LineGUID, CompanyLocationGuid = @CompanyLocationGuid, EffectiveDate = @EffectiveDate, ExpirationDate = @ExpirationDate, 
+                         QuotingLocationGuid = @QuotingLocationGuid, IssuingLocationGuid = @IssuingLocationGuid, ProducerContactGuid = @ProducerContactGuid, PolicyTypeID = @PolicyTypeID, DateCreated = @DateCreated, 
+                         SubmissionGroupGuid = @SubmissionGroupGuid, QuoteGUID = @QuoteGUID, BillingTypeID = @BillingTypeID, ControlNo = @ControlNo, TACSRUserGuid = @TACSRUserGuid, 
+                         EndorsementEffective = @EndorsementEffective, EndorsementComment = @EndorsementComment, FinanceCompanyGuid = @FinanceCompanyGuid, ControlGuid = @ControlGuid, RetailerGuid = @RetailerGuid, 
+                         MinimumEarnedPercentage = @MinimumEarnedPercentage, AccountNumber = @AccountNumber, CostCenterID = @CostCenterID, InspectionCompanyID = @InspectionCompanyID, SIC_Code = @SIC_Code, 
+                         QuickQuote = @QuickQuote, PreviousPremium = @PreviousPremium, TargetPremium = @TargetPremium, ExpiringPolicyNumber = @ExpiringPolicyNumber, RiskDescription = @RiskDescription, 
+                         UnderwritingAssistantGuid = @UnderwritingAssistantGuid, ProducerLocationID = @ProducerLocationID, SecProducerContactGuid = @SecProducerContactGuid, EarnedPremiumTypeID = @EarnedPremiumTypeID, 
+                         Auditable = @Auditable, NAICSCode = @NAICSCode, RenewalOfQuoteGuid = @RenewalOfQuoteGuid, RenewalOfControlNum = @RenewalOfControlNum
+WHERE        (QuoteGUID = @Original_QuoteGUID)</value>
+  </data>
+  <data name="DbSelectCommand3.CommandText" xml:space="preserve">
+    <value>SELECT        dbo.tblQuoteDetails.QuoteGuid, dbo.tblQuoteDetails.CompanyLineGuid, dbo.tblQuoteDetails.CompanyContactGuid, dbo.tblQuoteDetails.CompanyCommission, dbo.tblQuoteDetails.ProducerCommission, 
+                         dbo.tblQuoteDetails.Participation, dbo.tblQuoteDetails.TermsOfPayment, dbo.GetCompanyLineState(dbo.tblQuoteDetails.CompanyLineGuid) AS CompanyLine, dbo.tblQuoteDetails.IntermediaryContactGuid, 
+                         dbo.tblCompanyLineCommissions.UsingAdditiveCommission, dbo.tblQuoteDetails.ProgramID, dbo.tblQuoteDetails.SLA_Number
+FROM            dbo.tblQuoteDetails INNER JOIN
+                         dbo.tblCompanyLines ON dbo.tblQuoteDetails.CompanyLineGuid = dbo.tblCompanyLines.CompanyLineGUID INNER JOIN
+                         dbo.tblCompanyLineCommissions ON dbo.tblCompanyLines.CompanyLineID = dbo.tblCompanyLineCommissions.CompanyLineID
+WHERE        (dbo.tblQuoteDetails.QuoteGuid = @QuoteGuid)
+ORDER BY dbo.tblCompanyLineCommissions.Effective DESC</value>
+  </data>
+  <data name="DbInsertCommand1.CommandText" xml:space="preserve">
+    <value>INSERT INTO tblQuotes
+                         (StateID, UnderwriterUserGuid, LineGUID, CompanyLocationGuid, EffectiveDate, ExpirationDate, QuotingLocationGuid, IssuingLocationGuid, ProducerContactGuid, PolicyTypeID, DateCreated, 
+                         SubmissionGroupGuid, QuoteGUID, BillingTypeID, ControlNo, TACSRUserGuid, EndorsementEffective, EndorsementComment, FinanceCompanyGuid, ControlGuid, RetailerGuid, MinimumEarnedPercentage, 
+                         AccountNumber, CostCenterID, InspectionCompanyID, SIC_Code, QuickQuote, PreviousPremium, TargetPremium, ExpiringPolicyNumber, RiskDescription, UnderwritingAssistantGuid, ProducerLocationID, 
+                         SecProducerContactGuid, EarnedPremiumTypeID, Auditable, NAICSCode, RenewalOfQuoteGuid, RenewalOfControlNum)
+VALUES        (@StateID,@UnderwriterUserGuid,@LineGUID,@CompanyLocationGuid,@EffectiveDate,@ExpirationDate,@QuotingLocationGuid,@IssuingLocationGuid,@ProducerContactGuid,@PolicyTypeID,@DateCreated,@SubmissionGroupGuid,@QuoteGUID,@BillingTypeID,@ControlNo,@TACSRUserGuid,@EndorsementEffective,@EndorsementComment,@FinanceCompanyGuid,@ControlGuid,@RetailerGuid,@MinimumEarnedPercentage,@AccountNumber,@CostCenterID,@InspectionCompanyID,@SIC_Code,@QuickQuote,@PreviousPremium,@TargetPremium,@ExpiringPolicyNumber,@RiskDescription,@UnderwritingAssistantGuid,@ProducerLocationID,@SecProducerContactGuid,@EarnedPremiumTypeID,@Auditable,@NAICSCode,@RenewalOfQuoteGuid,@RenewalOfControlNum)</value>
+  </data>
+  <data name="Appearance52.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA8QIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAJ8SURBVDhPhZLLT1NBGMW70K2JS7cmxrjU+A9oIGIgFGhEUYkYRYIYaiyCUPqgD2p42hb6BkqLoKUWegt9UKm0JQrSGjdaQErRmLhzY4pE0OPcIRBKfSzO5M7M/Z3vzDfDAfBftUdb06oZ2aE/7WUt7FdbRJE2x3VQhqQQBxqzTDIm+/UwLE+b4j3wffLAsKBFs68BdczdDJMMYK9I5LQxxsIMHCt2eNfGoXnZAYG7FjWjt3ZNskBWrS9a0oaYFr6Pbjz9YIdt0YyGCQEmUmPoiKpQ7ajE9aFyapIFK0OStH5BAy+B26JKKMNSWBNGDCQMeLw0ACblREtQhKvWS+tZBvJp8brutZrEdSP5bQkbW98x8nYIihnxNrzqhDQoxOWB0s0dhg7a+a5jsueiH73zj+hZ2yJKCusjvUh9TUIVkcG9OgrJlJCtjPLBMly08A5QA+18p0hGIvXMdVP4ybKNxJbQyiws90u34UATWxlzX2bR7H+AEmOhghqwkbRzXZgkDRpZHqRn7X+vh5zEVoVlGE+OQhRoRJXrBoVnP4cRWguAZ+LivCb3MEcxLbESwfJGD0/qGeo8fPS908G+2EdgB61WP3WPwFFMLjOo9VdvlPWXIk+dK8jpPnOKowhJjrAp2EeiX1DTuLaEZRsma5XOCjCLLqhn21GkLwgU9OSp89Q5RzOa2OS9b7bGLRAwfGhedWJsxQGhtx4XzMUQEhOeqSjJ1eWfzdeeO7EDZhjUMfzjLcHmreCqD3ecVSCGKDYU/iKd9vOM3Kb90F7RodZ1+yB5XWOVwxU/+a4aNupmqaXkNOn0btS/affj5nDFyWu2KzFyVfl7f/i3wPkNOLzMGxqYvkUAAAAASUVORK5CYIIL</value>
+  </data>
+  <data name="DbSelectCommand1.CommandText" xml:space="preserve">
+    <value>SELECT        Q.StateID, Q.UnderwriterUserGuid, Q.LineGUID, Q.CompanyLocationGuid, Q.EffectiveDate, Q.ExpirationDate, Q.QuotingLocationGuid, Q.IssuingLocationGuid, Q.ProducerContactGuid, Q.PolicyTypeID, 
+                         Q.DateCreated, Q.SubmissionGroupGuid, Q.QuoteGUID, Q.BillingTypeID, Q.ControlNo, Q.TACSRUserGuid, Q.EndorsementEffective, Q.EndorsementComment, Q.FinanceCompanyGuid, Q.ControlGuid, 
+                         Q.RetailerGuid, P.Name AS Retailer, Q.MinimumEarnedPercentage, Q.AccountNumber, Q.CostCenterID, Q.InspectionCompanyID, Q.SIC_Code, Q.QuickQuote, Q.PreviousPremium, Q.TargetPremium, 
+                         Q.ExpiringPolicyNumber, Q.RiskDescription, P.ProducerLocationGUID, Q.UnderwritingAssistantGuid, Q.ProducerLocationID, Q.SecProducerContactGuid, Q.EarnedPremiumTypeID, Q.Auditable, Q.NAICSCode, 
+                         Q.RenewalOfQuoteGuid, Q.RenewalOfControlNum
+FROM            tblQuotes AS Q LEFT OUTER JOIN
+                         tblProducerLocations AS P ON Q.RetailerGuid = P.ProducerLocationGUID
+WHERE        (Q.QuoteGUID = @QuoteGuid)</value>
+  </data>
+  <data name="DbUpdateCommand2.CommandText" xml:space="preserve">
+    <value>UPDATE       dbo.tblQuoteDetails
+SET                QuoteGuid = @QuoteGuid, CompanyLineGuid = @CompanyLineGuid, CompanyContactGuid = @CompanyContactGuid, CompanyCommission = @CompanyCommission, ProducerCommission = @ProducerCommission, 
+                         Participation = @Participation, TermsOfPayment = @TermsOfPayment, IntermediaryContactGuid = @IntermediaryContactGuid, ProgramID = @ProgramID, SLA_Number = @SLA_Number
+WHERE        (QuoteGuid = @Original_QuoteGuid) AND (CompanyLineGuid = @Original_CompanyLineGuid);  
+SELECT QuoteGuid, CompanyLineGuid, CompanyContactGuid, CompanyCommission, ProducerCommission, Participation, TermsOfPayment, IntermediaryContactGuid FROM tblQuoteDetails WHERE (CompanyLineGuid = @CompanyLineGuid) AND (QuoteGuid = @QuoteGuid)</value>
+  </data>
+  <data name="Appearance51.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAdAIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAH/SURBVDhPjZPNaxNBGIejf4WIBUHQQ8FLpHcpSP0AKShIWytS0EMVb1YjHjzkUJViIYIWiqAUipSKRRQKBtFIiD3YNkkTsTExTWwTabLZze7m08eZpQlJSD8WHnZh3t8z887s2ACbeA4J7IKuXTgs2C8zNWoCe6FQUMrlcrVSqdAOMY7L5RpvldQEXTKcz+fRdb1OLpcjm82SSqUsSSI4Q3jqEj/fOlmcPMXS085BGd4nBbLANE2KxaL1lmiahqIopNNptMQb1t0jKMvvQEuSXZ7B+7hno0kgwzWkwDAMVFVl48c0mZUHFNfmWP/0CMM/SyXmwf/imtkkEG3Ue5bfsm9lbZ5M4D5Vw4MRucHmt5uEXg3x/fmA4hk7f6xJ0Iqa/EjGf5eq6UVfvYIZ70ddcRB/2cvwmSMDW9n2gmRA9LwwshUexPzdRy5wj8jEWfRkQO68PNb2gmRwjtD8bbHsz5jRIQrxyyhiJavPTqOmflk12wpCX6YIvnew9OEJCd9F9Gg/m4t3iEz2ov+NWvuyo+D1aDeoMcITF3A7DvJVzOod60H7E7bCuwqc149T9Loo+sbxOU8yO3yUTDxAqVSqs6Ogr/sAo1c7cT88x8L0LXKpmHWkjWwn+FeT7IGqzDTehRPi79PlQEthO6qiVhMZe6OgQ0oEcll7QV79DsD2HyFunSzkr/pxAAAAAElFTkSuQmCCCw==</value>
+  </data>
+  <data name="Appearance54.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAcgIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAH9SURBVDhPjZPdS1NhHMef5YVEXuwqLDU0CLS7OV04rC6UId0UgQglhUqmDdILwYsJmRE5pdxg0w1hOtekF6JAkohuEtJICrroP4iNvbnXs/f17fkdPXZ8WfOBD+cczvP9nOd7znkYAMZHNUfN0ZSglnOMMhKSQJ1OpyO5XK6Qz+dxGPw+LBaLeb9EEmgonEgkIAjCLtFoFOFwGD6fT5R4vV5YrdY9EhoKjoYmpFIpZDIZ8UjE43FEIhH4/X5RkEwmQQ+x2+2i5ICAwhIkoEAsFkMgENhTh6DMTvafgNfYnUDn1FuqEgwGxZV4PJ7igv3IJbQSeh+hUOjoAkKSDC9fwp0FFULh7TpHFhDZbBaDrhY8XLmBLls9kulEacGQ+yLuP2/BwFIzeh0qjL3txKtNM0ZeX4XOdAoVVWWX/yvQuy7g3Y9ZvPluEYMvNk0wfRqBc2MKA24dmp+UF84bFMqigj7el8LPPg7B+EGPx6v9GF/pwcT7u7CtPUL3YivOPWD5ooKb8w14+c0E99encK5PwfFlkkvuYW5tAv3uDtQa2NbpUaaSC/7IBdfnzuKKuRrtMyfROq3ErQUtZj+Po9elQ5OxEhVa1iXfC0387xN4sOhmUk+ewG1nGzTGKvz6/VPgGbVcUEMSDn2aQ6kbY6kzhjIcb2TX+DVt/RoA7C/l933lrnh1pAAAAABJRU5ErkJgggs=</value>
+  </data>
+  <data name="Appearance50.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAHQMAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAKoSURBVDhPpZPtT1JRHMf9W/RP6N7etDZ90VybDZK0F5k1TBO1la7CbLBKMRGfAAVsCIaaD5RPUJIiJHAlI+QhNPXmwAza2uoNZC3LbwdaqNXaWi8+d/ece77f3/ne3zkZAP6L3ybyNStZx1QhUZ4iyB5p8cZzZJ54tmyBzZa5RYdvM1m/rt834KiXeUflgVhFrx+99ghGmc0UemsYfPVT0KLZGC228vZq0i+kKi+31ZdomVyFxRtDz3QEEuNL3Bpehty0CqNjA42jIdCVEwn64kTaJPXIUwYzc9sWo0mx6VkMIiK6NhDAkOs1hpwbuGrwQ9gfgGF2HZL7ftBlxihdOpyZNsiVL4rLtV6YPW9RNxCCkES4rPPh4+ftFNU6D6p7PBDe9WLgSRinmh+DKuoXpw1y2jys3hqB0sTiSq8PNTovqrUe9NnXYSBUdjM/0LhIrADU0yugC3Vs2uCQhNkaX3iDuj4/qfQcVXfcZDFDPgE7BIHKifLOOYIDFzROGJkwKF7XVlKbMqDF9q0x92Yqa7JShdpFRC6EIh+Q+LSNsg47StttOEcQKGwYmScGXMVeAyurtbKQPlhClcYNQZcT55VzeBF+Twy+oEQ2gxKSm99sQW0PA6UlCPp4x24EutYiLpbbMeSIoErFQCB3wOLZwNdvO6kI/lfvUCwxE0zofhhC4fVRYtC++xPpS2OZtMAYvTnig8G6hjK5DfyWaZyRTqG4wYTT9RMoqh9H64iXtHeebF8apbnS3TYmofiDvAMF+oRo0AP9zAqEWifZ8iOcbTSjRmWD2hSAsI8BzWlIEPH+g5Q2KdTzqILu2Mkbk1BOLeGekyWsocMcRH6dERSnMUZzm/58lH9Cn1BnUbxOEZWvYCluc5ziNMVJRZYgOsht+Ptl+neQ8R04hsvsalKMmgAAAABJRU5ErkJgggs=</value>
+  </data>
+  <data name="DbInsertCommand2.CommandText" xml:space="preserve">
+    <value>INSERT INTO dbo.tblQuoteDetails
+                         (QuoteGuid, CompanyLineGuid, CompanyContactGuid, CompanyCommission, ProducerCommission, Participation, TermsOfPayment, IntermediaryContactGuid, ProgramID, SLA_Number)
+VALUES        (@QuoteGuid,@CompanyLineGuid,@CompanyContactGuid,@CompanyCommission,@ProducerCommission,@Participation,@TermsOfPayment,@IntermediaryContactGuid,@ProgramID,@SLA_Number);  
+SELECT QuoteGuid, CompanyLineGuid, CompanyContactGuid, CompanyCommission, ProducerCommission, Participation, TermsOfPayment, IntermediaryContactGuid FROM tblQuoteDetails WHERE (CompanyLineGuid = @CompanyLineGuid) AND (QuoteGuid = @QuoteGuid)</value>
+  </data>
+  <data name="Appearance53.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAlgEAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAEhSURBVDhPlZJbqoMwEIZzuo8euofSdj1d0gEf3IpvIl6e3YYigvcbTOdPm5ATU0oDH0SZ+Zz8UfD6ZS7M1cGJORCReAfWZVmWeds2MpmmiTzP+/skwbqiYRxHatuW6rqmoiikZBgG8n1fSlzNQAvwRTQ0TUNlWepJ1nVF1Y05MD/AKUAhJH3fS0me5xQEAWVZhqo7A8kuGywpMCWYJAxD4mz0JAo7m38CoCRRFMnnT9nsBGCeZ4rjWO7fZQPQ6xRg9CRJ5N7OpqoqPclOgGIAQZqmWmhmo47jFJgNSN9+h6NB0nWdfKcECAIbE1zZ3RQATAYJgtWC113KH8QA13OzBep46nq55imweUl22Zh8JXDBR2m55uwUAF6ubEzOQojjAx/rst1BfeUnAAAAAElFTkSuQmCCCw==</value>
+  </data>
+</root>

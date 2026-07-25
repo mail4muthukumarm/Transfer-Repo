@@ -1,0 +1,152 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\augusta\\fortegra\\IMS Project\\MgaSystems.IMS.Policies\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B359A1AC-3FBA-4444-8403-8F9EFB33E791}|MgaSystems.IMS.Policies.csproj|f:\\augusta\\fortegra\\ims project\\mgasystems.ims.policies\\claims\\dsclaims.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B359A1AC-3FBA-4444-8403-8F9EFB33E791}|MgaSystems.IMS.Policies.csproj|solutionrelative:claims\\dsclaims.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B359A1AC-3FBA-4444-8403-8F9EFB33E791}|MgaSystems.IMS.Policies.csproj|f:\\augusta\\fortegra\\ims project\\mgasystems.ims.policies\\bindpolicy\\dsbinderconfirmation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B359A1AC-3FBA-4444-8403-8F9EFB33E791}|MgaSystems.IMS.Policies.csproj|solutionrelative:bindpolicy\\dsbinderconfirmation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B359A1AC-3FBA-4444-8403-8F9EFB33E791}|MgaSystems.IMS.Policies.csproj|f:\\augusta\\fortegra\\ims project\\mgasystems.ims.policies\\policydetail\\dsinvoices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B359A1AC-3FBA-4444-8403-8F9EFB33E791}|MgaSystems.IMS.Policies.csproj|solutionrelative:policydetail\\dsinvoices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B359A1AC-3FBA-4444-8403-8F9EFB33E791}|MgaSystems.IMS.Policies.csproj|f:\\augusta\\fortegra\\ims project\\mgasystems.ims.policies\\policybusinessobjects\\quote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B359A1AC-3FBA-4444-8403-8F9EFB33E791}|MgaSystems.IMS.Policies.csproj|solutionrelative:policybusinessobjects\\quote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B359A1AC-3FBA-4444-8403-8F9EFB33E791}|MgaSystems.IMS.Policies.csproj|F:\\augusta\\fortegra\\IMS Project\\MgaSystems.IMS.Policies\\viewsummaryreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B359A1AC-3FBA-4444-8403-8F9EFB33E791}|MgaSystems.IMS.Policies.csproj|solutionrelative:viewsummaryreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B359A1AC-3FBA-4444-8403-8F9EFB33E791}|MgaSystems.IMS.Policies.csproj|F:\\augusta\\fortegra\\IMS Project\\MgaSystems.IMS.Policies\\accountingtransfer\\accountingtransfer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B359A1AC-3FBA-4444-8403-8F9EFB33E791}|MgaSystems.IMS.Policies.csproj|solutionrelative:accountingtransfer\\accountingtransfer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B359A1AC-3FBA-4444-8403-8F9EFB33E791}|MgaSystems.IMS.Policies.csproj|F:\\augusta\\fortegra\\IMS Project\\MgaSystems.IMS.Policies\\dsquoteedit2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B359A1AC-3FBA-4444-8403-8F9EFB33E791}|MgaSystems.IMS.Policies.csproj|solutionrelative:dsquoteedit2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B359A1AC-3FBA-4444-8403-8F9EFB33E791}|MgaSystems.IMS.Policies.csproj|F:\\augusta\\fortegra\\IMS Project\\MgaSystems.IMS.Policies\\dsquoteedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B359A1AC-3FBA-4444-8403-8F9EFB33E791}|MgaSystems.IMS.Policies.csproj|solutionrelative:dsquoteedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "dsClaims.cs",
+              "DocumentMoniker": "F:\\augusta\\fortegra\\IMS Project\\MgaSystems.IMS.Policies\\Claims\\dsClaims.cs",
+              "RelativeDocumentMoniker": "Claims\\dsClaims.cs",
+              "ToolTip": "F:\\augusta\\fortegra\\IMS Project\\MgaSystems.IMS.Policies\\Claims\\dsClaims.cs",
+              "RelativeToolTip": "Claims\\dsClaims.cs",
+              "ViewState": "AgIAANwDAAAAAAAAAAAAAOIGAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T00:08:15.504Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "dsBinderConfirmation.cs",
+              "DocumentMoniker": "F:\\augusta\\fortegra\\IMS Project\\MgaSystems.IMS.Policies\\BindPolicy\\dsBinderConfirmation.cs",
+              "RelativeDocumentMoniker": "BindPolicy\\dsBinderConfirmation.cs",
+              "ToolTip": "F:\\augusta\\fortegra\\IMS Project\\MgaSystems.IMS.Policies\\BindPolicy\\dsBinderConfirmation.cs",
+              "RelativeToolTip": "BindPolicy\\dsBinderConfirmation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T00:07:09.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "dsInvoices.cs",
+              "DocumentMoniker": "F:\\augusta\\fortegra\\IMS Project\\MgaSystems.IMS.Policies\\PolicyDetail\\dsInvoices.cs",
+              "RelativeDocumentMoniker": "PolicyDetail\\dsInvoices.cs",
+              "ToolTip": "F:\\augusta\\fortegra\\IMS Project\\MgaSystems.IMS.Policies\\PolicyDetail\\dsInvoices.cs",
+              "RelativeToolTip": "PolicyDetail\\dsInvoices.cs",
+              "ViewState": "AgIAAEECAAAAAAAAAAA4wGYCAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T00:05:02.607Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Quote.cs",
+              "DocumentMoniker": "F:\\augusta\\fortegra\\IMS Project\\MgaSystems.IMS.Policies\\PolicyBusinessObjects\\Quote.cs",
+              "RelativeDocumentMoniker": "PolicyBusinessObjects\\Quote.cs",
+              "ToolTip": "F:\\augusta\\fortegra\\IMS Project\\MgaSystems.IMS.Policies\\PolicyBusinessObjects\\Quote.cs",
+              "RelativeToolTip": "PolicyBusinessObjects\\Quote.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAABcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T13:45:43.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AccountingTransfer.cs",
+              "DocumentMoniker": "F:\\augusta\\fortegra\\IMS Project\\MgaSystems.IMS.Policies\\AccountingTransfer\\AccountingTransfer.cs",
+              "RelativeDocumentMoniker": "AccountingTransfer\\AccountingTransfer.cs",
+              "ToolTip": "F:\\augusta\\fortegra\\IMS Project\\MgaSystems.IMS.Policies\\AccountingTransfer\\AccountingTransfer.cs",
+              "RelativeToolTip": "AccountingTransfer\\AccountingTransfer.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAcwBsAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T13:45:02.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ViewSummaryReport.cs",
+              "DocumentMoniker": "F:\\augusta\\fortegra\\IMS Project\\MgaSystems.IMS.Policies\\ViewSummaryReport.cs",
+              "RelativeDocumentMoniker": "ViewSummaryReport.cs",
+              "ToolTip": "F:\\augusta\\fortegra\\IMS Project\\MgaSystems.IMS.Policies\\ViewSummaryReport.cs",
+              "RelativeToolTip": "ViewSummaryReport.cs",
+              "ViewState": "AgIAAMQCAAAAAAAAAAAAAOYCAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T13:44:47.367Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "dsQuoteEdit2.cs",
+              "DocumentMoniker": "F:\\augusta\\fortegra\\IMS Project\\MgaSystems.IMS.Policies\\dsQuoteEdit2.cs",
+              "RelativeDocumentMoniker": "dsQuoteEdit2.cs",
+              "ToolTip": "F:\\augusta\\fortegra\\IMS Project\\MgaSystems.IMS.Policies\\dsQuoteEdit2.cs",
+              "RelativeToolTip": "dsQuoteEdit2.cs",
+              "ViewState": "AgIAAIMFAAAAAAAAAAAQwIAFAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T12:31:35.986Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "dsQuoteEdit.cs",
+              "DocumentMoniker": "F:\\augusta\\fortegra\\IMS Project\\MgaSystems.IMS.Policies\\dsQuoteEdit.cs",
+              "RelativeDocumentMoniker": "dsQuoteEdit.cs",
+              "ToolTip": "F:\\augusta\\fortegra\\IMS Project\\MgaSystems.IMS.Policies\\dsQuoteEdit.cs",
+              "RelativeToolTip": "dsQuoteEdit.cs",
+              "ViewState": "AgIAAGAHAAAAAAAAAAAAAFgHAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T12:27:06.431Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

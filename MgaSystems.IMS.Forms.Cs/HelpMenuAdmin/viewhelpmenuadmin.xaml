@@ -1,0 +1,116 @@
+<local:ViewHelpMenuAdmin x:Class="MgaSystems.IMS.Forms.HelpMenuAdmin.ViewHelpMenuAdmin"
+                         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                         xmlns:local="clr-namespace:MgaSystems.IMS.Forms.HelpMenuAdmin"
+                         xmlns:interop="clr-namespace:Mga.Wpf.Ims.Interop;assembly=Mga.Wpf.Ims"
+                         FrameworkElement.Height="675" FrameworkElement.Width="775" Title="Manage Help Menu Tools"
+                         WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip"
+                         PromptOnCloseIfDataContextHasChanges="true"
+                         TransactionLogFilter="3EA03EAF-EC95-4F99-AAC3-BCAC7FA77818">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/CommonResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/DatagridResources2.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Mga.Wpf.Ims;component/Resources/ToolBarResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/TreeViewResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource textBoxStyleMain}">
+        <Style.Triggers>
+          <Trigger Property="TextBoxBase.IsReadOnly" Value="true">
+            <Setter Property="Control.Background" Value="LightGray"/>
+          </Trigger>
+        </Style.Triggers>
+      </Style>
+      <Style x:Key="SearchBtnStyle" TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.Margin" Value="2"/>
+        <Setter Property="FrameworkElement.Height" Value="20"/>
+        <Setter Property="FrameworkElement.Width" Value="20"/>
+      </Style>
+      <Style TargetType="{x:Type DataGrid}" BasedOn="{StaticResource dataGridStyle}"/>
+      <Style TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.MinWidth" Value="80"/>
+      </Style>
+      <Style TargetType="{x:Type TextBlock}">
+        <Setter Property="FrameworkElement.Margin" Value="2"/>
+        <Setter Property="TextBlock.Foreground" Value="{StaticResource standardTextForegroundColor}"/>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <DockPanel>
+    <ToolBarTray DockPanel.Dock="Top">
+      <FrameworkElement.Resources>
+        <Style TargetType="{x:Type ToolBarTray}" BasedOn="{StaticResource toolBarTrayStyle}"/>
+        <Style TargetType="{x:Type Image}" BasedOn="{StaticResource verticalToolbarImageStyle}"/>
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource toolbarButtonStyle}"/>
+        <Style TargetType="{x:Type StackPanel}" BasedOn="{StaticResource toolbarStackPanelStyle}"/>
+        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource verticalToolbarTextBlockStyle}"/>
+        <Style TargetType="{x:Type AccessText}" BasedOn="{StaticResource verticalToolbarAccessTextStyle}"/>
+      </FrameworkElement.Resources>
+      <ToolBar>
+        <Button ToolTip="Add Help Menu" Command="{Binding AddHelpMenuCommand}">
+          <StackPanel>
+            <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/add.png"/>
+            <AccessText Text="Add Help Menu"/>
+          </StackPanel>
+        </Button>
+        <Separator/>
+        <Button ToolTip="Delete Help Menu" Command="{Binding DeleteHelpMenuCommand}"
+                CommandParameter="{Binding HelpAdminManager.HelpItems}">
+          <StackPanel>
+            <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/delete.png"/>
+            <AccessText Text="Delete Help Menu"/>
+          </StackPanel>
+        </Button>
+        <Separator/>
+        <Button ToolTip="Save" Command="{Binding SaveCommand}">
+          <StackPanel>
+            <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/saveHS.png"/>
+            <AccessText Text="_Save"/>
+          </StackPanel>
+        </Button>
+      </ToolBar>
+    </ToolBarTray>
+    <Grid DockPanel.Dock="Top">
+      <Grid.RowDefinitions>
+        <RowDefinition/>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+      </Grid.RowDefinitions>
+      <DataGrid Grid.Row="0" SelectionMode="Single" AutoGenerateColumns="false" CanUserAddRows="false"
+                CanUserDeleteRows="false" Margin="2"
+                ItemsSource="{Binding HelpAdminManager.HelpItems, UpdateSourceTrigger=PropertyChanged}"
+                SelectedItem="{Binding SelectedItem, UpdateSourceTrigger=PropertyChanged}">
+        <DataGrid.Columns>
+          <DataGridTextColumn Header="Key " Width="Auto" IsReadOnly="true" Binding="{Binding HelpToolKey}"/>
+          <DataGridTextColumn Header="Caption " Width="Auto" IsReadOnly="true" Binding="{Binding HelpToolCaption}"/>
+          <DataGridTextColumn Header="Uri " Width="Auto" IsReadOnly="true" Binding="{Binding HelpToolUri}"/>
+          <DataGridCheckBoxColumn Header="Active" Width="Auto" IsReadOnly="false"
+                                  Binding="{Binding Active, UpdateSourceTrigger=PropertyChanged}"/>
+        </DataGrid.Columns>
+      </DataGrid>
+      <Separator Grid.Row="1" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"/>
+      <Grid Row="2">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="auto"/>
+          <RowDefinition Height="auto"/>
+          <RowDefinition Height="auto"/>
+          <RowDefinition Height="auto"/>
+          <RowDefinition Height="auto"/>
+          <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Key:"/>
+        <TextBox Grid.Row="1" MaxLength="200"
+                 Text="{Binding SelectedItem.HelpToolKey, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock Grid.Row="2" Text="Caption:"/>
+        <TextBox Grid.Row="3" MaxLength="200"
+                 Text="{Binding SelectedItem.HelpToolCaption, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock Grid.Row="4" Text="Uri:"/>
+        <TextBox Grid.Row="5" MaxLength="500"
+                 Text="{Binding SelectedItem.HelpToolUri, UpdateSourceTrigger=PropertyChanged}"/>
+      </Grid>
+    </Grid>
+  </DockPanel>
+</local:ViewHelpMenuAdmin>

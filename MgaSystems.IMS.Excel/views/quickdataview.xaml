@@ -1,0 +1,134 @@
+<QuickDataView x:Class="MgaSystems.IMS.Excel.Views.QuickDataView"
+               xmlns:mgaInterop="clr-namespace:Mga.Wpf.Ims.Interop;assembly=Mga.Wpf.Ims"
+               xmlns:baseWpfControls="clr-namespace:Mga.Wpf.Ims.Controls;assembly=Mga.Wpf.Ims"
+               xmlns:baseWpfCommands="clr-namespace:Mga.Wpf.Ims.Commands;assembly=Mga.Wpf.Ims"
+               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+               xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+               xmlns:data="clr-namespace:MgaSystems.IMS.Excel.Data.QuickDataView"
+               ResizeMode="CanResizeWithGrip" Title="Excel Quick Premium View"
+               WindowStartupLocation="CenterScreen" PromptOnCloseIfDataContextHasChanges="true"
+               FrameworkElement.Width="650" FrameworkElement.Height="400">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Mga.Wpf.Ims;component/Resources/CommonResources.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Mga.Wpf.Ims;component/Resources/DataGridResources2.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Mga.Wpf.Ims;component/Resources/ToolBarResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <Style TargetType="{x:Type DataGrid}" BasedOn="{StaticResource dataGridStyle}"/>
+      <Style TargetType="{x:Type GridViewColumnHeader}" BasedOn="{StaticResource gridViewColumnHeaderStyle}"/>
+      <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource textBoxStyleMain}">
+        <Style.Triggers>
+          <Trigger Property="TextBoxBase.IsReadOnly" Value="true">
+            <Setter Property="Control.Background" Value="LightGray"/>
+          </Trigger>
+        </Style.Triggers>
+      </Style>
+      <BooleanToVisibilityConverter x:Key="visibilityConverter"/>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <DockPanel LastChildFill="true">
+    <ToolBarTray DockPanel.Dock="Top">
+      <FrameworkElement.Resources>
+        <Style TargetType="{x:Type ToolBarTray}" BasedOn="{StaticResource toolBarTrayStyle}"/>
+        <Style TargetType="{x:Type Image}" BasedOn="{StaticResource verticalToolbarImageStyle}"/>
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource toolbarButtonStyle}"/>
+        <Style TargetType="{x:Type StackPanel}" BasedOn="{StaticResource toolbarStackPanelStyle}"/>
+        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource verticalToolbarTextBlockStyle}"/>
+        <Style TargetType="{x:Type ToolBar}" BasedOn="{StaticResource toolBarStyle}"/>
+        <Style TargetType="{x:Type AccessText}" BasedOn="{StaticResource verticalToolbarAccessTextStyle}"/>
+      </FrameworkElement.Resources>
+      <ToolBar>
+        <Button ToolTip="Save" Command="{Binding Source={x:Static baseWpfCommands:DatabaseCommands.SubmitChanges}}"
+                CommandParameter="{Binding}">
+          <StackPanel>
+            <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/saveHS.png"/>
+            <AccessText Text="_Save"/>
+          </StackPanel>
+        </Button>
+        <Separator/>
+        <baseWpfControls:UndoButton ChangeManager="{Binding Path=ChangeManager}"/>
+        <baseWpfControls:RedoButton ChangeManager="{Binding Path=ChangeManager}"/>
+      </ToolBar>
+      <ToolBar>
+        <Button ToolTip="Open SQL Management Studio" Command="{Binding LaunchSSMSCommand, Mode=OneWay}">
+          <StackPanel>
+            <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/database_gear.png"/>
+            <AccessText Text="Open SQL Management Studio"/>
+          </StackPanel>
+        </Button>
+        <Button ToolTip="Password will be in clipboard for 10 seconds"
+                Command="{Binding CopySSMSPasswordToClipboardCommand, Mode=OneWay}"
+                Visibility="{Binding CanCopySSMSPasswordToClipboard, Converter={StaticResource visibilityConverter}}">
+          <StackPanel>
+            <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/book_edit.png"/>
+            <AccessText Text="Copy SQL Password"/>
+          </StackPanel>
+        </Button>
+        <Separator/>
+        <Button ToolTip="Re-run Rating Proc" Command="{Binding RerunRatingProcCommand, Mode=OneWay}">
+          <StackPanel>
+            <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/database_refresh.png"/>
+            <AccessText Text="Re-run Rating Proc"/>
+          </StackPanel>
+        </Button>
+      </ToolBar>
+    </ToolBarTray>
+    <TabControl Background="Transparent">
+      <TabItem Header="Raw Premium History and Calculation Information (readonly)">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+          </Grid.RowDefinitions>
+          <Label Content="Manual Premium Changes Detected Rating Procedures will no longer calculate properly!"
+                 Background="PaleVioletRed"
+                 Visibility="{Binding HasManualPremiumChanges, Converter={StaticResource visibilityConverter}, Mode=OneWay}"/>
+          <Grid Row="1">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="auto"/>
+              <RowDefinition/>
+              <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="Includes only fields marked as Premium in the Excel Admin Tool (or * if none selected).
+Important Note: If the rater returns more than a single premium you'll likely need to review the rating proc instead.
+To do that, just open SQL management Studio and examine the rating procedure/premium field query."/>
+            <DataGrid Grid.Row="1" AutoGenerateColumns="true" ItemsSource="{Binding DefaultPremiumData}"/>
+            <Grid Row="2">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+              </Grid.ColumnDefinitions>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+              </Grid.RowDefinitions>
+              <Label Content="Rating Procedure:"/>
+              <Label Grid.Row="1" Content="Factorset Used:"/>
+              <Label Grid.Row="2" Content="Premium Field Query:"/>
+              <CheckBox Grid.Row="3" Content="Include Prorata data" IsChecked="{Binding IncludeProRataData}"/>
+              <TextBox Grid.Column="1" IsReadOnly="true" Text="{Binding RatingProcedureWithFirstOption, Mode=OneWay}"/>
+              <TextBox Grid.Row="1" Grid.Column="1" IsReadOnly="true" Text="{Binding FactorSetInformation, Mode=OneWay}"/>
+              <TextBox Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" IsReadOnly="true" TextWrapping="WrapWithOverflow"
+                       ScrollViewer.CanContentScroll="true" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                       MaxHeight="100" Text="{Binding PremiumQuery, Mode=OneWay}"/>
+            </Grid>
+          </Grid>
+        </Grid>
+      </TabItem>
+      <TabItem Header="Quote Option Status Information (editable)">
+        <DataGrid Grid.Row="1" ItemsSource="{Binding QuoteOptions}">
+          <DataGrid.Columns>
+            <DataGridTextColumn Header="Line" IsReadOnly="true" Binding="{Binding LineName, Mode=OneWay}"/>
+            <DataGridCheckBoxColumn Header=" Bind " Binding="{Binding Bound, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <DataGridCheckBoxColumn Header=" Quoted " Binding="{Binding Quote, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+          </DataGrid.Columns>
+        </DataGrid>
+      </TabItem>
+    </TabControl>
+  </DockPanel>
+</QuickDataView>

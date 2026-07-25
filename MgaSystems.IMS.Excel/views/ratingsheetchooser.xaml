@@ -1,0 +1,93 @@
+<Window x:Class="MGASystems.IMS.Excel.Views.RatingSheetChooser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+        xmlns:mgaWpf="clr-namespace:Mga.Wpf.Ims.Controls;assembly=Mga.Wpf.Ims"
+        xmlns:mgaWpfImsData="clr-namespace:Mga.Wpf.Ims.Data;assembly=Mga.Wpf.Ims"
+        xmlns:wpfToolKit="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        xmlns:mgaCommonWpf="clr-namespace:MGASystems.Common.Wpf;assembly=MGASystems.IMS.Common"
+        xmlns:mgaInterop="clr-namespace:Mga.Wpf.Ims.Interop;assembly=Mga.Wpf.Ims"
+        xmlns:data="clr-namespace:MGASystems.IMS.Excel.Data.StandardRating"
+        xmlns:mgaValueConverters="clr-namespace:Mga.Wpf.Ims.ValueConverters;assembly=Mga.Wpf.Ims"
+        xmlns:controllers="clr-namespace:MGASystems.IMS.Excel.Controllers"
+        x:Name="mainWindow" ResizeMode="NoResize" SizeToContent="WidthAndHeight" MaxHeight="700"
+        MaxWidth="700" Title="Copy an existing rating sheet?" WindowStartupLocation="CenterScreen">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/CommonResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/ToolBarResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/ListviewResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <mgaValueConverters:BooleanConverter x:Key="BooleanConverter"/>
+      <Style TargetType="{x:Type GridViewColumnHeader}" BasedOn="{StaticResource gridViewColumnHeaderStyle}"/>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Border BorderBrush="#32465A" BorderThickness="1">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition MinHeight="80" Height="auto"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="auto"/>
+      </Grid.RowDefinitions>
+      <Label Style="{StaticResource headerStyle1}">
+        <StackPanel Orientation="Horizontal">
+          <Image VerticalAlignment="Top" Source="/MGASystems.IMS.Excel;component/Images/excel258.png" Stretch="None"/>
+          <StackPanel Margin="5,0,0,0">
+            <TextBlock Text="Would you like to copy the rating data from"/>
+            <TextBlock Text="an existing quote under this submission?"/>
+          </StackPanel>
+        </StackPanel>
+      </Label>
+      <ListView Name="quoteList" Grid.Row="1" Margin="2,2,2,10" EnableSorting="true" ItemsSource="{Binding}">
+        <ListView.View>
+          <GridView>
+            <GridViewColumn SortOn="ControlNumber" Header="Control" DisplayMemberBinding="{Binding ControlNumber}"/>
+            <GridViewColumn SortOn="LineName" Header="Line" DisplayMemberBinding="{Binding LineName}"/>
+            <GridViewColumn SortOn="StateId" Header="State" DisplayMemberBinding="{Binding StateId}"/>
+            <GridViewColumn SortOn="InsuredPolicyName" Header="Policy Name" DisplayMemberBinding="{Binding InsuredPolicyName}"/>
+            <GridViewColumn SortOn="DateCreated" Header="Created"
+                            DisplayMemberBinding="{Binding Path=DateCreated, StringFormat={0:MM/dd/yyyy}}"/>
+            <GridViewColumn SortOn="Premium" Header="Premium" DisplayMemberBinding="{Binding Path=Premium, StringFormat={0:C}}"/>
+          </GridView>
+        </ListView.View>
+      </ListView>
+      <Border BorderThickness="0,2,0,0" BorderBrush="#DFDFDF" Grid.Row="2">
+        <Grid Background="#F0F0F0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+          </Grid.ColumnDefinitions>
+          <Grid Column="1">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="*"/>
+              <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+              <FrameworkElement.Resources>
+                <Style TargetType="{x:Type Button}">
+                  <Setter Property="FrameworkElement.Margin" Value="2,10,2,10"/>
+                  <Setter Property="FrameworkElement.MinWidth" Value="80"/>
+                </Style>
+                <Style x:Key="copyStyle" TargetType="{x:Type Button}">
+                  <Setter Property="FrameworkElement.Margin" Value="2,10,2,10"/>
+                  <Setter Property="FrameworkElement.MinWidth" Value="80"/>
+                  <Setter Property="UIElement.IsEnabled" Value="false"/>
+                  <Style.Triggers>
+                    <DataTrigger Binding="{Binding ElementName=quoteList, Path=SelectedItem, Converter={StaticResource BooleanConverter}}"
+                                 Value="True">
+                      <Setter Property="UIElement.IsEnabled" Value="true"/>
+                    </DataTrigger>
+                  </Style.Triggers>
+                </Style>
+              </FrameworkElement.Resources>
+              <Button Click="Save_Click" Content="Copy" IsDefault="true" Style="{StaticResource copyStyle}"/>
+              <Button Click="SaveWithoutExit_Click" Content="Don't Copy"/>
+            </StackPanel>
+          </Grid>
+        </Grid>
+      </Border>
+    </Grid>
+  </Border>
+</Window>

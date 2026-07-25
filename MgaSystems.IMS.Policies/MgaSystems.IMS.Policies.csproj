@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Users\muthu\Downloads\MgaSystems.IMS.Policies.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B359A1AC-3FBA-4444-8403-8F9EFB33E791}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>MgaSystems.IMS.Policies</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <ApplicationVersion>2.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>MGASystems.IMS.Policies</RootNamespace>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddlInterestExcelImporter.cs" />
+    <Compile Include="FormAdditionalInterestExcelImport.cs" />
+    <Compile Include="dsAdditionalInterests.cs" />
+    <Compile Include="FormCopyAdditionalInterest.cs" />
+    <Compile Include="frmAdditionalInterests.cs" />
+    <Compile Include="BindingProcessSettings.cs" />
+    <Compile Include="AdditionalInterestSearch.cs" />
+    <Compile Include="DeleteQuoteOverride.cs" />
+    <Compile Include="DriverClearance.cs" />
+    <Compile Include="dsAdditionalInterestSearch.cs" />
+    <Compile Include="dsDriverSearch.cs" />
+    <Compile Include="FormAdditionalInterestClearance.cs" />
+    <Compile Include="FormDriverClearance.cs" />
+    <Compile Include="FormNonRenewedStatusInfo.cs" />
+    <Compile Include="frmInsuredSummary.cs" />
+    <Compile Include="dsPrintSubBinders.cs" />
+    <Compile Include="FormPrintSubmissionBinders.cs" />
+    <Compile Include="dsRenewAll.cs" />
+    <Compile Include="dsResults.cs" />
+    <Compile Include="FormRenewAllPolicies.cs" />
+    <Compile Include="FormRenewAllResults.cs" />
+    <Compile Include="FormShowProdLocCommissionEntities.cs" />
+    <Compile Include="FilingSummary.cs" />
+    <Compile Include="frmPolicyForms_ClientOverridePluginAttribute.cs" />
+    <Compile Include="PolicyFCWSettingsOverride.cs" />
+    <Compile Include="frmEditAffidavitNumbers.cs" />
+    <Compile Include="InstallmentBillingPay.cs" />
+    <Compile Include="DuplicatePolicyNumberException.cs" />
+    <Compile Include="ClaimsExcelImport.cs" />
+    <Compile Include="dsExcelImport.cs" />
+    <Compile Include="ImportClaims.cs" />
+    <Compile Include="LoadSavedMapping.cs" />
+    <Compile Include="SelectWorksheet.cs" />
+    <Compile Include="dsBindSubQuotes.cs" />
+    <Compile Include="FormBindSubmissionQuotes.cs" />
+    <Compile Include="ClearanceSearch.cs" />
+    <Compile Include="dsLocationSearch.cs" />
+    <Compile Include="FormClearanceLocation.cs" />
+    <Compile Include="LocationClearance.cs" />
+    <Compile Include="TestReport.cs" />
+    <Compile Include="dsChangeQuoteStatusReasons.cs" />
+    <Compile Include="FormChangeQuoteStatusReason.cs" />
+    <Compile Include="DriverExcelImporter.cs" />
+    <Compile Include="FormDriverExcelImport.cs" />
+    <Compile Include="dsFilingPolicyInfo.cs" />
+    <Compile Include="dsStateSLRules.cs" />
+    <Compile Include="FormSLStateRules.cs" />
+    <Compile Include="dsCompareInspect.cs" />
+    <Compile Include="FormInspectionComparison.cs" />
+    <Compile Include="dsEditAffidavitNumbers.cs" />
+    <Compile Include="ClearanceDragDropManager.cs" />
+    <Compile Include="dsInsuredSummary.cs" />
+    <Compile Include="QuoteStatusChangeMenu.cs" />
+    <Compile Include="SelectRewritePolicyType.cs" />
+    <Compile Include="rptAdminCommissions.cs" />
+    <Compile Include="FormFilingInformation.cs" />
+    <Compile Include="frmAdditionalWarranties.cs" />
+    <Compile Include="frmChangeInvoiceIssuedDate.cs" />
+    <Compile Include="dsITVCalculator.cs" />
+    <Compile Include="FormITVCalculator.cs" />
+    <Compile Include="ITVReport.cs" />
+    <Compile Include="CoverageExposure.cs" />
+    <Compile Include="FormCoverageMappings.cs" />
+    <Compile Include="FormLocationExcelImport.cs" />
+    <Compile Include="formLocationExcelImporter.cs" />
+    <Compile Include="FormLocationExcelImporterSub.cs" />
+    <Compile Include="dsMultiMarketSubmit.cs" />
+    <Compile Include="dsNetRateAdditionalInfo.cs" />
+    <Compile Include="dsPolicyLookup.cs" />
+    <Compile Include="dsSelectQuoteOption.cs" />
+    <Compile Include="FormChangeUnderwriter.cs" />
+    <Compile Include="frmNetRateUpdateXML.cs" />
+    <Compile Include="QuoteDetailCommission.cs" />
+    <Compile Include="QuoteIsReadyForBindContext.cs" />
+    <Compile Include="rptVinException.cs" />
+    <Compile Include="ucVinCar.cs" />
+    <Compile Include="frmNetRateDBUpdate.cs" />
+    <Compile Include="dsChangeQuoteStatus.cs" />
+    <Compile Include="FormNetrateAdditionalInfo.cs" />
+    <Compile Include="FormUnbindPleaseWait.cs" />
+    <Compile Include="frmChangeQuoteStatus.cs" />
+    <Compile Include="frmControlNumberJump.cs" />
+    <Compile Include="frmNetRatePremiums.cs" />
+    <Compile Include="ChargeClass.cs" />
+    <Compile Include="frmNetRateReconnectData.cs" />
+    <Compile Include="frmRenewInactiveCompanyLine.cs" />
+    <Compile Include="frmSelectQuoteOption.cs" />
+    <Compile Include="frmVinVerification.cs" />
+    <Compile Include="SymbolAutomationTest.cs" />
+    <Compile Include="dsBOROnRenewal.cs" />
+    <Compile Include="dsChangeProducer.cs" />
+    <Compile Include="dsCurrentLossInformation.cs" />
+    <Compile Include="dsManualPolicyNumberEntry.cs" />
+    <Compile Include="FormDisplayHtml.cs" />
+    <Compile Include="FormManualPolicyNumbersEntry.cs" />
+    <Compile Include="FormRenewalChangeProducer.cs" />
+    <Compile Include="frmChangeProducer.cs" />
+    <Compile Include="frmCurrentLossInformation.cs" />
+    <Compile Include="frmViewSummary.cs" />
+    <Compile Include="VerifyProducerCommissions.cs" />
+    <Compile Include="ViewSummaryReport.cs" />
+    <Compile Include="ViewSummaryReport_SUB.cs" />
+    <Compile Include="FormTablePolicyNumberEntry.cs" />
+    <Compile Include="frmChildPolicyNumbers.cs" />
+    <Compile Include="StringExtensions.cs" />
+    <Compile Include="ContactExcelImporter.cs" />
+    <Compile Include="dsContactImport.cs" />
+    <Compile Include="dsProducerExcelImport.cs" />
+    <Compile Include="formContactExcelImport.cs" />
+    <Compile Include="FormProducerExcelImport.cs" />
+    <Compile Include="ProducerExcelImporter.cs" />
+    <Compile Include="dsProgCodeExt.cs" />
+    <Compile Include="dsProgramCodes.cs" />
+    <Compile Include="FormProgramCode.cs" />
+    <Compile Include="FormBaseProgramCodeExt.cs" />
+    <Compile Include="FormBaseProgramCodeParticipation.cs" />
+    <Compile Include="dsChildPol.cs" />
+    <Compile Include="dsQuoteEdit.cs" />
+    <Compile Include="dsQuoteEdit2.cs" />
+    <Compile Include="dsSIC.cs" />
+    <Compile Include="FormChildPolicyNumbersUpdate.cs" />
+    <Compile Include="FormSic.cs" />
+    <Compile Include="FormTransSelection.cs" />
+    <Compile Include="frmQuoteEdit.cs" />
+    <Compile Include="FixedUltraGrid.cs" />
+    <Compile Include="frmQuoteEdit2.cs" />
+    <Compile Include="SR.cs" />
+    <Compile Include="strings.cs" />
+    <Compile Include="dsNewSubmissionGroup.cs" />
+    <Compile Include="FormChangeSubmissionContact.cs" />
+    <Compile Include="frmSelectQuoteType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSubmissionGroup.cs" />
+    <Compile Include="dsSymbolAutomation.cs" />
+    <Compile Include="FormSymbolAutomation.cs" />
+    <Compile Include="My\MyApplication.cs" />
+    <Compile Include="My\MyComputer.cs" />
+    <Compile Include="My\MyProject.cs" />
+    <Compile Include="My\MySettings.cs" />
+    <Compile Include="My\MySettingsProperty.cs" />
+    <Compile Include="AccountingTransfer\AccountingTransfer.cs" />
+    <Compile Include="AccountingTransfer\NoInvoiceDetailItemsCreatedException.cs" />
+    <Compile Include="AccountingTransfer\PremiumSumMismatchException.cs" />
+    <Compile Include="AccountingTransfer\AccountingTransferInvoice.cs" />
+    <Compile Include="AccountingTransfer\Fee.cs" />
+    <Compile Include="AccountingTransfer\Fees.cs" />
+    <Compile Include="AdditionalInterests\InterestType.cs" />
+    <Compile Include="AdditionalInterests\NetRateVehicle.cs" />
+    <Compile Include="AdditionalInterests\UnderwritingLocation.cs" />
+    <Compile Include="Administration\dsTransactionLog.cs" />
+    <Compile Include="Administration\frmTextInfo.cs" />
+    <Compile Include="Administration\frmTransactionLog.cs" />
+    <Compile Include="BindPolicy\BindPolicyExtendedWork.cs" />
+    <Compile Include="BindPolicy\frmBindPolicy.cs" />
+    <Compile Include="BindPolicy\PreBindValidation.cs" />
+    <Compile Include="BindPolicy\dsBinderConfirmation.cs" />
+    <Compile Include="BindPolicy\dsBindQuote.cs" />
+    <Compile Include="BindPolicy\frmBinderConfirmation.cs" />
+    <Compile Include="BindPolicy\frmBindingRequirements.cs" />
+    <Compile Include="BindPolicy\frmBindPolicyDebugInfo.cs" />
+    <Compile Include="BindPolicy\frmCreatingInvoicesPleaseWait.cs" />
+    <Compile Include="PolicyBusinessObjects\BindingValidationResult.cs" />
+    <Compile Include="PolicyBusinessObjects\QuoteExtendedData.cs" />
+    <Compile Include="PolicyBusinessObjects\UnbindEventArgs.cs" />
+    <Compile Include="PolicyBusinessObjects\EndorsementEventArgs.cs" />
+    <Compile Include="PolicyBusinessObjects\Quote.cs" />
+    <Compile Include="Cancellations\frmCancelPolicy.cs" />
+    <Compile Include="Cancellations\Notices\dsNOC.cs" />
+    <Compile Include="Cancellations\Notices\dsNoticeOfCancellation.cs" />
+    <Compile Include="Cancellations\Notices\frmNOC.cs" />
+    <Compile Include="Cancellations\Notices\frmNOC_BindingManagement.cs" />
+    <Compile Include="Claims\frmClaims.cs" />
+    <Compile Include="Claims\dsClaims.cs" />
+    <Compile Include="Clearance\frmClearance.cs" />
+    <Compile Include="Clearance\frmClearanceView.cs" />
+    <Compile Include="Clearance\TabClearanceSearch.cs" />
+    <Compile Include="Clearance\dsTabClearance.cs" />
+    <Compile Include="Clearance\ClearanceSearchInfo.cs" />
+    <Compile Include="Clearance\dsClearanceView.cs" />
+    <Compile Include="Clearance\dsInsuredNavigation.cs" />
+    <Compile Include="Clearance\LoadProducers.cs" />
+    <Compile Include="Clearance\MultiQuotePrinting\dsMultiQuotePrinting.cs" />
+    <Compile Include="Clearance\MultiQuotePrinting\FormMultiQuotePrinting.cs" />
+    <Compile Include="Commissions\dsAdminCommissions.cs" />
+    <Compile Include="Commissions\frmAdminCommissions.cs" />
+    <Compile Include="Commissions\frmPolicyCommissions.cs" />
+    <Compile Include="Commissions\AddCommissionableEntity.cs" />
+    <Compile Include="Commissions\dsPolicyCommissions.cs" />
+    <Compile Include="Endorsements\dsBindEndorsement.cs" />
+    <Compile Include="Endorsements\dsCreateEndorsement.cs" />
+    <Compile Include="Endorsements\dsEndorsement.cs" />
+    <Compile Include="Endorsements\dsEndorsementInfo.cs" />
+    <Compile Include="Endorsements\frmCreateEndorsement.cs" />
+    <Compile Include="Endorsements\ValidateEndorsementReason.cs" />
+    <Compile Include="Endorsements\EndorsementInfo.cs" />
+    <Compile Include="Endorsements\frmEndorsementInfo.cs" />
+    <Compile Include="FormsConditionsWarranties\frmPolicyForms.cs" />
+    <Compile Include="FormsConditionsWarranties\frmPolicyFCW.cs" />
+    <Compile Include="FormsConditionsWarranties\dsAdditionalWarranties.cs" />
+    <Compile Include="FormsConditionsWarranties\dsAddWarrantyForm.cs" />
+    <Compile Include="FormsConditionsWarranties\dsConditions.cs" />
+    <Compile Include="FormsConditionsWarranties\dsPolicyFCW.cs" />
+    <Compile Include="FormsConditionsWarranties\dsPolicyForms.cs" />
+    <Compile Include="FormsConditionsWarranties\dsWarranties.cs" />
+    <Compile Include="FormsConditionsWarranties\frmAddWarrantyForm.cs" />
+    <Compile Include="FormsConditionsWarranties\frmConditions.cs" />
+    <Compile Include="FormsConditionsWarranties\frmWarranties.cs" />
+    <Compile Include="FormsConditionsWarranties\Export\FormPolicyFormsExportUtility.cs" />
+    <Compile Include="FormsConditionsWarranties\Import\FormPolicyFormsImportUtility.cs" />
+    <Compile Include="Forms_Conditions_Warranties\frmPolicyForms_ClientOverridePlugin.cs" />
+    <Compile Include="AffidavitNumbering\frmAdminAffidavitNumbers.cs" />
+    <Compile Include="AffidavitNumbering\frmAffidavitConfirmation.cs" />
+    <Compile Include="AffidavitNumbering\Numbering.cs" />
+    <Compile Include="AffidavitNumbering\dsAdminAffidavitNumbers.cs" />
+    <Compile Include="AffidavitNumbering\dsAffidavitConfirmation.cs" />
+    <Compile Include="AffidavitNumbering\dsViewExistingAffidavitNumbers.cs" />
+    <Compile Include="AffidavitNumbering\frmViewExistingAffidavitNumbers.cs" />
+    <Compile Include="InstallmentBilling\frmInstallmentBilling.cs" />
+    <Compile Include="InstallmentBilling\frmInstallmentBillingOptions.cs" />
+    <Compile Include="InstallmentBilling\dsInstallmentBilling.cs" />
+    <Compile Include="InstallmentBilling\dsInstallmentBillingOptions.cs" />
+    <Compile Include="InstallmentBilling\InstallmentInvoiceItem.cs" />
+    <Compile Include="InstallmentBilling\SelectUnissuedInvoicesForm.cs" />
+    <Compile Include="InstallmentBilling\TaggedEventArgs.cs" />
+    <Compile Include="Invoices\dsInvoice.cs" />
+    <Compile Include="Invoices\frmInvoiceLookup.cs" />
+    <Compile Include="Invoices\dsInvoiceSearchResults.cs" />
+    <Compile Include="Invoices\frmChangeInvoiceDueDate.cs" />
+    <Compile Include="Invoices\Invoices.cs" />
+    <Compile Include="Fees\dsPolicyFees.cs" />
+    <Compile Include="Fees\frmPolicyFees.cs" />
+    <Compile Include="PolicyDetail\dsInvoices.cs" />
+    <Compile Include="PolicyDetail\dsPolicyDetail.cs" />
+    <Compile Include="PolicyDetail\dsPolicyDetail_Premiums.cs" />
+    <Compile Include="PolicyDetail\dsPolicyDetail_StatusChanges.cs" />
+    <Compile Include="PolicyDetail\dsPolicyHistory.cs" />
+    <Compile Include="PolicyDetail\dsPolicyInquiry.cs" />
+    <Compile Include="PolicyDetail\frmPolicyDetail.cs" />
+    <Compile Include="PolicyDetail\PolicyDetail_Invoices.cs" />
+    <Compile Include="PolicyDetail\PolicyDetail_Plugin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PolicyDetail\PolicyDetail_PluginAttribute.cs" />
+    <Compile Include="PolicyDetail\PolicyDetail_PolicyInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PolicyDetail\PolicyDetail_PolicyInquiry.cs" />
+    <Compile Include="PolicyDetail\PolicyDetail_Premiums.cs" />
+    <Compile Include="PolicyDetail\PolicyDetail_StatusChanges.cs" />
+    <Compile Include="PolicyDetail\PolicyDetail_Transactions.cs" />
+    <Compile Include="PolicyNumbering\DefaultIMSPolicyNumberingEngine.cs" />
+    <Compile Include="PolicyNumbering\dsPolicyNumberAdmin.cs" />
+    <Compile Include="PolicyNumbering\frmAdminPolicyNumbers.cs" />
+    <Compile Include="PolicyNumbering\frmChangePolicyNumber.cs" />
+    <Compile Include="PolicyNumbering\frmPolicyNumberEntry.cs" />
+    <Compile Include="PolicyNumbering\ManualEntryRequiredException.cs" />
+    <Compile Include="PolicyNumbering\PolicyManagerBase.cs" />
+    <Compile Include="PolicyNumbering\PolicyEngineBase.cs" />
+    <Compile Include="PolicyNumbering\PolicyManagerIMS.cs" />
+    <Compile Include="PolicyNumbering\PolicyInfo.cs" />
+    <Compile Include="PolicyNumbering\PolicyDetailInfo.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="514.png" />
+    <EmbeddedResource Include="Administration\frmTextInfo.resx" />
+    <EmbeddedResource Include="Administration\frmTransactionLog.resx" />
+    <EmbeddedResource Include="AffidavitNumbering\frmAdminAffidavitNumbers.resx" />
+    <EmbeddedResource Include="AffidavitNumbering\frmAffidavitConfirmation.resx" />
+    <EmbeddedResource Include="AffidavitNumbering\frmViewExistingAffidavitNumbers.resx" />
+    <EmbeddedResource Include="BindPolicy\frmBinderConfirmation.resx" />
+    <EmbeddedResource Include="BindPolicy\frmBindingRequirements.resx" />
+    <EmbeddedResource Include="BindPolicy\frmBindPolicy.resx" />
+    <EmbeddedResource Include="BindPolicy\frmBindPolicyDebugInfo.resx" />
+    <EmbeddedResource Include="BindPolicy\frmCreatingInvoicesPleaseWait.resx" />
+    <EmbeddedResource Include="Cancellations\frmCancelPolicy.resx" />
+    <EmbeddedResource Include="Cancellations\Notices\frmNOC.resx" />
+    <EmbeddedResource Include="Claims\frmClaims.resx" />
+    <EmbeddedResource Include="ClaimsExcelImport.resx" />
+    <EmbeddedResource Include="Clearance\frmClearance.resx" />
+    <EmbeddedResource Include="Clearance\frmClearanceView.resx" />
+    <EmbeddedResource Include="Clearance\MultiQuotePrinting\FormMultiQuotePrinting.resx" />
+    <EmbeddedResource Include="Clearance\TabClearanceSearch.resx" />
+    <EmbeddedResource Include="Commissions\AddCommissionableEntity.resx" />
+    <EmbeddedResource Include="Commissions\frmAdminCommissions.resx" />
+    <EmbeddedResource Include="Commissions\frmPolicyCommissions.resx" />
+    <EmbeddedResource Include="dll.licenses" />
+    <EmbeddedResource Include="Endorsements\EndorsementInfo.resx" />
+    <EmbeddedResource Include="Endorsements\frmCreateEndorsement.resx" />
+    <EmbeddedResource Include="Endorsements\frmEndorsementInfo.resx" />
+    <EmbeddedResource Include="export-icon.png" />
+    <EmbeddedResource Include="Fees\frmPolicyFees.resx" />
+    <EmbeddedResource Include="FormAdditionalInterestClearance.resx" />
+    <EmbeddedResource Include="FormBaseProgramCodeExt.resx" />
+    <EmbeddedResource Include="FormBaseProgramCodeParticipation.resx" />
+    <EmbeddedResource Include="FormBindSubmissionQuotes.resx" />
+    <EmbeddedResource Include="FormChangeQuoteStatusReason.resx" />
+    <EmbeddedResource Include="FormChangeSubmissionContact.resx" />
+    <EmbeddedResource Include="FormChangeUnderwriter.resx" />
+    <EmbeddedResource Include="FormChildPolicyNumbersUpdate.resx" />
+    <EmbeddedResource Include="FormClearanceLocation.resx" />
+    <EmbeddedResource Include="formContactExcelImport.resx" />
+    <EmbeddedResource Include="FormCopyAdditionalInterest.resx" />
+    <EmbeddedResource Include="FormCoverageMappings.resx" />
+    <EmbeddedResource Include="FormDisplayHtml.resx" />
+    <EmbeddedResource Include="FormDriverClearance.resx" />
+    <EmbeddedResource Include="FormFilingInformation.resx" />
+    <EmbeddedResource Include="FormInspectionComparison.resx" />
+    <EmbeddedResource Include="FormITVCalculator.resx" />
+    <EmbeddedResource Include="FormLocationExcelImport.resx" />
+    <EmbeddedResource Include="FormLocationExcelImporterSub.resx" />
+    <EmbeddedResource Include="FormManualPolicyNumbersEntry.resx" />
+    <EmbeddedResource Include="FormNetrateAdditionalInfo.resx" />
+    <EmbeddedResource Include="FormNonRenewedStatusInfo.resx" />
+    <EmbeddedResource Include="FormPrintSubmissionBinders.resx" />
+    <EmbeddedResource Include="FormProgramCode.resx" />
+    <EmbeddedResource Include="FormRenewalChangeProducer.resx" />
+    <EmbeddedResource Include="FormRenewAllPolicies.resx" />
+    <EmbeddedResource Include="FormRenewAllResults.resx" />
+    <EmbeddedResource Include="FormsConditionsWarranties\Export\FormPolicyFormsExportUtility.resx" />
+    <EmbeddedResource Include="FormsConditionsWarranties\frmAddWarrantyForm.resx" />
+    <EmbeddedResource Include="FormsConditionsWarranties\frmConditions.resx" />
+    <EmbeddedResource Include="FormsConditionsWarranties\frmPolicyFCW.resx" />
+    <EmbeddedResource Include="FormsConditionsWarranties\frmPolicyForms.resx" />
+    <EmbeddedResource Include="FormsConditionsWarranties\frmWarranties.resx" />
+    <EmbeddedResource Include="FormsConditionsWarranties\Import\FormPolicyFormsImportUtility.resx" />
+    <EmbeddedResource Include="FormShowProdLocCommissionEntities.resx" />
+    <EmbeddedResource Include="FormSic.resx" />
+    <EmbeddedResource Include="FormSLStateRules.resx" />
+    <EmbeddedResource Include="FormSymbolAutomation.resx" />
+    <EmbeddedResource Include="FormTablePolicyNumberEntry.resx" />
+    <EmbeddedResource Include="FormTransSelection.resx" />
+    <EmbeddedResource Include="FormUnbindPleaseWait.resx" />
+    <EmbeddedResource Include="free_graphics_cyansphere.gif" />
+    <EmbeddedResource Include="free_icons_33.gif" />
+    <EmbeddedResource Include="frmAdditionalInterests.resx" />
+    <EmbeddedResource Include="frmAdditionalWarranties.resx" />
+    <EmbeddedResource Include="frmChangeInvoiceIssuedDate.resx" />
+    <EmbeddedResource Include="frmChangeProducer.resx" />
+    <EmbeddedResource Include="frmChangeQuoteStatus.resx" />
+    <EmbeddedResource Include="frmChildPolicyNumbers.resx" />
+    <EmbeddedResource Include="frmControlNumberJump.resx" />
+    <EmbeddedResource Include="frmCurrentLossInformation.resx" />
+    <EmbeddedResource Include="frmEditAffidavitNumbers.resx" />
+    <EmbeddedResource Include="frmInsuredSummary.resx" />
+    <EmbeddedResource Include="frmNetRateDBUpdate.resx" />
+    <EmbeddedResource Include="frmNetRatePremiums.resx" />
+    <EmbeddedResource Include="frmNetRateReconnectData.resx" />
+    <EmbeddedResource Include="frmNetRateUpdateXML.resx" />
+    <EmbeddedResource Include="frmQuoteEdit.resx" />
+    <EmbeddedResource Include="frmQuoteEdit2.resx" />
+    <EmbeddedResource Include="frmRenewInactiveCompanyLine.resx" />
+    <EmbeddedResource Include="frmSelectQuoteOption.resx" />
+    <EmbeddedResource Include="frmSelectQuoteType.resx" />
+    <EmbeddedResource Include="frmSubmissionGroup.resx" />
+    <EmbeddedResource Include="frmViewSummary.resx" />
+    <EmbeddedResource Include="frmVinVerification.resx" />
+    <EmbeddedResource Include="ImportClaims.resx" />
+    <EmbeddedResource Include="InstallmentBilling\frmInstallmentBilling.resx" />
+    <EmbeddedResource Include="InstallmentBilling\frmInstallmentBillingOptions.resx" />
+    <EmbeddedResource Include="InstallmentBilling\SelectUnissuedInvoicesForm.resx" />
+    <EmbeddedResource Include="Invoices\frmChangeInvoiceDueDate.resx" />
+    <EmbeddedResource Include="Invoices\frmInvoiceLookup.resx" />
+    <EmbeddedResource Include="ITVReport.resx" />
+    <EmbeddedResource Include="LoadSavedMapping.resx" />
+    <EmbeddedResource Include="note_edit.png" />
+    <EmbeddedResource Include="page_cross.gif" />
+    <EmbeddedResource Include="page_delete.gif" />
+    <EmbeddedResource Include="page_deny.gif" />
+    <EmbeddedResource Include="page_lock.gif" />
+    <EmbeddedResource Include="page_right.gif" />
+    <EmbeddedResource Include="page_user_dark.gif" />
+    <EmbeddedResource Include="PolicyDetail\frmPolicyDetail.resx" />
+    <EmbeddedResource Include="PolicyDetail\PolicyDetail_Invoices.resx" />
+    <EmbeddedResource Include="PolicyDetail\PolicyDetail_Plugin.resx" />
+    <EmbeddedResource Include="PolicyDetail\PolicyDetail_PolicyInfo.resx" />
+    <EmbeddedResource Include="PolicyDetail\PolicyDetail_PolicyInquiry.resx" />
+    <EmbeddedResource Include="PolicyDetail\PolicyDetail_Premiums.resx" />
+    <EmbeddedResource Include="PolicyDetail\PolicyDetail_StatusChanges.resx" />
+    <EmbeddedResource Include="PolicyDetail\PolicyDetail_Transactions.resx" />
+    <EmbeddedResource Include="PolicyNumbering\frmAdminPolicyNumbers.resx" />
+    <EmbeddedResource Include="PolicyNumbering\frmChangePolicyNumber.resx" />
+    <EmbeddedResource Include="PolicyNumbering\frmPolicyNumberEntry.resx" />
+    <EmbeddedResource Include="rptAdminCommissions.resx" />
+    <EmbeddedResource Include="rptVinException.resx" />
+    <EmbeddedResource Include="SelectRewritePolicyType.resx" />
+    <EmbeddedResource Include="SelectWorksheet.resx" />
+    <EmbeddedResource Include="strings.resx" />
+    <EmbeddedResource Include="SymbolAutomationTest.resx" />
+    <EmbeddedResource Include="TestReport.resx" />
+    <EmbeddedResource Include="ucVinCar.resx" />
+    <EmbeddedResource Include="ViewSummaryReport.resx" />
+    <EmbeddedResource Include="ViewSummaryReport_SUB.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

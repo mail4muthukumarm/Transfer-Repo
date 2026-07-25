@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Appearance22.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAArgMAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAM5SURBVDhPZZLbT9NnGMf5J3azuyXLsmiy7GJuNwwPKEN0ZEsgTsqhgIIO2ClhYJWTXaHCxqmlQGllKmBLOZQJVEeUzYC1VOlRqCLSX0EwQ4ZToSOZ++yl2RIdF9/36v18nvd5njcKiPr4i7PbDxYYpw4UGMcP5BtJyDewP0/k8zbiRT46rifuWCv7cluIPaIhJu27B5vcZiKHgBsE/Hdx8whZp3vIrOhBXm4ho8xCelk3aaUmUk+ZEPeIzWkmOlUtsJcEAnYVN//MlfEA0w8eMTW7xNT9RfwzC/juzeMJhHBPSzxcWmZ1dZVtMYf+J8g3BDuv3+WrhiEyROX0UnMkqSUmZKJyysmLHD7RFWlr9xHdVkFCnkEy35yl6aqfK/5Fhj2LDLkXuDQ5j9UZotcRxGyf48fReyTk6bcKxLCkrvEZvr14g7bRu2hsHmqtTqr7Jqiy3ERpcVJl9TBgO0+g8zNmBlS4jXF4mranRwRi0lKHaOGbjl/RXvaysLJG6PFzJJHg8nPmfnvG+b46lq4V8cQ7CM8esurtwf59/KOIQKxJah+d5sv2q9QP+VH3Oqkw2SnpvIHi3Bh6Ux3L/nI25n9i6Zca1n19/BUcw9eeE44IxI6ltpE7HNdfpvqSn6p+L6d73ZR0u9BZjKz4S3ixPsb6bD4rEwVMX8jG25b2eKLx07cign25rZLO5uVo4yDKPg9lFhcK0200Jj2/+07wImxn7X4G4ZCMp1MKXA17uP3D3nc32Yhgb06L1DjoRl7TzynzJEVdt6hpFT07i/6F0wlLKfzhP4lfE0di4icCe2kLsUebpVrrJDJVN4UdYuIt9fhsheLZ1wnPZfNnKI0n4iUBXTxJx9Rb1yg+h6TucXKotIvy6kruDCvw2OpZcCSzNidjxV2MS3MQ1Vkbu7K0WwW7snWSyjxBUvEFus/EwtMgAX0S1xSvM96yn2HlHvLUJgqNDnZmaXg7Oll6RbAzq0lSWW5xpt+DMucdNuxaNhwNOFS7MeW+SaXeSlG7k69b7cRkanjjvcRzrwhiMrWGD+VaouUakmJeozJjGyNVCRgqkomXK/lAVsf7KXXsSKllx+Hagf9gIOof7+rMw9N8+3YAAAAASUVORK5CYIIL</value>
+  </data>
+  <data name="SqlDeleteCommand1.CommandText" xml:space="preserve">
+    <value>DELETE FROM tblQuoteOptions WHERE (QuoteOptionGUID = @Original_QuoteOptionGUID) AND (LineGUID = @Original_LineGUID) AND (Premium = @Original_Premium OR @Original_Premium IS NULL AND Premium IS NULL) AND (QuoteGUID = @Original_QuoteGUID) AND (QuoteOptionID = @Original_QuoteOptionID)</value>
+  </data>
+  <data name="SqlSelectCommand4.CommandText" xml:space="preserve">
+    <value>SELECT tblQuoteOptionGL.ID, tblQuoteOptionGL.OCC_ID, tblQuoteOptionGL.AGG_ID, tblQuoteOptionGL.PCO_ID, tblQuoteOptionGL.PAI_ID, tblQuoteOptionGL.FDL_ID, tblQuoteOptionGL.MED_ID, tblQuoteOptionGL.LLL_ID, tblQuoteOptionGL.NOH_ID, tblQuoteOptionGL.PDL_ID, tblQuoteOptionGL.Deductible, tblQuoteOptionGL.DeductibleDescriptionID, tblQuoteOptionGL.AggPerLocation, tblQuoteOptionGL.TerrorismDeclined, tblQuoteOptionGL.QuoteOptionID, tblQuoteOptionGL.AdditionalComments, tblQuoteOptionGL.PremPremium, tblQuoteOptionGL.ProdPremium, tblQuoteOptionGL.TerrPremium, tblQuoteOptionGL.ClaimsMade, CASE WHEN tblQuoteOptionGL.ClaimsMade = 1 THEN 0 ELSE 1 END AS Occurrence FROM tblQuoteOptionGL INNER JOIN tblQuoteOptions ON tblQuoteOptionGL.QuoteOptionID = tblQuoteOptions.QuoteOptionID WHERE (tblQuoteOptions.QuoteGUID = @QuoteGuid)</value>
+  </data>
+  <data name="SqlUpdateCommand1.CommandText" xml:space="preserve">
+    <value>UPDATE tblQuoteOptions SET QuoteOptionGUID = @QuoteOptionGUID, QuoteGUID = @QuoteGUID, LineGUID = @LineGUID WHERE (QuoteOptionGUID = @Original_QuoteOptionGUID) AND (LineGUID = @Original_LineGUID) AND (QuoteGUID = @Original_QuoteGUID); SELECT QuoteOptionID, QuoteOptionGUID, QuoteGUID, LineGUID, Premium FROM tblQuoteOptions WHERE (QuoteOptionGUID = @QuoteOptionGUID)</value>
+  </data>
+  <data name="SqlUpdateCommand2.CommandText" xml:space="preserve">
+    <value>UPDATE tblQuoteOptionGL SET OCC_ID = @OCC_ID, AGG_ID = @AGG_ID, PCO_ID = @PCO_ID, PAI_ID = @PAI_ID, FDL_ID = @FDL_ID, MED_ID = @MED_ID, LLL_ID = @LLL_ID, NOH_ID = @NOH_ID, PDL_ID = @PDL_ID, Deductible = @Deductible, DeductibleDescriptionID = @DeductibleDescriptionID, AggPerLocation = @AggPerLocation, TerrorismDeclined = @TerrorismDeclined, QuoteOptionID = @QuoteOptionID, AdditionalComments = @AdditionalComments, PremPremium = @PremPremium, ProdPremium = @ProdPremium, TerrPremium = @TerrPremium, ClaimsMade = @ClaimsMade WHERE (ID = @Original_ID); SELECT ID, OCC_ID, AGG_ID, PCO_ID, PAI_ID, FDL_ID, MED_ID, LLL_ID, NOH_ID, PDL_ID, Deductible, DeductibleDescriptionID, AggPerLocation, TerrorismDeclined, QuoteOptionID, AdditionalComments, PremPremium, ProdPremium, TerrPremium, ClaimsMade FROM tblQuoteOptionGL WHERE (ID = @ID)</value>
+  </data>
+  <data name="Appearance20.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAHQMAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAKoSURBVDhPpZPtT1JRHMf9W/RP6N7etDZ90VybDZK0F5k1TBO1la7CbLBKMRGfAAVsCIaaD5RPUJIiJHAlI+QhNPXmwAza2uoNZC3LbwdaqNXaWi8+d/ece77f3/ne3zkZAP6L3ybyNStZx1QhUZ4iyB5p8cZzZJ54tmyBzZa5RYdvM1m/rt834KiXeUflgVhFrx+99ghGmc0UemsYfPVT0KLZGC228vZq0i+kKi+31ZdomVyFxRtDz3QEEuNL3Bpehty0CqNjA42jIdCVEwn64kTaJPXIUwYzc9sWo0mx6VkMIiK6NhDAkOs1hpwbuGrwQ9gfgGF2HZL7ftBlxihdOpyZNsiVL4rLtV6YPW9RNxCCkES4rPPh4+ftFNU6D6p7PBDe9WLgSRinmh+DKuoXpw1y2jys3hqB0sTiSq8PNTovqrUe9NnXYSBUdjM/0LhIrADU0yugC3Vs2uCQhNkaX3iDuj4/qfQcVXfcZDFDPgE7BIHKifLOOYIDFzROGJkwKF7XVlKbMqDF9q0x92Yqa7JShdpFRC6EIh+Q+LSNsg47StttOEcQKGwYmScGXMVeAyurtbKQPlhClcYNQZcT55VzeBF+Twy+oEQ2gxKSm99sQW0PA6UlCPp4x24EutYiLpbbMeSIoErFQCB3wOLZwNdvO6kI/lfvUCwxE0zofhhC4fVRYtC++xPpS2OZtMAYvTnig8G6hjK5DfyWaZyRTqG4wYTT9RMoqh9H64iXtHeebF8apbnS3TYmofiDvAMF+oRo0AP9zAqEWifZ8iOcbTSjRmWD2hSAsI8BzWlIEPH+g5Q2KdTzqILu2Mkbk1BOLeGekyWsocMcRH6dERSnMUZzm/58lH9Cn1BnUbxOEZWvYCluc5ziNMVJRZYgOsht+Ptl+neQ8R04hsvsalKMmgAAAABJRU5ErkJgggs=</value>
+  </data>
+  <data name="Appearance21.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA8QIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAJ8SURBVDhPhZLLT1NBGMW70K2JS7cmxrjU+A9oIGIgFGhEUYkYRYIYaiyCUPqgD2p42hb6BkqLoKUWegt9UKm0JQrSGjdaQErRmLhzY4pE0OPcIRBKfSzO5M7M/Z3vzDfDAfBftUdb06oZ2aE/7WUt7FdbRJE2x3VQhqQQBxqzTDIm+/UwLE+b4j3wffLAsKBFs68BdczdDJMMYK9I5LQxxsIMHCt2eNfGoXnZAYG7FjWjt3ZNskBWrS9a0oaYFr6Pbjz9YIdt0YyGCQEmUmPoiKpQ7ajE9aFyapIFK0OStH5BAy+B26JKKMNSWBNGDCQMeLw0ACblREtQhKvWS+tZBvJp8brutZrEdSP5bQkbW98x8nYIihnxNrzqhDQoxOWB0s0dhg7a+a5jsueiH73zj+hZ2yJKCusjvUh9TUIVkcG9OgrJlJCtjPLBMly08A5QA+18p0hGIvXMdVP4ybKNxJbQyiws90u34UATWxlzX2bR7H+AEmOhghqwkbRzXZgkDRpZHqRn7X+vh5zEVoVlGE+OQhRoRJXrBoVnP4cRWguAZ+LivCb3MEcxLbESwfJGD0/qGeo8fPS908G+2EdgB61WP3WPwFFMLjOo9VdvlPWXIk+dK8jpPnOKowhJjrAp2EeiX1DTuLaEZRsma5XOCjCLLqhn21GkLwgU9OSp89Q5RzOa2OS9b7bGLRAwfGhedWJsxQGhtx4XzMUQEhOeqSjJ1eWfzdeeO7EDZhjUMfzjLcHmreCqD3ecVSCGKDYU/iKd9vOM3Kb90F7RodZ1+yB5XWOVwxU/+a4aNupmqaXkNOn0btS/affj5nDFyWu2KzFyVfl7f/i3wPkNOLzMGxqYvkUAAAAASUVORK5CYIIL</value>
+  </data>
+  <data name="Appearance2.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA9gYAAAJCTfYGAAAAAAAANgAAACgAAAAYAAAAGAAAAAEAGAAAAAAAAAAAAMQOAADEDgAAAAAAAAAAAAD/AP//AP//AP//AP//AP//AP//AP//AP8ESwYESwYETgcFWgkFWgkETgcETAYESwb/AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP8ESAUETAYFXwoHhBAIlxQInhUInhUImRUHihIFZgsETgcESwb/AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP8GYQsEXgkHjhIJrxgJuhoJtxoJtRoJtRoJtxoJuhoJshkHlhMGaQwETgf/AP//AP//AP//AP//AP//AP//AP//AP//AP8IahEHcQ8KsRsJuRoJtRoJshkJshkJshkJshkJshkJshkJsxkJuRoJtRoHgBAEUAf/AP//AP//AP//AP//AP//AP//AP8LbxgNehoSuysOuCMLshwJshkIshgEsBMFsBIIshgJshkJshkJshkJshkJtRoJuhoHhhEEUAf/AP//AP//AP//AP//AP8GVwwNeh0avz4VuTIRtSoPtCMKshsGsRYKshoJshkJshkJshkJshkJshkJshkJshkJsxkJuhoHhBAETgf/AP//AP//AP//AP8IXA8euUQewUUYuDkVuTIRtioGsRoKshoJshl+14bx+vHx+vGs5bEStSEJshkJshkJshkJtBkJtxkFZAv/AP//AP//AP8IaA4XjzEmyFYgvEkcu0AWtzQLsyENsx4KshoJshmI2pD///////////+v5rQStSEJshkJshkJshkJuhoJlBQETgf/AP//AP8JaRAnuVYrwlskvlEdukIOtCYMsx0LsxsLshwJshoWtiWo5K7///////////+p5K8PtB4JshkJshkJsxkJtBkFXwr/AP8GcAsRgSUxyGsqwWEov1gaukERtSUKshoKshoKshoKshoKshoKshqW3p3+//7///////+j4qkNsx0JshkJshkJuhoGeQ4EUgcGcQwbmDo3yXEvw2cmwFxGyG1Gxl43wEY9w1FAxFU6wko7wk05wUs0v0K46bz///////////+c4KIKshoIshgJuhoHjhIEUgcJeA8lpkhCzXszxWs4xm7l9+z6/fv5/fr5/fv5/fv5/fv5/fv6/fv2/Pfy+/P///////////////+Q3JcIshgJuhoIlxQEUAcKgBEyr1Ne0ow9xnI3xW7+//7////////////////////////////////////////////////////y+/MKshkJtxkImRUFYQsLhxMyr1N326BTzYI3xW7J79jl9+zk9+zk9+zk9+zk9+zk9+zk9+ra9N/m9+j////////////2/Pdlz3ILsx8JuhsIlxQEUgcKjhQuq0mH36x12Z02xGw5xnA/x3Q/x3Q/x3RAx3RAx3M3xGclvlJGyGjP8dj////////y+/Viz3wcukEPtSYJuhsHihIEUgf/AP8dojCG3qqf5LlV0YcpwGU4xW83xW43xW43xW44xW81xGtd0ITd9eT////////s+fBaznkcu0QXuDcNtCMJuhoFdA7/AP//AP8fqDBkz4a67M6P361ByHQnwWM1xWw3xW43xW43xW5z1pnz/Pb////////n+OxQym4auj0YuDcTti0QtycMsh8FWgn/AP//AP//AP8vtEqv6snC7tN41505xW8mwGE1xGw3xW43xW616sr////////g9udNyXEgu0geu0MaujsWtzUUwTEMjhz/AP//AP//AP//AP8/tUtkz4bF79nC7tN015pByHQowGQ1xGw3xW5o05Hp+e/M8NpGyHIkvlgkvVAhvEoeu0Mavz4XuDUHXw3/AP//AP//AP//AP//AP8msDuF3KLS89/M8duM3q1YzoY1xGwww2lAyHU3xW4uwmcvw2ctwWArwlsovlQjv00ewUUOeh7/AP//AP//AP//AP//AP//AP//AP8nrDuG3qrS89/b9eW36suJ3alr05JTzYJJy3xOy35RzYFRzYFHyXU2x2cow1cRgSX/AP//AP//AP//AP//AP//AP//AP//AP//AP8wskBq0Yyv6snM8dvS89/D7tWx6Mej5LyZ4reM3q1z2JxV0Yc0wGQSgyb/AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP8wskAttkpr05KZ4req6cWq6cWh5r6P4bF12Z1Oy34pp0sNehr/AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP8wskAttEg9u149u14/u2E5tVomp0MQih//AP//AP//AP//AP//AP//AP//AP//AP8L</value>
+  </data>
+  <data name="SqlInsertCommand2.CommandText" xml:space="preserve">
+    <value>INSERT INTO tblQuoteOptionGL(OCC_ID, AGG_ID, PCO_ID, PAI_ID, FDL_ID, MED_ID, LLL_ID, NOH_ID, PDL_ID, Deductible, DeductibleDescriptionID, AggPerLocation, TerrorismDeclined, QuoteOptionID, AdditionalComments, PremPremium, ProdPremium, TerrPremium, ClaimsMade) VALUES (@OCC_ID, @AGG_ID, @PCO_ID, @PAI_ID, @FDL_ID, @MED_ID, @LLL_ID, @NOH_ID, @PDL_ID, @Deductible, @DeductibleDescriptionID, @AggPerLocation, @TerrorismDeclined, @QuoteOptionID, @AdditionalComments, @PremPremium, @ProdPremium, @TerrPremium, @ClaimsMade); SELECT ID, OCC_ID, AGG_ID, PCO_ID, PAI_ID, FDL_ID, MED_ID, LLL_ID, NOH_ID, PDL_ID, Deductible, DeductibleDescriptionID, AggPerLocation, TerrorismDeclined, QuoteOptionID, AdditionalComments, PremPremium, ProdPremium, TerrPremium, ClaimsMade FROM tblQuoteOptionGL WHERE (ID = @@IDENTITY)</value>
+  </data>
+  <data name="SqlInsertCommand1.CommandText" xml:space="preserve">
+    <value>INSERT INTO tblQuoteOptions(QuoteOptionGUID, QuoteGUID, LineGUID) VALUES (@QuoteOptionGUID, @QuoteGUID, @LineGUID); SELECT QuoteOptionID, QuoteOptionGUID, QuoteGUID, LineGUID, Premium FROM tblQuoteOptions WHERE (QuoteOptionGUID = @QuoteOptionGUID)</value>
+  </data>
+</root>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SqlSelectCommand1.CommandText" xml:space="preserve">
+    <value>SELECT      LocationID, LocationGuid, QuoteGuid, LocationNo, BuildingNo, PhysicalBuildingNo, Address1, Address2, City, State, County, Zip, ZipPlus, ConstructionID, ProtectionCode, AddnInformation, SqFootage, EQZone, FloodZone, EQConstruction, WindCoverage, Territory, TaxTerritory, Inspect, Photo, Diagram, 
+                   CostEstimator, UserAdded, DateAdded, DistToFireHydrant, DistToFireStation, FireDistrict, Stories, Basements, Elevators, YearBuilt, WiringYear, RoofingYear, PlumbingYear, HeatingYear, ModificationCode, InspectionCompanyID, InspectionContact, InspectionContactPhone, Comments, ClassCodeID, 
+                   FireAlarmTypeID, BurglarAlarmTypeID, LockedAndSecured, SprinklerTypeID, Vacant, WindRestrictionID, GEOPhyBuildNum, GEOAddress1, GEOAddress2, GEOCity, GEOState, GEOCounty, GEOZip, GEOZipPlus, RecCheck, Rush, DueDate, Latitude, Longitude, GeoStatus, GeoURL,
+                       (SELECT      TOP (1) BaseLocationId
+                        FROM         tblUnderwritingLocationsLookup AS ULL
+                        WHERE      (LocationId = UL.LocationID)) AS BaseLocationId, LocationLookup, RoofInspectionCompanyID, ContactEmail
+FROM         tblUnderwritingLocations AS UL
+WHERE      (LocationID = COALESCE (@LocationID, LocationID)) AND (QuoteGuid = @QuoteGuid)
+ORDER BY LocationNo, CASE WHEN ISNUMERIC(BuildingNo) = 1 THEN CONVERT(BIGINT, BuildingNo) ELSE 9000 END</value>
+  </data>
+  <data name="Appearance40.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAHQMAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAKoSURBVDhPpZPtT1JRHMf9W/RP6N7etDZ90VybDZK0F5k1TBO1la7CbLBKMRGfAAVsCIaaD5RPUJIiJHAlI+QhNPXmwAza2uoNZC3LbwdaqNXaWi8+d/ece77f3/ne3zkZAP6L3ybyNStZx1QhUZ4iyB5p8cZzZJ54tmyBzZa5RYdvM1m/rt834KiXeUflgVhFrx+99ghGmc0UemsYfPVT0KLZGC228vZq0i+kKi+31ZdomVyFxRtDz3QEEuNL3Bpehty0CqNjA42jIdCVEwn64kTaJPXIUwYzc9sWo0mx6VkMIiK6NhDAkOs1hpwbuGrwQ9gfgGF2HZL7ftBlxihdOpyZNsiVL4rLtV6YPW9RNxCCkES4rPPh4+ftFNU6D6p7PBDe9WLgSRinmh+DKuoXpw1y2jys3hqB0sTiSq8PNTovqrUe9NnXYSBUdjM/0LhIrADU0yugC3Vs2uCQhNkaX3iDuj4/qfQcVXfcZDFDPgE7BIHKifLOOYIDFzROGJkwKF7XVlKbMqDF9q0x92Yqa7JShdpFRC6EIh+Q+LSNsg47StttOEcQKGwYmScGXMVeAyurtbKQPlhClcYNQZcT55VzeBF+Twy+oEQ2gxKSm99sQW0PA6UlCPp4x24EutYiLpbbMeSIoErFQCB3wOLZwNdvO6kI/lfvUCwxE0zofhhC4fVRYtC++xPpS2OZtMAYvTnig8G6hjK5DfyWaZyRTqG4wYTT9RMoqh9H64iXtHeebF8apbnS3TYmofiDvAMF+oRo0AP9zAqEWifZ8iOcbTSjRmWD2hSAsI8BzWlIEPH+g5Q2KdTzqILu2Mkbk1BOLeGekyWsocMcRH6dERSnMUZzm/58lH9Cn1BnUbxOEZWvYCluc5ziNMVJRZYgOsht+Ptl+neQ8R04hsvsalKMmgAAAABJRU5ErkJgggs=</value>
+  </data>
+  <data name="SqlUpdateCommand1.CommandText" xml:space="preserve">
+    <value>UPDATE     tblUnderwritingLocations
+SET            LocationGuid = @LocationGuid, QuoteGuid = @QuoteGuid, LocationNo = @LocationNo, BuildingNo = @BuildingNo, PhysicalBuildingNo = @PhysicalBuildingNo, Address1 = @Address1, Address2 = @Address2, City = @City, State = @State, County = @County, Zip = @Zip, ZipPlus = @ZipPlus, 
+                   ConstructionID = @ConstructionID, ProtectionCode = @ProtectionCode, AddnInformation = @AddnInformation, SqFootage = @SqFootage, EQZone = @EQZone, FloodZone = @FloodZone, EQConstruction = @EQConstruction, WindCoverage = @WindCoverage, Territory = @Territory, 
+                   TaxTerritory = @TaxTerritory, Inspect = @Inspect, Photo = @Photo, Diagram = @Diagram, CostEstimator = @CostEstimator, UserAdded = @UserAdded, DateAdded = @DateAdded, DistToFireHydrant = @DistToFireHydrant, DistToFireStation = @DistToFireStation, FireDistrict = @FireDistrict, 
+                   Stories = @Stories, Basements = @Basements, Elevators = @Elevators, YearBuilt = @YearBuilt, WiringYear = @WiringYear, RoofingYear = @RoofingYear, PlumbingYear = @PlumbingYear, HeatingYear = @HeatingYear, ModificationCode = @ModificationCode, 
+                   InspectionCompanyID = @InspectionCompanyID, InspectionContact = @InspectionContact, InspectionContactPhone = @InspectionContactPhone, Comments = @Comments, ClassCodeID = @ClassCodeID, FireAlarmTypeID = @FireAlarmTypeID, BurglarAlarmTypeID = @BurglarAlarmTypeID, 
+                   LockedAndSecured = @LockedAndSecured, SprinklerTypeID = @SprinklerTypeID, Vacant = @Vacant, WindRestrictionID = @WindRestrictionID, GEOPhyBuildNum = @GEOPhyBuildNum, GEOAddress1 = @GEOAddress1, GEOAddress2 = @GEOAddress2, GEOCity = @GEOCity, GEOState = @GEOState, 
+                   GEOCounty = @GEOCounty, GEOZip = @GEOZip, GEOZipPlus = @GEOZipPlus, RecCheck = @RecCheck, Rush = @Rush, DueDate = @DueDate, Latitude = @Latitude, Longitude = @Longitude, GeoStatus = @GeoStatus, GeoURL = @GeoURL, LocationLookup = @LocationLookup, 
+                   RoofInspectionCompanyID = @RoofInspectionCompanyID, ContactEmail = @ContactEmail
+WHERE      (LocationID = @Original_LocationID);   
+SELECT LocationID, LocationGuid, QuoteGuid, LocationNo, BuildingNo, PhysicalBuildingNo, Address1, Address2, City, State, County, Zip, ZipPlus, ConstructionID, ProtectionCode, AddnInformation, SqFootage, EQZone, FloodZone, EQConstruction, WindCoverage, Territory, TaxTerritory, Inspect, Photo, Diagram, CostEstimator, UserAdded, DateAdded, DistToFireHydrant, DistToFireStation, FireDistrict, Stories, Basements, Elevators, YearBuilt, WiringYear, RoofingYear, PlumbingYear, HeatingYear, ModificationCode, InspectionCompanyID, InspectionContact, InspectionContactPhone, Comments, ClassCodeID, FireAlarmTypeID, BurglarAlarmTypeID, LockedAndSecured, SprinklerTypeID, Vacant, WindRestrictionID, GEOPhyBuildNum, GEOAddress1, GEOAddress2, GEOCity, GEOState, GEOCounty, GEOZip, GEOZipPlus, RecCheck, Rush, DueDate, Latitude, Longitude, GeoStatus, GeoURL, (SELECT TOP (1) BaseLocationId FROM dbo.tblUnderwritingLocationsLookup AS ULL WHERE (LocationId = UL.LocationID)) AS BaseLocationId, LocationLookup, RoofInspectionCompanyID FROM dbo.tblUnderwritingLocations AS UL WHERE (LocationID = @LocationID) ORDER BY LocationNo, CASE WHEN ISNUMERIC(BuildingNo) = 1 THEN CONVERT (INT , BuildingNo) ELSE 9000 END</value>
+  </data>
+  <data name="Appearance42.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAjQIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAIYSURBVDhPpY9NaBNBGIZLhJwVPIgehF4UvBRvghfBm2cvigii9VAEEaxIkV60YlHERl2sXSvRSmxJqmJsNUndWNsk5qfR0MQ03V2zG01001DZbJINhtfZjQlpfgTx8HzMfDPPO/N1Afgv6gs398vwdrVMOeKqOBstVF5G8pXppZ/ilD9HPVmUDI1SI3phiDyXKDNBQQWXLUPIqRDWVKx8L8G1vI5xJs2MOsW2IXpxJcpUQChBzJURTRcREgrwJwsIiwWwP1TYl7IwveKpZllDL69jRZGTVF0OEPHDFwVeTsECq1SDBAXXnyXEZllDL9q8SfJlTfbxCjxEfr+ax7tEHsxKngSXMDQZqzTLGnqxhdYrfFaFl8iL5NV5IruJOBeX4YrJiHwrYXAi0jnA4s2KsT/fr73q+izDQWRt7+NkDIwH082yhl7M8xlqJryGeKakz67L0ar8KVUE7eAxcpsuOi8f2tU24L4rZbg7m2RsvgyCSQWRr0V8JHhZGWNveNyyeLBsG4L90gFp+sK+DSH1xc0XrGHYFqeuPI2K2rwDD8OV/rFgathk5gLm88j4pxB63A/L2R7pUd/uekg9oBMzgweNzy/uty5QJ5Fy0/Dc6wV9aqdUO28R2jF5bq9x4sweq/PGYbD2a6CObyPt6lnL5U486O02jp7YYaVPd8N0dMvVWr/l4t+4c2zrppEjm7c39jZc+HfQ9Rvx6Ap4ZpE7GAAAAABJRU5ErkJgggs=</value>
+  </data>
+  <data name="Appearance43.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA3AIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAJnSURBVDhPddLNT9NwHAbwHtX4J+mFiK+JMYwNb56MMVEvusMSX9C5sSsSOanx7MVEuSBGgwy7tB1sghIofCVjsBdexlY2XNv18WmNFy2HJ78m6/fZ9/dJlXMJ9U00bcwNZQyJZXQzljHMoRHdvJLUCn2J7J1TN94dA6AcFWUwpRX4YNasntSZasuVjYYtlZYtmam6RFPzL07fnDjx7+DfKLG0vrLb9mRWXFHXHfmy2pWJhbZYXU+yJVvGpnfk/IOZ4bBhP0o0rZv7HU/yJVfyG67kftrycflQ1mpt2bZssX45cv15fjVs2E9Q0Dz05NumK8WyK0bJkexaV17O1DH+eQvPpspBbr0utm+/KnSujRsrtHlIm+NBwSALWoeQ7xUvSHGzJ9q6LeOfNuHxDdqANqANaAPagDagzXvanFQiKV4hKID8qPRkcasnBW4yxn+lDWgD2oA2oA1oA9qANqDNmDLwVOMVIMs1iFn/cy6xzF+bNqANaAPagDagDWgD2iCS1DxlIGmYe20ntIA2oA1oA9qANpha6uBt0UKZ17k6YnhK5Mm8VJqN/wpGWUAb0CUIbUAbZKUbbFJp9TDkF1y+n1vYsVypNvnx7NtSazpSbzky+oFXCAoA2oA2oA30Dd/DRtXyEEuz4GJCnbyUyM31x3Nr/XF1kSejLtKGVwC4EbhZcHIzXgnQSwh+i6Z0L/Tj8EMbhzZHFjQ6DqJJbhA27Ic2oM2RBdVWA7HHc+HDfi4k1F3agDagDWgD2gTZZvYOehgc1rqhw3767s5O98e/btHEo4nFk/FP1Tobzx2cuTdbjTzSmr8B1uo6cuIIh6sAAAAASUVORK5CYIIL</value>
+  </data>
+  <data name="Appearance44.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAuQIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAJESURBVDhPpZLtT1JhHIbd/Dv6klMLy1aWBpmRVg5JtDQSjTRCUAg6FvgGiIAgoYyXcM4NJSGJCRrMClPDqWjOajXXi9k3P/I/tLsDWwqDubU+XNs59zm/+3nOdZ4sAP9FxvBf2L94FBWAWOVDusyDeKkFbfNctL5uAi/U8Ls5cCvW5LsZbvDUEPUu5pGMBcQKH8FfXrzc9WLmpwf+HTd8P1yY+ubE+BcHhtd1kL16gNqxyuB1xxVqWoEkwsPs7hQC5OD0ziRefJ9IDLu/jsG1PYqRT8MY+2yDYv4xKi30YIWpNLGT/QLRQjOEb+6AP8dByywb3Ok6cLy1YE9Wgwi1wbppxMhHM+wfhsCf4uKS/jyRUnAYrNFrlip7+Z5xTQN9VAX5nBQX1OfC8WcZBzJx1VxmEfv5METV0ER6UNx7OhbPU14iTWeTphXJ2V8uD9IsQt89aFcVUC514oz8ZHrBbQ/LVTfB3E7O4tANNEuppnhPsShH1zsC7f77KCQoqZ/Adlc/fRgSQjzDB9NRETcN0jToeioax+vRuyCDeqUHquUu1NiqUCDOO5BImjZJgwLYt0ywbj2BedMA04YOg+v9GFjrg4bctmxRAmWkE9xnHFDEecF8Yc7Bb7zhZAyIAjxyUI+h93oYN7QJWdpVJfrJVbvfdqDV1wyWjQGKKDeYL8hJP0gMW7mV97wRdycbUKYrAa3vbNw0iuSFONVREDshORY+3p5L5AmOZj7KcUjTzovakjSJh5FyQ5rOpqqKupOzw0HWH+d+o/aII7tsAAAAAElFTkSuQmCCCw==</value>
+  </data>
+  <data name="SqlInsertCommand1.CommandText" xml:space="preserve">
+    <value>INSERT INTO tblUnderwritingLocations
+                   (LocationGuid, QuoteGuid, LocationNo, BuildingNo, PhysicalBuildingNo, Address1, Address2, City, State, County, Zip, ZipPlus, ConstructionID, ProtectionCode, AddnInformation, SqFootage, EQZone, FloodZone, EQConstruction, WindCoverage, Territory, TaxTerritory, Inspect, Photo, Diagram, 
+                   CostEstimator, UserAdded, DateAdded, DistToFireHydrant, DistToFireStation, FireDistrict, Stories, Basements, Elevators, YearBuilt, WiringYear, RoofingYear, PlumbingYear, HeatingYear, ModificationCode, InspectionCompanyID, InspectionContact, InspectionContactPhone, Comments, ClassCodeID, 
+                   FireAlarmTypeID, BurglarAlarmTypeID, LockedAndSecured, SprinklerTypeID, Vacant, WindRestrictionID, GEOPhyBuildNum, GEOAddress1, GEOAddress2, GEOCity, GEOState, GEOCounty, GEOZip, GEOZipPlus, RecCheck, Rush, DueDate, Latitude, Longitude, GeoStatus, GeoURL, LocationLookup, 
+                   RoofInspectionCompanyID, ContactEmail)
+VALUES      (@LocationGuid,@QuoteGuid,@LocationNo,@BuildingNo,@PhysicalBuildingNo,@Address1,@Address2,@City,@State,@County,@Zip,@ZipPlus,@ConstructionID,@ProtectionCode,@AddnInformation,@SqFootage,@EQZone,@FloodZone,@EQConstruction,@WindCoverage,@Territory,@TaxTerritory,@Inspect,@Photo,@Diagram,@CostEstimator,@UserAdded,@DateAdded,@DistToFireHydrant,@DistToFireStation,@FireDistrict,@Stories,@Basements,@Elevators,@YearBuilt,@WiringYear,@RoofingYear,@PlumbingYear,@HeatingYear,@ModificationCode,@InspectionCompanyID,@InspectionContact,@InspectionContactPhone,@Comments,@ClassCodeID,@FireAlarmTypeID,@BurglarAlarmTypeID,@LockedAndSecured,@SprinklerTypeID,@Vacant,@WindRestrictionID,@GEOPhyBuildNum,@GEOAddress1,@GEOAddress2,@GEOCity,@GEOState,@GEOCounty,@GEOZip,@GEOZipPlus,@RecCheck,@Rush,@DueDate,@Latitude,@Longitude,@GeoStatus,@GeoURL,@LocationLookup,@RoofInspectionCompanyID,@ContactEmail);  
+SELECT LocationID, LocationGuid, QuoteGuid, LocationNo, BuildingNo, PhysicalBuildingNo, Address1, Address2, City, State, County, Zip, ZipPlus, ConstructionID, ProtectionCode, AddnInformation, SqFootage, EQZone, FloodZone, EQConstruction, WindCoverage, Territory, TaxTerritory, Inspect, Photo, Diagram, CostEstimator, UserAdded, DateAdded, DistToFireHydrant, DistToFireStation, FireDistrict, Stories, Basements, Elevators, YearBuilt, WiringYear, RoofingYear, PlumbingYear, HeatingYear, ModificationCode, InspectionCompanyID, InspectionContact, InspectionContactPhone, Comments, ClassCodeID, FireAlarmTypeID, BurglarAlarmTypeID, LockedAndSecured, SprinklerTypeID, Vacant, WindRestrictionID, GEOPhyBuildNum, GEOAddress1, GEOAddress2, GEOCity, GEOState, GEOCounty, GEOZip, GEOZipPlus, RecCheck, Rush, DueDate, Latitude, Longitude, GeoStatus, GeoURL, (SELECT TOP (1) BaseLocationId FROM dbo.tblUnderwritingLocationsLookup AS ULL WHERE (LocationId = UL.LocationID)) AS BaseLocationId, LocationLookup, RoofInspectionCompanyID FROM dbo.tblUnderwritingLocations AS UL WHERE (LocationID = SCOPE_IDENTITY()) ORDER BY LocationNo, CASE WHEN ISNUMERIC(BuildingNo) = 1 THEN CONVERT (INT , BuildingNo) ELSE 9000 END</value>
+  </data>
+</root>

@@ -1,0 +1,149 @@
+<PolicyImportDetailView x:Class="MgaSystems.Ims.Fortegra.PolicyImport.UI.PolicyImportDetail.PolicyImportDetailView"
+                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                        xmlns:mgaInterop="clr-namespace:Mga.Wpf.Ims.Interop;assembly=Mga.Wpf.Ims"
+                        Loaded="MgaMdiChild_Loaded" x:Name="clos" FrameworkElement.Height="600"
+                        FrameworkElement.Width="1206" Title="Policy Import Detail"
+                        PromptOnCloseIfDataContextHasChanges="true">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/CommonResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/DatagridResources2.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Mga.Wpf.Ims;component/Resources/ToolBarResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/TreeViewResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/ListViewResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter"/>
+      <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource textBoxStyleMain}">
+        <Setter Property="FrameworkElement.Height" Value="20"/>
+        <Style.Triggers>
+          <Trigger Property="TextBoxBase.IsReadOnly" Value="true">
+            <Setter Property="Control.Background" Value="LightGray"/>
+          </Trigger>
+        </Style.Triggers>
+      </Style>
+      <Style TargetType="{x:Type DataGrid}" BasedOn="{StaticResource dataGridStyle}"/>
+      <Style TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.MinWidth" Value="80"/>
+      </Style>
+      <Style x:Key="SearchBtnStyle" TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.Margin" Value="2"/>
+      </Style>
+      <Style TargetType="{x:Type TextBlock}">
+        <Setter Property="FrameworkElement.Margin" Value="2"/>
+        <Setter Property="TextBlock.Foreground" Value="{StaticResource standardTextForegroundColor}"/>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition/>
+      <ColumnDefinition Width="0*"/>
+    </Grid.ColumnDefinitions>
+    <StackPanel>
+      <Label Height="37" FontSize="20" Content="{Binding CurrentImportSource.SourceName}"/>
+      <Grid Visibility="Visible">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="170"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="auto"/>
+          <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Grid.Column="0" Height="20" Width="120" HorizontalAlignment="Left"
+                Content=" Select File to Import " Command="{Binding SelectFileToImport}"/>
+        <TextBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch"
+                 Text="{Binding ImportFilePath, Mode=TwoWay}" ToolTip="{Binding ImportFilePath}"/>
+        <StackPanel Grid.Row="1" Grid.Column="0">
+          <TextBlock Visibility="Visible" Width="170" Text="Import File Version" Margin="2,10,0,0"/>
+          <ComboBox Visibility="Visible" Width="170" Margin="2,2,0,0" DisplayMemberPath="ExcelToXMLVersionName"
+                    SelectedValuePath="ID" IsSynchronizedWithCurrentItem="True"
+                    ItemsSource="{Binding ExcelToXMLVersionFilteredList, UpdateSourceTrigger=PropertyChanged}"
+                    SelectedItem="{Binding SelectedExcelToXMLVersion, UpdateSourceTrigger=PropertyChanged}">
+            <ItemsControl.ItemContainerStyle>
+              <Style>
+                <Setter Property="FrameworkElement.ToolTip" Value="{Binding Note}"/>
+              </Style>
+            </ItemsControl.ItemContainerStyle>
+          </ComboBox>
+          <TextBlock Visibility="Visible" Width="170" Text="IMS Producer Location" Margin="2,4,0,0"/>
+          <ComboBox Visibility="Visible" Width="170" Margin="2,2,0,0" DisplayMemberPath="ProducerLocationName"
+                    SelectedValuePath="ProducerLocationID" IsSynchronizedWithCurrentItem="True"
+                    ItemsSource="{Binding ImportSourceProducerLocationFilteredList, UpdateSourceTrigger=PropertyChanged}"
+                    SelectedItem="{Binding SelectedImportSourceProducerLocation, UpdateSourceTrigger=PropertyChanged}"/>
+          <TextBlock Visibility="Visible" Width="170" Text="Import Processing Version" Margin="2,4,0,0"/>
+          <ComboBox Visibility="Visible" Width="170" Margin="2,2,0,0" DisplayMemberPath="ImportVersionName"
+                    SelectedValuePath="ImportVersion" IsSynchronizedWithCurrentItem="True"
+                    ItemsSource="{Binding ImportSourceImportVersionFilteredList, UpdateSourceTrigger=PropertyChanged}"
+                    SelectedItem="{Binding SelectedImportSourceImportVersion, UpdateSourceTrigger=PropertyChanged}">
+            <ItemsControl.ItemContainerStyle>
+              <Style>
+                <Setter Property="FrameworkElement.ToolTip" Value="{Binding Note}"/>
+              </Style>
+            </ItemsControl.ItemContainerStyle>
+          </ComboBox>
+          <TextBlock Width="170" Text="Preparing Data For Import" Margin="2,10,0,0"
+                     Visibility="{Binding ImportStep1Visibility}"/>
+          <ProgressBar Name="pgExcelToXMLConvert" Height="15" Margin="2" Visibility="{Binding ImportStep1Visibility}"
+                       Maximum="{Binding ExcelToXMLConvertRowsTotal}" Value="{Binding ExcelToXMLConvertRowsProcessed}"/>
+          <TextBlock Text="Data Preparation Complete" Margin="2,10,0,2"
+                     Visibility="{Binding ImportStep1VisibilityComplete}"/>
+          <Button HorizontalAlignment="Left" Content="View Prepared Data" Width="130" Margin="2,0,0,2"
+                  Visibility="{Binding ImportStep2ChoiceVisible}" Command="{Binding PreviewPreparedData}"/>
+          <Button HorizontalAlignment="Left" Content="Continue With Upload" Width="130" Margin="2,0,0,2"
+                  Visibility="{Binding ImportStep2ChoiceVisible}" Command="{Binding UploadToImportProcess}"/>
+          <TextBlock Margin="2,10,0,2" Visibility="{Binding ImportStep2Visibility}"
+                     Text="{Binding CurrentlyImportingFilesProgress}"/>
+          <ProgressBar Name="pgImportingFiles" Height="15" Maximum="1" Margin="2"
+                       Visibility="{Binding ImportStep2Visibility}"
+                       IsIndeterminate="{Binding pgImportingFilesIsIndeterminate}" Value="{Binding pgImportingFilesValue}"/>
+          <Button HorizontalAlignment="Left" Content="View Pre-process Errors" Width="130" Margin="2,0,0,2"
+                  Visibility="{Binding ImportStep2ErrorVisibility}" Command="{Binding ShowImportPreprocessErrors}"/>
+        </StackPanel>
+        <DataGrid x:Name="ImportDetailGrid" Grid.Row="1" Grid.Column="1" Height="500" Margin="0,2,0,2"
+                  CanUserAddRows="false" CanUserDeleteRows="false" IsSynchronizedWithCurrentItem="True"
+                  ColumnHeaderHeight="18"
+                  ItemsSource="{Binding PolicyImportDataManager.CurrentImportDetailList, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItem="{Binding SelectedImportDetailItem, UpdateSourceTrigger=PropertyChanged}">
+          <DataGrid.Columns>
+            <DataGridTextColumn Header="Policy Number " Width="Auto" IsReadOnly="true"
+                                Binding="{Binding PolicyNumber, UpdateSourceTrigger=PropertyChanged}"/>
+            <DataGridTextColumn Header="IMS Control No " Width="Auto" IsReadOnly="true"
+                                Binding="{Binding IMSControlNo, UpdateSourceTrigger=PropertyChanged}"/>
+            <DataGridTextColumn Header="IMS QuoteID " Width="Auto" IsReadOnly="true"
+                                Binding="{Binding IMSQuoteID, UpdateSourceTrigger=PropertyChanged}"/>
+            <DataGridTextColumn Header="Transaction Type " Width="Auto" IsReadOnly="true"
+                                Binding="{Binding TransactionType, UpdateSourceTrigger=PropertyChanged}"/>
+            <DataGridTextColumn Header="Prepared Premium " Width="Auto" IsReadOnly="true"
+                                Binding="{Binding PreparedPremium, UpdateSourceTrigger=PropertyChanged}"/>
+            <DataGridTextColumn Header="Billed Premium " Width="Auto" IsReadOnly="true"
+                                Binding="{Binding BilledPremium, UpdateSourceTrigger=PropertyChanged}"/>
+            <DataGridTextColumn Header="Premium Difference " Width="Auto" IsReadOnly="true"
+                                Binding="{Binding PremiumDifference, UpdateSourceTrigger=PropertyChanged}"/>
+            <DataGridTextColumn Header="Date Processed " Width="Auto" IsReadOnly="true"
+                                Binding="{Binding DateProcessed, UpdateSourceTrigger=PropertyChanged}"/>
+            <DataGridTextColumn Header="Error " Width="*" IsReadOnly="true"
+                                Binding="{Binding ErrorMessage, UpdateSourceTrigger=PropertyChanged}">
+              <DataGridBoundColumn.ElementStyle>
+                <Style TargetType="{x:Type TextBlock}">
+                  <Setter Property="FrameworkElement.ToolTip" Value="{Binding ErrorMessage}"/>
+                </Style>
+              </DataGridBoundColumn.ElementStyle>
+            </DataGridTextColumn>
+          </DataGrid.Columns>
+        </DataGrid>
+      </Grid>
+      <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" Margin="0,0,8,0">
+        <Button Content="Import File" Height="20" Width="116" Command="{Binding ExecuteImportFile}"/>
+        <Button Content="Resume Import" Height="20" Width="116" Command="{Binding ExecuteResumeImport}"/>
+        <CheckBox Margin="10,0,0,0" FlowDirection="LeftToRight" Content="Preview Prepared Data Before Uploading"
+                  ToolTip="The import process will pause just before uploading to the database to allow inspection of the data. The 'Continue With Upload' button must be clicked to upload the data to the database."
+                  IsChecked="{Binding PreviewBeforeUploading, Mode=OneWayToSource}"/>
+      </StackPanel>
+    </StackPanel>
+  </Grid>
+</PolicyImportDetailView>

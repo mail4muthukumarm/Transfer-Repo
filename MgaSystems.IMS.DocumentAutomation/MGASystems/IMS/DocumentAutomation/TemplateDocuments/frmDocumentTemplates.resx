@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SqlSelectCommand1.CommandText" xml:space="preserve">
+    <value>SELECT        AutomationGroupID, TemplateName, Description, TemplateID, FolderID, Template, TemplateType, IsPolicyForm, IsEditable, SaveAsType, FileOnly, Removable, HideWaterMark, IsEmail, FileOnlyName, 
+                         SeparateDocName, SeparateDoc, RequiresEdit, CopyForwardOnRenewal, TemplateGroupID, OnDemand, OriginalFileName 
+FROM            tblDocumentTemplates
+WHERE        (TemplateID = @TemplateID)</value>
+  </data>
+  <data name="ImageList1.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADsGQAAAk1TRnQBSQFMAgEBBQEAARwBAwEcAQMBEAEAARABAAT/ASEBEAj/AUIBTQE2BwABNgMAASgDAAFAAwABIAMAAQEBAAEgBgABIBYAAz4BawFbAVgBVQG8AYQBXQFIAe0BnwFmATYB9wGfAWYBNgH3AZ8BZgE2AfcBnwFlATYB9wGfAWUBNgH3AZ4BZQE2AfcBngFlATYB9wGeAWQBNgH3AYUBYgFEAe8BXAFaAVcBvQM7AWPIAAFyAWABVAHeAbABrAGnAfIB4AHVAcgB/QH2AesB3gH/AfYB6gHeAf8B9gHqAdwB/wH2AeoB3AH/AfoB8wHrAf8B+gHzAesB/wH6AfIB6gH/AfwB9wHzAf8B5QHhAd0B/QKoAaUB8AFpAV4BVgHVyAABmQFqAUIB9QHkAdoBzgH+AfwB5AHRAf8B/AHkAdEB/wH8AeQB0QH/AfwB5AHRAf8B/AHkAdEB/wH8AeQB0QH/AfwB5AHRAf8B/AHkAdEB/wH8AeQB0QH/AfwB5AHRAf8B5gHkAeEB/QGRAV8BPAHzyAABowFtAT0C9wHtAeMB/wH8AeQB0QH/AfwB5AHRAf8B/AHkAdEB/wH8AeQB0QH/AfwB5AHRAf8B/AHkAdEB/wH8AeQB0QH/AfwB5AHRAf8B/AHkAdEB/wH8AeQB0QH/AfsB9wH0Af8BoAFnATYB98gAAaQBbQFMAvcB8AHmAf8B/AHkAdEB/wH8AeQB0QH/AeUB2QHCAf8BYgGeAWoB/wFRAZYBXwH/AVMBlwFgAf8BZgGgAW0B/wH8AeQB0QH/AfwB5AHRAf8B/AHkAdEB/wH8AfkB9QH/AaEBbQE3AffEAAFLAWIBUQHkARQBbwEtAf8BEwFvAS0B/wETAW4BLQH/AT4BigFMAf8BWwGbAWUB/wG7AdYBwwH/AXIBuwGEAf8BWwGrAWQB/wFRAZYBXgH/AfwB4gHMAf8B+wHgAckB/wH7AeEByAH/Af0B+gH3Af8BowFtATwB98QAAzwBZgEVAW8BLQH/AVUBoAFoAf8BQwGWAVYB/wFBAZABVQH/AccB3QHNAf8BVwG2AWsB/wFhAa4BbwH/AT4BjQFSAf8BFQFvAS0B/wH8AeIBzQH/AfsB4QHLAf8B+wHhAckB/wH7AfcB8gH/AaUBbQFKAffIAAF5AXgBRQH6ARkBcgExAf8BQgGRAVcB/wHHAd0BzQH/AWQBwAGEAf8BawG2AYIB/wE+AY4BUwH/AbEBwQGhAf8B+wHkAdAB/wH7AeMBzAH/AfoB3wHHAf8B+gHfAcYB/wH6AfIB6gH/AaUBbgFOAffIAAGkAYIBUQH3AVsBngFrAf8BxQHcAcwB/wFwAckBlwH/AW0BvAGHAf8BPQGNAVIB/wFPAZMBWgH/AfUB4AHMAf8B+wHhAcwB/wH6AeABxwH/AfkB3QHDAf8B+AHcAcIB/wH6AfQB7QH/AaUBdAFRAffEAAMFAQcBaQF8AUIB/AHAAdkByAH/AYIB0wGjAf8BZwHBAYoB/wFOAZUBXQH/AUUBlgFaAf8BSwGXAV4B/wFhAZoBYgH/AfQB3AHDAf8B+AHcAcIB/wH2AdoBvQH/AfYB2AG7Af8B+gH0Ae8B/wGlAXgBUQH3xAABUwJUAawBtQHTAb4B/wGcAdoBtQH/AW4ByAGVAf8BTgGVAV0B/wFEAZMBWQH/AVcBpAFuAf8BUwGhAWgB/wFKAZcBXgH/AVwBlwFcAf8B6QHRAbQB/wHzAdQBtQH/AfEB0gGzAf8B+AH0AfAB/wGkAXQBUQH3xAABVAFlAVoB3gFVAX8BVgH+AU0BlgFgAf8BTgGVAV0B/wGhAbkBlQH/AY0BrgGDAf8BKAF5ATwB/wEoAXkBOwH/ATQBhAFCAf8BMAGCAT8B/wGQAbQBkAH/AfcB8gHsAf8B+wH3AfMB/wH1Ae8B6QH/AaYBZwFFAfvIAAGcAXcBSAH2AfkB9QHxAf8B/AHjAc0B/wH7AeMBzgH/AfsB4wHNAf8B+wHiAcsB/wH5AeAByAH/AfgB3AHCAf8B9QHWAboB/wH9AfsB+AH/AfwB5gHNAf8B+gHlAckB/wHiAbYBhAH/AlQBUgGmyAABgAFrAVEB6gHXAdMB0QH8AfoB4AHHAf8B+wHhAckB/wH7AeIByQH/AfsB4AHIAf8B+QHfAcUB/wH4AdsBwQH/AfQB1gG4Av8B+wH4Af8B9gHYAbQB/wHhAbABdwH/AawBewFiAfYDBQEHyAABXwFbAVkBwwGeAZ0BlAHsAdUB0QHOAfwB+AH0Ae0B/wH4AfMB7QH/AfgB8wHtAf8B+AHzAe0B/wH4AfIB7AH/AfcB8gHsAf8B8gHmAdcB/wHiAbIBdwH/AakBgAFZAfUDBQEHzAADOgFgAVsBWAFWAbsBiwFxAVQB7gGgAXgBSAH2AacBhQFRAfcBpwGFAVEB9wGnAYUBUQH3AacBhQFRAfcBpgGEAVEB9wFpAWMBWAHUAk0BTAGRAwQBBv8AFQADEAEVAyIBMgMiATIDIgEyAyIBMgMiATIDIgEyAyIBMgMiATIDIgEyAwABAQwACP8DIQEwAyEBMAMhATADIQEwAyEBMAMhATADIQEwAyEBMAMhATADIQEwAyEBMAMhATADIQEwAwkBDA8AAf8DAAH/AwAB/wMAAf8DAAH/AwAB/wMAAf8DAAH/AwAB/wMAAf8DAAH/AwAB/wMAAf9EAAPeAf8D0QH/A9AB/wPQAf8D0AH/A9AB/wPQAf8D0AH/A9AB/wPQAf8D0AH/A8wB/wPdAf8IAAj/AdoBgQEQAf8B1wGBAQ4B/wHUAYEBDAH/Ac4BgQEJAf8ByQGBAQYB/wHEAYEBAwH/Ab8BLQEAAf8BuQEpAQAB/wGzASYBAAH/Aa4BJAEAAf8BqQEhAQAB/wGlAR4BAAH/AaEBHAEAAf8DIQEwDwAB/wIAAv8D3QH/A90B/wPdAf8D3QH/A90B/wPdAf8D3QH/A90B/wPdAf8D3QH/AwAB/wHMAgAB/wHMAZkBgQH/AcwBmQGBAf8BzAGZAYEB/wHMAZkBgQH/AcwBmQGBAf8BzAKBAf8BzAKBAf8BzAKBAf8BmQKBAf8BmQKBAf8BmQKBAf8BmQKBAf8BmQKBAf8BzAIAAf8EAAGBAcMB3QH/AQABmgHGAf8BAAGaAcYB/wEAAZoBxgH/AQABmgHGAf8BAAGaAcYB/wEAAZoBxgH/AQABmgHGAf8BAAGaAcYB/wEAAZoBxgH/AQABmgHGAf8BAAGaAcYB/wEAAagBywH/A8wB/wgACP8BzAGBAQwB/wH5AfAB7QH/AfgB7gHrAf8B9wHrAekB/wH3AeoB5gH/AfYB6AHkAf8B9QHmAeIB/wH0AeUB4AH/AfQB5AHfAf8B9AHiAd4B/wHzAeAB3AH/AfMB4AHbAf8BpAEeAQAB/wMhATAPAAH/AgAC/wIAAv8D3QH/A90B/wPdAf8D3QH/A90B/wPdAf8D3QH/A90B/wPdAf8DAAH/AcwBmQGBAf80AAGZAoEB/wUAAZoBxgH/AQABnAHIAf8BFwHIAe0B/wEeAcwB8QH/AR4BzAHxAf8BHgHMAfEB/wEeAcwB8QH/AR4BzAHxAf8BHgHMAfEB/wEeAcwB8QH/AR4BzAHxAf8BIQHMAfAB/wEAAZsBxwH/AbIBwAHEAf8D4QH/BAAI/wHOAYEBEwH/AfoB8QHvAf8B+QHvAe0B/wH5Ae0B6wH/AfgB7AHpAf8B9gHqAeYB/wH2AegB5QH/AfUB5wHiAf8B9QHkAeAB/wH0AeQB3wH/AfQB4gHdAf8B9AHhAdwB/wGoASABAAH/AyEBMA8AAf8D3QH/AgAC/wIAAv8D3QH/A90B/wPdAf8D3QH/A90B/wPdAf8D3QH/A90B/wMAAf8BzAGZAYEB/wQAAf8BmQEAAf8EAAOyAf8DsgH/A7IB/wGkAqAB/wOZAf8DmQH/A5kB/wOZAf8DmQH/BAABmQKBAf8FAAGaAcYB/wEAAaMBzgH/AQ8BwAHlAf8BKQHRAfIB/wEpAdEB8gH/ASkB0QHyAf8BKQHRAfIB/wEpAdEB8gH/ASkB0QHyAf8BKQHRAfIB/wEpAdEB8gH/ASwB0gHxAf8BAAGkAc0B/wGBAbcBywH/A9UB/wQACP8B0gGBARsB/wH6AfMB8QH/AZsBJQEQAf8BgQIAAf8B6gHbAdUB/wH3AesB6AH/AYECAAH/AYECAAH/AeAB0gHJAf8B9QHlAeEB/wH1AeMB3gH/AfMB4gHdAf8BrAEjAQAB/wMhATAPAAH/A90B/wPdAf8CAAL/AgAC/wIlAv8CAAL/AgAC/wIAAv8CAAL/AgAC/wIAAv8DAAH/AcwBmQGBAf80AAGZAoEB/wUAAZoBxgH/AQABrAHUAf8BCAG6Ad4B/wGBAdcB8wH/AYEB1wHzAf8BgQHXAfMB/wGBAdcB8wH/AYEB1wHzAf8BgQHXAfMB/wGBAdcB8wH/AYEB1wHzAf8BgQHXAfMB/wELAbgB2wH/AQABpgHLAf8DzAH/BAAI/wHVAYgBJQH/AfsB9QHzAf8BpAEsARYB/wGeAQ4BAAH/AYQBBwEAAf8B+AHuAesB/wGQAQUBAAH/AYsBBAEAAf8BgQIAAf8B9QHmAeMB/wH1AeQB4AH/AfQB4wHfAf8BsgEmAQAB/wMhATAPAAH/A90B/wPdAf8CmQL/AgAC/wPdAf8CmQL/AiUC/wIAAv8CAAL/AgAC/wIAAv8DAAH/AcwBmQGBAf8EAAH/AcwBgQH/BAADwAH/A7IB/wOyAf8DsgH/A7IB/wGkAqAB/wGkAqAB/wGkAqAB/wGkAqAB/wQAAcwCgQH/BQABmgHGAf8BAQG5AdwB/wEAAbMB2AH/AYwB3wH1Af8BjAHfAfUB/wGMAd8B9QH/AYwB3wH1Af8BjAHfAfUB/wGMAd8B9QH/AYwB3wH1Af8BjAHfAfUB/wGOAd8B9QH/ASoBxgHiAf8BBQGvAdIB/wGvAcsB1AH/BAAI/wHZAY8BgQH/AfwB9wH1Af8BrwGBAR4B/wG0ASUBAAH/AawBHgEAAf8B6gHbAdUB/wGbAQwBAAH/AZwBDwEAAf8BmAEMAQAB/wHgAdIByQH/AfUB5wHiAf8B9QHlAeEB/wG4ASkBAAH/AyEBMA8AAf8D3QH/A90B/wPdAf8CJQL/AiUC/wIAAv8CJQL/A90B/wPdAf8D3QH/A90B/wMAAf8BzAGZAYEB/zQAAcwCgQH/BQABmgHGAf8BFwHJAeYB/wEAAaoB0QH/AaUB6AH3Af8BpQHoAfcB/wGlAegB9wH/AaUB6AH3Af8BpQHoAfcB/wGlAegB9wH/AaUB6AH3Af8BpQHoAfcB/wGmAeYB9gH/AYEByQHiAf8BlgHQAeQB/wGBAcAB2QH/BAAI/wHdAZYBgQH/Af0B+AH3Af8BvAGBASYB/wHDAYEBEQH/Ab8BgQEiAf8BhAEHAQAB/wGyAR4BAAH/AbMBHgEAAf8BvgEdAQAB/wGBAgAB/wH2AegB5AH/AfUB5gHiAf8BvQEtAQAB/wMhATAPAAH/A90B/wPdAf8D3QH/A90B/wIAAv8CJQL/A90B/wPdAf8D3QH/A90B/wPdAf8DAAH/AcwBmQGBAf8EAAH/AcwBgQH/BAADwAH/A8AB/wPAAf8DsgH/A7IB/wOyAf8DsgH/A7IB/wOyAf8EAAHMAoEB/wUAAZoBxgH/AYEB3AHwAf8BAAGgAcoB/wG4AfAB+QH/AbgB8AH5Af8BuAHwAfkB/wG4AfAB+QH/AbgB8AH5Af8BuAHwAfkB/wG4AfAB+QH/AbgB8AH5Af8BuQHvAfgB/wGLAcwB4gH/AeQB7gHxAf8BAAGcAccB/wQACP8B4QGdAYEB/wH+AvoB/wHGAYIBLQH/AdABhgErAf8ByAGsAaIB/wHSAYQBJwH/AccBgQENAf8BvQEgAQAB/wGpAYcBgQH/Ab4BJQEAAf8B4AHSAckB/wH2AegB5AH/AcMBgQECAf8DIQEwDwAB/wPdAf8D3QH/A90B/wPdAf8CAAL/AiUC/wPdAf8D3QH/A90B/wPdAf8D3QH/AwAB/wHMAZkBgQH/NAABzAGZAYEB/wUAAZoBxgH/AYQB6wH3Af8BAgG7AdoB/wEAAZoBxgH/AQABmgHGAf8BAAGaAcYB/wEAAZoBxgH/AQABmgHGAf8BAAGaAcYB/wEAAZoBxgH/AQABmgHGAf8BAAGaAcYB/wEAAZoBxgH/AQABoQHKAf8BhwHKAeEB/wQACP8B5QGlAYkB/wH+AvsB/wHPAYcBgQH/AdYBlQGBAf8B+wH3AfYB/wHMAZ0BiwH/AdMBiAErAf8BxQGBAQsB/wH5Ae8B7QH/AdIBgQEgAf8BgQIAAf8B9wHqAecB/wHJAYEBBgH/AyEBMA8AAf8D3QH/A90B/wPdAf8D3QH/AgAC/wIlAv8D3QH/A90B/wPdAf8D3QH/A90B/wMAAf8BzAGZAYEB/wQAAf8BzAGBAf8EAAPAAf8DwAH/A8AB/wPAAf8DwAH/A8AB/wPAAf8DwAH/A8AB/wQAAcwBmQGBAf8FAAGaAcYB/wGOAfMB+gH/AY4B8wH6Af8BjgHzAfoB/wGOAfMB+gH/AY4B8wH6Af8BrQH2AfsR/wHxAfkB/AH/AQABoAHJAf8MAAj/AekBqwGSAf8B1AGPAYEB/wHiAacBjwH/AeIBpwGPAf8BrgGBAScB/wHxAd4B1QH/AeABogGJAf8BzwGHASsB/wH5AfIB7wH/Ac4BgQEZAf8BywGBAQwB/wHDAYEBDgH/Ac8BgQEJAf8DIQEwAwAB/wMAAf8DAAH/AwAB/wMAAf8DAAH/AwAB/wMAAf8DAAH/AwAB/wMAAf8D3QH/A90B/wPdAf8D3QH/AwAB/wHMAZkBgQH/NAABzAGZAYEB/wUAAZoBxgH/AcsB/QH+Af8BlgH6Af0B/wGWAfoB/QH/AZYB+gH9Af8BlgH6Af0B/wGxAeMB8AH/AQABmgHGAf8BAAGaAcYB/wEAAZoBxgH/AQABmgHGAf8BAAGgAckB/wGFAcoB4QH/DAAI/wHrAbEBmQL/Av4B/wH+Av0B/wH+AvwB/wH9AfoB+QH/AfwB+AH3Af8B/AH3AfYB/wH7AfUB8wH/AfsB8wHxAf8B+gHyAfAB/wH5Ae8B7QH/AfkB7QHrAf8B1AGBAQwB/wMhATADAAH/AgAC/wIAAv8CAAL/AgAC/wIAAv8CAAL/AgAC/wIAAv8CAAL/AwAB/wPdAf8D3QH/A90B/wPdAf8DAAH/AcwBmQGBAf8BzAGZAYEB/wHMAZkBgQH/AcwBmQGBAf8BzAGZAYEB/wHMAZkBgQH/AcwBmQGBAf8BzAGZAYEB/wHMAZkBgQH/AcwBmQGBAf8BzAGZAYEB/wHMAZkBgQH/AcwBmQGBAf8BzAGZAYEB/wHMAZkBgQH/BAABgQHEAd0B/wGKAcwB4hH/AQQBrgHRAf8BtgHfAe0B/yAACP8B7gG1AaAF/wP+Av8C/QH/Af0C/AH/Af0C+gH/Af0B+QH3Af8B/AH3AfYB/wH7AfUB8wH/AfoB8wHxAf8B+gHyAe8B/wH5AfAB7QH/AdcBgQEOAf8DIQEwAwAB/wIAAv8CAAL/AgAC/wIAAv8CAAL/AgAC/wIAAv8CAAL/AgAC/wMAAf8D3QH/AwAB/wMAAf8DAAH/AwAB/wHMApkB/wHwAcoBpgH/AfABygGmAf8B8AHKAaYB/wHwAcoBpgH/AfABygGmAf8B8AHKAaYB/wHwAcoBpgH/AfABygGmAf8B8AHKAaYB/wHwAcoBpgH/AfABygGmAf8B8AHKAaYB/wHwAcoBpgH/AcwBmQGBAf8IAAGBAcQB3QH/AQABmgHGAf8BAAGaAcYB/wEAAZoBxgH/AQABmgHGAf8BgQHEAd0B/yQACP8B7wG4AaMB/wHuAbUBoAH/AesBsQGZAf8B6AGrAZIB/wHlAaQBiAH/AeEBnQGBAf8B3AGVAYEB/wHYAY0BLQH/AdQBhgEiAf8B0QGBARkB/wHOAYEBEQH/AcsBgQEKAf8B2gGBARAB/wMhATADAAH/AwAB/wMAAf8DAAH/AwAB/wMAAf8DAAH/AwAB/wMAAf8DAAH/AwAB/wPdAf8DAAH/AgAC/wIAAv8DAAH/AcwCAAH/AcwCmQH/AcwBmQGBAf8BzAGZAYEB/wHMAZkBgQH/AcwBmQGBAf8BzAGZAYEB/wHMAZkBgQH/AcwBmQGBAf8BzAGZAYEB/wHMAZkBgQH/AcwBmQGBAf8BzAGZAYEB/wHMAZkBgQH/AcwCAAH/RABA/w8AAf8D3QH/A90B/wPdAf8D3QH/A90B/wPdAf8D3QH/A90B/wMAAf8CAAL/AwAB/4QAQP8PAAH/AwAB/wMAAf8DAAH/AwAB/wMAAf8DAAH/AwAB/wMAAf8DAAH/AwAB/wgAAUIBTQE+BwABPgMAASgDAAFAAwABIAMAAQEBAAEBBgABARYAA/8BAAGAAQEGAAGAAQEGAAGAAQEGAAGAAQEGAAGAAQEHAAEBBwABAQYAAYABAQYAAYABAQcAAQEHAAEBBwABAQYAAYABAQYAAYABAQYAAYABAwYAAYABBwYAAv8BwAEHAgAB4AEAAv8BgAEDAgAB4AIAAQEBAAEDAgAB4AEAAX8B/QEAAQECAAHgAQABUAEFAQABAQIAAeABAAF/Af0BAAEBAgAB4AEAAVABBQEAAQECAAHgAQABfwH9AQABAQIAAeABAAFQAQUBAAEBAgAB4AEAAX8B/QEAAQECAAHgAQABUAEFAQABBwQAAX8B/QEAAQcFAAEBAQAB/wUAAQEBgQH/BQABAQL/AgAB4AEBBP8CAAHgAQMWAAs=</value>
+  </data>
+  <data name="SqlDeleteCommand1.CommandText" xml:space="preserve">
+    <value>DELETE FROM [tblDocumentTemplates] WHERE (([AutomationGroupID] = @Original_AutomationGroupID) AND ([TemplateName] = @Original_TemplateName) AND ([Description] = @Original_Description) AND ([TemplateID] = @Original_TemplateID) AND ((@IsNull_FolderID = 1 AND [FolderID] IS NULL) OR ([FolderID] = @Original_FolderID)) AND ([TemplateType] = @Original_TemplateType) AND ([IsPolicyForm] = @Original_IsPolicyForm) AND ([IsEditable] = @Original_IsEditable) AND ([SaveAsType] = @Original_SaveAsType) AND ([FileOnly] = @Original_FileOnly) AND ([Removable] = @Original_Removable) AND ([HideWaterMark] = @Original_HideWaterMark) AND ([IsEmail] = @Original_IsEmail) AND ((@IsNull_FileOnlyName = 1 AND [FileOnlyName] IS NULL) OR ([FileOnlyName] = @Original_FileOnlyName)) AND ((@IsNull_SeparateDocName = 1 AND [SeparateDocName] IS NULL) OR ([SeparateDocName] = @Original_SeparateDocName)) AND ([SeparateDoc] = @Original_SeparateDoc))</value>
+  </data>
+  <data name="SqlUpdateCommand1.CommandText" xml:space="preserve">
+    <value>UPDATE       tblDocumentTemplates
+SET                AutomationGroupID = @AutomationGroupID, TemplateName = @TemplateName, Description = @Description, FolderID = @FolderID, Template = @Template, 
+                         TemplateType = @TemplateType, IsPolicyForm = @IsPolicyForm, IsEditable = @IsEditable, SaveAsType = @SaveAsType, FileOnly = @FileOnly, 
+                         Removable = @Removable, HideWaterMark = @HideWaterMark, IsEmail = @IsEmail, FileOnlyName = @FileOnlyName, SeparateDocName = @SeparateDocName, 
+                         SeparateDoc = @SeparateDoc, RequiresEdit = @RequiresEdit, CopyForwardOnRenewal = @CopyForwardOnRenewal
+, OnDemand = @OnDemand, OriginalFileName = @OriginalFileName WHERE        (AutomationGroupID = @Original_AutomationGroupID) AND (TemplateName = @Original_TemplateName) AND (Description = @Original_Description) AND 
+                         (TemplateID = @Original_TemplateID) AND (@IsNull_FolderID = 1) AND (FolderID IS NULL) AND (TemplateType = @Original_TemplateType) AND 
+                         (IsPolicyForm = @Original_IsPolicyForm) AND (IsEditable = @Original_IsEditable) AND (SaveAsType = @Original_SaveAsType) AND (FileOnly = @Original_FileOnly) 
+                         AND (Removable = @Original_Removable) AND (HideWaterMark = @Original_HideWaterMark) AND (IsEmail = @Original_IsEmail) AND (@IsNull_FileOnlyName = 1) 
+                         AND (FileOnlyName IS NULL) AND (@IsNull_SeparateDocName = 1) AND (SeparateDocName IS NULL) AND (SeparateDoc = @Original_SeparateDoc) OR
+                         (AutomationGroupID = @Original_AutomationGroupID) AND (TemplateName = @Original_TemplateName) AND (Description = @Original_Description) AND 
+                         (TemplateID = @Original_TemplateID) AND (FolderID = @Original_FolderID) AND (TemplateType = @Original_TemplateType) AND 
+                         (IsPolicyForm = @Original_IsPolicyForm) AND (IsEditable = @Original_IsEditable) AND (SaveAsType = @Original_SaveAsType) AND (FileOnly = @Original_FileOnly) 
+                         AND (Removable = @Original_Removable) AND (HideWaterMark = @Original_HideWaterMark) AND (IsEmail = @Original_IsEmail) AND (@IsNull_FileOnlyName = 1) 
+                         AND (FileOnlyName IS NULL) AND (@IsNull_SeparateDocName = 1) AND (SeparateDocName IS NULL) AND (SeparateDoc = @Original_SeparateDoc) OR
+                         (AutomationGroupID = @Original_AutomationGroupID) AND (TemplateName = @Original_TemplateName) AND (Description = @Original_Description) AND 
+                         (TemplateID = @Original_TemplateID) AND (@IsNull_FolderID = 1) AND (FolderID IS NULL) AND (TemplateType = @Original_TemplateType) AND 
+                         (IsPolicyForm = @Original_IsPolicyForm) AND (IsEditable = @Original_IsEditable) AND (SaveAsType = @Original_SaveAsType) AND (FileOnly = @Original_FileOnly) 
+                         AND (Removable = @Original_Removable) AND (HideWaterMark = @Original_HideWaterMark) AND (IsEmail = @Original_IsEmail) AND 
+                         (FileOnlyName = @Original_FileOnlyName) AND (@IsNull_SeparateDocName = 1) AND (SeparateDocName IS NULL) AND (SeparateDoc = @Original_SeparateDoc) OR
+                         (AutomationGroupID = @Original_AutomationGroupID) AND (TemplateName = @Original_TemplateName) AND (Description = @Original_Description) AND 
+                         (TemplateID = @Original_TemplateID) AND (FolderID = @Original_FolderID) AND (TemplateType = @Original_TemplateType) AND 
+                         (IsPolicyForm = @Original_IsPolicyForm) AND (IsEditable = @Original_IsEditable) AND (SaveAsType = @Original_SaveAsType) AND (FileOnly = @Original_FileOnly) 
+                         AND (Removable = @Original_Removable) AND (HideWaterMark = @Original_HideWaterMark) AND (IsEmail = @Original_IsEmail) AND 
+                         (FileOnlyName = @Original_FileOnlyName) AND (@IsNull_SeparateDocName = 1) AND (SeparateDocName IS NULL) AND (SeparateDoc = @Original_SeparateDoc) OR
+                         (AutomationGroupID = @Original_AutomationGroupID) AND (TemplateName = @Original_TemplateName) AND (Description = @Original_Description) AND 
+                         (TemplateID = @Original_TemplateID) AND (@IsNull_FolderID = 1) AND (FolderID IS NULL) AND (TemplateType = @Original_TemplateType) AND 
+                         (IsPolicyForm = @Original_IsPolicyForm) AND (IsEditable = @Original_IsEditable) AND (SaveAsType = @Original_SaveAsType) AND (FileOnly = @Original_FileOnly) 
+                         AND (Removable = @Original_Removable) AND (HideWaterMark = @Original_HideWaterMark) AND (IsEmail = @Original_IsEmail) AND (@IsNull_FileOnlyName = 1) 
+                         AND (FileOnlyName IS NULL) AND (SeparateDocName = @Original_SeparateDocName) AND (SeparateDoc = @Original_SeparateDoc) OR
+                         (AutomationGroupID = @Original_AutomationGroupID) AND (TemplateName = @Original_TemplateName) AND (Description = @Original_Description) AND 
+                         (TemplateID = @Original_TemplateID) AND (FolderID = @Original_FolderID) AND (TemplateType = @Original_TemplateType) AND 
+                         (IsPolicyForm = @Original_IsPolicyForm) AND (IsEditable = @Original_IsEditable) AND (SaveAsType = @Original_SaveAsType) AND (FileOnly = @Original_FileOnly) 
+                         AND (Removable = @Original_Removable) AND (HideWaterMark = @Original_HideWaterMark) AND (IsEmail = @Original_IsEmail) AND (@IsNull_FileOnlyName = 1) 
+                         AND (FileOnlyName IS NULL) AND (SeparateDocName = @Original_SeparateDocName) AND (SeparateDoc = @Original_SeparateDoc) OR
+                         (AutomationGroupID = @Original_AutomationGroupID) AND (TemplateName = @Original_TemplateName) AND (Description = @Original_Description) AND 
+                         (TemplateID = @Original_TemplateID) AND (@IsNull_FolderID = 1) AND (FolderID IS NULL) AND (TemplateType = @Original_TemplateType) AND 
+                         (IsPolicyForm = @Original_IsPolicyForm) AND (IsEditable = @Original_IsEditable) AND (SaveAsType = @Original_SaveAsType) AND (FileOnly = @Original_FileOnly) 
+                         AND (Removable = @Original_Removable) AND (HideWaterMark = @Original_HideWaterMark) AND (IsEmail = @Original_IsEmail) AND 
+                         (FileOnlyName = @Original_FileOnlyName) AND (SeparateDocName = @Original_SeparateDocName) AND (SeparateDoc = @Original_SeparateDoc) OR
+                         (AutomationGroupID = @Original_AutomationGroupID) AND (TemplateName = @Original_TemplateName) AND (Description = @Original_Description) AND 
+                         (TemplateID = @Original_TemplateID) AND (FolderID = @Original_FolderID) AND (TemplateType = @Original_TemplateType) AND 
+                         (IsPolicyForm = @Original_IsPolicyForm) AND (IsEditable = @Original_IsEditable) AND (SaveAsType = @Original_SaveAsType) AND (FileOnly = @Original_FileOnly) 
+                         AND (Removable = @Original_Removable) AND (HideWaterMark = @Original_HideWaterMark) AND (IsEmail = @Original_IsEmail) AND 
+                         (FileOnlyName = @Original_FileOnlyName) AND (SeparateDocName = @Original_SeparateDocName) AND (SeparateDoc = @Original_SeparateDoc);  
+SELECT AutomationGroupID, TemplateName, Description, TemplateID, FolderID, Template, TemplateType, IsPolicyForm, IsEditable, SaveAsType, FileOnly, Removable, HideWaterMark, IsEmail, FileOnlyName, SeparateDocName, SeparateDoc, OnDemand, OriginalFileName FROM tblDocumentTemplates WHERE (TemplateID = @TemplateID)</value>
+  </data>
+  <data name="SqlInsertCommand1.CommandText" xml:space="preserve">
+    <value>INSERT INTO tblDocumentTemplates
+                         (AutomationGroupID, TemplateName, Description, FolderID, Template, TemplateType, IsPolicyForm, IsEditable, SaveAsType, FileOnly, Removable, HideWaterMark, 
+                         IsEmail, FileOnlyName, SeparateDocName, SeparateDoc, RequiresEdit, CopyForwardOnRenewal, OnDemand, OriginalFileName)
+VALUES        (@AutomationGroupID,@TemplateName,@Description,@FolderID,@Template,@TemplateType,@IsPolicyForm,@IsEditable,@SaveAsType,@FileOnly,@Removable,@HideWaterMark,@IsEmail,@FileOnlyName,@SeparateDocName,@SeparateDoc,@RequiresEdit,@CopyForwardOnRenewal, @OnDemand, @OriginalFileName);  
+SELECT AutomationGroupID, TemplateName, Description, TemplateID, FolderID, Template, TemplateType, IsPolicyForm, IsEditable, SaveAsType, FileOnly, Removable, HideWaterMark, IsEmail, FileOnlyName, SeparateDocName, SeparateDoc, OnDemand, OriginalFileName FROM tblDocumentTemplates WHERE (TemplateID = SCOPE_IDENTITY())</value>
+  </data>
+</root>

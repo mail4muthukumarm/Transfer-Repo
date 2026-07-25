@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: D:\augusta\fortegra\IMS Project\MgaSystems.IMS.Excel.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C5C70C07-DD30-4FDB-9748-7FC9940A0772}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>MgaSystems.IMS.Excel</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MGASystems.IMS.Logging">
+      <HintPath>lib\MGASystems.IMS.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.BusinessObjects">
+      <HintPath>lib\MgaSystems.IMS.BusinessObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Common">
+      <HintPath>lib\MgaSystems.IMS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Common.Cs">
+      <HintPath>lib\MgaSystems.IMS.Common.Cs.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.DocumentAutomation">
+      <HintPath>lib\MgaSystems.IMS.DocumentAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.NotesDocuments">
+      <HintPath>lib\MgaSystems.IMS.NotesDocuments.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Policies">
+      <HintPath>lib\MgaSystems.IMS.Policies.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Rating">
+      <HintPath>lib\MgaSystems.IMS.Rating.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Security">
+      <HintPath>lib\MgaSystems.IMS.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Tools">
+      <HintPath>lib\MgaSystems.IMS.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MGASystems\IMS\Excel\AsposeExcelExtensions.cs" />
+    <Compile Include="MGASystems\IMS\Excel\MenuManager.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Views\ExcelDownloadingWaitWindow.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Views\ExcelRatingAdmin2.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Views\ExternalExcelSaveOptions.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Views\RatingSheetChooser.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Views\UserTaggingAdmin.cs" />
+    <Compile Include="MGASystems\IMS\Excel\TagParsing\ExcelUserTagParser.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Rating\ImportSheetWindowResult.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Rating\ConcurrencyLockLevel.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Rating\ExcelFileStrategy.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Rating\ExcelFileTracker.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Rating\ExcelRater.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Rating\ImportSheetWindow.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Rating\RaterFactoryExtension.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Rating\ExcelFilePicker\ExcelFileInfo.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Rating\ExcelFilePicker\ExcelFileList.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Rating\ExcelFilePicker\ExcelFileListManager.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Messaging\GlobalMessageListener.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Logging\Log.cs" />
+    <Compile Include="MGASystems\IMS\Excel\ImportFileUtil\ConfigInfo.cs" />
+    <Compile Include="MGASystems\IMS\Excel\ImportFileUtil\CustomException.cs" />
+    <Compile Include="MGASystems\IMS\Excel\ImportFileUtil\ErrorHandling.cs" />
+    <Compile Include="MGASystems\IMS\Excel\ImportFileUtil\FileExcel.cs" />
+    <Compile Include="MGASystems\IMS\Excel\ImportFileUtil\FileXml.cs" />
+    <Compile Include="MGASystems\IMS\Excel\ImportFileUtil\frmImportFileUtility.cs" />
+    <Compile Include="MGASystems\IMS\Excel\ImportFileUtil\LogFile.cs" />
+    <Compile Include="MGASystems\IMS\Excel\ImportFileUtil\PoliciesStatus.cs" />
+    <Compile Include="MGASystems\IMS\Excel\ImportFileUtil\PoliciesStatusCollection.cs" />
+    <Compile Include="MGASystems\IMS\Excel\ImportFileUtil\SprocData.cs" />
+    <Compile Include="MGASystems\IMS\Excel\ImportFileUtil\TransactionData.cs" />
+    <Compile Include="MGASystems\IMS\Excel\ImportFileUtil\XmlHelper.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Data\ExcelQuote.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Data\ExcelQuoteCollection.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Data\ExcelSecurityOverride.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Data\Security.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Data\UserTagging\TagType.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Data\UserTagging\UserTag.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Data\UserTagging\TagDataStore.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Data\UserTagging\UserTaggingManager.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Data\StandardRating\ExcelDataExporter.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Data\StandardRating\ExcelFile.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Data\StandardRating\ExcelMappingError.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Data\StandardRating\ExcelStandardRatingData.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Data\Administration2\ExcelLineQuoteDetail.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Data\Administration2\ExcelMapping.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Data\Administration2\ExcelAdministrationData.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Data\Administration2\ExcelRaterFactorSet.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Data\Administration2\ExcelRater.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Data\Administration2\OnDemandViewModel.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Data\Administration2\RaterScheduleLink.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Controllers\ExcelAdministrationCommands.cs" />
+    <Compile Include="MGASystems\IMS\Excel\Controllers\UserTaggingManagerCommands.cs" />
+    <Compile Include="MgaSystems\IMS\Excel\Views\AdminPremiumAdjustment.cs" />
+    <Compile Include="MgaSystems\IMS\Excel\Views\DisplayUI.cs" />
+    <Compile Include="MgaSystems\IMS\Excel\Views\QuickDataView.cs" />
+    <Compile Include="MgaSystems\IMS\Excel\Views\ScheduleChooserView.cs" />
+    <Compile Include="MgaSystems\IMS\Excel\Properties\Resources.cs" />
+    <Compile Include="MgaSystems\IMS\Excel\Properties\Settings.cs" />
+    <Compile Include="MgaSystems\IMS\Excel\Data\DatabaseInformation.cs" />
+    <Compile Include="MgaSystems\IMS\Excel\Data\SSMSInterop.cs" />
+    <Compile Include="MgaSystems\IMS\Excel\Data\ScheduleChooser\ScheduleChooserDataManager.cs" />
+    <Compile Include="MgaSystems\IMS\Excel\Data\ScheduleChooser\ScheduleInfo.cs" />
+    <Compile Include="MgaSystems\IMS\Excel\Data\QuickDataView\QuickDataViewManager.cs" />
+    <Compile Include="MgaSystems\IMS\Excel\Data\QuickDataView\QuoteOption.cs" />
+    <Compile Include="MgaSystems\IMS\Excel\Data\PremiumAdmin\OptionPremium.cs" />
+    <Compile Include="MgaSystems\IMS\Excel\Data\PremiumAdmin\PremiumDataManager.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\css_go.png" />
+    <Resource Include="images\excel.png" />
+    <Resource Include="images\excel258.png" />
+    <Resource Include="images\folder_page.png" />
+    <Resource Include="images\page_add.png" />
+    <Resource Include="images\page_delete.png" />
+    <Resource Include="images\page_save.png" />
+    <Resource Include="images\table_add.png" />
+    <Resource Include="images\table_delete.png" />
+    <Resource Include="images\table_go.png" />
+    <Resource Include="images\table_save.png" />
+    <Resource Include="images\tag_blue_add.png" />
+    <Resource Include="images\tag_blue_delete.png" />
+    <Resource Include="images\tag_green.png" />
+    <Resource Include="images\textfield_add.png" />
+    <Resource Include="images\textfield_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MgaSystems\IMS\Excel\ImportFileUtil\frmImportUtility.resx" />
+    <EmbeddedResource Include="MgaSystems\IMS\Excel\Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="rating\excelfilepicker\excelfilelist.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="rating\importsheetwindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\adminpremiumadjustment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\exceldownloadingwaitwindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\excelratingadmin2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\externalexcelsaveoptions.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\quickdataview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\ratingsheetchooser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\schedulechooserview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="views\usertaggingadmin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

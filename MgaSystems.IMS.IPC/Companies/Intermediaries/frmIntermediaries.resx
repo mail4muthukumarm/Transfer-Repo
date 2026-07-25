@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SqlSelectCommand1.CommandText" xml:space="preserve">
+    <value>SELECT        IntermediaryGuid, IntermediaryName, Address1, Address2, City, County, State, ZipCode, ZipPlus, ISNULL(REPLACE(Phone, '-', ''), '') AS Phone, ISNULL(REPLACE(Fax, '-', ''), '') AS Fax, WebSite, Region, ISOCountryCode, 
+                         IntermediaryID, Email, BillingSameAsPrimary, BillingAddress1, BillingAddress2, BillingCity, BillingCounty, BillingState, BillingZipCode, BillingZipPlus, BillingRegion, BillingISOCountryCode, NAIC, ISNULL(CountryCodeforPhone, 
+                         'USA') AS CountryCodeforPhone, ISNULL(CountryCodeforFax, 'USA') AS CountryCodeforFax
+FROM            tblIntermediaries
+ORDER BY IntermediaryName</value>
+  </data>
+  <data name="mgaInternationalFax.Value" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAEAQAAAB9TeXN0ZW0uVW5pdHlTZXJpYWxpemF0aW9uSG9sZGVyAwAAAAREYXRhCVVuaXR5VHlwZQxBc3NlbWJseU5hbWUBAAEICgIAAAAGAgAAAAAL</value>
+  </data>
+  <data name="SqlDeleteCommand1.CommandText" xml:space="preserve">
+    <value>DELETE FROM [tblIntermediaries] WHERE (([IntermediaryGuid] = @Original_IntermediaryGuid) AND ([IntermediaryName] = @Original_IntermediaryName) AND ([Address1] = @Original_Address1) AND ((@IsNull_Address2 = 1 AND [Address2] IS NULL) OR ([Address2] = @Original_Address2)) AND ([City] = @Original_City) AND ((@IsNull_County = 1 AND [County] IS NULL) OR ([County] = @Original_County)) AND ((@IsNull_State = 1 AND [State] IS NULL) OR ([State] = @Original_State)) AND ([ZipCode] = @Original_ZipCode) AND ((@IsNull_ZipPlus = 1 AND [ZipPlus] IS NULL) OR ([ZipPlus] = @Original_ZipPlus)) AND ((@IsNull_Phone = 1 AND [Phone] IS NULL) OR ([Phone] = @Original_Phone)) AND ((@IsNull_Fax = 1 AND [Fax] IS NULL) OR ([Fax] = @Original_Fax)) AND ((@IsNull_WebSite = 1 AND [WebSite] IS NULL) OR ([WebSite] = @Original_WebSite)) AND ((@IsNull_Region = 1 AND [Region] IS NULL) OR ([Region] = @Original_Region)) AND ([ISOCountryCode] = @Original_ISOCountryCode) AND ([IntermediaryID] = @Original_IntermediaryID) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)) AND ([BillingSameAsPrimary] = @Original_BillingSameAsPrimary) AND ((@IsNull_BillingAddress1 = 1 AND [BillingAddress1] IS NULL) OR ([BillingAddress1] = @Original_BillingAddress1)) AND ((@IsNull_BillingAddress2 = 1 AND [BillingAddress2] IS NULL) OR ([BillingAddress2] = @Original_BillingAddress2)) AND ((@IsNull_BillingCity = 1 AND [BillingCity] IS NULL) OR ([BillingCity] = @Original_BillingCity)) AND ((@IsNull_BillingCounty = 1 AND [BillingCounty] IS NULL) OR ([BillingCounty] = @Original_BillingCounty)) AND ((@IsNull_BillingState = 1 AND [BillingState] IS NULL) OR ([BillingState] = @Original_BillingState)) AND ((@IsNull_BillingZipCode = 1 AND [BillingZipCode] IS NULL) OR ([BillingZipCode] = @Original_BillingZipCode)) AND ((@IsNull_BillingZipPlus = 1 AND [BillingZipPlus] IS NULL) OR ([BillingZipPlus] = @Original_BillingZipPlus)) AND ((@IsNull_BillingRegion = 1 AND [BillingRegion] IS NULL) OR ([BillingRegion] = @Original_BillingRegion)) AND ((@IsNull_BillingISOCountryCode = 1 AND [BillingISOCountryCode] IS NULL) OR ([BillingISOCountryCode] = @Original_BillingISOCountryCode)) AND ((@IsNull_NAIC = 1 AND [NAIC] IS NULL) OR ([NAIC] = @Original_NAIC)) AND ([CountryCodeforPhone] = @Original_CountryCodeforPhone) AND ([CountryCodeforFax] = @Original_CountryCodeforFax))</value>
+  </data>
+  <data name="SqlUpdateCommand1.CommandText" xml:space="preserve">
+    <value>UPDATE       tblIntermediaries
+SET                IntermediaryGuid = @IntermediaryGuid, IntermediaryName = @IntermediaryName, Address1 = @Address1, Address2 = @Address2, City = @City, County = @County, State = @State, ZipCode = @ZipCode, ZipPlus = @ZipPlus, 
+                         Phone = @Phone, Fax = @Fax, WebSite = @WebSite, Region = @Region, ISOCountryCode = @ISOCountryCode, Email = @Email, BillingSameAsPrimary = @BillingSameAsPrimary, BillingAddress1 = @BillingAddress1, 
+                         BillingAddress2 = @BillingAddress2, BillingCity = @BillingCity, BillingCounty = @BillingCounty, BillingState = @BillingState, BillingZipCode = @BillingZipCode, BillingZipPlus = @BillingZipPlus, 
+                         BillingRegion = @BillingRegion, BillingISOCountryCode = @BillingISOCountryCode, NAIC = @NAIC, CountryCodeforPhone = @CountryCodeforPhone, CountryCodeforFax = @CountryCodeforFax
+WHERE        (IntermediaryGuid = @Original_IntermediaryGuid); 
+SELECT IntermediaryGuid, IntermediaryName, Address1, Address2, City, County, State, ZipCode, ZipPlus, Phone, Fax, WebSite, Region, ISOCountryCode, IntermediaryID, Email, BillingSameAsPrimary, BillingAddress1, BillingAddress2, BillingCity, BillingCounty, BillingState, BillingZipCode, BillingZipPlus, BillingRegion, BillingISOCountryCode, NAIC, CountryCodeforPhone, CountryCodeforFax FROM tblIntermediaries WHERE (IntermediaryGuid = @IntermediaryGuid) ORDER BY IntermediaryName</value>
+  </data>
+  <data name="mgaInternationalPhone.Value" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAEAQAAAB9TeXN0ZW0uVW5pdHlTZXJpYWxpemF0aW9uSG9sZGVyAwAAAAREYXRhCVVuaXR5VHlwZQxBc3NlbWJseU5hbWUBAAEICgIAAAAGAgAAAAAL</value>
+  </data>
+  <data name="Appearance17.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAMQMAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAK8SURBVDhPlZDbT5JhHMe54o/wrq3DZqGZZZBmI9vSGU0JMFazItespgMhEFREhDECpszTbI6GI4oizQPTwHIeBpvVNA9tpnaguDKVdzLtIv328pY4kpsuvs/2/Pb7fJ73/dIAJExv2WE6mSSPmJHkkabSE+1Ek3AYhfvEjJBHmrI5oDi66VUdC3nVxxNK9gz6yo/QSTA8asrFlPMO3rvK4W8qhE97MuzTMfdI4i4eSQp9QH40PGbJx/RTMRkJpt0yzHSrMN4mwICWFfbUsuIku7AslT6oTCPGGzmYeSaFv5kLb30mXuqzMNoiwKS7BkNWPtxKJvFYmhGTUMegIo3uVaUTfmsBZp7L4W/hYcjIxtzsNJX+ejZ8Fj4CjxTo1RXAVppOtF5PoyQ0siA6WRDhb+JipktJfiofXsNZvH0zgZWVFaytrWFxYR5O+Wl0aTh49eAuOu+dh4nHIHQXkuk0X21GwN9y6e9/FpFwDqYm32F1dZWCd7LwcR5tJUw8FJ9Dj/kqmkuyoGIfDNDIZnO9OtbWaGsR+jTZ218+LcZe/jffvn5GXT4DjddOQZl9YItM7p8Ca1m5L9TMMWuDZXtjY4NalslkkMvlUCgUqKyspGaRSAQW030o2MmzUThW4k5MJtM6QRDUchRsb29HR0cHqqurY4KoVCgUHtph4gR6vX49HA5Ty1VVVbDZbLDb7airq4sJJBIJeDzerqDs9Y0UUc/lKwI7Z0hgKfjlGOlEVKJWq+FwOOB0OkGKqdmTD3aIuoUQ2DhzeVa2JlNzooBGwt/F/bdQM1yBsn4RRNZihEIhaLVauFwuuN1uGI1GBINBqIfkaJjQQTMiQ7GDj1RxcoRGvjxM2oKkLXBGnElwbucvl5aWLhkMBgoke4HZbAaXy10qrLi4nFef8zNTnTFBwj/239w3HNfB/we03419rIdhAWPUAAAAAElFTkSuQmCCCw==</value>
+  </data>
+  <data name="Appearance19.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA8QIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAJ8SURBVDhPhZLLT1NBGMW70K2JS7cmxrjU+A9oIGIgFGhEUYkYRYIYaiyCUPqgD2p42hb6BkqLoKUWegt9UKm0JQrSGjdaQErRmLhzY4pE0OPcIRBKfSzO5M7M/Z3vzDfDAfBftUdb06oZ2aE/7WUt7FdbRJE2x3VQhqQQBxqzTDIm+/UwLE+b4j3wffLAsKBFs68BdczdDJMMYK9I5LQxxsIMHCt2eNfGoXnZAYG7FjWjt3ZNskBWrS9a0oaYFr6Pbjz9YIdt0YyGCQEmUmPoiKpQ7ajE9aFyapIFK0OStH5BAy+B26JKKMNSWBNGDCQMeLw0ACblREtQhKvWS+tZBvJp8brutZrEdSP5bQkbW98x8nYIihnxNrzqhDQoxOWB0s0dhg7a+a5jsueiH73zj+hZ2yJKCusjvUh9TUIVkcG9OgrJlJCtjPLBMly08A5QA+18p0hGIvXMdVP4ybKNxJbQyiws90u34UATWxlzX2bR7H+AEmOhghqwkbRzXZgkDRpZHqRn7X+vh5zEVoVlGE+OQhRoRJXrBoVnP4cRWguAZ+LivCb3MEcxLbESwfJGD0/qGeo8fPS908G+2EdgB61WP3WPwFFMLjOo9VdvlPWXIk+dK8jpPnOKowhJjrAp2EeiX1DTuLaEZRsma5XOCjCLLqhn21GkLwgU9OSp89Q5RzOa2OS9b7bGLRAwfGhedWJsxQGhtx4XzMUQEhOeqSjJ1eWfzdeeO7EDZhjUMfzjLcHmreCqD3ecVSCGKDYU/iKd9vOM3Kb90F7RodZ1+yB5XWOVwxU/+a4aNupmqaXkNOn0btS/affj5nDFyWu2KzFyVfl7f/i3wPkNOLzMGxqYvkUAAAAASUVORK5CYIIL</value>
+  </data>
+  <data name="Appearance18.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAADAMAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAKXSURBVDhPfZBPTJJxHMapQ1t66NShfwcl65C2/uicY8sID82la05kiIosxNQcKpJhQKZYuqXoC75opVCir6UYmjPXRQ/aTMX/Ya0NDil0a+asLcMnZENffavD5/Q+n+f9/h4WgP+iTj0qWTBFrC53HIPLErZhloe3JseGHwh+Zwh05InHee72MN9K5xHQaSlgNwQzDIlOq/gwsdIbDc9QDn6M18Fj42CFOoFFE/tbMMOQ6JCph+q8s0NYHSOxMfsMa+9ILM8MYrjqvDuYYUh0UhLTZE5ryeb3uR74lnqxvmiHd4RAZdZlWzCzS5BxIyRNkiurRCYXZDZvI08QNUWUFfzy2hT40ncf3n4NRptv4WzOmcEYZWTorgIx5ySvSZLgaxBxQadNL4ehRYdaowb3HinR98GK6uFKRGlPW84pToVsF+gFF0Yf511Hb8UNODvV6FDwQWTy0JybAPOsGqbpMtQ7ilHjKEH3x1YU2QsRlxdDbhcYBezuz8MUYzCqnAv99B3UOpSomizC3cl8qN7nQ0Jmw0Um77z/X4PVVqXCOKNCvf8C/fRtNPopHShAuj4dnifXdgr2X2xUGVWFjMEi+aWQWjNws0uIXEoIaXsaLuk4bqWsosJlFooC8j5OlzRF4Vgb+Qo8eGmDpo2CkrDg6cRPKI3LOBjXZQmNbwkJ/owOKyyxmc+XD6z3L/mgcwI5E0DWCJA2AAgogBgDRBonInjV5F8L5nXRv6d6DFC88kI8BIjtmxBRm+BbfEgyAUkGH56bXwcG2ytvwXI3xnt6qosh1I5D9haQvPFfYAcy+4GMrStqXNAqHgYG2ytvwfrUnhs3WJlSHsu32qOLJsHVzvtZAFc9h/hyB9hXX7gNpdLAYMwCsP4AQX+yAK6XMLkAAAAASUVORK5CYIIL</value>
+  </data>
+  <data name="SqlInsertCommand1.CommandText" xml:space="preserve">
+    <value>INSERT INTO [tblIntermediaries] ([IntermediaryGuid], [IntermediaryName], [Address1], [Address2], [City], [County], [State], [ZipCode], [ZipPlus], [Phone], [Fax], [WebSite], [Region], [ISOCountryCode], [Email], [BillingSameAsPrimary], [BillingAddress1], [BillingAddress2], [BillingCity], [BillingCounty], [BillingState], [BillingZipCode], [BillingZipPlus], [BillingRegion], [BillingISOCountryCode], [NAIC], [CountryCodeforPhone], [CountryCodeforFax]) VALUES (@IntermediaryGuid, @IntermediaryName, @Address1, @Address2, @City, @County, @State, @ZipCode, @ZipPlus, @Phone, @Fax, @WebSite, @Region, @ISOCountryCode, @Email, @BillingSameAsPrimary, @BillingAddress1, @BillingAddress2, @BillingCity, @BillingCounty, @BillingState, @BillingZipCode, @BillingZipPlus, @BillingRegion, @BillingISOCountryCode, @NAIC, @CountryCodeforPhone, @CountryCodeforFax);
+SELECT IntermediaryGuid, IntermediaryName, Address1, Address2, City, County, State, ZipCode, ZipPlus, Phone, Fax, WebSite, Region, ISOCountryCode, IntermediaryID, Email, BillingSameAsPrimary, BillingAddress1, BillingAddress2, BillingCity, BillingCounty, BillingState, BillingZipCode, BillingZipPlus, BillingRegion, BillingISOCountryCode, NAIC, CountryCodeforPhone, CountryCodeforFax FROM tblIntermediaries WHERE (IntermediaryGuid = @IntermediaryGuid) ORDER BY IntermediaryName</value>
+  </data>
+</root>

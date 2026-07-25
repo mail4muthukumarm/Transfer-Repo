@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: D:\augusta\fortegra\IMS Project\MgaSystems.IMS.Rating.Property.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{24E3A861-D798-43E5-BFF7-F999576B3DA8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>MgaSystems.IMS.Rating.Property</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>MgaSystems.IMS.Rating.Property</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MgaSystems.IMS.BusinessObjects">
+      <HintPath>lib\MgaSystems.IMS.BusinessObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Common">
+      <HintPath>lib\MgaSystems.IMS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.DocumentAutomation">
+      <HintPath>lib\MgaSystems.IMS.DocumentAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Editors">
+      <HintPath>lib\MgaSystems.IMS.Editors.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.NotesDocuments">
+      <HintPath>lib\MgaSystems.IMS.NotesDocuments.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Rating">
+      <HintPath>lib\MgaSystems.IMS.Rating.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Security">
+      <HintPath>lib\MgaSystems.IMS.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Tools">
+      <HintPath>lib\MgaSystems.IMS.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormExtensionTermFactor.cs" />
+    <Compile Include="dsPropertyRater.cs" />
+    <Compile Include="dsPropertyRaterConditionals.cs" />
+    <Compile Include="dsPropertyRater_Exposure.cs" />
+    <Compile Include="frmPleaseWait.cs" />
+    <Compile Include="frmPropertyRater.cs" />
+    <Compile Include="frmPropertyRater_Exposure.cs" />
+    <Compile Include="PropertyQuoteOption.cs" />
+    <Compile Include="PropertyRater.cs" />
+    <Compile Include="My\MyApplication.cs" />
+    <Compile Include="My\MyComputer.cs" />
+    <Compile Include="My\MyProject.cs" />
+    <Compile Include="My_Project\Resources.cs" />
+    <Compile Include="My_Project\MySettings.cs" />
+    <Compile Include="My_Project\MySettingsProperty.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="dll.licenses" />
+    <EmbeddedResource Include="FormExtensionTermFactor.resx" />
+    <EmbeddedResource Include="frmPleaseWait.resx" />
+    <EmbeddedResource Include="frmPropertyRater.resx" />
+    <EmbeddedResource Include="frmPropertyRater_Exposure.resx" />
+    <EmbeddedResource Include="Resources.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

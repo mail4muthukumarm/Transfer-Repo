@@ -1,0 +1,397 @@
+<UserTaggingAdmin x:Class="MGASystems.IMS.Excel.Views.UserTaggingAdmin"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                  xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+                  xmlns:system="clr-namespace:System;assembly=mscorlib"
+                  xmlns:appCommands="clr-namespace:MGASystems.IMS.Excel.Controllers"
+                  xmlns:mgaValidationRules="clr-namespace:Mga.Wpf.Ims.Validation;assembly=Mga.Wpf.Ims"
+                  xmlns:wpfToolKit="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+                  xmlns:data="clr-namespace:MGASystems.IMS.Excel.Data.UserTagging"
+                  xmlns:baseWpfControls="clr-namespace:Mga.Wpf.Ims.Controls;assembly=Mga.Wpf.Ims"
+                  xmlns:baseWpfBehaviors="clr-namespace:Mga.Wpf.Ims.Controls;assembly=Mga.Wpf.Ims"
+                  xmlns:baseWpfValueConverters="clr-namespace:Mga.Wpf.Ims.ValueConverters;assembly=Mga.Wpf.Ims"
+                  xmlns:baseWpfCommands="clr-namespace:Mga.Wpf.Ims.Commands;assembly=Mga.Wpf.Ims"
+                  xmlns:baseWpfFiltering="clr-namespace:Mga.Wpf.Ims.Filtering;assembly=Mga.Wpf.Ims"
+                  xmlns:baseData="clr-namespace:MGASystems.Data;assembly=MGASystems.Data"
+                  xmlns:mgaInterop="clr-namespace:Mga.Wpf.Ims.Interop;assembly=Mga.Wpf.Ims"
+                  x:Name="mainWindow" FrameworkElement.Height="550" FrameworkElement.Width="800"
+                  Title="Custom User Tag Administration" TransactionLogFilter="31661EE6-231C-42d3-B209-79F5AD0CC2BF"
+                  FrameworkElement.MinWidth="600" FrameworkElement.MinHeight="350"
+                  PromptOnCloseIfDataContextHasChanges="true" ResizeMode="CanResizeWithGrip"
+                  WindowStartupLocation="CenterScreen"
+                  FrameworkElement.Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type baseWpfBehaviors:MgaWindow}, ResourceId=backgroundStyle}}"
+                  FrameworkElement.DataContext="{Binding Source={StaticResource userTagAdministrationData}}">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/SplitButtonResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/CommonResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/ToolBarResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/ListViewResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/DataGridResources2.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/TreeViewResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <Style x:Key="mappingControlBorderStyle" TargetType="{x:Type Border}"
+             BasedOn="{StaticResource controlBorderStyle}">
+        <Setter Property="FrameworkElement.Margin" Value="3"/>
+      </Style>
+      <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource textBoxStyle}">
+        <Setter Property="FrameworkElement.Width" Value="250"/>
+      </Style>
+      <Style TargetType="{x:Type baseWpfBehaviors:SplitButton}"
+             BasedOn="{StaticResource ToolBarSplitButtonStyle}"/>
+      <Style TargetType="{x:Type DataGrid}" BasedOn="{StaticResource dataGridStyle}"/>
+      <Style TargetType="{x:Type GridViewColumnHeader}" BasedOn="{StaticResource gridViewColumnHeaderStyle}"/>
+      <Style TargetType="{x:Type CheckBox}">
+        <Setter Property="FrameworkElement.VerticalAlignment" Value="Center"/>
+        <Setter Property="FrameworkElement.Margin" Value="2"/>
+      </Style>
+      <baseWpfValueConverters:DeltaListToStringConverter x:Key="DeltaListToStringConverter"/>
+      <baseWpfValueConverters:MultiValueConverter x:Key="MultiValueConverter"/>
+      <BooleanToVisibilityConverter x:Key="BoolVisibilityConverter"/>
+      <baseWpfValueConverters:ComboBoxEmptyItemConverter x:Key="ComboBoxEmptyItemConverter"/>
+      <ObjectDataProvider x:Key="userTagAdministrationData" ObjectType="{x:Type data:UserTaggingManager}"/>
+      <baseWpfBehaviors:StringContainsFilterStrategy x:Key="stringFilter" IgnoreCase="true"/>
+      <baseWpfFiltering:FilterSource x:Key="storeNameFilterSource" Enabled="true" Path="Name"
+                                     FilterStrategy="{StaticResource stringFilter}"/>
+      <baseWpfFiltering:FilterSource x:Key="tagNameFilterSource" Enabled="true" Path="Name"
+                                     FilterStrategy="{StaticResource stringFilter}"/>
+      <baseWpfFiltering:FilterSource x:Key="fieldNameFilterSource" Enabled="true" Path="Field"
+                                     FilterStrategy="{StaticResource stringFilter}"/>
+      <baseWpfFiltering:FilterSource x:Key="resolvedTagNameFilterSource" Enabled="true" Path="ResolvedTagName"
+                                     FilterStrategy="{StaticResource stringFilter}"/>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <DockPanel LastChildFill="true">
+    <FrameworkElement.Resources>
+      <baseWpfFiltering:FilterableCollectionViewSource x:Key="dataStoresView" CollectionViewSource.Source="{Binding Path=DataStores}">
+        <baseWpfFiltering:FilterableCollectionViewSource.Filters>
+          <baseWpfFiltering:FilterSourceCollection>
+            <StaticResource ResourceKey="storeNameFilterSource"/>
+          </baseWpfFiltering:FilterSourceCollection>
+        </baseWpfFiltering:FilterableCollectionViewSource.Filters>
+        <CollectionViewSource.SortDescriptions>
+          <componentModel:SortDescription PropertyName="Name"/>
+        </CollectionViewSource.SortDescriptions>
+      </baseWpfFiltering:FilterableCollectionViewSource>
+      <baseWpfFiltering:FilterableCollectionViewSource x:Key="userTagsView"
+                                                       CollectionViewSource.Source="{Binding Source={StaticResource dataStoresView}, Path=UserTags}">
+        <baseWpfFiltering:FilterableCollectionViewSource.Filters>
+          <baseWpfFiltering:FilterSourceCollection>
+            <StaticResource ResourceKey="tagNameFilterSource"/>
+            <StaticResource ResourceKey="fieldNameFilterSource"/>
+            <StaticResource ResourceKey="resolvedTagNameFilterSource"/>
+          </baseWpfFiltering:FilterSourceCollection>
+        </baseWpfFiltering:FilterableCollectionViewSource.Filters>
+      </baseWpfFiltering:FilterableCollectionViewSource>
+    </FrameworkElement.Resources>
+    <ToolBarTray DockPanel.Dock="Top">
+      <FrameworkElement.Resources>
+        <Style TargetType="{x:Type ToolBarTray}" BasedOn="{StaticResource toolBarTrayStyle}"/>
+        <Style TargetType="{x:Type Image}" BasedOn="{StaticResource verticalToolbarImageStyle}"/>
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource toolbarButtonStyle}"/>
+        <Style TargetType="{x:Type StackPanel}" BasedOn="{StaticResource toolbarStackPanelStyle}"/>
+        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource verticalToolbarTextBlockStyle}"/>
+        <Style TargetType="{x:Type ToolBar}" BasedOn="{StaticResource toolBarStyle}"/>
+        <Style TargetType="{x:Type AccessText}" BasedOn="{StaticResource verticalToolbarAccessTextStyle}"/>
+      </FrameworkElement.Resources>
+      <ToolBar>
+        <Button ToolTip="Save" Command="{Binding Source={x:Static baseWpfCommands:DatabaseCommands.SubmitChanges}}"
+                CommandParameter="{Binding Source={StaticResource userTagAdministrationData}}">
+          <StackPanel>
+            <Image Source="/Mga.Wpf.Ims;component/Images/saveHS.png"/>
+            <AccessText Text="_Save"/>
+          </StackPanel>
+        </Button>
+        <Separator/>
+        <baseWpfBehaviors:UndoButton ChangeManager="{Binding ChangeManager, Mode=OneWay}"/>
+        <baseWpfBehaviors:RedoButton ChangeManager="{Binding ChangeManager, Mode=OneWay}"/>
+        <Separator/>
+        <Button ToolTip="Add a new DataStore"
+                Command="{Binding Source={x:Static appCommands:UserTaggingManagerCommands.AddDataStore}}">
+          <ButtonBase.CommandParameter>
+            <MultiBinding Converter="{StaticResource MultiValueConverter}">
+              <MultiBinding.Bindings>
+                <Binding/>
+                <Binding Source="{StaticResource dataStoresView}"/>
+              </MultiBinding.Bindings>
+            </MultiBinding>
+          </ButtonBase.CommandParameter>
+          <StackPanel>
+            <Image Source="/Mga.Wpf.Ims;component/Images/database_add.png"/>
+            <AccessText Text="New Store"/>
+          </StackPanel>
+        </Button>
+        <Button ToolTip="Deletes the selected data store"
+                Command="{Binding Source={x:Static baseWpfCommands:CollectionViewCommands.RemoveCurrentItem}}"
+                CommandParameter="{Binding Source={StaticResource dataStoresView}}">
+          <StackPanel>
+            <Image Source="/Mga.Wpf.Ims;component/Images/database_delete.png"/>
+            <AccessText Text="Delete Store"/>
+          </StackPanel>
+        </Button>
+        <Separator/>
+        <Button ToolTip="Add a new Tag"
+                Command="{Binding Source={x:Static appCommands:UserTaggingManagerCommands.AddUserTag}}">
+          <ButtonBase.CommandParameter>
+            <MultiBinding Converter="{StaticResource MultiValueConverter}">
+              <MultiBinding.Bindings>
+                <Binding Source="{StaticResource dataStoresView}" Path="/"/>
+                <Binding Source="{StaticResource userTagsView}"/>
+              </MultiBinding.Bindings>
+            </MultiBinding>
+          </ButtonBase.CommandParameter>
+          <StackPanel>
+            <Image Source="/Mga.Wpf.Ims;component/Images/tag_blue_add.png"/>
+            <AccessText Text="New Tag"/>
+          </StackPanel>
+        </Button>
+        <Button ToolTip="Deletes the selected Tag"
+                Command="{Binding Source={x:Static baseWpfCommands:CollectionViewCommands.RemoveCurrentItem}}"
+                CommandParameter="{Binding Source={StaticResource userTagsView}}">
+          <StackPanel>
+            <Image Source="/Mga.Wpf.Ims;component/Images/tag_blue_delete.png"/>
+            <AccessText Text="Delete Tag"/>
+          </StackPanel>
+        </Button>
+        <Separator/>
+        <Button ToolTip="Synchronize the tags with the DB"
+                Command="{Binding Source={x:Static appCommands:UserTaggingManagerCommands.SynchronizeTags}}">
+          <ButtonBase.CommandParameter>
+            <MultiBinding Converter="{StaticResource MultiValueConverter}">
+              <MultiBinding.Bindings>
+                <Binding Source="{StaticResource dataStoresView}" Path="/"/>
+                <Binding Source="{StaticResource dataStoresView}"/>
+              </MultiBinding.Bindings>
+            </MultiBinding>
+          </ButtonBase.CommandParameter>
+          <StackPanel>
+            <Image Source="/Mga.Wpf.Ims;component/Images/database_refresh.png"/>
+            <AccessText Text="Sync Tags"/>
+          </StackPanel>
+        </Button>
+      </ToolBar>
+    </ToolBarTray>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <Label Content="Custom User Tags" Style="{StaticResource headerStyle}"/>
+      <Grid Row="1" DataContext="{StaticResource dataStoresView}">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="2*" MinWidth="20"/>
+          <ColumnDefinition Width="auto"/>
+          <ColumnDefinition Width="5*" MinWidth="20"/>
+        </Grid.ColumnDefinitions>
+        <Border Style="{StaticResource mappingControlBorderStyle}">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="auto"/>
+              <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBox Name="dataStoreNameFilter" Width="auto" HorizontalAlignment="Stretch"
+                     Text="{Binding Source={StaticResource storeNameFilterSource}, Path=Value, UpdateSourceTrigger=PropertyChanged}">
+              <FrameworkElement.Style>
+                <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
+                  <Style.Triggers>
+                    <DataTrigger Binding="{Binding Source={StaticResource userTagAdministrationData}, Path=DataStores.Count}"
+                                 Value="0">
+                      <Setter Property="UIElement.Visibility" Value="Collapsed"/>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding Source={StaticResource userTagAdministrationData}, Path=DataStores.Count}"
+                                 Value="1">
+                      <Setter Property="UIElement.Visibility" Value="Collapsed"/>
+                    </DataTrigger>
+                  </Style.Triggers>
+                  <Setter Property="UIElement.Visibility" Value="Visible"/>
+                </Style>
+              </FrameworkElement.Style>
+              <baseWpfBehaviors:CueBannerService.CueBanner>
+                <Grid HorizontalAlignment="Stretch">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                  </Grid.ColumnDefinitions>
+                  <TextBlock VerticalAlignment="Center" Text="Filter Data Stores"/>
+                </Grid>
+              </baseWpfBehaviors:CueBannerService.CueBanner>
+            </TextBox>
+            <ListView Name="dataStoreList" Grid.Row="1" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}">
+              <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                  <StackPanel Style="{StaticResource treeViewStackPanelStyle}" ToolTip="{Binding StoredProcedure}">
+                    <Image Source="/Mga.Wpf.Ims;component/Images/database.png"/>
+                    <TextBlock Text="{Binding Name}"/>
+                  </StackPanel>
+                </DataTemplate>
+              </ItemsControl.ItemTemplate>
+            </ListView>
+          </Grid>
+        </Border>
+        <GridSplitter Width="2" Background="Transparent" Grid.Column="1" HorizontalAlignment="Stretch"/>
+        <Border Grid.Column="2" Style="{StaticResource mappingControlBorderStyle}">
+          <Grid>
+            <FrameworkElement.Style>
+              <Style TargetType="{x:Type Grid}">
+                <Style.Triggers>
+                  <DataTrigger Binding="{Binding ElementName=dataStoreList, Path=SelectedItem}" Value="{x:Null}">
+                    <Setter Property="UIElement.IsEnabled" Value="false"/>
+                  </DataTrigger>
+                </Style.Triggers>
+                <Setter Property="UIElement.IsEnabled" Value="true"/>
+              </Style>
+            </FrameworkElement.Style>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="auto"/>
+              <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+              </Grid.ColumnDefinitions>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+              </Grid.RowDefinitions>
+              <Label Content="Name"/>
+              <Label Grid.Row="1" Content="Tag Prefix"/>
+              <Label Grid.Row="2" Content="Stored Procedure"/>
+              <TextBox MaxLength="50" Grid.Column="1"
+                       Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true}"/>
+              <TextBox MaxLength="20" Grid.Column="1" Grid.Row="1"
+                       Text="{Binding TagPrefix, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true}"/>
+              <TextBox MaxLength="50" Grid.Column="1" Grid.Row="2"
+                       Text="{Binding StoredProcedure, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true}"/>
+              <CheckBox Content="Repeatable" Grid.Column="2" Grid.Row="1" Height="16" HorizontalAlignment="Left"
+                        Margin="18,6,0,0"
+                        IsChecked="{Binding RepeatableStore, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true}">
+                <FrameworkElement.Style>
+                  <Style TargetType="{x:Type CheckBox}">
+                    <Style.Triggers>
+                      <DataTrigger Binding="{Binding ID, Mode=OneWay}" Value="{x:Null}">
+                        <Setter Property="UIElement.IsEnabled" Value="true"/>
+                      </DataTrigger>
+                      <DataTrigger Binding="{Binding Source={StaticResource userTagAdministrationData}, Path=SupportsRepeatableTags}"
+                                   Value="True">
+                        <Setter Property="UIElement.Visibility" Value="Visible"/>
+                      </DataTrigger>
+                    </Style.Triggers>
+                    <Setter Property="UIElement.IsEnabled" Value="false"/>
+                    <Setter Property="UIElement.Visibility" Value="Collapsed"/>
+                  </Style>
+                </FrameworkElement.Style>
+              </CheckBox>
+              <ComboBox Grid.Column="2" Grid.Row="2" IsSynchronizedWithCurrentItem="True" DisplayMemberPath="Name"
+                        SelectedValuePath="ID"
+                        ItemsSource="{Binding NestCandidates, Mode=OneWay, Converter={StaticResource ComboBoxEmptyItemConverter}}"
+                        SelectedValue="{Binding NestedParentID}">
+                <FrameworkElement.Style>
+                  <Style TargetType="{x:Type ComboBox}">
+                    <Style.Triggers>
+                      <DataTrigger Binding="{Binding RepeatableStore, Mode=OneWay}" Value="True">
+                        <Setter Property="UIElement.Visibility" Value="Visible"/>
+                      </DataTrigger>
+                    </Style.Triggers>
+                    <Setter Property="UIElement.Visibility" Value="Collapsed"/>
+                  </Style>
+                </FrameworkElement.Style>
+              </ComboBox>
+            </Grid>
+            <Grid Row="1">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+              </Grid.RowDefinitions>
+              <Grid Margin="0,0,20,0">
+                <FrameworkElement.Resources>
+                  <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
+                    <Style.Triggers>
+                      <DataTrigger Binding="{Binding Path=UserTags}" Value="{x:Null}">
+                        <Setter Property="UIElement.Visibility" Value="Collapsed"/>
+                      </DataTrigger>
+                      <DataTrigger Binding="{Binding Path=UserTags.Count}" Value="0">
+                        <Setter Property="UIElement.Visibility" Value="Collapsed"/>
+                      </DataTrigger>
+                      <DataTrigger Binding="{Binding Path=UserTags.Count}" Value="1">
+                        <Setter Property="UIElement.Visibility" Value="Collapsed"/>
+                      </DataTrigger>
+                    </Style.Triggers>
+                    <Setter Property="UIElement.Visibility" Value="Visible"/>
+                    <Setter Property="FrameworkElement.Width" Value="auto"/>
+                    <Setter Property="FrameworkElement.HorizontalAlignment" Value="Stretch"/>
+                  </Style>
+                </FrameworkElement.Resources>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*"/>
+                  <ColumnDefinition Width="*"/>
+                  <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Text="{Binding Source={StaticResource tagNameFilterSource}, Path=Value, UpdateSourceTrigger=PropertyChanged}">
+                  <baseWpfBehaviors:CueBannerService.CueBanner>
+                    <Grid HorizontalAlignment="Stretch">
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                      </Grid.ColumnDefinitions>
+                      <TextBlock VerticalAlignment="Center" Text="Filter Name"/>
+                    </Grid>
+                  </baseWpfBehaviors:CueBannerService.CueBanner>
+                </TextBox>
+                <TextBox Grid.Column="1"
+                         Text="{Binding Source={StaticResource fieldNameFilterSource}, Path=Value, UpdateSourceTrigger=PropertyChanged}">
+                  <baseWpfBehaviors:CueBannerService.CueBanner>
+                    <Grid HorizontalAlignment="Stretch">
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                      </Grid.ColumnDefinitions>
+                      <TextBlock VerticalAlignment="Center" Text="Filter Field"/>
+                    </Grid>
+                  </baseWpfBehaviors:CueBannerService.CueBanner>
+                </TextBox>
+                <TextBox Grid.Column="2"
+                         Text="{Binding Source={StaticResource resolvedTagNameFilterSource}, Path=Value, UpdateSourceTrigger=PropertyChanged}">
+                  <baseWpfBehaviors:CueBannerService.CueBanner>
+                    <Grid HorizontalAlignment="Stretch">
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                      </Grid.ColumnDefinitions>
+                      <TextBlock VerticalAlignment="Center" Text="Filter Resolved Tag Name"/>
+                    </Grid>
+                  </baseWpfBehaviors:CueBannerService.CueBanner>
+                </TextBox>
+              </Grid>
+              <DataGrid Name="grid" Grid.Row="1" EditClickAction="SingleClick" AutoScrollCurrentRowIntoView="true"
+                        BorderThickness="0" CanUserSortColumns="true" Margin="2"
+                        ItemsSource="{Binding Source={StaticResource userTagsView}}">
+                <FrameworkElement.Resources>
+                  <Style x:Key="maxLengthTextEditingStyle" TargetType="{x:Type TextBox}">
+                    <Setter Property="TextBox.MaxLength" Value="50"/>
+                  </Style>
+                </FrameworkElement.Resources>
+                <DataGrid.Columns>
+                  <DataGridTextColumn Header="Name" MinWidth="100" EditingElementStyle="{StaticResource maxLengthTextEditingStyle}"
+                                      Binding="{Binding Name, ValidatesOnDataErrors=true, UpdateSourceTrigger=PropertyChanged}"/>
+                  <DataGridTextColumn Header="Field" MinWidth="100" EditingElementStyle="{StaticResource maxLengthTextEditingStyle}"
+                                      Binding="{Binding Field, ValidatesOnDataErrors=true, UpdateSourceTrigger=PropertyChanged}"/>
+                  <DataGridTextColumn Header="Description" MinWidth="100"
+                                      EditingElementStyle="{StaticResource maxLengthTextEditingStyle}"
+                                      Binding="{Binding Description, ValidatesOnDataErrors=true, UpdateSourceTrigger=PropertyChanged}"/>
+                  <DataGridTextColumn Header="Resolved Tag Name" MinWidth="100" IsReadOnly="true" Binding="{Binding ResolvedTagName}"/>
+                </DataGrid.Columns>
+              </DataGrid>
+            </Grid>
+          </Grid>
+        </Border>
+      </Grid>
+    </Grid>
+  </DockPanel>
+</UserTaggingAdmin>

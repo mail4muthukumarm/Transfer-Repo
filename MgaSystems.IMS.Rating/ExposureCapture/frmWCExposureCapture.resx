@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SqlSelectCommand1.CommandText" xml:space="preserve">
+    <value>SELECT        WorkCompID, QuoteID, Description, Rate, Renumeration, StateID, LocationID, ClassCodeID, ISNULL(ClassCode, LTRIM(RTRIM(LEFT(Description, 5)))) AS ClassCode, 
+                         EffectiveRateOfClass, NoOfEmployees, ExpectedIndemnityClaims
+FROM            tblGenericWCExposures
+WHERE        (QuoteID = @QuoteID)</value>
+  </data>
+  <data name="SqlCommand3.CommandText" xml:space="preserve">
+    <value>INSERT INTO tblWCPolicyInfo
+                         (QuoteID, Deductible, ExperienceMod, ScheduleRating, WCLimit, ScheduledMod, IncurredLoss, NoOfMedical, NoOfIndemnity)
+VALUES        (@QuoteID,@Deductible,@ExperienceMod,@ScheduleRating,@WCLimit,@ScheduledMod,@IncurredLoss,@NoOfMedical,@NoOfIndemnity); 
+SELECT QuoteID, Deductible, ExperienceMod, ScheduleRating, WCLimit FROM dbo.tblWCPolicyInfo WHERE (QuoteID = @QuoteID)</value>
+  </data>
+  <data name="SqlCommand1.CommandText" xml:space="preserve">
+    <value>SELECT     LocationID, LocationNo, BuildingNo, PhysicalBuildingNo, Address1 + ISNULL(',       ' + Address2, '') AS Address, City, State, Zip, 
+                      ModificationCode
+FROM         dbo.tblUnderwritingLocations
+WHERE     (QuoteGuid = @QuoteGuid)
+ORDER BY LocationNo, CASE WHEN ISNUMERIC(BuildingNo) = 1 THEN CAST(BuildingNo AS INT) ELSE CAST(- 1 AS INT) END</value>
+  </data>
+  <data name="SqlUpdateCommand1.CommandText" xml:space="preserve">
+    <value>UPDATE       tblGenericWCExposures
+SET                QuoteID = @QuoteID, Description = @Description, Rate = @Rate, Renumeration = @Renumeration, StateID = @StateID, LocationID = @LocationID, 
+                         ClassCode = @ClassCode, ClassCodeID = @ClassCodeID, EffectiveRateOfClass = @EffectiveRateOfClass, NoOfEmployees = @NoOfEmployees, 
+                         ExpectedIndemnityClaims = @ExpectedIndemnityClaims
+WHERE        (WorkCompID = @Original_WorkCompID);   
+SELECT WorkCompID, QuoteID, ClassCode, Description, Rate, Renumeration, StateID, LocationID, ClassCodeID FROM dbo.tblGenericWCExposures WHERE (WorkCompID = @WorkCompID)</value>
+  </data>
+  <data name="Appearance42.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAMQMAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAK8SURBVDhPlZDbT5JhHMe54o/wrq3DZqGZZZBmI9vSGU0JMFazItespgMhEFREhDECpszTbI6GI4oizQPTwHIeBpvVNA9tpnaguDKVdzLtIv328pY4kpsuvs/2/Pb7fJ73/dIAJExv2WE6mSSPmJHkkabSE+1Ek3AYhfvEjJBHmrI5oDi66VUdC3nVxxNK9gz6yo/QSTA8asrFlPMO3rvK4W8qhE97MuzTMfdI4i4eSQp9QH40PGbJx/RTMRkJpt0yzHSrMN4mwICWFfbUsuIku7AslT6oTCPGGzmYeSaFv5kLb30mXuqzMNoiwKS7BkNWPtxKJvFYmhGTUMegIo3uVaUTfmsBZp7L4W/hYcjIxtzsNJX+ejZ8Fj4CjxTo1RXAVppOtF5PoyQ0siA6WRDhb+JipktJfiofXsNZvH0zgZWVFaytrWFxYR5O+Wl0aTh49eAuOu+dh4nHIHQXkuk0X21GwN9y6e9/FpFwDqYm32F1dZWCd7LwcR5tJUw8FJ9Dj/kqmkuyoGIfDNDIZnO9OtbWaGsR+jTZ218+LcZe/jffvn5GXT4DjddOQZl9YItM7p8Ca1m5L9TMMWuDZXtjY4NalslkkMvlUCgUqKyspGaRSAQW030o2MmzUThW4k5MJtM6QRDUchRsb29HR0cHqqurY4KoVCgUHtph4gR6vX49HA5Ty1VVVbDZbLDb7airq4sJJBIJeDzerqDs9Y0UUc/lKwI7Z0hgKfjlGOlEVKJWq+FwOOB0OkGKqdmTD3aIuoUQ2DhzeVa2JlNzooBGwt/F/bdQM1yBsn4RRNZihEIhaLVauFwuuN1uGI1GBINBqIfkaJjQQTMiQ7GDj1RxcoRGvjxM2oKkLXBGnElwbucvl5aWLhkMBgoke4HZbAaXy10qrLi4nFef8zNTnTFBwj/239w3HNfB/we03419rIdhAWPUAAAAAElFTkSuQmCCCw==</value>
+  </data>
+  <data name="SqlUpdateCommand.CommandText" xml:space="preserve">
+    <value>UPDATE [dbo].[tblUnderwritingLocations] SET [LocationNo] = @LocationNo, [BuildingNo] = @BuildingNo, [PhysicalBuildingNo] = @PhysicalBuildingNo, [City] = @City, [State] = @State, [Zip] = @Zip, [ModificationCode] = @ModificationCode WHERE (([LocationID] = @Original_LocationID));
+SELECT LocationID, LocationNo, BuildingNo, PhysicalBuildingNo, Address1 + ISNULL(',       ' + Address2, '') AS Address, City, State, Zip, ModificationCode FROM dbo.tblUnderwritingLocations WHERE (LocationID = @LocationID) ORDER BY LocationNo, CASE WHEN ISNUMERIC(BuildingNo) = 1 THEN CAST(BuildingNo AS INT) ELSE CAST(- 1 AS INT) END</value>
+  </data>
+  <data name="Appearance43.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAMQMAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAK8SURBVDhPlZDbT5JhHMe54o/wrq3DZqGZZZBmI9vSGU0JMFazItespgMhEFREhDECpszTbI6GI4oizQPTwHIeBpvVNA9tpnaguDKVdzLtIv328pY4kpsuvs/2/Pb7fJ73/dIAJExv2WE6mSSPmJHkkabSE+1Ek3AYhfvEjJBHmrI5oDi66VUdC3nVxxNK9gz6yo/QSTA8asrFlPMO3rvK4W8qhE97MuzTMfdI4i4eSQp9QH40PGbJx/RTMRkJpt0yzHSrMN4mwICWFfbUsuIku7AslT6oTCPGGzmYeSaFv5kLb30mXuqzMNoiwKS7BkNWPtxKJvFYmhGTUMegIo3uVaUTfmsBZp7L4W/hYcjIxtzsNJX+ejZ8Fj4CjxTo1RXAVppOtF5PoyQ0siA6WRDhb+JipktJfiofXsNZvH0zgZWVFaytrWFxYR5O+Wl0aTh49eAuOu+dh4nHIHQXkuk0X21GwN9y6e9/FpFwDqYm32F1dZWCd7LwcR5tJUw8FJ9Dj/kqmkuyoGIfDNDIZnO9OtbWaGsR+jTZ218+LcZe/jffvn5GXT4DjddOQZl9YItM7p8Ca1m5L9TMMWuDZXtjY4NalslkkMvlUCgUqKyspGaRSAQW030o2MmzUThW4k5MJtM6QRDUchRsb29HR0cHqqurY4KoVCgUHtph4gR6vX49HA5Ty1VVVbDZbLDb7airq4sJJBIJeDzerqDs9Y0UUc/lKwI7Z0hgKfjlGOlEVKJWq+FwOOB0OkGKqdmTD3aIuoUQ2DhzeVa2JlNzooBGwt/F/bdQM1yBsn4RRNZihEIhaLVauFwuuN1uGI1GBINBqIfkaJjQQTMiQ7GDj1RxcoRGvjxM2oKkLXBGnElwbucvl5aWLhkMBgoke4HZbAaXy10qrLi4nFef8zNTnTFBwj/239w3HNfB/we03419rIdhAWPUAAAAAElFTkSuQmCCCw==</value>
+  </data>
+  <data name="Appearance24.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA9gYAAAJCTfYGAAAAAAAANgAAACgAAAAYAAAAGAAAAAEAGAAAAAAAAAAAABILAAASCwAAAAAAAAAAAAD/AP//AP+udGyfUlKaTU6cTk+ZR0ijc3S3uLi4tra5t7e6uLe6t7e5t7e4tra3tra4uLikcXGYRUaZSkuZS0yaTU6aTU7/AP//AP+0gXbDbmvJZGTJZGTLZWW3V1eaaWqwsbHNzcvl4+Hy7+359fL59fHu6+rj4uDe39+2dnaVLCyYNTWeOjrBW1vAYGGaTE3/AP+0gXbDbmvNZWXNZmbOZ2e6WFmbbGyhjY21gYDPr6zfzMr59fH//Pn79/Xv7evo6ei5dneUKimYMzOeOTnCXFzCYmKaTE3/AP+0gXbDbmvMZWXLZmbOZ2e4WFiecXGhfX6ePTy0cG7JoJ3s6OX79/X++vf59fLw8O+7eXiUKiqYMzOeOTnCXFzCYmKaTE3/AP+0gXbDbmvMZWXLZmbOZ2e4WFiidHSnhISXLy+fPz+1dXPe2Nfy7+379/X++/j6+ve+fHyUKSqYMzOeOTnCXFzCYmKaTE3/AP+0gXbDbmvMZWXLZmbOZ2e4WFildnatiYiYMjKXLy+gSEjJwsHl4+Hz8O39+fb///3Cf36TKSmYMzOeOTnCXFzCYmKaTE3/AP+0gXbDbmvMZWXLZmbOZ2e3V1erenm1jIuXKyuXKyuXMjKtpqbPz87m4+D28/D///3EgoCTKSmYMzOeOTnCXFzCYmKaTE3/AP+0gXbDbmvMZWXLZmbOZ2e1VlaufHvFqqimZWWhYGCdZGSen5+0ubjT1tTs7+z////DgoGQJiaVMDCcNzfBW1vCYmKaTE3/AP+0gXbDbmvMZWXLZmbOZ2e9XFy5cXLTp6XJoKC/mZm4lJSxjY2xjY3Dn57YsrHmwsDFd3anPz+qRUWuSUnGYGDCYWKaTE3/AP+0gXbDbmvNZmbNZmbNZmbMZWXMY2PLYWHLYmLLYmLMYWLMYWLLYWHKX1/KX1/JX1/LYmLMZWXMY2PNZmbOZ2fAYGGaTE3/AP+0gXbDbmvGYGDBXVzEY2HIbGvLcnLNd3bNd3bNd3bNd3bNd3bNd3bNd3bNd3bNd3bNd3bNd3bNeXjNb2/NZmbAYGGaTE3/AP+0gnbEb2ywTkqlSUS1bGjEj4zQq6nXvLvYv77Yvr3Yvr3Yvr3Yvr3Yvr3Yvr3Yvr3Yvr3Yvr3Yw8LRkJDMYWHAYGGaTE3/AP+0gnbEbmusRUHOnpr69fP27ez37+748fD48fD48fD48fD48fD48fD48fD48fD48fD48fD68/Lu5eTNjo3DWVnAYGGaTU7/AP+0gnbEbmusRUHSpqP////79fT79fT79fT79fT79fT79fT79fT79fT79fT79fT79fT79fT99/bv5+bMjYzBV1fAYGGaTU7/AP+0gnbEbmusRUHRpKH///348vH48fD48vH48vH48vH48vH48vH48vH48vH48vH48vH48fD79fTv5uXMjYzBV1fAYGGaTU7/AP+0gnbEbmusRUHRpKH///7p5OPMysrNzMzNzMzNzMzNzMzNzMzNzMzNzMzNzMzNzMzKycjm4uLy6OfMjYzBV1fAYGGaTU7/AP+0gnbEbmusRUHRpKH///717u7t6Oft6Oft6Oft6Oft6Oft6Oft6Oft6Oft6Oft6Ofs5+b18PDx5+bMjYzBV1fAYGGaTU7/AP+0gnbEbmusRUHRpKH///7s5+bU0dHV0tLV0tLV0tLV0tLV0tLV0tLV0tLV0tLV0tLS0NDp5eXx6OfMjYzBV1fAYGGaTU7/AP+0gnbEbmusRUHRpKH///7y7Ovl4N/l4eDl4eDl4eDl4eDl4eDl4eDl4eDl4eDl4eDk39/y7ezx5+bMjYzBV1fAYGGaTU7/AP+0gnbEbmusRUHRpKH///7y7Ovl4N/l4eDl4eDl4eDl4eDl4eDl4eDl4eDl4eDl4eDk39/y7ezx5+bMjYzBV1fAYGGaTU7/AP+0gnbEbmusRUHRpKH///7r5eXSz8/T0dDT0dDT0dDT0dDT0dDT0dDT0dDT0dDT0dDQzs7p5OPy6OfMjYzBV1fAYGGaTU7/AP+0gnbEbmusRUHSpaL////89fT99vX99vX99vX99vX99vX99vX99vX99vX99vX99vX99vX/+Pfx5+bMjYzDWVnBYWKaTU7/AP+0gna/b2uqRUHLnpvz8/Lv6ejv6ejv6ejv6ejv6ejv6ejv6ejv6ejv6ejv6ejv6ejv6ejw7Ovo4N/Ii4q4U1O4XF2aTU7/AP//AP+tc2yhRUC2iYfGy8vEw8PEw8PEw8PEw8PEw8PEw8PEw8PEw8PEw8PEw8PEw8PEw8PDw8PPyci4hISWREWaTE3/AP8L</value>
+  </data>
+  <data name="SqlCommand5.CommandText" xml:space="preserve">
+    <value>UPDATE       tblWCPolicyInfo
+SET                QuoteID = @QuoteID, Deductible = @Deductible, ExperienceMod = @ExperienceMod, ScheduleRating = @ScheduleRating, WCLimit = @WCLimit, 
+                         ScheduledMod = @ScheduledMod, IncurredLoss = @IncurredLoss, NoOfMedical = @NoOfMedical, NoOfIndemnity = @NoOfIndemnity
+WHERE        (QuoteID = @Original_QuoteID); 
+SELECT QuoteID, Deductible, ExperienceMod, ScheduleRating, WCLimit FROM dbo.tblWCPolicyInfo WHERE (QuoteID = @QuoteID)</value>
+  </data>
+  <data name="SqlInsertCommand1.CommandText" xml:space="preserve">
+    <value>INSERT INTO tblGenericWCExposures
+                         (QuoteID, Description, Rate, Renumeration, StateID, LocationID, ClassCodeID, ClassCode, EffectiveRateOfClass, NoOfEmployees, ExpectedIndemnityClaims)
+VALUES        (@QuoteID,@Description,@Rate,@Renumeration,@StateID,@LocationID,@ClassCodeID,@ClassCode,@EffectiveRateOfClass,@NoOfEmployees,@ExpectedIndemnityClaims);    
+SELECT WorkCompID, QuoteID, ClassCode, Description, Rate, Renumeration, StateID, LocationID, ClassCodeID FROM dbo.tblGenericWCExposures WHERE (WorkCompID = SCOPE_IDENTITY())</value>
+  </data>
+</root>

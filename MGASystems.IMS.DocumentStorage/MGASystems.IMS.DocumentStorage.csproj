@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: D:\augusta\fortegra\IMS Project\MGASystems.IMS.DocumentStorage.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{145E2B79-5F4D-47D5-BB0C-5D67C0B47867}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>MGASystems.IMS.DocumentStorage</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>MGASystems.IMS.DocumentStorage</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MGASystems.IMS.Logging">
+      <HintPath>lib\MGASystems.IMS.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Common">
+      <HintPath>lib\MgaSystems.IMS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Common.Cs">
+      <HintPath>lib\MgaSystems.IMS.Common.Cs.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="_003C_003Ez__ReadOnlyArray`1.cs" />
+    <Compile Include="System\Runtime\CompilerServices\RefSafetyRulesAttribute.cs" />
+    <Compile Include="RepositoryWriterException.cs" />
+    <Compile Include="DocumentLocation.cs" />
+    <Compile Include="DocumentMissingException.cs" />
+    <Compile Include="Metadata.cs" />
+    <Compile Include="MetadataProviders\IMetadataProvider.cs" />
+    <Compile Include="MetadataProviders\SqlMetadataProvider.cs" />
+    <Compile Include="DocumentProviders\ProgressCalculationExtensions.cs" />
+    <Compile Include="DocumentProviders\IDocumentReader.cs" />
+    <Compile Include="DocumentProviders\IDocumentWriter.cs" />
+    <Compile Include="DocumentProviders\ProviderLogging.cs" />
+    <Compile Include="DocumentProviders\AzureDocumentProvider.cs" />
+    <Compile Include="DocumentProviders\IDocumentRepository.cs" />
+    <Compile Include="DocumentProviders\LocationAwareDocumentProvider.cs" />
+    <Compile Include="DocumentProviders\ProgressStream.cs" />
+    <Compile Include="DocumentProviders\SqlDocumentProvider.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

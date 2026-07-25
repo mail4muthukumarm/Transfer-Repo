@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: D:\augusta\fortegra\IMS Project\MgaSystems.IMS.Editors.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{446F5CB1-7F38-4B92-AF55-FB6E4A5F714B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>MgaSystems.IMS.Editors</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <ApplicationVersion>2.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>MGASystems.ExtendedEditors</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MgaSystems.IMS.Common">
+      <HintPath>lib\MgaSystems.IMS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="TrayBalloon.cs" />
+    <Compile Include="MGASystems\InfragisticsExtensions\Editors\HyperlinkEditor.cs" />
+    <Compile Include="MGASystems\InfragisticsExtensions\Editors\HyperLinkEmbeddableUIElement.cs" />
+    <Compile Include="RichText\PrintableRichTextBox.cs" />
+    <Compile Include="RichText\RichTextConverter.cs" />
+    <Compile Include="RichText\UnsafeNativeMethods.cs" />
+    <Compile Include="ShellLink\ShellFile.cs" />
+    <Compile Include="ShellLink\ShellLink.cs" />
+    <Compile Include="DragDrop\ByteData.cs" />
+    <Compile Include="DragDrop\DataFormats.cs" />
+    <Compile Include="DragDrop\DragDropExtender.cs" />
+    <Compile Include="DragDrop\FileDropTarget.cs" />
+    <Compile Include="DragDrop\UnsafeNativeMethods.cs" />
+    <Compile Include="ComTypes\CHARRANGE.cs" />
+    <Compile Include="ComTypes\DragDropHelper.cs" />
+    <Compile Include="ComTypes\FILEDESCRIPTOR.cs" />
+    <Compile Include="ComTypes\FILEDESCRIPTORA.cs" />
+    <Compile Include="ComTypes\FILEDESCRIPTORW.cs" />
+    <Compile Include="ComTypes\FILEGROUPDESCRIPTORW.cs" />
+    <Compile Include="ComTypes\FORMATETC.cs" />
+    <Compile Include="ComTypes\FORMATRANGE.cs" />
+    <Compile Include="ComTypes\HResults.cs" />
+    <Compile Include="ComTypes\IDropTargetHelper.cs" />
+    <Compile Include="ComTypes\IEnumSTATSTG.cs" />
+    <Compile Include="ComTypes\ILockBytes.cs" />
+    <Compile Include="ComTypes\IOleDataObject.cs" />
+    <Compile Include="ComTypes\IOleDropTarget.cs" />
+    <Compile Include="ComTypes\IShellLinkW.cs" />
+    <Compile Include="ComTypes\IStorage.cs" />
+    <Compile Include="ComTypes\IStream.cs" />
+    <Compile Include="ComTypes\NIF.cs" />
+    <Compile Include="ComTypes\NIIF.cs" />
+    <Compile Include="ComTypes\NIM.cs" />
+    <Compile Include="ComTypes\POINTL.cs" />
+    <Compile Include="ComTypes\POINTSTRUCT.cs" />
+    <Compile Include="ComTypes\RECT.cs" />
+    <Compile Include="ComTypes\ShellClipboardFormats.cs" />
+    <Compile Include="ComTypes\SIZEL.cs" />
+    <Compile Include="ComTypes\STATSTG.cs" />
+    <Compile Include="ComTypes\STATFLAG.cs" />
+    <Compile Include="ComTypes\STGC.cs" />
+    <Compile Include="ComTypes\STGM.cs" />
+    <Compile Include="ComTypes\STGMEDIUM.cs" />
+    <Compile Include="ComTypes\tagRemSNB.cs" />
+    <Compile Include="ComTypes\NIS.cs" />
+    <Compile Include="ThumbnailExtractor\ThumbnailExtractor.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

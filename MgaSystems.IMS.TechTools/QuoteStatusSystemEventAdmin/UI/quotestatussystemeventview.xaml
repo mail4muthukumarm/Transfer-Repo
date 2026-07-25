@@ -1,0 +1,110 @@
+<local:QuoteStatusSystemEventView x:Class="MgaSystems.IMS.TechTools.QuoteStatusSystemEventAdmin.UI.QuoteStatusSystemEventView"
+                                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                                  xmlns:local="clr-namespace:MgaSystems.IMS.TechTools.QuoteStatusSystemEventAdmin.UI"
+                                  xmlns:mgaInterop="clr-namespace:Mga.Wpf.Ims.Interop;assembly=Mga.Wpf.Ims"
+                                  xmlns:baseWpfBehaviors="clr-namespace:Mga.Wpf.Ims.Controls;assembly=Mga.Wpf.Ims"
+                                  FrameworkElement.Height="500" FrameworkElement.Width="400"
+                                  Title="Quote Status / System Event Admin" WindowStartupLocation="CenterScreen"
+                                  TransactionLogFilter="A3E89878-AA9A-454F-B1AC-32BCE2DA7F53">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/CommonResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/DatagridResources2.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Mga.Wpf.Ims;component/Resources/ToolBarResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/TreeViewResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/ListViewResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter"/>
+      <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource textBoxStyleMain}">
+        <Setter Property="FrameworkElement.Height" Value="20"/>
+        <Style.Triggers>
+          <Trigger Property="TextBoxBase.IsReadOnly" Value="true">
+            <Setter Property="Control.Background" Value="LightGray"/>
+          </Trigger>
+        </Style.Triggers>
+      </Style>
+      <Style TargetType="{x:Type DataGrid}" BasedOn="{StaticResource dataGridStyle}"/>
+      <Style TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.MinWidth" Value="80"/>
+      </Style>
+      <Style x:Key="SearchBtnStyle" TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.Margin" Value="2"/>
+      </Style>
+      <Style TargetType="{x:Type TextBlock}">
+        <Setter Property="FrameworkElement.Margin" Value="2"/>
+        <Setter Property="TextBlock.Foreground" Value="{StaticResource standardTextForegroundColor}"/>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <DockPanel LastChildFill="true">
+    <ToolBarTray DockPanel.Dock="Top">
+      <FrameworkElement.Resources>
+        <Style TargetType="{x:Type ToolBarTray}" BasedOn="{StaticResource toolBarTrayStyle}"/>
+        <Style TargetType="{x:Type Image}" BasedOn="{StaticResource verticalToolbarImageStyle}"/>
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource toolbarButtonStyle}"/>
+        <Style TargetType="{x:Type StackPanel}" BasedOn="{StaticResource toolbarStackPanelStyle}"/>
+        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource verticalToolbarTextBlockStyle}"/>
+        <Style TargetType="{x:Type AccessText}" BasedOn="{StaticResource verticalToolbarAccessTextStyle}"/>
+      </FrameworkElement.Resources>
+      <ToolBar>
+        <Button ToolTip="Save" Width="60" Command="{Binding SaveCommand}">
+          <StackPanel>
+            <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/saveHS.png"/>
+            <AccessText Text="_Save"/>
+          </StackPanel>
+        </Button>
+        <Separator/>
+        <Button ToolTip="Add" Width="60" Command="{Binding AddCommand}">
+          <StackPanel>
+            <Image Source="pack://application:,,,/Mga.Wpf.Ims;component/Images/add.png"/>
+            <AccessText Text="Add"/>
+          </StackPanel>
+        </Button>
+        <Separator/>
+      </ToolBar>
+    </ToolBarTray>
+    <Grid x:Name="grid">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="30"/>
+        <RowDefinition/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition/>
+      </Grid.ColumnDefinitions>
+      <Label Grid.Row="0" Grid.Column="0" Content="Duplicate Entry" HorizontalAlignment="Left"
+             VerticalAlignment="Center" Foreground="Red"
+             Visibility="{Binding DuplicateEntryError, UpdateSourceTrigger=PropertyChanged}"/>
+      <DataGrid Grid.Row="1" Grid.Column="0" CanUserAddRows="false" CanUserDeleteRows="false"
+                IsSynchronizedWithCurrentItem="True"
+                ItemsSource="{Binding QuoteStatusSystemEventManager.QuoteStatusSystemEventList, UpdateSourceTrigger=PropertyChanged}"
+                SelectedItem="{Binding QuoteStatusId, UpdateSourceTrigger=PropertyChanged}">
+        <DataGrid.Columns>
+          <DataGridTemplateColumn Header="Quote Status" Width="1*" Visibility="Visible">
+            <DataGridTemplateColumn.CellTemplate>
+              <DataTemplate>
+                <ComboBox DisplayMemberPath="QuoteStatus" SelectedValuePath="QuoteStatusId" HorizontalAlignment="Stretch"
+                          ItemsSource="{Binding DataContext.QuoteStatusSystemEventManager.QuoteStatuses, ElementName=grid}"
+                          IsEnabled="{Binding IsEnabledComboBox}"
+                          SelectedValue="{Binding QuoteStatusId, UpdateSourceTrigger=PropertyChanged}"/>
+              </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+          </DataGridTemplateColumn>
+          <DataGridTemplateColumn Header="Event" Width="1*" Visibility="Visible">
+            <DataGridTemplateColumn.CellTemplate>
+              <DataTemplate>
+                <ComboBox DisplayMemberPath="EventName" SelectedValuePath="EventGuid" HorizontalAlignment="Stretch"
+                          ItemsSource="{Binding DataContext.QuoteStatusSystemEventManager.SystemEvents, ElementName=grid}"
+                          IsEnabled="{Binding IsEnabledComboBox}"
+                          SelectedValue="{Binding EventGuid, UpdateSourceTrigger=PropertyChanged}"/>
+              </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+          </DataGridTemplateColumn>
+        </DataGrid.Columns>
+      </DataGrid>
+    </Grid>
+  </DockPanel>
+</local:QuoteStatusSystemEventView>

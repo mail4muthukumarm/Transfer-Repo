@@ -1,0 +1,186 @@
+<local:AddDocuments x:Class="MGASystems.IMS.DocumentAutomation.AddDocuments"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:local="clr-namespace:MGASystems.IMS.DocumentAutomation"
+                    xmlns:mgasystemsInterop="clr-namespace:Mga.Wpf.Ims.Interop;assembly=Mga.Wpf.Ims"
+                    xmlns:baseWpfBehaviors="clr-namespace:Mga.Wpf.Ims.Controls;assembly=Mga.Wpf.Ims"
+                    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                    xmlns:mgaWpf="clr-namespace:Mga.Wpf.Ims.Controls;assembly=Mga.Wpf.Ims"
+                    x:Name="AddDocs" FrameworkElement.Height="517" FrameworkElement.Width="872"
+                    Title="Add Additional Documents" ResizeMode="CanResizeWithGrip"
+                    FrameworkElement.Cursor="{Binding Cursor}">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/CommonResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/ListViewResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <Style TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.MinWidth" Value="80"/>
+      </Style>
+      <Style TargetType="{x:Type ListViewItem}">
+        <Setter Property="Control.HorizontalContentAlignment" Value="Stretch"/>
+        <Style.Triggers>
+          <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+            <Setter Property="Control.Background" Value="White"/>
+          </Trigger>
+          <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+            <Setter Property="Control.Background" Value="{StaticResource alternateRowBrush}"/>
+          </Trigger>
+          <Trigger Property="ListBoxItem.IsSelected" Value="true">
+            <Trigger.Setters>
+              <Setter Property="Control.Background" Value="{StaticResource selectedItemBrush}"/>
+            </Trigger.Setters>
+          </Trigger>
+        </Style.Triggers>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition/>
+      <RowDefinition/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <Grid Row="0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <TextBlock Grid.Row="0" Text="Please select the documents you would like to add:" Margin="2"/>
+      <Border Grid.Row="1" BorderBrush="DarkGray" BorderThickness="1">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+          </Grid.RowDefinitions>
+          <TextBlock Grid.Row="0" Background="#FFCDD9EE" TextAlignment="Center" Text="Available Documents"
+                     Margin="2,2,2,0"/>
+          <Grid Row="1" Background="#FFCDD9EE">
+            <Grid.RowDefinitions>
+              <RowDefinition/>
+              <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Filter Description:" Margin="2"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Margin="0,2,2,2"
+                     Text="{Binding FilterAvailableDescription, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Filter Folder Name:" Margin="2"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="0,2,2,2"
+                     Text="{Binding FilterAvailableFolderName, UpdateSourceTrigger=PropertyChanged}"/>
+          </Grid>
+          <ListView Grid.Row="2" AutoSizeGridViewColumnsOnItemsSourceChanged="true" SelectionMode="Extended"
+                    AlternationCount="2" EnableSorting="true" Margin="2" ItemsSource="{Binding AvailableDocCVS.View}"
+                    SelectedItem="{Binding SelectedDocument}">
+            <mgaWpf:ListBoxBehavior.SelectedItems>
+              <Binding>                <!-- constructor argument:
+                     SelectedDocuments
+                -->
+
+              </Binding>
+            </mgaWpf:ListBoxBehavior.SelectedItems>
+            <ListView.View>
+              <GridView>
+                <GridViewColumn Header="Description" SortOn="Description" DisplayMemberBinding="{Binding Description}"/>
+                <GridViewColumn Header="Folder Name" SortOn="FolderName" DisplayMemberBinding="{Binding FolderName}"/>
+              </GridView>
+            </ListView.View>
+          </ListView>
+        </Grid>
+      </Border>
+      <Grid Row="2">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" Content="Add" Margin="2" Command="{Binding AddCommand}"
+                CommandParameter="{Binding ElementName=AddDocs}"/>
+        <Button Grid.Column="1" Content="Add All" Margin="0,2,2,2" Command="{Binding AddAllCommand}"
+                CommandParameter="{Binding ElementName=AddDocs}"/>
+        <Button Grid.Column="2" Content="Remove" Margin="2" HorizontalAlignment="Right"
+                Command="{Binding RemoveCommand}" CommandParameter="{Binding ElementName=AddDocs}"/>
+      </Grid>
+    </Grid>
+    <Border Grid.Row="1" BorderBrush="DarkGray" BorderThickness="1">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Background="#FFCDD9EE" TextAlignment="Center" Text="Added Documents" Margin="2,2,2,0"/>
+        <Grid Row="1" Background="#FFCDD9EE">
+          <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+          </Grid.ColumnDefinitions>
+          <TextBlock Grid.Row="0" Grid.Column="0" Text="Filter Description:" Margin="2"/>
+          <TextBox Grid.Row="0" Grid.Column="1" Margin="0,2,2,2"
+                   Text="{Binding FilterAddedDescription, UpdateSourceTrigger=PropertyChanged}"/>
+          <TextBlock Grid.Row="1" Grid.Column="0" Text="Filter Attachment File Name:" Margin="2"/>
+          <TextBox Grid.Row="1" Grid.Column="1" Margin="0,2,2,2"
+                   Text="{Binding FilterAddedFileName, UpdateSourceTrigger=PropertyChanged}"/>
+          <TextBlock Grid.Row="2" Grid.Column="0" Text="Filter Folder Name:" Margin="2"/>
+          <TextBox Grid.Row="2" Grid.Column="1" Margin="0,2,2,2"
+                   Text="{Binding FilterAddedFolderName, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
+        <ListView Grid.Row="2" AutoSizeGridViewColumnsOnItemsSourceChanged="true" AlternationCount="2"
+                  EnableSorting="true" Margin="2" ItemsSource="{Binding AddedDocCVS.View}"
+                  SelectedItem="{Binding SelectedAddedDoc}">
+          <mgaWpf:ListBoxBehavior.SelectedItems>
+            <Binding>              <!-- constructor argument:
+                   SelectedAddedDocuments
+              -->
+
+            </Binding>
+          </mgaWpf:ListBoxBehavior.SelectedItems>
+          <ListView.View>
+            <GridView>
+              <GridViewColumn Header="Description" SortOn="Description" DisplayMemberBinding="{Binding Description}"/>
+              <GridViewColumn Header="Attachment File Name" SortOn="AttachmentFileName">
+                <GridViewColumn.CellTemplate>
+                  <DataTemplate>
+                    <TextBox Background="Transparent" BorderThickness="0"
+                             Text="{Binding Path=AttachmentFileName, UpdateSourceTrigger=PropertyChanged}"
+                             Foreground="{Binding RelativeSource={RelativeSource AncestorType=ListViewItem}, Path=Foreground}"/>
+                  </DataTemplate>
+                </GridViewColumn.CellTemplate>
+              </GridViewColumn>
+              <GridViewColumn Header="Folder Name" SortOn="FolderName" DisplayMemberBinding="{Binding FolderName}"/>
+            </GridView>
+          </ListView.View>
+        </ListView>
+      </Grid>
+    </Border>
+    <Grid Row="2">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition/>
+        <ColumnDefinition/>
+      </Grid.ColumnDefinitions>
+      <TextBlock Grid.Column="0" Margin="2">
+        <Hyperlink Command="{Binding BrowseCommand}" CommandParameter="{Binding ElementName=AddDocs}">
+          <TextBlock Text="Browse..."/>
+        </Hyperlink>
+      </TextBlock>
+      <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+        <Button Content="Save" Margin="2" Command="{Binding SaveCommand}"
+                CommandParameter="{Binding ElementName=AddDocs}"/>
+        <Button Content="Cancel" Margin="0,2,2,2" Command="{Binding CancelCommand}"
+                CommandParameter="{Binding ElementName=AddDocs}"/>
+      </StackPanel>
+    </Grid>
+  </Grid>
+</local:AddDocuments>

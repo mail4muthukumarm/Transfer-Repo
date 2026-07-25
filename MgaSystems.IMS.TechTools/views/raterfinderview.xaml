@@ -1,0 +1,89 @@
+<RaterFinderView x:Class="MgaSystems.IMS.TechTools.Views.RaterFinderView"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+                 xmlns:controls="clr-namespace:Mga.Wpf.Ims.Controls;assembly=Mga.Wpf.Ims"
+                 xmlns:mgaInterop="clr-namespace:Mga.Wpf.Ims.Interop;assembly=Mga.Wpf.Ims"
+                 xmlns:data="clr-namespace:MgaSystems.IMS.TechTools.ViewModels"
+                 ResizeMode="CanResizeWithGrip" FrameworkElement.Height="554" FrameworkElement.Width="700"
+                 Title="Rater Finder Tool">
+  <BusyIndicator x:Name="BusyBar" IsBusy="{Binding IsBusy}">
+    <Grid Margin="60,0,-60,0">
+      <Label Content="Rater Type:" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,10,573,0"/>
+      <ComboBox Name="CboRatingType" Height="25" Width="188" Margin="132,12,0,517" HorizontalAlignment="Left"
+                DisplayMemberPath="RatingType" SelectedValuePath="RatingTypeId" ItemsSource="{Binding Raters}"
+                SelectedValue="{Binding RatingTypeId}"/>
+      <controls:MgaDatePicker FrameworkElement.Name="DpDateFrom" FrameworkElement.Margin="132,48,460,482"
+                              DatePicker.Text="{Binding DateFrom}" DatePicker.SelectedDate="{Binding DateFrom, Mode=TwoWay}"/>
+      <controls:MgaDatePicker FrameworkElement.Name="DpDateTo" FrameworkElement.Margin="266,48,326,482"
+                              DatePicker.Text="{Binding DateTo}" DatePicker.SelectedDate="{Binding DateTo, Mode=TwoWay}"/>
+      <Label Content="Quote Effective Date:" HorizontalAlignment="Left" Margin="6,48,0,0"
+             VerticalAlignment="Top"/>
+      <Label Content="to" HorizontalAlignment="Left" Margin="243,48,0,0" VerticalAlignment="Top"
+             RenderTransformOrigin="-0.126,0.59"/>
+      <RadioButton Content="Any" HorizontalAlignment="Left" Margin="132,90,0,0" VerticalAlignment="Top"
+                   GroupName="QuoteStatusRadio"
+                   IsChecked="{Binding Path=IsAnyEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+      <RadioButton Content="By Bound" HorizontalAlignment="Left" Margin="132,121,0,0" VerticalAlignment="Top"
+                   GroupName="QuoteStatusRadio"
+                   IsChecked="{Binding Path=IsByBoundEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+      <RadioButton Content="By Quote Status" HorizontalAlignment="Left" Margin="132,150,0,0" VerticalAlignment="Top"
+                   GroupName="QuoteStatusRadio"
+                   IsChecked="{Binding Path=IsByQuoteStatusDescriptionEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+      <ComboBox Name="CboByBinding" Height="25" Width="175" Margin="240,116,0,413" HorizontalAlignment="Left"
+                SelectedValuePath="BoundStatusId" ItemsSource="{Binding BoundStatuses}"
+                SelectedValue="{Binding BoundStatusId}" IsEnabled="{Binding IsByBoundEnabled}">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <ContentControl x:Name="content" Content="{Binding BoundStatus}"/>
+            <DataTemplate.Triggers>
+              <DataTrigger Value="False"
+                           Binding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ComboBox}, Path=IsEnabled}">
+                <Setter TargetName="content" Property="UIElement.Visibility" Value="Hidden"/>
+              </DataTrigger>
+            </DataTemplate.Triggers>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ComboBox>
+      <ComboBox Name="CboByDescription" Height="25" Width="175" Margin="240,146,0,383" HorizontalAlignment="Left"
+                SelectedValuePath="QuoteStatusId" ItemsSource="{Binding QuoteStatuses}"
+                SelectedValue="{Binding QuoteStatusId}" IsEnabled="{Binding IsByQuoteStatusDescriptionEnabled}">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <ContentControl x:Name="content" Content="{Binding QuoteStatus}"/>
+            <DataTemplate.Triggers>
+              <DataTrigger Value="False"
+                           Binding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ComboBox}, Path=IsEnabled}">
+                <Setter TargetName="content" Property="UIElement.Visibility" Value="Hidden"/>
+              </DataTrigger>
+            </DataTemplate.Triggers>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ComboBox>
+      <Label Content="Quote Status:" HorizontalAlignment="Left" Margin="47,84,0,0" VerticalAlignment="Top"/>
+      <Button x:Name="BSearch" Content="Search" HorizontalAlignment="Left" Margin="453,146,0,0"
+              VerticalAlignment="Top" Height="25" Width="109" Command="{Binding GetQuoteDetailsCommand}"/>
+      <DataGrid Name="DgQuoteDetails" Margin="13,185,136,12" IsReadOnly="true" AutoGenerateColumns="false"
+                ItemsSource="{Binding QuoteDetails}">
+        <DataGrid.Columns>
+          <DataGridTextColumn Header="Quote Detail ID" Binding="{Binding QuoteDetailId}"/>
+          <DataGridTemplateColumn Header="Control Number">
+            <DataGridTemplateColumn.CellTemplate>
+              <DataTemplate>
+                <Button Foreground="#FF0000EE" Background="White" Cursor="Hand" BorderThickness="0" Padding="-4"
+                        Content="{Binding ControlNumber}"
+                        Command="{Binding Path=DataContext.OpenPolicyDetailWindowCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}}"
+                        CommandParameter="{Binding ControlNumber}"/>
+              </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+          </DataGridTemplateColumn>
+          <DataGridTextColumn Width="150" Header="Rating Type" Binding="{Binding RatingType}"/>
+          <DataGridTextColumn Header="Is Bound" Binding="{Binding IsBound}"/>
+          <DataGridTextColumn Width="150" Header="Quote Status" Binding="{Binding QuoteStatus}"/>
+        </DataGrid.Columns>
+      </DataGrid>
+    </Grid>
+  </BusyIndicator>
+</RaterFinderView>

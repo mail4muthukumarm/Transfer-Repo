@@ -1,0 +1,66 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: MgaSystems.IMS.UnderwritingServices.InsCipher.ServiceObjects.DocumentCode
+// Assembly: MgaSystems.IMS.UnderwritingServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e175cb7c4ce15bbd
+// MVID: 4E63F408-1B27-4004-B8D3-2C6361F8A9AF
+// Assembly location: D:\augusta\fortegra\IMS Project\MgaSystems.IMS.UnderwritingServices.dll
+
+#nullable disable
+namespace MgaSystems.IMS.UnderwritingServices.InsCipher.ServiceObjects;
+
+public enum DocumentCode
+{
+  ADD,
+  ADIO,
+  AFFID,
+  AFFIDA,
+  AFFIDC,
+  AFFIDCA,
+  AFFIDEN,
+  AOA,
+  CN,
+  COMPN,
+  CONEL,
+  D1DISC,
+  D2NOT,
+  DDILF,
+  DECLA,
+  DECLD,
+  DILEF,
+  DILIF,
+  DILSE,
+  DISCB,
+  DISCL,
+  DSF,
+  ECP,
+  ECPC,
+  EL,
+  ELNIF,
+  ENDOR,
+  EVGF,
+  EXHA2,
+  EXPL,
+  FFRPG,
+  FLCE,
+  NCUA,
+  NOOELP,
+  NOOELPDC,
+  NOTINS,
+  NTC19040,
+  NTXP,
+  OSD1,
+  OSD2,
+  OSD3,
+  PHN,
+  PLALR14,
+  POLIC,
+  RDOP,
+  SFP,
+  SL1917,
+  SL3,
+  SL8,
+  SLACK,
+  SLDISC,
+  SSW,
+  SUBDF,
+  WET,
+}

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SqlSelectCommand1.CommandText" xml:space="preserve">
+    <value>SELECT     LocationID, LocationNo, BuildingNo, PhysicalBuildingNo, Address1 + ISNULL(',       ' + Address2, '') AS Address, City, State, Zip, 
+                      ModificationCode
+FROM         dbo.tblUnderwritingLocations
+WHERE     (QuoteGuid = @QuoteGuid)
+ORDER BY LocationNo, CASE WHEN ISNUMERIC(BuildingNo) = 1 THEN CAST(BuildingNo AS INT) ELSE CAST(- 1 AS INT) END</value>
+  </data>
+  <data name="Appearance22.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAGAIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAGjSURBVDhPjZLbKwRhGIf3X+QCF1pEUuSwclhK1raHEtlNiZDGRhOLrSmtdVjru3AhSg6zy65PbqScy34u7Ov3jXaWRsxbz3xz/L0zz7yOsg61fCSW3exfvGR9CyCSYd1zp6xr9oR1zhwz19QRa588ZO4pxuS9ROT4jsO3nE2F47fMDm1juylLgOxsl8bhJLME9EUu5Elb1Ae25PozwD2fNi5qqUxmOnH9Fly7EoFVEM0J/9Kl8Kpp4Vk8E4ORE9E6cSDggsOFsxSg6EZASOP5meSd+IsR7UbABYeLnBnQEt43AmTn/+hRzgVccLjgZgBeZ6hpdI/1Krp4en0HQjy+SPImD5LnvHh9e3/CQxwuSgHFHbiQJ3lsR78PabkCOhHmgjAXhM8kzAZhLghzQZgLggtC8+ZSgKIbAf5olvCdtoCLDzMALowA2dkucPH1sASvMw4XHHOBQ3sFF6WAInCB5fcqSLApyA2q1rfxSwCE/VXFEFlOz7o1AC6w2Ksyl2oNgAsVLgxBDcFtqvMlqMYbp+oBjar6Y1TpXqGK7qj8hUBVPwH6FSN70PpefwAAAABJRU5ErkJgggs=</value>
+  </data>
+  <data name="SqlSelectCommand3.CommandText" xml:space="preserve">
+    <value>SELECT     dbo.tblPropertyExposure.ExposureID, dbo.tblPropertyExposure.OriginalExposureID, dbo.tblPropertyExposure.LocationID, 
+                      dbo.tblPropertyExposure.QuoteOptionID, dbo.tblPropertyExposure.TerrPremium, dbo.tblPropertyExposure.ModificationCode, 
+                      dbo.tblPropertyExposure.EndorsementCalcType, dbo.tblPropertyExposure.EffectiveDate, dbo.tblPropertyExposure.UserAdded, 
+                      dbo.tblPropertyExposure.OfficeID, dbo.tblPropertyExposure.PrimaryPremium, dbo.tblPropertyExposure.ExcessPremium, 
+                      dbo.tblPropertyExposure.Limit, dbo.tblPropertyExposure.CauseOfLossID, dbo.tblPropertyExposure.ValuationID, 
+                      dbo.tblPropertyExposure.CoInsuranceID, dbo.tblPropertyExposure.CoverageID, dbo.tblPropertyExposure.CoInsurance, 
+                      dbo.tblPropertyExposure.PrimaryRate, dbo.tblPropertyExposure.ExcessRate, dbo.tblPropertyExposure.TerrRate, dbo.tblPropertyExposure.Deductible, 
+                      dbo.tblPropertyExposure.DeductiblePerID, dbo.tblPropertyExposure.UserOverrideFactor, dbo.tblPropertyExposure.OtherDeductibles, 
+                      dbo.tblPropertyExposure.PremiumsWaived, dbo.tblPropertyExposure.TotalNonTerrorPremium, dbo.tblPropertyExposure.TerrorPrimary, 
+                      dbo.tblPropertyExposure.TerrorExcess, dbo.tblPropertyExposure.AccountRate, dbo.tblPropertyExposure.Factor, 
+                      dbo.tblPropertyExposure.AdditionalInfo
+FROM         dbo.tblPropertyExposure INNER JOIN
+                      dbo.lstPropRater_CoverageTypes ON dbo.tblPropertyExposure.CoverageID = dbo.lstPropRater_CoverageTypes.ID
+WHERE     (dbo.tblPropertyExposure.ExposureID = COALESCE (dbo.tblPropertyExposure.ExposureID, @ExposureID)) AND 
+                      (dbo.tblPropertyExposure.QuoteOptionID = @quoteOptionID)
+ORDER BY dbo.lstPropRater_CoverageTypes.Coverage</value>
+  </data>
+  <data name="Appearance23.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA9gYAAAJCTfYGAAAAAAAANgAAACgAAAAYAAAAGAAAAAEAGAAAAAAAAAAAABILAAASCwAAAAAAAAAAAAD/AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP+hPgihPgihPgj/AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP+hPgi5VATAXAOjQAegPQj/AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP+hPQi+WgTUbwDAWwOiPgehPgj/AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP+hPgiiQAjCXgPTbQC9WQOhPgihPgj/AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP+fPAilQgfHYgLSbQC4VASfPAigPAf/AP//AP//AP+hPgidOgaeOgafOwifPAifPAifPAifPAifPAifPAifPAifPAihPgj/AP//AP+fPAiqRwbMZwHQawGvSwWeOwigPQj/AP//AP+kQQm4WBO3Vw6yUAixTAWxTQWxTQWxTQWxTQWxTQWyTQWwTAWlQQihPgj/AP//AP+fPAiuSwXOagHJZAKmQgegPQj/AP//AP+pSA3rlTPpkijafBTRbQbOaAHRawHRbAHRbAHRbAHSbAHTbgGyTgWfPAj/AP//AP//AP+fPAizUAXRbAC9WASgPQigPAf/AP+pSA7xokL0oz3okSrdgBjJZgm0TwO3UwS3UwS3UwS4VAS2UwWmQwehPgj/AP//AP//AP//AP+gPQjAXAPPagGrRwefPQj/AP+pRw3zqEj9sUzplTbrlS7afhyoRgqbOAefPAifPAifPAifPAihPgj/AP//AP//AP//AP//AP+fPAivTAbRbAG8VwSePAifPQipRw3zp0f/t1HEaSLfiTDznjTTdhqiPwefOwf/AP//AP//AP//AP//AP//AP//AP//AP//AP//AP+mQwfMZwHEXwKiPwifPQipRw3zp0f/ulK5XBmsSxDyokD0oDbPchuhPQefOwf/AP//AP//AP//AP//AP//AP//AP//AP//AP+jQAfHYgLIZAKkQQefPQipRw3zp0f/ulK/Yh2VLwC8YBz5q0b2oznPcx2hPgefOwb/AP//AP//AP//AP//AP//AP//AP//AP+kQQfJZALJZAKkQQefPQipRw3zp0f/uVK+Yh2cNwObNgPDaCH8sEr4pjzTeCClQgidOQb/AP//AP//AP//AP//AP//AP+fPAirSAfPagHFYAKiQAefPQipRw3zp0f/uVK+Yh2cNwP/AP+bNgPBZiD6rkn6q0DcgyWsSgucOQX/AP//AP//AP//AP+hPgigPQi/WgPSbQC7VwSfPAj/AP+pRw3zp0f/uVK+Yh2cNwP/AP//AP+bNQK6Xhz0p0b+sEXljSy2VRCfOwWdOgeePAiePAigPQi4VATQawHNaAGqRgegPQj/AP+pRw3zp0f/uVK+Yh2cNwP/AP//AP//AP+bNgOuThLjkTn9r0bxnDTSdRy5WA2wTAewTAXAXAPRbAHOaQGzTgWfPAj/AP//AP+pSA33rUv/wVa/ZB6cNwP/AP//AP//AP//AP+dOQSgPAfEaSLnlTjynzbrkifdfxTUcQbOaAHCXQOsSAafPAj/AP//AP//AP+iQAjUgC/ikTmsTBCfPAb/AP//AP//AP//AP//AP+gPAebNwSkQgq3WRbCZhvAYhS1UwupRQahPgigPQj/AP//AP//AP//AP//AP+eOgafOwWgPAf/AP//AP//AP//AP//AP//AP//AP//AP+fPQidOQWdOQWdOgefPAigPQj/AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP//AP8L</value>
+  </data>
+  <data name="SqlUpdateCommand1.CommandText" xml:space="preserve">
+    <value>UPDATE    dbo.tblPropertyExposure
+SET              OriginalExposureID = @OriginalExposureID, LocationID = @LocationID, QuoteOptionID = @QuoteOptionID, TerrPremium = @TerrPremium, 
+                      ModificationCode = @ModificationCode, EndorsementCalcType = @EndorsementCalcType, EffectiveDate = @EffectiveDate, UserAdded = @UserAdded, 
+                      OfficeID = @OfficeID, PrimaryPremium = @PrimaryPremium, ExcessPremium = @ExcessPremium, Limit = @Limit, 
+                      CauseOfLossID = @CauseOfLossID, ValuationID = @ValuationID, CoInsuranceID = @CoInsuranceID, CoverageID = @CoverageID, 
+                      CoInsurance = @CoInsurance, PrimaryRate = @PrimaryRate, ExcessRate = @ExcessRate, TerrRate = @TerrRate, Deductible = @Deductible, 
+                      DeductiblePerID = @DeductiblePerID, UserOverrideFactor = @UserOverrideFactor, OtherDeductibles = @OtherDeductibles, 
+                      PremiumsWaived = @PremiumsWaived, TotalNonTerrorPremium = @TotalNonTerrorPremium, TerrorPrimary = @TerrorPrimary, 
+                      TerrorExcess = @TerrorExcess, AccountRate = @AccountRate, AdditionalInfo = @AdditionalInfo
+WHERE     (ExposureID = @Original_ExposureID); 
+SELECT ExposureID, OriginalExposureID, LocationID, QuoteOptionID, TerrPremium, ModificationCode, EndorsementCalcType, EffectiveDate, UserAdded, OfficeID, PrimaryPremium, ExcessPremium, Limit, CauseOfLossID, ValuationID, CoInsuranceID, CoverageID, CoInsurance, PrimaryRate, ExcessRate, TerrRate, Deductible, DeductiblePerID, UserOverrideFactor, OtherDeductibles, PremiumsWaived, TotalNonTerrorPremium, TerrorPrimary, TerrorExcess, AccountRate FROM tblPropertyExposure WHERE (ExposureID = @ExposureID)</value>
+  </data>
+  <data name="Appearance20.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA8QIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAJ8SURBVDhPhZLLT1NBGMW70K2JS7cmxrjU+A9oIGIgFGhEUYkYRYIYaiyCUPqgD2p42hb6BkqLoKUWegt9UKm0JQrSGjdaQErRmLhzY4pE0OPcIRBKfSzO5M7M/Z3vzDfDAfBftUdb06oZ2aE/7WUt7FdbRJE2x3VQhqQQBxqzTDIm+/UwLE+b4j3wffLAsKBFs68BdczdDJMMYK9I5LQxxsIMHCt2eNfGoXnZAYG7FjWjt3ZNskBWrS9a0oaYFr6Pbjz9YIdt0YyGCQEmUmPoiKpQ7ajE9aFyapIFK0OStH5BAy+B26JKKMNSWBNGDCQMeLw0ACblREtQhKvWS+tZBvJp8brutZrEdSP5bQkbW98x8nYIihnxNrzqhDQoxOWB0s0dhg7a+a5jsueiH73zj+hZ2yJKCusjvUh9TUIVkcG9OgrJlJCtjPLBMly08A5QA+18p0hGIvXMdVP4ybKNxJbQyiws90u34UATWxlzX2bR7H+AEmOhghqwkbRzXZgkDRpZHqRn7X+vh5zEVoVlGE+OQhRoRJXrBoVnP4cRWguAZ+LivCb3MEcxLbESwfJGD0/qGeo8fPS908G+2EdgB61WP3WPwFFMLjOo9VdvlPWXIk+dK8jpPnOKowhJjrAp2EeiX1DTuLaEZRsma5XOCjCLLqhn21GkLwgU9OSp89Q5RzOa2OS9b7bGLRAwfGhedWJsxQGhtx4XzMUQEhOeqSjJ1eWfzdeeO7EDZhjUMfzjLcHmreCqD3ecVSCGKDYU/iKd9vOM3Kb90F7RodZ1+yB5XWOVwxU/+a4aNupmqaXkNOn0btS/affj5nDFyWu2KzFyVfl7f/i3wPkNOLzMGxqYvkUAAAAASUVORK5CYIIL</value>
+  </data>
+  <data name="Appearance19.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAMQMAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAK8SURBVDhPlZDbT5JhHMe54o/wrq3DZqGZZZBmI9vSGU0JMFazItespgMhEFREhDECpszTbI6GI4oizQPTwHIeBpvVNA9tpnaguDKVdzLtIv328pY4kpsuvs/2/Pb7fJ73/dIAJExv2WE6mSSPmJHkkabSE+1Ek3AYhfvEjJBHmrI5oDi66VUdC3nVxxNK9gz6yo/QSTA8asrFlPMO3rvK4W8qhE97MuzTMfdI4i4eSQp9QH40PGbJx/RTMRkJpt0yzHSrMN4mwICWFfbUsuIku7AslT6oTCPGGzmYeSaFv5kLb30mXuqzMNoiwKS7BkNWPtxKJvFYmhGTUMegIo3uVaUTfmsBZp7L4W/hYcjIxtzsNJX+ejZ8Fj4CjxTo1RXAVppOtF5PoyQ0siA6WRDhb+JipktJfiofXsNZvH0zgZWVFaytrWFxYR5O+Wl0aTh49eAuOu+dh4nHIHQXkuk0X21GwN9y6e9/FpFwDqYm32F1dZWCd7LwcR5tJUw8FJ9Dj/kqmkuyoGIfDNDIZnO9OtbWaGsR+jTZ218+LcZe/jffvn5GXT4DjddOQZl9YItM7p8Ca1m5L9TMMWuDZXtjY4NalslkkMvlUCgUqKyspGaRSAQW030o2MmzUThW4k5MJtM6QRDUchRsb29HR0cHqqurY4KoVCgUHtph4gR6vX49HA5Ty1VVVbDZbLDb7airq4sJJBIJeDzerqDs9Y0UUc/lKwI7Z0hgKfjlGOlEVKJWq+FwOOB0OkGKqdmTD3aIuoUQ2DhzeVa2JlNzooBGwt/F/bdQM1yBsn4RRNZihEIhaLVauFwuuN1uGI1GBINBqIfkaJjQQTMiQ7GDj1RxcoRGvjxM2oKkLXBGnElwbucvl5aWLhkMBgoke4HZbAaXy10qrLi4nFef8zNTnTFBwj/239w3HNfB/we03419rIdhAWPUAAAAAElFTkSuQmCCCw==</value>
+  </data>
+  <data name="Appearance21.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAASQIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAHUSURBVDhPpZLLaxpRFMbzD3bTRegfUJqUlC5sVxZcVJmZqKMdH8hotdYHVVRQcVdBMsEkdiGoC0UFX/jCRVYtLSN+nXMaLFPTFtoDH9+955774+POHAH4L+0XFovFGYvFZplMBrlcDvl8HoVCgZ321E+lUohEIhubzeY7AIRCoZbht4b+Vt9UVV0YbgYkEgnd8N0Dywf8SVRGUjIzgOJRHb8q4rHrAk/kS5x463j65gpnvhs8C3ziM6p4PE5mBiSTSWry0Ilx+fSXy8+DPwHv4u/JDgHb7Rb9fh/dbhftdhvNZhONRgP1eh2apqFWq9HF+xPcNfnlPR4Per0e0uk0nE4ng1YvX2Dw6CF0Xb//DaJRbmI2m2EymWA4HGIwGHCaTqfDarXoQwFvf8yaAWo4TE2USiUoioLpdMppvF4vw7LZLGRZ5gSqyrNmQDAYpCZWqxWWyyXm8zmnIdB4PMZoNGIQ1d2sGaAo9HMBlUoFgUCAIeVyGX6/n0HFYpGTUQLFx7NmgMvtpiY2mw1rvV7v05AWiwWLyi17yMwAQRD0C03bVatVkD7+RjQjiOKXA4DVau3Y7Y7PgiBCFA1JEqTzc0gSSeI9nb22O74as9cHgH8Tjr4DCIoZgoHjZz0AAAAASUVORK5CYIIL</value>
+  </data>
+  <data name="SqlInsertCommand1.CommandText" xml:space="preserve">
+    <value>INSERT INTO dbo.tblPropertyExposure
+                      (OriginalExposureID, LocationID, QuoteOptionID, TerrPremium, ModificationCode, EndorsementCalcType, EffectiveDate, UserAdded, OfficeID, 
+                      PrimaryPremium, ExcessPremium, Limit, CauseOfLossID, ValuationID, CoInsuranceID, CoverageID, CoInsurance, PrimaryRate, ExcessRate, TerrRate, 
+                      Deductible, DeductiblePerID, UserOverrideFactor, OtherDeductibles, PremiumsWaived, TotalNonTerrorPremium, TerrorPrimary, TerrorExcess, 
+                      AccountRate, AdditionalInfo)
+VALUES     (@OriginalExposureID,@LocationID,@QuoteOptionID,@TerrPremium,@ModificationCode,@EndorsementCalcType,@EffectiveDate,@UserAdded,@OfficeID,@PrimaryPremium,@ExcessPremium,@Limit,@CauseOfLossID,@ValuationID,@CoInsuranceID,@CoverageID,@CoInsurance,@PrimaryRate,@ExcessRate,@TerrRate,@Deductible,@DeductiblePerID,@UserOverrideFactor,@OtherDeductibles,@PremiumsWaived,@TotalNonTerrorPremium,@TerrorPrimary,@TerrorExcess,@AccountRate,@AdditionalInfo); 
+SELECT ExposureID, OriginalExposureID, LocationID, QuoteOptionID, TerrPremium, ModificationCode, EndorsementCalcType, EffectiveDate, UserAdded, OfficeID, PrimaryPremium, ExcessPremium, Limit, CauseOfLossID, ValuationID, CoInsuranceID, CoverageID, CoInsurance, PrimaryRate, ExcessRate, TerrRate, Deductible, DeductiblePerID, UserOverrideFactor, OtherDeductibles, PremiumsWaived, TotalNonTerrorPremium, TerrorPrimary, TerrorExcess, AccountRate FROM tblPropertyExposure WHERE (ExposureID = SCOPE_IDENTITY())</value>
+  </data>
+</root>

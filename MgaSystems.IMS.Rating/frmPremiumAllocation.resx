@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SqlUpdateCommand1.CommandText" xml:space="preserve">
+    <value>UPDATE [dbo].[tblPremiumAllocationCompanies] SET [QuoteGuid] = @QuoteGuid, [CompanyLocationGUID] = @CompanyLocationGUID, [Premium] = @Premium, [TerrorismPremium] = @TerrorismPremium, [Rate] = @Rate, [TerrorismRate] = @TerrorismRate WHERE (([PremiumID] = @Original_PremiumID));
+SELECT PremiumID, QuoteGuid, CompanyLocationGUID, Premium, TerrorismPremium, Rate, TerrorismRate FROM dbo.tblPremiumAllocationCompanies WHERE (PremiumID = @PremiumID)</value>
+  </data>
+  <data name="SqlUpdateCommand2.CommandText" xml:space="preserve">
+    <value>UPDATE [dbo].[tblPremiumAllocationStates] SET [QuoteGuid] = @QuoteGuid, [StateID] = @StateID, [TIV] = @TIV, [QuotingLocationID] = @QuotingLocationID WHERE (([AllocationID] = @Original_AllocationID));
+SELECT AllocationID, QuoteGuid, StateID, TIV, QuotingLocationID FROM dbo.tblPremiumAllocationStates WHERE (AllocationID = @AllocationID)</value>
+  </data>
+  <data name="PictureBox1.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>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</value>
+  </data>
+  <data name="SqlInsertCommand2.CommandText" xml:space="preserve">
+    <value>INSERT INTO [dbo].[tblPremiumAllocationStates] ([QuoteGuid], [StateID], [TIV], [QuotingLocationID]) VALUES (@QuoteGuid, @StateID, @TIV, @QuotingLocationID);
+SELECT AllocationID, QuoteGuid, StateID, TIV, QuotingLocationID FROM dbo.tblPremiumAllocationStates WHERE (AllocationID = SCOPE_IDENTITY())</value>
+  </data>
+  <data name="SqlUpdateCommand4.CommandText" xml:space="preserve">
+    <value>UPDATE tblQuoteOptionGeneric SET QuoteOptionGuid = @QuoteOptionGuid, ChargeCode = @ChargeCode, OfficeID = @OfficeID, Premium = @Premium, EffectiveDate = @EffectiveDate WHERE (GenericID = @Original_GenericID)</value>
+  </data>
+  <data name="SqlInsertCommand1.CommandText" xml:space="preserve">
+    <value>INSERT INTO [dbo].[tblPremiumAllocationCompanies] ([QuoteGuid], [CompanyLocationGUID], [Premium], [TerrorismPremium], [Rate], [TerrorismRate]) VALUES (@QuoteGuid, @CompanyLocationGUID, @Premium, @TerrorismPremium, @Rate, @TerrorismRate);
+SELECT PremiumID, QuoteGuid, CompanyLocationGUID, Premium, TerrorismPremium, Rate, TerrorismRate FROM dbo.tblPremiumAllocationCompanies WHERE (PremiumID = SCOPE_IDENTITY())</value>
+  </data>
+</root>

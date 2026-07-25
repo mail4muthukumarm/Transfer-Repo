@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: D:\augusta\fortegra\IMS Project\MgaSystems.IMS.Forms.Cs.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D36287F9-22AF-492D-8E52-BD81E02B7FEA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>MgaSystems.IMS.Forms.Cs</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>MgaSystems.IMS.Forms</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MgaSystems.IMS.Common">
+      <HintPath>lib\MgaSystems.IMS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Common.Cs">
+      <HintPath>lib\MgaSystems.IMS.Common.Cs.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.NotesDocuments">
+      <HintPath>lib\MgaSystems.IMS.NotesDocuments.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Security">
+      <HintPath>lib\MgaSystems.IMS.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Tools">
+      <HintPath>lib\MgaSystems.IMS.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContactTechnicalSupport.cs" />
+    <Compile Include="MenuManager.cs" />
+    <Compile Include="StartupTasks.cs" />
+    <Compile Include="HelpMenuAdmin\HelpAdminManager.cs" />
+    <Compile Include="HelpMenuAdmin\HelpAdminViewModel.cs" />
+    <Compile Include="HelpMenuAdmin\HelpItemModel.cs" />
+    <Compile Include="DebugHelper\ViewModels\DeveloperDebugHelperViewModel.cs" />
+    <Compile Include="HelpMenuAdminViewHelpMenuAdmin.xaml.cs">
+      <DependentUpon>helpmenuadminviewhelpmenuadmin.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DebugHelper\ViewsDeveloperDebugHelper.xaml.cs">
+      <DependentUpon>viewsdeveloperdebughelper.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="debughelper\views\developerdebughelper.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="helpmenuadmin\viewhelpmenuadmin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

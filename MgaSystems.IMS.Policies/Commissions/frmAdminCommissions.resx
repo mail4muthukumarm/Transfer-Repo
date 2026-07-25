@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Appearance15.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAHQMAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAKoSURBVDhPpZPtT1JRHMf9W/RP6N7etDZ90VybDZK0F5k1TBO1la7CbLBKMRGfAAVsCIaaD5RPUJIiJHAlI+QhNPXmwAza2uoNZC3LbwdaqNXaWi8+d/ece77f3/ne3zkZAP6L3ybyNStZx1QhUZ4iyB5p8cZzZJ54tmyBzZa5RYdvM1m/rt834KiXeUflgVhFrx+99ghGmc0UemsYfPVT0KLZGC228vZq0i+kKi+31ZdomVyFxRtDz3QEEuNL3Bpehty0CqNjA42jIdCVEwn64kTaJPXIUwYzc9sWo0mx6VkMIiK6NhDAkOs1hpwbuGrwQ9gfgGF2HZL7ftBlxihdOpyZNsiVL4rLtV6YPW9RNxCCkES4rPPh4+ftFNU6D6p7PBDe9WLgSRinmh+DKuoXpw1y2jys3hqB0sTiSq8PNTovqrUe9NnXYSBUdjM/0LhIrADU0yugC3Vs2uCQhNkaX3iDuj4/qfQcVXfcZDFDPgE7BIHKifLOOYIDFzROGJkwKF7XVlKbMqDF9q0x92Yqa7JShdpFRC6EIh+Q+LSNsg47StttOEcQKGwYmScGXMVeAyurtbKQPlhClcYNQZcT55VzeBF+Twy+oEQ2gxKSm99sQW0PA6UlCPp4x24EutYiLpbbMeSIoErFQCB3wOLZwNdvO6kI/lfvUCwxE0zofhhC4fVRYtC++xPpS2OZtMAYvTnig8G6hjK5DfyWaZyRTqG4wYTT9RMoqh9H64iXtHeebF8apbnS3TYmofiDvAMF+oRo0AP9zAqEWifZ8iOcbTSjRmWD2hSAsI8BzWlIEPH+g5Q2KdTzqILu2Mkbk1BOLeGekyWsocMcRH6dERSnMUZzm/58lH9Cn1BnUbxOEZWvYCluc5ziNMVJRZYgOsht+Ptl+neQ8R04hsvsalKMmgAAAABJRU5ErkJgggs=</value>
+  </data>
+  <data name="DbUpdateCommand1.CommandText" xml:space="preserve">
+    <value>UPDATE     tblAdminCommissions
+SET            StateID = @StateID, LineGuid = @LineGuid, ProducerLocationGuid = @ProducerLocationGuid, CompanyLocationGuid = @CompanyLocationGuid, EntityGuid = @EntityGuid, ChargeCode = @ChargeCode, EntityTypeID = @EntityTypeID, CommissionTypeID = @CommissionTypeID, 
+                   Percentage = @Percentage, FlatAmount = @FlatAmount, CommissionsFromOperatingAccount = @CommissionsFromOperatingAccount, AddedByUserID = @AddedByUserID, InHouseProducerGuid = @InHouseProducerGuid, OfficeLocationGuid = @OfficeLocationGuid, 
+                   CommissionOnTotalPremium = @CommissionOnTotalPremium, MinimumFirmIncome = @MinimumFirmIncome, IncomeBetweenStartMonth = @IncomeBetweenStartMonth, IncomeBetweenStartDay = @IncomeBetweenStartDay, IncomeBetweenEndMonth = @IncomeBetweenEndMonth, 
+                   IncomeBetweenEndDay = @IncomeBetweenEndDay, Hierarchy = @Hierarchy, UnderwriterGuid = @UnderwriterGuid, IssuingOfficeGuid = @IssuingOfficeGuid, PolicyTypeID = @PolicyTypeID, Effective = @Effective, RenewalOnlyIfPreviouslyCommissioned = @RenewalOnlyIfPreviouslyCommissioned, 
+                   DisabledDate = @DisabledDate, ProducerGUID = @ProducerGUID, ApplyPremiumEqualOrOver = @ApplyPremiumEqualOrOver, ApplyPremiumEqualOrLess = @ApplyPremiumEqualOrLess
+WHERE      (ID = @Original_ID); 
+SELECT ID, StateID, LineGuid, ProducerLocationGuid, CompanyLocationGuid, EntityGuid, ChargeCode, EntityTypeID, CommissionTypeID, Percentage, FlatAmount, CommissionsFromOperatingAccount, AddedByUserID, InHouseProducerGuid, OfficeLocationGuid, CommissionOnTotalPremium, MinimumFirmIncome, IncomeBetweenStartMonth, IncomeBetweenStartDay, IncomeBetweenEndMonth, IncomeBetweenEndDay, Hierarchy, UnderwriterGuid, IssuingOfficeGuid, PolicyTypeID, Effective, RenewalOnlyIfPreviouslyCommissioned, DisabledDate, ProducerGUID FROM dbo.tblAdminCommissions WHERE (ID = @ID)</value>
+  </data>
+  <data name="DbInsertCommand1.CommandText" xml:space="preserve">
+    <value>INSERT INTO tblAdminCommissions
+                   (StateID, LineGuid, ProducerLocationGuid, CompanyLocationGuid, EntityGuid, ChargeCode, EntityTypeID, CommissionTypeID, Percentage, FlatAmount, CommissionsFromOperatingAccount, AddedByUserID, InHouseProducerGuid, OfficeLocationGuid, CommissionOnTotalPremium, MinimumFirmIncome, 
+                   IncomeBetweenStartMonth, IncomeBetweenStartDay, IncomeBetweenEndMonth, IncomeBetweenEndDay, Hierarchy, UnderwriterGuid, IssuingOfficeGuid, PolicyTypeID, Effective, RenewalOnlyIfPreviouslyCommissioned, DisabledDate, ProducerGUID, ApplyPremiumEqualOrOver, 
+                   ApplyPremiumEqualOrLess)
+VALUES      (@StateID,@LineGuid,@ProducerLocationGuid,@CompanyLocationGuid,@EntityGuid,@ChargeCode,@EntityTypeID,@CommissionTypeID,@Percentage,@FlatAmount,@CommissionsFromOperatingAccount,@AddedByUserID,@InHouseProducerGuid,@OfficeLocationGuid,@CommissionOnTotalPremium,@MinimumFirmIncome,@IncomeBetweenStartMonth,@IncomeBetweenStartDay,@IncomeBetweenEndMonth,@IncomeBetweenEndDay,@Hierarchy,@UnderwriterGuid,@IssuingOfficeGuid,@PolicyTypeID,@Effective,@RenewalOnlyIfPreviouslyCommissioned,@DisabledDate,@ProducerGUID,@ApplyPremiumEqualOrOver,@ApplyPremiumEqualOrLess); 
+SELECT ID, StateID, LineGuid, ProducerLocationGuid, CompanyLocationGuid, EntityGuid, ChargeCode, EntityTypeID, CommissionTypeID, Percentage, FlatAmount, CommissionsFromOperatingAccount, AddedByUserID, InHouseProducerGuid, OfficeLocationGuid, CommissionOnTotalPremium, MinimumFirmIncome, IncomeBetweenStartMonth, IncomeBetweenStartDay, IncomeBetweenEndMonth, IncomeBetweenEndDay, Hierarchy, UnderwriterGuid, IssuingOfficeGuid, PolicyTypeID, Effective, RenewalOnlyIfPreviouslyCommissioned, DisabledDate, ProducerGUID FROM dbo.tblAdminCommissions WHERE (ID = SCOPE_IDENTITY())</value>
+  </data>
+  <data name="DbSelectCommand1.CommandText" xml:space="preserve">
+    <value>SELECT      ID, StateID, LineGuid, ProducerLocationGuid, CompanyLocationGuid, EntityGuid, ChargeCode, EntityTypeID, CommissionTypeID, Percentage, FlatAmount, CommissionsFromOperatingAccount, AddedByUserID, InHouseProducerGuid, OfficeLocationGuid, CommissionOnTotalPremium, MinimumFirmIncome, 
+                   IncomeBetweenStartMonth, IncomeBetweenStartDay, IncomeBetweenEndMonth, IncomeBetweenEndDay, Hierarchy, UnderwriterGuid, IssuingOfficeGuid, PolicyTypeID, Effective, RenewalOnlyIfPreviouslyCommissioned, DisabledDate, ProducerGUID, ApplyPremiumEqualOrOver, 
+                   ApplyPremiumEqualOrLess
+FROM         tblAdminCommissions</value>
+  </data>
+  <data name="Appearance14.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAcwMAAAJHSUY4OWEPABAAhwAAAAAAgAAAAIAAgIAAAACAgACAAICAgICAwNzApsrwmQAAxAAm/2Zm/5mZ/8zMUwBdgVSQpYaz1L7eAChWAD2EXGqmj5LAzMz/AEFrAGOkWYS9j6fRxtbzAACIAACqM5n/js3w2e75JE0MMmwRTaYZjMBss9ObRFkAX30AksAAuNJr0d+cUFAeZmYzmZlmzMyZ///WeXAAqp0A6NJY/+sA//CebkcAmmQA/2YA/5kA97NX/8wzVjUNbkogpn5Ox59t/8yZ5ubm2dnZv7+/pqammZmZjIyMZmZmQEBAb4yc//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////vwoKCkgICA/wAAAP8A//8AAAD//wD/AP//AAAAIf8LTkVUU0NBUEUyLjADAQEAACH5BAAAAAAALAAAAAAPABAAAAg9APsJHEiwoMGDCBMqXKhQgsOHECEmSQKgosWLFZP0m4gRo0aBHDsC+Dgw5EWSBE2OTBgS5cGJLhnKnHkwIAA7Cw==</value>
+  </data>
+  <data name="Appearance13.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAcAMAAAJHSUY4OWEPABAAhwAAAAAAgAAAAIAAgIAAAACAgACAAICAgICAwNzApsrwmQAAxAAm/2Zm/5mZ/8zMUwBdgVSQpYaz1L7eAChWAD2EXGqmj5LAzMz/AEFrAGOkWYS9j6fRxtbzAACIAACqM5n/js3w2e75JE0MMmwRTaYZjMBss9ObRFkAX30AksAAuNJr0d+cUFAeZmYzmZlmzMyZ///WeXAAqp0A6NJY/+sA//CebkcAmmQA/2YA/5kA97NX/8wzVjUNbkogpn5Ox59t/8yZ5ubm2dnZv7+/pqammZmZjIyMZmZmQEBAb4yc//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////vwoKCkgICA/wAAAP8A//8AAAD//wD/AP//AAAAIf8LTkVUU0NBUEUyLjADAQEAACH5BAAAAAAALAAAAAAPABAAAAg6APsJHEiwoMGDCBMeTCJBocAkAAA0TAgxokSEFS1eLJhR48aHHj1O7BgyooQkKFOqVOmwpcuXMB0GBAA7Cw==</value>
+  </data>
+  <data name="DbSelectCommand2.CommandText" xml:space="preserve">
+    <value>SELECT        Producer, ProducerLocation, ProducerLocationGuid, Line, State, Company, Entity, EntityType, CommissionType, Percentage, FlatAmount, ID, ChargeName, Hierarchy, Effective, DisabledDate, EntityGuid, ProducerGUID, CompanyGUID, LineGUID
+FROM            viewAdminCommissions
+ORDER BY Hierarchy</value>
+  </data>
+  <data name="Appearance16.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAyAMAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAANTSURBVDhPjZBbTFNZFIZNfDO8aGQUlehoorwcE0UDI1ZQYcYIzgQtFaUKHrWAUgFLh2G4lJqiFGylFAsFZIBCLSpBhY4VCUbNEC61laMiZbQU0Bao5Xa84ZD809ZIMPrgw7+y9177/7L+NQ/ArKSUwOOcIS1L0M5rS71/Yiax5ehMrDaq7XB9ROaRy+fnJ6tfLpj736XZw/nurMAc/R/mW8+b0GxpgXbgNrpGDVAbasBUhSoSa4bi4//qNx9VPg/8CpD3KCNc87QSdyzNqOy7jCRDJngPBag3Xcfeqt2OqEtla+Iq+h0V9+3gVb8AU9wdPgsQGzMWnelMoVsHWiF+UgSy8xRiOk6huKcCinty/KLYHs8pNyukTTZoH9MouTOC0OwuOiT1n0VugDOvSNvXiNLeakR3chHZxgFfnw2VQYWf5YFGUvlk42G5aeZm9xQkt+240jGBpPJeMLgtIjeAfy/OqOtvBlf/Jw44zZz201D1acDVxIFx1m/rocLeB1KtFdf0E0hWv4LoxghyG4aw+ViT0Q04qYuZvmH5G4n6dIipQtSZ6pGvE2OLaPOlKNkzljPvu7r2cfDUVsSWDYJTMogLjTasZ1+dcANiGlgT7cOduGpqQNHdQgRJtjh+OrMpS5csXCzj1yx15qXkt2xIVdtwqMACttSM3HorfPapaDeAVbvHKL9b4Mo7Gpjnf1qbzPT+EB2d/j6C5Xgb+isRzH9A5V9/CW75EJg5LxCrGAS3uA+rw0o/RQgrDeYFyxicx3xy+TTnuOQDm03TWRl4E3kAU9t2EAEJzZRQM4BjhRaEpZkg0tiwO6kV3iGyT0v87/eUhR8TTiqnSXL6TY4I4xoVHLWVmAz7DZO+fsQmspFKqzIjSmyGwLkH9rlHWBFSQHsF5Xm6AR9PxHs6R6anlBcxdqUWVmE67KXFGA8KxpjPeoI4WEclKf+FoMaK/dld2BChxtJtuUyX2Q1wlXd7mUyaJDEmyIRdWYQRmQSv/QJgX7mWWBdeRZHSHuzk6LBsh8S8hHF212fzLMClqYCgkElff7OdFQkbNwEjhC+Gl6wkVoWWUM68HV7b84U/MHI85ppd+uLiHNnD/qOPcHT56o5hT2/YFnoRc/vf0jcfv1+Y9z8kZ5tr60HORAAAAABJRU5ErkJgggs=</value>
+  </data>
+</root>

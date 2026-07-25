@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SqlSelectCommand1.CommandText" xml:space="preserve">
+    <value>SELECT tblQuoteOptions.QuoteOptionGUID, tblQuoteOptions.QuoteGUID, tblQuoteOptions.LineGUID, tblQuoteOptions.Premium, tblQuoteOptions.DateCreated, tblQuoteOptions.QuoteOptionID, tblQuoteOptions.AdditionalComments, tblQuoteOptions.CompanyLocationID, COALESCE (tblCompanyLocations.Name, tblCompanyLocations_1.Name) AS CompanyLocation FROM tblQuoteOptions INNER JOIN tblQuotes ON tblQuoteOptions.QuoteGUID = tblQuotes.QuoteGUID INNER JOIN tblCompanyLocations tblCompanyLocations_1 ON tblQuotes.CompanyLocationGuid = tblCompanyLocations_1.CompanyLocationGUID LEFT OUTER JOIN tblCompanyLocations ON tblQuoteOptions.CompanyLocationID = tblCompanyLocations.CompanyLocationCode WHERE (tblQuoteOptions.QuoteGUID = @QuoteGUID) AND (tblQuoteOptions.LineGUID = @LineGUID)</value>
+  </data>
+  <data name="SqlSelectCommand2.CommandText" xml:space="preserve">
+    <value>SELECT        dbo.tblQuoteOptionGeneric.GenericID, dbo.tblQuoteOptionGeneric.QuoteOptionGuid, dbo.tblQuoteOptionGeneric.EffectiveDate, dbo.tblQuoteOptionGeneric.Factor, 
+                         dbo.tblQuoteOptionGeneric.UserOverrideFactor, dbo.tblQuoteOptionGeneric.ChargeCode, dbo.tblQuoteOptionGeneric.OfficeID, dbo.tblQuoteOptionGeneric.Premium, 
+                         dbo.tblQuoteOptionGeneric.Added, dbo.tblFin_PolicyCharges.StateID, dbo.tblQuoteOptionGeneric.EndorsementCalcType, dbo.tblQuoteOptionGeneric.RoundToDollar, 
+                         dbo.tblQuoteOptionGeneric.CurrentAnnualPremium,  ISNULL(dbo.tblQuoteOptionGeneric.IncludeLeapYear, 0) AS IncludeLeapYear 
+FROM            dbo.tblQuoteOptionGeneric INNER JOIN
+                         dbo.tblQuoteOptions ON dbo.tblQuoteOptionGeneric.QuoteOptionGuid = dbo.tblQuoteOptions.QuoteOptionGUID INNER JOIN
+                         dbo.tblFin_PolicyCharges ON dbo.tblQuoteOptionGeneric.ChargeCode = dbo.tblFin_PolicyCharges.ChargeCode
+WHERE        (dbo.tblQuoteOptions.QuoteGUID = @QuoteGuid) AND (dbo.tblQuoteOptions.LineGUID = @LineGuid)</value>
+  </data>
+  <data name="SqlUpdateCommand3.CommandText" xml:space="preserve">
+    <value>UPDATE dbo.tblGenericLimits SET QuoteID = @QuoteID, Limit = @Limit, SubLimits = @SubLimits, Perils = @Perils, Covering = @Covering, Deductible = @Deductible, Valuation = @Valuation, Excluding = @Excluding, AdditionalComments = @AdditionalComments,PolicyLimit=@PolicyLimit WHERE (QuoteID = @Original_QuoteID)</value>
+  </data>
+  <data name="SqlUpdateCommand1.CommandText" xml:space="preserve">
+    <value>UPDATE tblQuoteOptions SET QuoteOptionGUID = @QuoteOptionGUID, QuoteGUID = @QuoteGUID, LineGUID = @LineGUID, DateCreated = @DateCreated, AdditionalComments = @AdditionalComments, CompanyLocationID = @CompanyLocationID WHERE (QuoteOptionGUID = @Original_QuoteOptionGUID); SELECT QuoteOptionGUID, QuoteGUID, LineGUID, Premium, DateCreated, QuoteOptionID, AdditionalComments, CompanyLocationID FROM tblQuoteOptions WHERE (QuoteOptionGUID = @QuoteOptionGUID)</value>
+  </data>
+  <data name="SqlUpdateCommand2.CommandText" xml:space="preserve">
+    <value>UPDATE       dbo.tblQuoteOptionGeneric
+SET                QuoteOptionGuid = @QuoteOptionGuid, EffectiveDate = @EffectiveDate, UserOverrideFactor = @UserOverrideFactor, ChargeCode = @ChargeCode, 
+                         OfficeID = @OfficeID, Premium = @Premium, Added = @Added, EndorsementCalcType = @EndorsementCalcType, RoundToDollar = @RoundToDollar, 
+                         CurrentAnnualPremium = @CurrentAnnualPremium, IncludeLeapYear = @IncludeLeapYear 
+WHERE        (GenericID = @Original_GenericID); 
+SELECT GenericID, QuoteOptionGuid, EffectiveDate, UserOverrideFactor, ChargeCode, OfficeID, Premium, Added, EndorsementCalcType, RoundToDollar, IncludeLeapYear FROM tblQuoteOptionGeneric WHERE (GenericID = @GenericID)</value>
+  </data>
+  <data name="Appearance17.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAewMAAAJHSUY4OWEQAA8AhwAAAAAAgAAAAIAAgIAAAACAgACAAICAgICAwNzApsrwmQAAxAAm/2Zm/5mZ/8zMUwBdgVSQpYaz1L7eAChWAD2EXGqmj5LAzMz/AEFrAGOkWYS9j6fRxtbzAACIAACqM5n/js3w2e75JE0MMmwRTaYZjMBss9ObRFkAX30AksAAuNJr0d+cUFAeZmYzmZlmzMyZ///WeXAAqp0A6NJY/+sA//CebkcAmmQA/2YA/5kA97NX/8wzVjUNbkogpn5Ox59t/8yZ5ubm2dnZv7+/pqammZmZjIyMZmZmQEBAb4yc//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////vwoKCkgICA/wAAAP8A//8AAAD//wD/AP//AAAAIf8LTkVUU0NBUEUyLjADAQEAACH5BAEAAP0ALAAAAAAQAA8AAAhFAPsJFCghycCDCAkCMJgwoQQACxsifAiRocR+FCtexAixo0WHHT1KzCiyIcmFHw+STJJSpceWLlFu5MhyJsaaNvvBFBgQADsL</value>
+  </data>
+  <data name="PictureBox1.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>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</value>
+  </data>
+  <data name="SqlInsertCommand3.CommandText" xml:space="preserve">
+    <value>INSERT INTO dbo.tblGenericLimits(QuoteID, Limit, SubLimits, Perils, Covering, Deductible, Valuation, Excluding, AdditionalComments,PolicyLimit) VALUES (@QuoteID, @Limit, @SubLimits, @Perils, @Covering, @Deductible, @Valuation, @Excluding, @AdditionalComments,@PolicyLimit)</value>
+  </data>
+  <data name="SqlInsertCommand2.CommandText" xml:space="preserve">
+    <value>INSERT INTO dbo.tblQuoteOptionGeneric
+                         (QuoteOptionGuid, EffectiveDate, UserOverrideFactor, ChargeCode, OfficeID, Premium, Added, EndorsementCalcType, RoundToDollar, CurrentAnnualPremium, IncludeLeapYear)
+VALUES        (@QuoteOptionGuid,@EffectiveDate,@UserOverrideFactor,@ChargeCode,@OfficeID,@Premium,@Added,@EndorsementCalcType,@RoundToDollar,@CurrentAnnualPremium, @IncludeLeapYear); 
+SELECT GenericID, QuoteOptionGuid, EffectiveDate, UserOverrideFactor, ChargeCode, OfficeID, Premium, Added, EndorsementCalcType, RoundToDollar, IncludeLeapYear FROM tblQuoteOptionGeneric WHERE (GenericID = SCOPE_IDENTITY())</value>
+  </data>
+  <data name="SqlInsertCommand1.CommandText" xml:space="preserve">
+    <value>INSERT INTO tblQuoteOptions(QuoteOptionGUID, QuoteGUID, LineGUID, DateCreated, AdditionalComments, CompanyLocationID) VALUES (@QuoteOptionGUID, @QuoteGUID, @LineGUID, @DateCreated, @AdditionalComments, @CompanyLocationID); SELECT QuoteOptionGUID, QuoteGUID, LineGUID, Premium, DateCreated, QuoteOptionID, AdditionalComments, CompanyLocationID FROM tblQuoteOptions WHERE (QuoteOptionGUID = @QuoteOptionGUID)</value>
+  </data>
+</root>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Appearance45.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAMQMAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAK8SURBVDhPlZDbT5JhHMe54o/wrq3DZqGZZZBmI9vSGU0JMFazItespgMhEFREhDECpszTbI6GI4oizQPTwHIeBpvVNA9tpnaguDKVdzLtIv328pY4kpsuvs/2/Pb7fJ73/dIAJExv2WE6mSSPmJHkkabSE+1Ek3AYhfvEjJBHmrI5oDi66VUdC3nVxxNK9gz6yo/QSTA8asrFlPMO3rvK4W8qhE97MuzTMfdI4i4eSQp9QH40PGbJx/RTMRkJpt0yzHSrMN4mwICWFfbUsuIku7AslT6oTCPGGzmYeSaFv5kLb30mXuqzMNoiwKS7BkNWPtxKJvFYmhGTUMegIo3uVaUTfmsBZp7L4W/hYcjIxtzsNJX+ejZ8Fj4CjxTo1RXAVppOtF5PoyQ0siA6WRDhb+JipktJfiofXsNZvH0zgZWVFaytrWFxYR5O+Wl0aTh49eAuOu+dh4nHIHQXkuk0X21GwN9y6e9/FpFwDqYm32F1dZWCd7LwcR5tJUw8FJ9Dj/kqmkuyoGIfDNDIZnO9OtbWaGsR+jTZ218+LcZe/jffvn5GXT4DjddOQZl9YItM7p8Ca1m5L9TMMWuDZXtjY4NalslkkMvlUCgUqKyspGaRSAQW030o2MmzUThW4k5MJtM6QRDUchRsb29HR0cHqqurY4KoVCgUHtph4gR6vX49HA5Ty1VVVbDZbLDb7airq4sJJBIJeDzerqDs9Y0UUc/lKwI7Z0hgKfjlGOlEVKJWq+FwOOB0OkGKqdmTD3aIuoUQ2DhzeVa2JlNzooBGwt/F/bdQM1yBsn4RRNZihEIhaLVauFwuuN1uGI1GBINBqIfkaJjQQTMiQ7GDj1RxcoRGvjxM2oKkLXBGnElwbucvl5aWLhkMBgoke4HZbAaXy10qrLi4nFef8zNTnTFBwj/239w3HNfB/we03419rIdhAWPUAAAAAElFTkSuQmCCCw==</value>
+  </data>
+  <data name="DbUpdateCommand1.CommandText" xml:space="preserve">
+    <value>UPDATE [tblQuoteAdditionalInterests] SET [AdditionalInterestGuid] = @AdditionalInterestGuid, [QuoteID] = @QuoteID, [InterestName] = @InterestName, [Address1] = @Address1, [Address2] = @Address2, [City] = @City, [County] = @County, [StateID] = @StateID, [Region] = @Region, [ISOCountryCode] = @ISOCountryCode, [ZipCode] = @ZipCode, [ZipPlus] = @ZipPlus, [Phone] = @Phone, [Fax] = @Fax, [ModificationCode] = @ModificationCode, [Interest] = @Interest, [DescriptionText] = @DescriptionText, [IssuanceDate] = @IssuanceDate, [FEIN] = @FEIN, [LineID] = @LineID, [Billable] = @Billable, [BillableAmount] = @BillableAmount, [AdditionalInterestTypeID] = @AdditionalInterestTypeID, [Salutation] = @Salutation, [FirstName] = @FirstName, [MiddleName] = @MiddleName, [LastName] = @LastName, [DateOfBirth] = @DateOfBirth, [mobile] = @mobile, [email] = @email, [OfacCleared] = @OfacCleared WHERE (([ID] = @Original_ID));
+SELECT ID, AdditionalInterestGuid, QuoteID, InterestName, Address1, Address2, City, County, StateID, Region, ISOCountryCode, ZipCode, ZipPlus, Phone, Fax, ModificationCode, Interest, DescriptionText, IssuanceDate, FEIN, LineID, Billable, BillableAmount, AdditionalInterestTypeID, Salutation, FirstName, MiddleName, LastName, DateOfBirth, mobile, email, OfacCleared FROM tblQuoteAdditionalInterests WHERE (ID = @ID)</value>
+  </data>
+  <data name="DbSelectCommand6.CommandText" xml:space="preserve">
+    <value>SELECT AdditionalInterestID, NetRateLocationID, NetRateBuildingNumber FROM dbo.tblQuoteAdditionalInterestsNetRateLocations WHERE (AdditionalInterestID IN (SELECT ID FROM tblQuoteAdditionalInterests WHERE tblQuoteAdditionalInterests.QuoteID = @QuoteID))</value>
+  </data>
+  <data name="cnMarkAsNew.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAXgEAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAADpSURBVDhPY/j//z9FGKsgKRirICkYqyApmOHkyZP/KcFgA/78+UMWfvHiBcIAcgwaYgZsP7n2f+nMhP9pff7/E7u8/i/dMwPVAHx409Fl/xtXJ/7fcmXq/wvPdv3v3531P7xf93/74rL/DCBTCOHELs//Gy9P+L/x2iRg1P//37Mn9X//nvT/tvny2BMHOvapNvy/7cocIBMBNl2a+t88WxK7BnRsmSP9vXtX0v/2XQlA7v//7TsTwC4AGvAdqwZ0DFTYEtyj8b93VwrYZhAN4gPFe7BqwIaBijuA+BMQgzSC6I7///8zAAD3aT81ala4PAAAAABJRU5ErkJgggs=</value>
+  </data>
+  <data name="DbSelectCommand3.CommandText" xml:space="preserve">
+    <value>SELECT LocationID, Address1, City, State, BuildingNo, PhysicalBuildingNo, LocationNo FROM dbo.tblUnderwritingLocations WHERE (QuoteGuid = @QuoteGuid) AND (ModificationCode &lt;&gt; 'D') ORDER BY LocationNo, CASE WHEN ISNUMERIC(BuildingNo) = 1 THEN CONVERT(INT, BuildingNo) ELSE 9000 END</value>
+  </data>
+  <data name="DbInsertCommand1.CommandText" xml:space="preserve">
+    <value>INSERT INTO [tblQuoteAdditionalInterests] ([AdditionalInterestGuid], [QuoteID], [InterestName], [Address1], [Address2], [City], [County], [StateID], [Region], [ISOCountryCode], [ZipCode], [ZipPlus], [Phone], [Fax], [ModificationCode], [Interest], [DescriptionText], [IssuanceDate], [FEIN], [LineID], [Billable], [BillableAmount], [AdditionalInterestTypeID], [Salutation], [FirstName], [MiddleName], [LastName], [DateOfBirth], [mobile], [email], [OfacCleared]) VALUES (@AdditionalInterestGuid, @QuoteID, @InterestName, @Address1, @Address2, @City, @County, @StateID, @Region, @ISOCountryCode, @ZipCode, @ZipPlus, @Phone, @Fax, @ModificationCode, @Interest, @DescriptionText, @IssuanceDate, @FEIN, @LineID, @Billable, @BillableAmount, @AdditionalInterestTypeID, @Salutation, @FirstName, @MiddleName, @LastName, @DateOfBirth, @mobile, @email, @OfacCleared);
+SELECT ID, AdditionalInterestGuid, QuoteID, InterestName, Address1, Address2, City, County, StateID, Region, ISOCountryCode, ZipCode, ZipPlus, Phone, Fax, ModificationCode, Interest, DescriptionText, IssuanceDate, FEIN, LineID, Billable, BillableAmount, AdditionalInterestTypeID, Salutation, FirstName, MiddleName, LastName, DateOfBirth, mobile, email, OfacCleared FROM tblQuoteAdditionalInterests WHERE (ID = SCOPE_IDENTITY())</value>
+  </data>
+  <data name="DbUpdateCommand3.CommandText" xml:space="preserve">
+    <value>UPDATE tblQuoteAdditionalInterestsLocations SET AdditionalInterestID = @AdditionalInterestID, UnderwritingLocationID = @UnderwritingLocationID WHERE (AdditionalInterestID = @Original_AdditionalInterestID) AND (UnderwritingLocationID = @Original_UnderwritingLocationID); SELECT AdditionalInterestID, UnderwritingLocationID FROM tblQuoteAdditionalInterestsLocations WHERE (AdditionalInterestID = @AdditionalInterestID) AND (UnderwritingLocationID = @UnderwritingLocationID)</value>
+  </data>
+  <data name="DbDeleteCommand5.CommandText" xml:space="preserve">
+    <value>DELETE FROM dbo.tblQuoteAdditionalInterestsNetRateLocations WHERE (AdditionalInterestID = @Original_AdditionalInterestID) AND (NetRateLocationID = @Original_NetRateLocationID) AND (NetRateBuildingNumber = @Original_NetRateBuildingNumber)</value>
+  </data>
+  <data name="DbInsertCommand3.CommandText" xml:space="preserve">
+    <value>INSERT INTO tblQuoteAdditionalInterestsLocations(AdditionalInterestID, UnderwritingLocationID) VALUES (@AdditionalInterestID, @UnderwritingLocationID); SELECT AdditionalInterestID, UnderwritingLocationID FROM tblQuoteAdditionalInterestsLocations WHERE (AdditionalInterestID = @AdditionalInterestID) AND (UnderwritingLocationID = @UnderwritingLocationID)</value>
+  </data>
+  <data name="DbSelectCommand1.CommandText" xml:space="preserve">
+    <value>SELECT        ID, AdditionalInterestGuid, QuoteID, InterestName, Address1, Address2, City, County, StateID, Region, ISOCountryCode, ZipCode, ZipPlus, Phone, Fax, ModificationCode, Interest, DescriptionText, IssuanceDate, FEIN, LineID, 
+                         Billable, BillableAmount, AdditionalInterestTypeID, Salutation, FirstName, MiddleName, LastName, DateOfBirth, mobile, email, OfacCleared
+FROM            tblQuoteAdditionalInterests
+WHERE        (QuoteID = @QuoteID)</value>
+  </data>
+  <data name="Appearance46.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAgQIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAIMSURBVDhPpZHdS9NRHMb3B3QVBBEiQUX+1gIXRoJrDTOYNm30RskgkVlQy2QZvdhIpdzEkUZvJmpaMu1tM1wpqYyWDIQibGFzmqKwDJfedNVFfDr7xWLJglYXHzg8z/d5zuF7FMB/kVRMhaRiKiQVU+HXwVAfWCUYKLCPRPSX/dFd1b5o7sWh6I5zA19zKr1L2ad6X2Udf6JPDMdILJhyPA0zMBblxdgX+t8u0PdmAa/APTqP0x0is+zB98RwjHh4hbEhQNNdD0esdbT7PlFR382JOhfGY7XUeWYwn7GzJrtEjC8rEOHV4tmvax59oMLWwEmHi6bnc5TV3KfQXEN+aTVnuyYptdrZWlROmu406/a3hNYab2+UC0TYbXdP8HJ8Sb75qncWR+8MtY+nqeqeovJemPL2CWw9U3T4IrQORTA7/aQX3hyVC8TCvg0FF2kRhrNvliviuZcefuS8axJrZxhLW4ijzeOU3HiPqSlIcWOQW/1zrN93h7Td11cqxLYZfLdIY8czduqLyN9zkCpnJz0jn+nyz8u3tg1HuHDNgzbPQG7BAWzNgygPtcYK0hXqvMNs3paLpFSh1WrR6XRIqkyUOXuRtmjJUG+XkZSbZF+j0ZChUrMhy/CzIL5NSZKmzWYzFosFcQ7G9eW+yWSK+cNxPXFAIwjETEFxXP+DL/9AjN+G/oWk4t+D4gfqB6uQAfk0SQAAAABJRU5ErkJgggs=</value>
+  </data>
+  <data name="DbInsertCommand4.CommandText" xml:space="preserve">
+    <value>INSERT INTO tblUnderwritingLocations(Address1, City, State, BuildingNo, PhysicalBuildingNo, LocationNo) VALUES (@Address1, @City, @State, @BuildingNo, @PhysicalBuildingNo, @LocationNo); SELECT LocationID, Address1, City, State, BuildingNo, PhysicalBuildingNo, LocationNo FROM tblUnderwritingLocations WHERE (LocationID = @@IDENTITY) ORDER BY LocationNo, BuildingNo</value>
+  </data>
+  <data name="DbUpdateCommand2.CommandText" xml:space="preserve">
+    <value>UPDATE tblQuoteAdditionalInterestTypes SET AdditionalInterestID = @AdditionalInterestID, AdditionalInterestType = @AdditionalInterestType WHERE (AdditionalInterestID = @Original_AdditionalInterestID) AND (AdditionalInterestType = @Original_AdditionalInterestType); SELECT AdditionalInterestID, AdditionalInterestType FROM tblQuoteAdditionalInterestTypes WHERE (AdditionalInterestID = @AdditionalInterestID) AND (AdditionalInterestType = @AdditionalInterestType)</value>
+  </data>
+  <data name="Appearance47.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAlgEAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAEhSURBVDhPlZJbqoMwEIZzuo8euofSdj1d0gEf3IpvIl6e3YYigvcbTOdPm5ATU0oDH0SZ+Zz8UfD6ZS7M1cGJORCReAfWZVmWeds2MpmmiTzP+/skwbqiYRxHatuW6rqmoiikZBgG8n1fSlzNQAvwRTQ0TUNlWepJ1nVF1Y05MD/AKUAhJH3fS0me5xQEAWVZhqo7A8kuGywpMCWYJAxD4mz0JAo7m38CoCRRFMnnT9nsBGCeZ4rjWO7fZQPQ6xRg9CRJ5N7OpqoqPclOgGIAQZqmWmhmo47jFJgNSN9+h6NB0nWdfKcECAIbE1zZ3RQATAYJgtWC113KH8QA13OzBep46nq55imweUl22Zh8JXDBR2m55uwUAF6ubEzOQojjAx/rst1BfeUnAAAAAElFTkSuQmCCCw==</value>
+  </data>
+  <data name="DbUpdateCommand5.CommandText" xml:space="preserve">
+    <value>UPDATE dbo.tblQuoteAdditionalInterestsNetRateLocations SET AdditionalInterestID = @AdditionalInterestID, NetRateLocationID = @NetRateLocationID, NetRateBuildingNumber = @NetRateBuildingNumber WHERE (AdditionalInterestID = @Original_AdditionalInterestID) AND (NetRateLocationID = @Original_NetRateLocationID) AND (NetRateBuildingNumber = @Original_NetRateBuildingNumber)</value>
+  </data>
+  <data name="DbSelectCommand2.CommandText" xml:space="preserve">
+    <value>SELECT     dbo.NetRate_Quote_Insur_Quote_Locat.LocationID, dbo.NetRate_Quote_Insur_Quote_Locat.UnitNumber AS LocationNumber, ISNULL(dbo.NetRate_Quote_Insur_Quote_Locat_Premi.UnitNumber, 1) AS BuildingNumber, dbo.NetRate_Quote_Insur_Quote_Locat.Address, dbo.NetRate_Quote_Insur_Quote_Locat.City, dbo.NetRate_Quote_Insur_Quote_Locat.State, dbo.NetRate_Quote_Insur_Quote_Locat.ZipCode, NetRate_Quote_Insur_Quote_Locat_Premi.StreetSecondaryLocation, ISNULL(dbo.NetRate_Quote_Insur_Quote_Locat_Premi.BuildingIdentifier, 1) AS BuildingIdentifier FROM         dbo.tblQuotes WITH (NOLOCK) INNER JOIN dbo.NetRate_Quote_Insur_Quote_Locat WITH (NOLOCK) ON dbo.tblQuotes.NetRate_QuoteID = dbo.NetRate_Quote_Insur_Quote_Locat.QuoteID LEFT OUTER JOIN dbo.NetRate_Quote_Insur_Quote_Locat_Premi WITH (NOLOCK) ON dbo.NetRate_Quote_Insur_Quote_Locat_Premi.LocationID = dbo.NetRate_Quote_Insur_Quote_Locat.LocationID WHERE     (dbo.tblQuotes.QuoteGUID = @QuoteGuid) ORDER BY LocationNumber</value>
+  </data>
+  <data name="DbSelectCommand8.CommandText" xml:space="preserve">
+    <value>SELECT     AdditionalInterestID, VehicleID
+FROM         dbo.tblQuoteAdditionalInterestsNetRateVehicles
+WHERE     EXISTS
+                          (SELECT     ID, AdditionalInterestGuid, PreviousAdditionalInterestGuid, QuoteID, InterestName, Address1, Address2, City, County, StateID, Region, 
+                                                   ISOCountryCode, ZipCode, ZipPlus, Phone, Fax, ModificationCode, Interest, DescriptionText, IssuanceDate, FEIN, LineID
+                            FROM          dbo.tblQuoteAdditionalInterests
+                            WHERE      (QuoteID = @QuoteID) AND (ID = dbo.tblQuoteAdditionalInterestsNetRateVehicles.AdditionalInterestID))</value>
+  </data>
+  <data name="DbUpdateCommand4.CommandText" xml:space="preserve">
+    <value>UPDATE tblUnderwritingLocations SET Address1 = @Address1, City = @City, State = @State, BuildingNo = @BuildingNo, PhysicalBuildingNo = @PhysicalBuildingNo, LocationNo = @LocationNo WHERE (LocationID = @Original_LocationID) AND (Address1 = @Original_Address1) AND (BuildingNo = @Original_BuildingNo) AND (City = @Original_City) AND (LocationNo = @Original_LocationNo) AND (PhysicalBuildingNo = @Original_PhysicalBuildingNo) AND (State = @Original_State); SELECT LocationID, Address1, City, State, BuildingNo, PhysicalBuildingNo, LocationNo FROM tblUnderwritingLocations WHERE (LocationID = @LocationID) ORDER BY LocationNo, BuildingNo</value>
+  </data>
+  <data name="Appearance48.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAngIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAIpSURBVDhPjZFvSBNxGMf3tre9it4pVi+EiAihd2VRG/VGSjBFI4yCMKI3aSt7EZkNJ1Q0yGIEiUQilbGcRImZsc4a7G9neTrdZrdCzznbnUe7+/b8Vje2dUEPfPjxPPf9fu+5+1kA/Ddzz3YemR5owMxwFwLuAwi6qltMhWYkvBWN4lg70iEPsLaIldAQfE5rylRcTvxFZb0UvaKqiecQx3sgh58gNz+J8INTiqmhmKS3yipFLmuaPAl5tg3LU2fB97cidL95aep23VZTk4HwtMImhS9CU3zICsehxJuQ+WRHrG9Pyt+7fwfTWBq6RzcSA4RKwKDj+lWIH9r/mFugLDRiNXIJgqs289lZs8t4CQsYfvzmC37mNOp/l8h7wL+8AE2egBJrxXq8GWnahHcd1H09ti0kKWzJAnKariMt6/iW0cG9eoToiB1B700kuXpkY01YDnRg1l2HbreHbVdTEtDmGqcTSK3q+JrWMejYB2TmMX3vKMbsm/Hurg1vnVYo3wU4Bv0s4JBhZhQCFskcl3RcO70dqu8OVO4WuK69GDqzDf4An9eYBhifwNaPLek4VrsJN05U47XjMCb6z+FjdAHBZI750fnwPQvYbZgZhZ/IQoqLbRNIaPlgVh4uxswzxAZqSwKMa8wRTAT3aJR58rWytp7vaR4mqmhUMDNKGgMSCqKUNYwK0WmmY/w1IHFv30iEGX8Q58ufl1PSkKGSmCNOFs//DSy/AEUu+nA6Sw2fAAAAAElFTkSuQmCCCw==</value>
+  </data>
+  <data name="DbSelectCommand5.CommandText" xml:space="preserve">
+    <value>SELECT     dbo.tblQuoteAdditionalInterestsLocations.AdditionalInterestID, dbo.tblQuoteAdditionalInterestsLocations.UnderwritingLocationID
+FROM         dbo.tblQuoteAdditionalInterestsLocations INNER JOIN
+                      dbo.tblUnderwritingLocations ON dbo.tblQuoteAdditionalInterestsLocations.UnderwritingLocationID = dbo.tblUnderwritingLocations.LocationID
+WHERE     (dbo.tblQuoteAdditionalInterestsLocations.AdditionalInterestID IN
+                          (SELECT     ID
+                            FROM          dbo.tblQuoteAdditionalInterests
+                            WHERE      (QuoteID = @QuoteID))) AND (dbo.tblUnderwritingLocations.ModificationCode &lt;&gt; 'D') AND 
+                      (dbo.tblUnderwritingLocations.QuoteGuid = @QuoteGuid)</value>
+  </data>
+  <data name="Appearance44.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAABgMAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAKRSURBVDhPpZJbSJNhHMaFoC48W10VdBGBdmHnZDA3lrrQVOwwa3iYumqtKA9zc585dZviGjmxhTDTZuqmztKluamY59DGNHVBBkUkXYShXggmFHv6vu/iw5lXdfGD//PneR5e3vf1A/Bf7Li8lZFaXczdCxUnEAp2AKSsMIhTkxt38v61kIpF5aqkcOjjg6EjUccFQcYJQFb0AYgzhYbtfh9BQVyKQg0ZVJAhKijjBCGPG4rss8FIOb7Pu93vIyhkUSHePqMS35x6TBglSDsTChFrP4SsgxCcDIFBds1/q98nTGFKP7S29uE1Vt624PsbM2aeFeKzXY0fHidabxxeX2i6vXur3ydM8UDEcq26rFh2d2Jjro2knZ5XZ9pgyjnm3u73EXzFc3/Onbqx2oLL2HQ34Of7bpqNdxbUExfBvv5wlJ9vCdyaYQZOri0sTmFp5Kpeoml4EfmaOrQWCNCXGQMR0UzuPuJc+Svw5e1PYvKtIT4FrELHrrz6cTNP1UObno58QqJ+GEOOSUxLMpGk7oXO7oGwdhyc4m4vL9ds4Mlse5iChCKLNu3RBOyuJcRqHIjTOiHQ9WMuLQELWSlIrBoEr6wXyfoRqDrmcLV62MvPbahiCmZLwn8v9ypBWGeh7VqgTUKdE9bkJJTkFOFChQPpxkkIDGOQ1E9hpb8UU4URm0zBvCrCuzqogaBmDI8HFqEki+QtbuQZBxFb1oN7ZhekDdOo7PIgvqIfa0NauIqO0p+KLvA03yVmiCO/rhhGEaPuQ2W3h6ascx7nKwfoU1Gae98OtqIDs6WRm2RGyxRQfGmXBko0jZGnb5qWeORFRRNdYCtf0LDkNrDlNu+JbOO6uMR06muHlHlKpuDfgN8f3kin5qY2oB8AAAAASUVORK5CYIIL</value>
+  </data>
+  <data name="cnCopy.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAqwIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAI2SURBVDhPpZDtS5NRGMaff6QP9aG+RBBGkhXUKpBeiCIjC92HFURQQWTRyGFjNF3DyWZztbStuUiba1oWzZyt2ebaGNosLVvWfNuep7kXhzMjrp5z1qaFhNUFF+c6N/f5nXNuBsB/mTG9iEvuOONjt5/H0OjgcPMZB609Cs2TKdR1TkLZMY7qB2HILJ9Q1RJCpfkDxKb3r/IAo3OaS2e+4W983jA0lwc09XyhRfObWzAGdWjsr4cuUAeN7xpqvXLUuKWQuSSocopx2XGB9p7VD/JnfwL03RwtLlek91TDAIlZgI7/LynedUWXZdJ7XBNYANTzw8oBiFp6I3TNyeL5dc8lMxCqfCRmAapHE0jNzqPVHYWF2MOizROF1RuFjTcBkNXWF0GnP4KPUymUKvoWAMr2MSR5gNXLkiLfzGKfdhfNRL+/YGQiiZKrbhKzALn1MxLpeXT4WDz0s9h7fSeKVdtoFrWXovz+IRwx7ccBfTF2qwUQVG9GkWQDCirWYe3pNWCkraOIz3wlROzR7IDIfBRlhhJslRZiU2UBukefwh56DNuwBc1BAxr8aijcMkicl7D6xCowknshCrD3c+jivV1ehC1XNtL8p5vJ4ZXCFWDEze8wzQMcrzn6ip4gh0LxepqJ2vihLtZwOAGhctEMKoxDiKXmwCYymIzNIsym+UnPYGQ8SZuXcpni5fc84FzT294zN4Lpk9oBiNQBlNf6cEzhxWG5BwdlriUtuNhlywNy4d8M5gfM7ij1pmtORgAAAABJRU5ErkJgggs=</value>
+  </data>
+  <data name="DbDeleteCommand4.CommandText" xml:space="preserve">
+    <value>DELETE FROM tblUnderwritingLocations WHERE (LocationID = @Original_LocationID) AND (Address1 = @Original_Address1) AND (BuildingNo = @Original_BuildingNo) AND (City = @Original_City) AND (LocationNo = @Original_LocationNo) AND (PhysicalBuildingNo = @Original_PhysicalBuildingNo) AND (State = @Original_State)</value>
+  </data>
+  <data name="DbUpdateCommand6.CommandText" xml:space="preserve">
+    <value>UPDATE [dbo].[tblQuoteAdditionalInterestsNetRateVehicles] SET [AdditionalInterestID] = @AdditionalInterestID, [VehicleID] = @VehicleID WHERE (([AdditionalInterestID] = @Original_AdditionalInterestID) AND ([VehicleID] = @Original_VehicleID))</value>
+  </data>
+  <data name="DbInsertCommand2.CommandText" xml:space="preserve">
+    <value>INSERT INTO dbo.tblQuoteAdditionalInterestTypes
+                      (AdditionalInterestID, AdditionalInterestType)
+VALUES     (@AdditionalInterestID,@AdditionalInterestType);  SELECT AdditionalInterestID, AdditionalInterestType FROM tblQuoteAdditionalInterestTypes WHERE (AdditionalInterestID = @AdditionalInterestID) AND (AdditionalInterestType = @AdditionalInterestType)</value>
+  </data>
+</root>

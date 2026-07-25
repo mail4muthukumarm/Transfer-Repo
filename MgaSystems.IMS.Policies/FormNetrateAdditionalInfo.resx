@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Appearance69.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAIgMAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAKtSURBVDhPhZJbTNJRHMd5qNe2Hl0PbW2tXnpwa2s+9VSt5TR1aTcNm+QSJ25YpojcRRFFQQQDE8G0gFTQQEBNsZWmNlfmLZXqod56qKEtrW/nHGYTaeu/ff9n5/L5/r7nwgHwX9VP1ETVY/ID/5pLGNgrTVgZtcy2QjUqRXWgIsEkrrNXteOK6P3ZFvg/DcA8bUCVvxxl3tI4kzhgt0jkaNsMhb1wrjrg+9AP/QsthJ4S8F23/pokgFQ1z2RR84wB/o8ePH7vgH3JgvJBIQYjfdBOqHHbyUN+Vy4zSYBVo5KoaVoPH4E1EyqoxqWwLbahY9GMh8sd8EbckIXEuG67vJFgoBip3mh91UzierD2fRk/tjfRM9cF5Vh1DF53QxoS4WpH9tYOw36Gqcaj8mHxT+NUE9urJqxisClsROTrGtRhOTzrLkiCIloZuZ1XkGPN2scMDFMNYjmJ1DKpY/CjFTuJLWGVKawYksbgQCWtjMkvz1E1dA+ZbWlKZkAjGSYb8ZQcUM9KJ9vrgwUTFCS2elyO/jUXxIEK8DvzIDTn4VZjOvLqziKt7jTO688c5ChHJDYiWF+bMBB5grIBAdrftcKx1E5gJ6sm6MqHzJWPwXkj5j4HoQsVIUd3Aimlhx0c5agkiaagj8Q03czi2hetMZiM8dxccDXn4HnbBM+CnqQGtMM86IYLcYqftMkOsdJ3x2KbtULoFUD/sgF9q06IfHdxyZIBETFJFSXDN29l8M7nfWOkBrGrKPMKjslCVduhdT+K3YUghsgwp/0mJz2U1ZZemVJ8aLM+eBPqIJfB6gA3PkFJb9F+8rr6eN3cX4JePi6aUreyrZknyUkfofNkoTJLexwNwQJWmba0T8a1zICqoJubfMN+bYZc1YWdsd0ii2uJvhFRkLa1ADh/AFMEwJ17T19pAAAAAElFTkSuQmCCCw==</value>
+  </data>
+  <data name="Appearance70.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAjgMAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAMZSURBVDhPbZPtT1tlGMb5N/ykH41GEz8x50QXnG5sxiUaG0dbymsHBTbNxG68dGw2RUAopaX0hbG5UloKozjYoGzB4VpeDoO2q4VtbuMwZMZpSHTGb/58ehYXtZ7kOk9O8ly/637u+zk5QM67tWdePFDTl95f0xfdX91HQbWXfQahKg97hd6pdPP2YRd79L3kl3WTp/n8XsaXkfIS5i5h/tPonKbk1DDFzcPoToYoMoXQmobQNAVQNwQQ+8ivcLJL3SJs/wAI84rRGWEqusbqvR9J331I+vstUnc2uXn7AYm1DeKrMj88fMT29jYv5Kn+A6j2rg/M3uJo1wRFIlnbFFSkbgxQKJIP1Q/y0XG/cqzdZT3ZgAKDVw7O38VxNcVUaotLiS0m4ptcXH5AWNpgZGGd4Nx9zs7cpsDgzgaIZsn+6B3qBmN4Zm7RfTlBR1ii9cIiltA8p0MSlnACz/SaaKorGyA6LfvEET7xXcM+mWTzl9/Z+PkxstD6o8fc/+k3TEGJnsm0mMj/AMSY5P6ZVY70X8U6kaJlRKI5MEfjQIwT565Tdy5K/aCEdTwlxtmbDRAzlj3T31HpnqT1YgrLaJJTI3Eah1Yw+m9wzCfxqW+J1rGkuAvObMAevUvuuZyk3DbO6QsJTKEVTgRuUDcg8fFXi9ScmafWbeOIQ0tFx3uoTu5mn/HlhqeAtyp6Zdt4HF3bKA3BZT7zL3HsvETt2QWq+ubQ29toDhUznnIQ34rQOV2FqvMlcg3PtCuA/HKn3BFeptA8JEp9kmoQqYc9MUpdUTSWvYzdtDKWtont0H6lnM4r+gzgDwUgLofcMiyhavJT279ApUitcMUodn6L2jbLgfpXuJTyKua/n6+TjgzgSSPeLO2RzcFFPjCeR++OUdJ7Ha19lkPWa3zY/g07a56jLVKCJaJTzJYp3b8reKPEIZtDS3wxmqAlnMQ8kqB5KI5pcIV63zIq81Heb3+eLyNlSnJmzXw/7UFesd37us7OLl03rxXZ2Km18aqmix0aKzvUVnILO8ktPUhu1bNK2UK/Colfkpy/ABKkuBL4XlgTAAAAAElFTkSuQmCCCw==</value>
+  </data>
+  <data name="DbCommand5.CommandText" xml:space="preserve">
+    <value>UPDATE       tblNetRateAdditionalData
+SET                AutoliabSymbol = @AutoliabSymbol, PIPSymbol = @PIPSymbol, QuoteGuid = @QuoteGuid, AddnPIPSymbol = @AddnPIPSymbol, PropProtectionSymbol = @PropProtectionSymbol, MedPaySymbol = @MedPaySymbol, 
+                         UnInsSymbol = @UnInsSymbol, UnderInsSymbol = @UnderInsSymbol, RejectedTerrorism = @RejectedTerrorism, Terrorism = @Terrorism, CoverageTypeID = @CoverageTypeID, AutoReportingBasis = @AutoReportingBasis, 
+                         AutoNonReportingBasis = @AutoNonReportingBasis, AutoQuarterlyBasis = @AutoQuarterlyBasis, AutoMonthlyBasis = @AutoMonthlyBasis, AutoNewComprehensive = @AutoNewComprehensive, 
+                         AutoNewSpecCauseLoss = @AutoNewSpecCauseLoss, AutoNewCollision = @AutoNewCollision, AutoUsedComprehensive = @AutoUsedComprehensive, AutoUsedSpecCauseLoss = @AutoUsedSpecCauseLoss, 
+                         AutoUsedCollision = @AutoUsedCollision, AutoIntComprehensive = @AutoIntComprehensive, AutoIntSpecCauseLoss = @AutoIntSpecCauseLoss, AutoIntCollision = @AutoIntCollision, 
+                         AutoFinanceComprehensive = @AutoFinanceComprehensive, AutoFinanceSpecCauseLoss = @AutoFinanceSpecCauseLoss, AutoFinanceCollision = @AutoFinanceCollision, 
+                         AutoLossPayeeComprehensive = @AutoLossPayeeComprehensive, AutoLossPayeeSpecCauseLoss = @AutoLossPayeeSpecCauseLoss, AutoLossPayeeCollision = @AutoLossPayeeCollision, 
+                         AutoConsignComprehensive = @AutoConsignComprehensive, AutoConsignSpecCauseLoss = @AutoConsignSpecCauseLoss, AutoConsignCollision = @AutoConsignCollision, AutoComments = @AutoComments, 
+                         GaragekeepersSymbol = @GaragekeepersSymbol, PhysDamCompSymbol = @PhysDamCompSymbol, PhysDamCOLSymbol = @PhysDamCOLSymbol, PhysDamCollSymbol = @PhysDamCollSymbol, RetroDate = @RetroDate, 
+                         BodilyInjEachAcc = @BodilyInjEachAcc, BodilyInjDiseaseAggLimit = @BodilyInjDiseaseAggLimit, BodilyInjDiseaseEachEmpl = @BodilyInjDiseaseEachEmpl, TowingSymbol = @TowingSymbol, TrailerSymbol = @TrailerSymbol,
+                          HiredAutoLimit = @HiredAutoLimit, NonownedLiabilitySymbol = @NonownedLiabilitySymbol, HiredAutoSymbol = @HiredAutoSymbol, EndorseName = @EndorseName, EndorseSymbol = @EndorseSymbol, 
+                         EndorseLimit = @EndorseLimit, EndorseDeductible = @EndorseDeductible, Receipts = @Receipts, No_of_Empl = @No_of_Empl, GL_Rate = @GL_Rate, GL_Est_Premium = @GL_Est_Premium, 
+                         GL_Min_Premium = @GL_Min_Premium, CompositeRated = @CompositeRated, NumPoweredUnits = @NumPoweredUnits, StateUnEmployment = @StateUnEmployment
+WHERE        (@IsNull_AutoliabSymbol = 1 AND AutoliabSymbol IS NULL OR
+                         AutoliabSymbol = @Original_AutoliabSymbol) AND (@IsNull_PIPSymbol = 1 AND PIPSymbol IS NULL OR
+                         PIPSymbol = @Original_PIPSymbol) AND (QuoteGuid = @Original_QuoteGuid) AND (@IsNull_AddnPIPSymbol = 1 AND AddnPIPSymbol IS NULL OR
+                         AddnPIPSymbol = @Original_AddnPIPSymbol) AND (@IsNull_PropProtectionSymbol = 1 AND PropProtectionSymbol IS NULL OR
+                         PropProtectionSymbol = @Original_PropProtectionSymbol) AND (@IsNull_MedPaySymbol = 1 AND MedPaySymbol IS NULL OR
+                         MedPaySymbol = @Original_MedPaySymbol) AND (@IsNull_UnInsSymbol = 1 AND UnInsSymbol IS NULL OR
+                         UnInsSymbol = @Original_UnInsSymbol) AND (@IsNull_UnderInsSymbol = 1 AND UnderInsSymbol IS NULL OR
+                         UnderInsSymbol = @Original_UnderInsSymbol) AND (ID = @ID) AND (@IsNull_RejectedTerrorism = 1 AND RejectedTerrorism IS NULL OR
+                         RejectedTerrorism = @Original_RejectedTerrorism) AND (@IsNull_Terrorism = 1 AND Terrorism IS NULL OR
+                         Terrorism = @Original_Terrorism) AND (@IsNull_CoverageTypeID = 1 AND CoverageTypeID IS NULL OR
+                         CoverageTypeID = @Original_CoverageTypeID) AND (AutoReportingBasis = @Original_AutoReportingBasis) AND (AutoNonReportingBasis = @Original_AutoNonReportingBasis) AND 
+                         (AutoQuarterlyBasis = @Original_AutoQuarterlyBasis) AND (AutoMonthlyBasis = @Original_AutoMonthlyBasis) AND (AutoNewComprehensive = @Original_AutoNewComprehensive) AND 
+                         (AutoNewSpecCauseLoss = @Original_AutoNewSpecCauseLoss) AND (AutoNewCollision = @Original_AutoNewCollision) AND (AutoUsedComprehensive = @Original_AutoUsedComprehensive) AND 
+                         (AutoUsedSpecCauseLoss = @Original_AutoUsedSpecCauseLoss) AND (AutoUsedCollision = @Original_AutoUsedCollision) AND (AutoIntComprehensive = @Original_AutoIntComprehensive) AND 
+                         (AutoIntSpecCauseLoss = @Original_AutoIntSpecCauseLoss) AND (AutoIntCollision = @Original_AutoIntCollision) AND (AutoFinanceComprehensive = @Original_AutoFinanceComprehensive) AND 
+                         (AutoFinanceSpecCauseLoss = @Original_AutoFinanceSpecCauseLoss) AND (AutoFinanceCollision = @Original_AutoFinanceCollision) AND (AutoLossPayeeComprehensive = @Original_AutoLossPayeeComprehensive) AND 
+                         (AutoLossPayeeSpecCauseLoss = @Original_AutoLossPayeeSpecCauseLoss) AND (AutoLossPayeeCollision = @Original_AutoLossPayeeCollision) AND (AutoConsignComprehensive = @Original_AutoConsignComprehensive) 
+                         AND (AutoConsignSpecCauseLoss = @Original_AutoConsignSpecCauseLoss) AND (AutoConsignCollision = @Original_AutoConsignCollision) AND (@IsNull_AutoComments = 1 AND AutoComments IS NULL OR
+                         AutoComments = @Original_AutoComments) AND (@IsNull_GaragekeepersSymbol = 1 AND GaragekeepersSymbol IS NULL OR
+                         GaragekeepersSymbol = @Original_GaragekeepersSymbol) AND (@IsNull_PhysDamCompSymbol = 1 AND PhysDamCompSymbol IS NULL OR
+                         PhysDamCompSymbol = @Original_PhysDamCompSymbol) AND (@IsNull_PhysDamCOLSymbol = 1 AND PhysDamCOLSymbol IS NULL OR
+                         PhysDamCOLSymbol = @Original_PhysDamCOLSymbol) AND (@IsNull_PhysDamCollSymbol = 1 AND PhysDamCollSymbol IS NULL OR
+                         PhysDamCollSymbol = @Original_PhysDamCollSymbol) AND (@IsNull_RetroDate = 1 AND RetroDate IS NULL OR
+                         RetroDate = @Original_RetroDate) AND (@IsNull_BodilyInjEachAcc = 1 AND BodilyInjEachAcc IS NULL OR
+                         BodilyInjEachAcc = @Original_BodilyInjEachAcc) AND (@IsNull_BodilyInjDiseaseAggLimit = 1 AND BodilyInjDiseaseAggLimit IS NULL OR
+                         BodilyInjDiseaseAggLimit = @Original_BodilyInjDiseaseAggLimit) AND (@IsNull_BodilyInjDiseaseEachEmpl = 1 AND BodilyInjDiseaseEachEmpl IS NULL OR
+                         BodilyInjDiseaseEachEmpl = @Original_BodilyInjDiseaseEachEmpl) AND (@IsNull_TowingSymbol = 1 AND TowingSymbol IS NULL OR
+                         TowingSymbol = @Original_TowingSymbol) AND (@IsNull_TrailerSymbol = 1 AND TrailerSymbol IS NULL OR
+                         TrailerSymbol = @Original_TrailerSymbol) AND (@IsNull_HiredAutoLimit = 1 AND HiredAutoLimit IS NULL OR
+                         HiredAutoLimit = @Original_HiredAutoLimit) AND (@IsNull_NonownedLiabilitySymbol = 1 AND NonownedLiabilitySymbol IS NULL OR
+                         NonownedLiabilitySymbol = @Original_NonownedLiabilitySymbol) AND (@IsNull_HiredAutoSymbol = 1 AND HiredAutoSymbol IS NULL OR
+                         HiredAutoSymbol = @Original_HiredAutoSymbol) AND (@IsNull_EndorseName = 1 AND EndorseName IS NULL OR
+                         EndorseName = @Original_EndorseName) AND (@IsNull_EndorseSymbol = 1 AND EndorseSymbol IS NULL OR
+                         EndorseSymbol = @Original_EndorseSymbol) AND (@IsNull_EndorseLimit = 1 AND EndorseLimit IS NULL OR
+                         EndorseLimit = @Original_EndorseLimit) AND (@IsNull_EndorseDeductible = 1 AND EndorseDeductible IS NULL OR
+                         EndorseDeductible = @Original_EndorseDeductible) AND (@IsNull_Receipts = 1 AND Receipts IS NULL OR
+                         Receipts = @Original_Receipts) AND (@IsNull_No_of_Empl = 1 AND No_of_Empl IS NULL OR
+                         No_of_Empl = @Original_No_of_Empl) AND (@IsNull_GL_Rate = 1 AND GL_Rate IS NULL OR
+                         GL_Rate = @Original_GL_Rate) AND (@IsNull_GL_Est_Premium = 1 AND GL_Est_Premium IS NULL OR
+                         GL_Est_Premium = @Original_GL_Est_Premium) AND (@IsNull_GL_Min_Premium = 1 AND GL_Min_Premium IS NULL OR
+                         GL_Min_Premium = @Original_GL_Min_Premium) AND (CompositeRated = @Original_CompositeRated) AND (@IsNull_NumPoweredUnits = 1 AND NumPoweredUnits IS NULL OR
+                         NumPoweredUnits = @Original_NumPoweredUnits) AND (@IsNull_StateUnEmployment = 1 AND StateUnEmployment IS NULL OR
+                         StateUnEmployment = @Original_StateUnEmployment); 
+SELECT AutoliabSymbol, PIPSymbol, QuoteGuid, AddnPIPSymbol, PropProtectionSymbol, MedPaySymbol, UnInsSymbol, UnderInsSymbol, ID, RejectedTerrorism, Terrorism, CoverageTypeID, AutoReportingBasis, AutoNonReportingBasis, AutoQuarterlyBasis, AutoMonthlyBasis, AutoNewComprehensive, AutoNewSpecCauseLoss, AutoNewCollision, AutoUsedComprehensive, AutoUsedSpecCauseLoss, AutoUsedCollision, AutoIntComprehensive, AutoIntSpecCauseLoss, AutoIntCollision, AutoFinanceComprehensive, AutoFinanceSpecCauseLoss, AutoFinanceCollision, AutoLossPayeeComprehensive, AutoLossPayeeSpecCauseLoss, AutoLossPayeeCollision, AutoConsignComprehensive, AutoConsignSpecCauseLoss, AutoConsignCollision, AutoComments, GaragekeepersSymbol, PhysDamCompSymbol, PhysDamCOLSymbol, PhysDamCollSymbol, RetroDate, BodilyInjEachAcc, BodilyInjDiseaseAggLimit, BodilyInjDiseaseEachEmpl, TowingSymbol, TrailerSymbol, HiredAutoLimit, NonownedLiabilitySymbol, HiredAutoSymbol, EndorseName, EndorseSymbol, EndorseLimit, EndorseDeductible, Receipts, No_of_Empl, GL_Rate, GL_Est_Premium, GL_Min_Premium, CompositeRated, NumPoweredUnits, StateUnEmployment FROM tblNetRateAdditionalData WITH (NOLOCK) WHERE (ID = @ID)</value>
+  </data>
+  <data name="DbCommand3.CommandText" xml:space="preserve">
+    <value>INSERT INTO [tblNetRateAdditionalData] ([AutoliabSymbol], [PIPSymbol], [QuoteGuid], [AddnPIPSymbol], [PropProtectionSymbol], [MedPaySymbol], [UnInsSymbol], [UnderInsSymbol], [RejectedTerrorism], [Terrorism], [CoverageTypeID], [AutoReportingBasis], [AutoNonReportingBasis], [AutoQuarterlyBasis], [AutoMonthlyBasis], [AutoNewComprehensive], [AutoNewSpecCauseLoss], [AutoNewCollision], [AutoUsedComprehensive], [AutoUsedSpecCauseLoss], [AutoUsedCollision], [AutoIntComprehensive], [AutoIntSpecCauseLoss], [AutoIntCollision], [AutoFinanceComprehensive], [AutoFinanceSpecCauseLoss], [AutoFinanceCollision], [AutoLossPayeeComprehensive], [AutoLossPayeeSpecCauseLoss], [AutoLossPayeeCollision], [AutoConsignComprehensive], [AutoConsignSpecCauseLoss], [AutoConsignCollision], [AutoComments], [GaragekeepersSymbol], [PhysDamCompSymbol], [PhysDamCOLSymbol], [PhysDamCollSymbol], [RetroDate], [BodilyInjEachAcc], [BodilyInjDiseaseAggLimit], [BodilyInjDiseaseEachEmpl], [TowingSymbol], [TrailerSymbol], [HiredAutoLimit], [NonownedLiabilitySymbol], [HiredAutoSymbol], [EndorseName], [EndorseSymbol], [EndorseLimit], [EndorseDeductible], [Receipts], [No_of_Empl], [GL_Rate], [GL_Est_Premium], [GL_Min_Premium], [CompositeRated], [NumPoweredUnits], [StateUnEmployment]) VALUES (@AutoliabSymbol, @PIPSymbol, @QuoteGuid, @AddnPIPSymbol, @PropProtectionSymbol, @MedPaySymbol, @UnInsSymbol, @UnderInsSymbol, @RejectedTerrorism, @Terrorism, @CoverageTypeID, @AutoReportingBasis, @AutoNonReportingBasis, @AutoQuarterlyBasis, @AutoMonthlyBasis, @AutoNewComprehensive, @AutoNewSpecCauseLoss, @AutoNewCollision, @AutoUsedComprehensive, @AutoUsedSpecCauseLoss, @AutoUsedCollision, @AutoIntComprehensive, @AutoIntSpecCauseLoss, @AutoIntCollision, @AutoFinanceComprehensive, @AutoFinanceSpecCauseLoss, @AutoFinanceCollision, @AutoLossPayeeComprehensive, @AutoLossPayeeSpecCauseLoss, @AutoLossPayeeCollision, @AutoConsignComprehensive, @AutoConsignSpecCauseLoss, @AutoConsignCollision, @AutoComments, @GaragekeepersSymbol, @PhysDamCompSymbol, @PhysDamCOLSymbol, @PhysDamCollSymbol, @RetroDate, @BodilyInjEachAcc, @BodilyInjDiseaseAggLimit, @BodilyInjDiseaseEachEmpl, @TowingSymbol, @TrailerSymbol, @HiredAutoLimit, @NonownedLiabilitySymbol, @HiredAutoSymbol, @EndorseName, @EndorseSymbol, @EndorseLimit, @EndorseDeductible, @Receipts, @No_of_Empl, @GL_Rate, @GL_Est_Premium, @GL_Min_Premium, @CompositeRated, @NumPoweredUnits, @StateUnEmployment);
+SELECT AutoliabSymbol, PIPSymbol, QuoteGuid, AddnPIPSymbol, PropProtectionSymbol, MedPaySymbol, UnInsSymbol, UnderInsSymbol, ID, RejectedTerrorism, Terrorism, CoverageTypeID, AutoReportingBasis, AutoNonReportingBasis, AutoQuarterlyBasis, AutoMonthlyBasis, AutoNewComprehensive, AutoNewSpecCauseLoss, AutoNewCollision, AutoUsedComprehensive, AutoUsedSpecCauseLoss, AutoUsedCollision, AutoIntComprehensive, AutoIntSpecCauseLoss, AutoIntCollision, AutoFinanceComprehensive, AutoFinanceSpecCauseLoss, AutoFinanceCollision, AutoLossPayeeComprehensive, AutoLossPayeeSpecCauseLoss, AutoLossPayeeCollision, AutoConsignComprehensive, AutoConsignSpecCauseLoss, AutoConsignCollision, AutoComments, GaragekeepersSymbol, PhysDamCompSymbol, PhysDamCOLSymbol, PhysDamCollSymbol, RetroDate, BodilyInjEachAcc, BodilyInjDiseaseAggLimit, BodilyInjDiseaseEachEmpl, TowingSymbol, TrailerSymbol, HiredAutoLimit, NonownedLiabilitySymbol, HiredAutoSymbol, EndorseName, EndorseSymbol, EndorseLimit, EndorseDeductible, Receipts, No_of_Empl, GL_Rate, GL_Est_Premium, GL_Min_Premium, CompositeRated, NumPoweredUnits, StateUnEmployment FROM tblNetRateAdditionalData WITH (NOLOCK) WHERE (ID = SCOPE_IDENTITY())</value>
+  </data>
+  <data name="DbCommand4.CommandText" xml:space="preserve">
+    <value>SELECT        AutoliabSymbol, PIPSymbol, QuoteGuid, AddnPIPSymbol, PropProtectionSymbol, MedPaySymbol, UnInsSymbol, UnderInsSymbol, ID, RejectedTerrorism, Terrorism, CoverageTypeID, AutoReportingBasis, 
+                         AutoNonReportingBasis, AutoQuarterlyBasis, AutoMonthlyBasis, AutoNewComprehensive, AutoNewSpecCauseLoss, AutoNewCollision, AutoUsedComprehensive, AutoUsedSpecCauseLoss, AutoUsedCollision, 
+                         AutoIntComprehensive, AutoIntSpecCauseLoss, AutoIntCollision, AutoFinanceComprehensive, AutoFinanceSpecCauseLoss, AutoFinanceCollision, AutoLossPayeeComprehensive, AutoLossPayeeSpecCauseLoss, 
+                         AutoLossPayeeCollision, AutoConsignComprehensive, AutoConsignSpecCauseLoss, AutoConsignCollision, AutoComments, GaragekeepersSymbol, PhysDamCompSymbol, PhysDamCOLSymbol, 
+                         PhysDamCollSymbol, RetroDate, BodilyInjEachAcc, BodilyInjDiseaseAggLimit, BodilyInjDiseaseEachEmpl, TowingSymbol, TrailerSymbol, HiredAutoLimit, NonownedLiabilitySymbol, HiredAutoSymbol, 
+                         EndorseName, EndorseSymbol, EndorseLimit, EndorseDeductible, Receipts, No_of_Empl, GL_Rate, GL_Est_Premium, GL_Min_Premium, CompositeRated, NumPoweredUnits, StateUnEmployment
+FROM            tblNetRateAdditionalData WITH (NOLOCK)
+WHERE        (QuoteGuid = @QuoteGuid)</value>
+  </data>
+  <data name="DbCommand2.CommandText" xml:space="preserve">
+    <value>DELETE FROM [tblNetRateAdditionalData] WHERE (((@IsNull_AutoliabSymbol = 1 AND [AutoliabSymbol] IS NULL) OR ([AutoliabSymbol] = @Original_AutoliabSymbol)) AND ((@IsNull_PIPSymbol = 1 AND [PIPSymbol] IS NULL) OR ([PIPSymbol] = @Original_PIPSymbol)) AND ([QuoteGuid] = @Original_QuoteGuid) AND ((@IsNull_AddnPIPSymbol = 1 AND [AddnPIPSymbol] IS NULL) OR ([AddnPIPSymbol] = @Original_AddnPIPSymbol)) AND ((@IsNull_PropProtectionSymbol = 1 AND [PropProtectionSymbol] IS NULL) OR ([PropProtectionSymbol] = @Original_PropProtectionSymbol)) AND ((@IsNull_MedPaySymbol = 1 AND [MedPaySymbol] IS NULL) OR ([MedPaySymbol] = @Original_MedPaySymbol)) AND ((@IsNull_UnInsSymbol = 1 AND [UnInsSymbol] IS NULL) OR ([UnInsSymbol] = @Original_UnInsSymbol)) AND ((@IsNull_UnderInsSymbol = 1 AND [UnderInsSymbol] IS NULL) OR ([UnderInsSymbol] = @Original_UnderInsSymbol)) AND ([ID] = @Original_ID) AND ((@IsNull_RejectedTerrorism = 1 AND [RejectedTerrorism] IS NULL) OR ([RejectedTerrorism] = @Original_RejectedTerrorism)) AND ((@IsNull_Terrorism = 1 AND [Terrorism] IS NULL) OR ([Terrorism] = @Original_Terrorism)) AND ((@IsNull_CoverageTypeID = 1 AND [CoverageTypeID] IS NULL) OR ([CoverageTypeID] = @Original_CoverageTypeID)) AND ([AutoReportingBasis] = @Original_AutoReportingBasis) AND ([AutoNonReportingBasis] = @Original_AutoNonReportingBasis) AND ([AutoQuarterlyBasis] = @Original_AutoQuarterlyBasis) AND ([AutoMonthlyBasis] = @Original_AutoMonthlyBasis) AND ([AutoNewComprehensive] = @Original_AutoNewComprehensive) AND ([AutoNewSpecCauseLoss] = @Original_AutoNewSpecCauseLoss) AND ([AutoNewCollision] = @Original_AutoNewCollision) AND ([AutoUsedComprehensive] = @Original_AutoUsedComprehensive) AND ([AutoUsedSpecCauseLoss] = @Original_AutoUsedSpecCauseLoss) AND ([AutoUsedCollision] = @Original_AutoUsedCollision) AND ([AutoIntComprehensive] = @Original_AutoIntComprehensive) AND ([AutoIntSpecCauseLoss] = @Original_AutoIntSpecCauseLoss) AND ([AutoIntCollision] = @Original_AutoIntCollision) AND ([AutoFinanceComprehensive] = @Original_AutoFinanceComprehensive) AND ([AutoFinanceSpecCauseLoss] = @Original_AutoFinanceSpecCauseLoss) AND ([AutoFinanceCollision] = @Original_AutoFinanceCollision) AND ([AutoLossPayeeComprehensive] = @Original_AutoLossPayeeComprehensive) AND ([AutoLossPayeeSpecCauseLoss] = @Original_AutoLossPayeeSpecCauseLoss) AND ([AutoLossPayeeCollision] = @Original_AutoLossPayeeCollision) AND ([AutoConsignComprehensive] = @Original_AutoConsignComprehensive) AND ([AutoConsignSpecCauseLoss] = @Original_AutoConsignSpecCauseLoss) AND ([AutoConsignCollision] = @Original_AutoConsignCollision) AND ((@IsNull_AutoComments = 1 AND [AutoComments] IS NULL) OR ([AutoComments] = @Original_AutoComments)) AND ((@IsNull_GaragekeepersSymbol = 1 AND [GaragekeepersSymbol] IS NULL) OR ([GaragekeepersSymbol] = @Original_GaragekeepersSymbol)) AND ((@IsNull_PhysDamCompSymbol = 1 AND [PhysDamCompSymbol] IS NULL) OR ([PhysDamCompSymbol] = @Original_PhysDamCompSymbol)) AND ((@IsNull_PhysDamCOLSymbol = 1 AND [PhysDamCOLSymbol] IS NULL) OR ([PhysDamCOLSymbol] = @Original_PhysDamCOLSymbol)) AND ((@IsNull_PhysDamCollSymbol = 1 AND [PhysDamCollSymbol] IS NULL) OR ([PhysDamCollSymbol] = @Original_PhysDamCollSymbol)) AND ((@IsNull_RetroDate = 1 AND [RetroDate] IS NULL) OR ([RetroDate] = @Original_RetroDate)) AND ((@IsNull_BodilyInjEachAcc = 1 AND [BodilyInjEachAcc] IS NULL) OR ([BodilyInjEachAcc] = @Original_BodilyInjEachAcc)) AND ((@IsNull_BodilyInjDiseaseAggLimit = 1 AND [BodilyInjDiseaseAggLimit] IS NULL) OR ([BodilyInjDiseaseAggLimit] = @Original_BodilyInjDiseaseAggLimit)) AND ((@IsNull_BodilyInjDiseaseEachEmpl = 1 AND [BodilyInjDiseaseEachEmpl] IS NULL) OR ([BodilyInjDiseaseEachEmpl] = @Original_BodilyInjDiseaseEachEmpl)) AND ((@IsNull_TowingSymbol = 1 AND [TowingSymbol] IS NULL) OR ([TowingSymbol] = @Original_TowingSymbol)) AND ((@IsNull_TrailerSymbol = 1 AND [TrailerSymbol] IS NULL) OR ([TrailerSymbol] = @Original_TrailerSymbol)) AND ((@IsNull_HiredAutoLimit = 1 AND [HiredAutoLimit] IS NULL) OR ([HiredAutoLimit] = @Original_HiredAutoLimit)) AND ((@IsNull_NonownedLiabilitySymbol = 1 AND [NonownedLiabilitySymbol] IS NULL) OR ([NonownedLiabilitySymbol] = @Original_NonownedLiabilitySymbol)) AND ((@IsNull_HiredAutoSymbol = 1 AND [HiredAutoSymbol] IS NULL) OR ([HiredAutoSymbol] = @Original_HiredAutoSymbol)) AND ((@IsNull_EndorseName = 1 AND [EndorseName] IS NULL) OR ([EndorseName] = @Original_EndorseName)) AND ((@IsNull_EndorseSymbol = 1 AND [EndorseSymbol] IS NULL) OR ([EndorseSymbol] = @Original_EndorseSymbol)) AND ((@IsNull_EndorseLimit = 1 AND [EndorseLimit] IS NULL) OR ([EndorseLimit] = @Original_EndorseLimit)) AND ((@IsNull_EndorseDeductible = 1 AND [EndorseDeductible] IS NULL) OR ([EndorseDeductible] = @Original_EndorseDeductible)) AND ((@IsNull_Receipts = 1 AND [Receipts] IS NULL) OR ([Receipts] = @Original_Receipts)) AND ((@IsNull_No_of_Empl = 1 AND [No_of_Empl] IS NULL) OR ([No_of_Empl] = @Original_No_of_Empl)) AND ((@IsNull_GL_Rate = 1 AND [GL_Rate] IS NULL) OR ([GL_Rate] = @Original_GL_Rate)) AND ((@IsNull_GL_Est_Premium = 1 AND [GL_Est_Premium] IS NULL) OR ([GL_Est_Premium] = @Original_GL_Est_Premium)) AND ((@IsNull_GL_Min_Premium = 1 AND [GL_Min_Premium] IS NULL) OR ([GL_Min_Premium] = @Original_GL_Min_Premium)) AND ([CompositeRated] = @Original_CompositeRated) AND ((@IsNull_NumPoweredUnits = 1 AND [NumPoweredUnits] IS NULL) OR ([NumPoweredUnits] = @Original_NumPoweredUnits)) AND ((@IsNull_StateUnEmployment = 1 AND [StateUnEmployment] IS NULL) OR ([StateUnEmployment] = @Original_StateUnEmployment)))</value>
+  </data>
+  <data name="Appearance71.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAowIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAIuSURBVDhPpY/rS5NhGMbff6WTOqmIPmippeUhKF3OUqIWZJlKzVaIpW2kZQcpSYlFnio7SVlaHrBpm648sNxy6uZmMkcrQ9PU6IOfgl/vu2FIDMp64Hrem+u+nt973wLwXwpoLkeC6+7JCUdNDsNVx7DdysSqS8dcrqSnNA1TiQLDxV28LIynRRPdHhAgPZ52tfHF2cKUvYnJoQY+2+qZsNbx6e09vH23+dBdSePpcDEfADBYkc3USLMYrBCDOjxdZbgNVxnTX2K0tRDniwLGO2+wo/g18UWdbNe+Ijpf/yMytzXTB7DqDovfP5+4c0beuObpGpnjgekjYTnPZ0VbEKR9ta3j7K0aRKEbIOm6hZ0lZhLO9xKr6SY6z0RWmYWYgnYM9jkmv8O3BdiYVS9xBaH7Wqpv1/dtF3A1axlpPMNw/SkG644zcP8o1juHcDYVIo5Mv3se89gc8yJgXfojP6DzshxvT7VvV/uzXIYen8D2MJt3tUew1Bykv3Ifjoaz0sj0js5SbfDS5Zgh5ECtH6AvSsBjuonbWM5YR6k4yRVcLcW+vzoaNdif5mN/kucb2eT4inF4ho6haVan1fgBaXEbSI1dz55ta0mJCUWxNYTkLUHIo9aQFLmKxIiVJG5eQWhkCrIIBSGbkgkO301QmNwPkC6ZTObJyMhApVIh1gtqtRqlUinVRqm/qMXc0t5iI0pUn2SK2r+kDv4NsDTn6/1q/qsCmstRQPPvhfAT5KzI5hKcwb8AAAAASUVORK5CYIIL</value>
+  </data>
+  <data name="Appearance68.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAVgIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAHhSURBVDhPpdHdS1NxHMdx/4Vuu8uLCMKb7rsoofRGiBJCSQnBbuxSVovoIsTERg8kVtIKRMOIMHuwqA6bezgdtzF1cw8ccw9unmibOcOdho13Z6ekY52g0cULDp/f7/vh++PUAf/FNKyFafg3y5MHjsfGTiI/7WPu3hHmh/Z3mF40szK9p00RLKwvPIcvWT4vPEa82vRRP7Tb7Y2a9xrMvBjvJR++RHllCsUxSCn0hG9JN6H73ep2QSQQEMlkZF02W7X0Q3yCtfBFKiU3pQ89FGbPEh3tIjhyujJ789je7YJPiUQEr9eN0+nUuVwufMIQa6HzVFSRzaVO1HQ7GxEryQctPByxlauzhoIokiTqgx6PB+fkIIrP8nO4AzXVRjF8Afl2M0rUUX2auqMglYrj9/sQRZGZqWtEXvVqa8+gJrr4mj7FuraJPNzEos9BLpf9syCdlgkGA7we62fxpZX56etkpFY2E+0U5s4Rv9OiD8diUfJ55VeB9oEgvNHCVQqFVR4NNMJGktjdEwjW3Xi0lb22o+SW/RSLOU1e53AI+h/SC4wudzdQFm9Rlm4g9R1i4kw9o8MDO+4Y6U8waj24S+3v3Lf17krz1lvbYeczS0P973eMTMNamIa1MA3/HXXfAaP1BZGIGUBXAAAAAElFTkSuQmCCCw==</value>
+  </data>
+</root>

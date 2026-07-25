@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DbCommand6.CommandText" xml:space="preserve">
+    <value>INSERT INTO dbo.tblStatesSLRequiredData
+                      (StateID, RequiredDataID, UseForFiling)
+VALUES     (@StateID,@RequiredDataID,@UseForFiling); 
+SELECT StateID, RequiredDataID FROM dbo.tblStatesSLRequiredData WHERE (RequiredDataID = @RequiredDataID) AND (StateID = @StateID)</value>
+  </data>
+  <data name="DbUpdateCommand1.CommandText" xml:space="preserve">
+    <value>UPDATE [dbo].[tblStateSLRules] SET [StateID] = @StateID, [OtherInfo] = @OtherInfo, [NoAllowPremiumAllocation] = @NoAllowPremiumAllocation, [FilingRequiredForZeroPremium] = @FilingRequiredForZeroPremium, [UseCorporateLic] = @UseCorporateLic, [Description] = @Description, [Mail] = @Mail, [Online] = @Online, [Retain] = @Retain, [Comments] = @Comments, [FolderID] = @FolderID, [SLImageData] = @SLImageData, [StatePubWhiteList] = @StatePubWhiteList, [StatePubExportList] = @StatePubExportList WHERE (([ID] = @Original_ID));
+SELECT ID, StateID, OtherInfo, NoAllowPremiumAllocation, FilingRequiredForZeroPremium, UseCorporateLic, Description, Mail, Online, Retain, Comments, FolderID, SLImageData, StatePubWhiteList, StatePubExportList FROM dbo.tblStateSLRules WHERE (ID = @ID)</value>
+  </data>
+  <data name="Appearance31.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA3AIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAJnSURBVDhPddLNT9NwHAbwHtX4J+mFiK+JMYwNb56MMVEvusMSX9C5sSsSOanx7MVEuSBGgwy7tB1sghIofCVjsBdexlY2XNv18WmNFy2HJ78m6/fZ9/dJlXMJ9U00bcwNZQyJZXQzljHMoRHdvJLUCn2J7J1TN94dA6AcFWUwpRX4YNasntSZasuVjYYtlZYtmam6RFPzL07fnDjx7+DfKLG0vrLb9mRWXFHXHfmy2pWJhbZYXU+yJVvGpnfk/IOZ4bBhP0o0rZv7HU/yJVfyG67kftrycflQ1mpt2bZssX45cv15fjVs2E9Q0Dz05NumK8WyK0bJkexaV17O1DH+eQvPpspBbr0utm+/KnSujRsrtHlIm+NBwSALWoeQ7xUvSHGzJ9q6LeOfNuHxDdqANqANaAPagDagzXvanFQiKV4hKID8qPRkcasnBW4yxn+lDWgD2oA2oA1oA9qANqDNmDLwVOMVIMs1iFn/cy6xzF+bNqANaAPagDagDWgD2iCS1DxlIGmYe20ntIA2oA1oA9qANpha6uBt0UKZ17k6YnhK5Mm8VJqN/wpGWUAb0CUIbUAbZKUbbFJp9TDkF1y+n1vYsVypNvnx7NtSazpSbzky+oFXCAoA2oA2oA30Dd/DRtXyEEuz4GJCnbyUyM31x3Nr/XF1kSejLtKGVwC4EbhZcHIzXgnQSwh+i6Z0L/Tj8EMbhzZHFjQ6DqJJbhA27Ic2oM2RBdVWA7HHc+HDfi4k1F3agDagDWgD2gTZZvYOehgc1rqhw3767s5O98e/btHEo4nFk/FP1Tobzx2cuTdbjTzSmr8B1uo6cuIIh6sAAAAASUVORK5CYIIL</value>
+  </data>
+  <data name="DbInsertCommand1.CommandText" xml:space="preserve">
+    <value>INSERT INTO [dbo].[tblStateSLRules] ([StateID], [OtherInfo], [NoAllowPremiumAllocation], [FilingRequiredForZeroPremium], [UseCorporateLic], [Description], [Mail], [Online], [Retain], [Comments], [FolderID], [SLImageData], [StatePubWhiteList], [StatePubExportList]) VALUES (@StateID, @OtherInfo, @NoAllowPremiumAllocation, @FilingRequiredForZeroPremium, @UseCorporateLic, @Description, @Mail, @Online, @Retain, @Comments, @FolderID, @SLImageData, @StatePubWhiteList, @StatePubExportList);
+SELECT ID, StateID, OtherInfo, NoAllowPremiumAllocation, FilingRequiredForZeroPremium, UseCorporateLic, Description, Mail, Online, Retain, Comments, FolderID, SLImageData, StatePubWhiteList, StatePubExportList FROM dbo.tblStateSLRules WHERE (ID = SCOPE_IDENTITY())</value>
+  </data>
+  <data name="Appearance35.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAPwIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAHKSURBVDhPpZNLSxthFIbztxRXiiJuSimVgK5Eu5GUoqmi8RbjQgpFV6EtbeklieN8alTURWwFUdG9C6lkRm1NmsZkrjEzlCZvzzct0ZAYQRfPwDBnnvN+Z864ANwL59LhE1+6B1mqxSNo9U+q0F1OU6+gPfQKMyWBe4j9isty0TBNmDkLBqETqoMNxbSRNWxcOFhIKTranolqScA764aJTn8QA+8jGP0YwvAHhuFPMYx8jmEsFMNEZBMB4Qt6JmaQ1i00e5hWEjRQTN7ZH9rAYtzAsnyJqGQgKucRPbGwcmpj9ew31n78wTTbQkqtIuCR+cP1RBHr54Ub4TU/1TwJxHIBP28gvIFl6ZISUGcpR2l0sGMTCwT7ZmDpWMVUeA1JJVcpUEwLT4Nv8W4/iVd73xHcPcH01wNMxs4R+M/r7UP43oSRzFZJkKXpto9H0C/K/5iX0C9I6JuLl/F4NFQp4N86Q5N1Ty7g+WKiJrwmUU1wod1DUNcd0TIkaOzyOwW14DWJTB5NvdcTOII8jlIFongLBRJY5YJWj3CWzijQaJAara3qQGtM90oFNtLOKrOrVX7kFV886GM7/FzcfBv0H2j0zmxJcHfg+gtyLAUz3I05iAAAAABJRU5ErkJgggs=</value>
+  </data>
+  <data name="Appearance30.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA1wIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAJiSURBVDhPpZPvS1NRGMfPv9Db6FUvIpDqLwj6AZH1aqQQSfpiJoHmyqG2KwUSQ8MUG/ZjQyvUkumITDGMHFoTm0bpNqemF3WaG8XmnLv37O7u+u2cqyvQV9YDH87h8Dyf83B+EAD/BTHccpY29orJmq4FCK8Ynd9haZ9F1YtpVD4LwNzmQ4XjG27av8L0eAJlLV4IDk+S1+kCq0vUbIMR7BdT84imC/jO/0JJwzCrZwKhc55P9h3GuiE+EGLpmNMXFDWDFIMqKpJURYKmEZcURDcpfq7LCP+SEJrpx+zLy5jvtWKy7RymHuUUEn5gPNKahnQmo4vktAoptS3akFXEkilExB6E3dWI+/qBzR9Y97kw9uB8hPDT5pFhApVLGAoTUSaSeDdMFF3uQyxYC2XlLcLDDZD9r5FZ8sD/vIQSflW6YGtLF2RFCiPFRIk1N2KBO9BkD2SxDNHxG5jpMMJrN2LcZjhCzK1TfwRZuICzEWbFfgs0OgZpoQg0VIBEUECo3YDyu628jBDTky/bAga/2KxkdfoNwhPVO8WFoMtXsBGogei4CBoJIq/SxcsIKW8Z5xM9thhcshbsw8z7Ktb2R9BFI1Khq4izThbsFyDFVvTcS+ZuPhBSZvusL2RjbrQL0wMCpt41Y9WbD2mxANHJ2xDbDEjHV3eyAEOFkw/6X3Beb/qkv6zieje6758FEkuYdeTBLRzE6NNcDNSeQqnFztruYTs7wWo43ED2/K5713JUZawFivchvNbT6C4+tDloOX5id16WPQv5Jw/QuqKj6lB9rvqh8cxIX/Wxw7tz/gLyG4HTN6UG0fLbAAAAAElFTkSuQmCCCw==</value>
+  </data>
+  <data name="DbCommand4.CommandText" xml:space="preserve">
+    <value>UPDATE [dbo].[tblSLStateRulesForms] SET [StateID] = @StateID, [TemplateID] = @TemplateID, [UseOnBinder] = @UseOnBinder, [UserOnQuote] = @UserOnQuote, [InsuredSigns] = @InsuredSigns, [ProducerSigns] = @ProducerSigns, [UseOnIssuance] = @UseOnIssuance WHERE (([StateID] = @Original_StateID) AND ([TemplateID] = @Original_TemplateID));
+SELECT StateID, TemplateID, UseOnBinder, UserOnQuote, InsuredSigns, ProducerSigns, UseOnIssuance FROM dbo.tblSLStateRulesForms WHERE (StateID = @StateID) AND (TemplateID = @TemplateID)</value>
+  </data>
+  <data name="DbCommand2.CommandText" xml:space="preserve">
+    <value>INSERT INTO [dbo].[tblSLStateRulesForms] ([StateID], [TemplateID], [UseOnBinder], [UserOnQuote], [InsuredSigns], [ProducerSigns], [UseOnIssuance]) VALUES (@StateID, @TemplateID, @UseOnBinder, @UserOnQuote, @InsuredSigns, @ProducerSigns, @UseOnIssuance);
+SELECT StateID, TemplateID, UseOnBinder, UserOnQuote, InsuredSigns, ProducerSigns, UseOnIssuance FROM dbo.tblSLStateRulesForms WHERE (StateID = @StateID) AND (TemplateID = @TemplateID)</value>
+  </data>
+  <data name="DbSelectCommand2.CommandText" xml:space="preserve">
+    <value>SELECT     ID, StateID, OtherInfo, NoAllowPremiumAllocation, FilingRequiredForZeroPremium, UseCorporateLic, Description, Mail, Online, Retain, Comments, 
+                      FolderID, SLImageData, StatePubWhiteList, StatePubExportList
+FROM         dbo.tblStateSLRules
+WHERE     (StateID = @StateID)</value>
+  </data>
+  <data name="Appearance33.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAHQMAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAKoSURBVDhPpZPtT1JRHMf9W/RP6N7etDZ90VybDZK0F5k1TBO1la7CbLBKMRGfAAVsCIaaD5RPUJIiJHAlI+QhNPXmwAza2uoNZC3LbwdaqNXaWi8+d/ece77f3/ne3zkZAP6L3ybyNStZx1QhUZ4iyB5p8cZzZJ54tmyBzZa5RYdvM1m/rt834KiXeUflgVhFrx+99ghGmc0UemsYfPVT0KLZGC228vZq0i+kKi+31ZdomVyFxRtDz3QEEuNL3Bpehty0CqNjA42jIdCVEwn64kTaJPXIUwYzc9sWo0mx6VkMIiK6NhDAkOs1hpwbuGrwQ9gfgGF2HZL7ftBlxihdOpyZNsiVL4rLtV6YPW9RNxCCkES4rPPh4+ftFNU6D6p7PBDe9WLgSRinmh+DKuoXpw1y2jys3hqB0sTiSq8PNTovqrUe9NnXYSBUdjM/0LhIrADU0yugC3Vs2uCQhNkaX3iDuj4/qfQcVXfcZDFDPgE7BIHKifLOOYIDFzROGJkwKF7XVlKbMqDF9q0x92Yqa7JShdpFRC6EIh+Q+LSNsg47StttOEcQKGwYmScGXMVeAyurtbKQPlhClcYNQZcT55VzeBF+Twy+oEQ2gxKSm99sQW0PA6UlCPp4x24EutYiLpbbMeSIoErFQCB3wOLZwNdvO6kI/lfvUCwxE0zofhhC4fVRYtC++xPpS2OZtMAYvTnig8G6hjK5DfyWaZyRTqG4wYTT9RMoqh9H64iXtHeebF8apbnS3TYmofiDvAMF+oRo0AP9zAqEWifZ8iOcbTSjRmWD2hSAsI8BzWlIEPH+g5Q2KdTzqILu2Mkbk1BOLeGekyWsocMcRH6dERSnMUZzm/58lH9Cn1BnUbxOEZWvYCluc5ziNMVJRZYgOsht+Ptl+neQ8R04hsvsalKMmgAAAABJRU5ErkJgggs=</value>
+  </data>
+  <data name="DbCommand8.CommandText" xml:space="preserve">
+    <value>UPDATE    dbo.tblStatesSLRequiredData
+SET              StateID = @StateID, RequiredDataID = @RequiredDataID, UseForFiling = @UseForFiling
+WHERE     (StateID = @Original_StateID) AND (RequiredDataID = @Original_RequiredDataID); 
+SELECT StateID, RequiredDataID FROM dbo.tblStatesSLRequiredData WHERE (RequiredDataID = @RequiredDataID) AND (StateID = @StateID)</value>
+  </data>
+  <data name="Appearance32.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA5wEAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAFySURBVDhPpZI/SEJBHMddWwuDlnCplkAEm1xEGqIhhZYcDKPBiqQhaGupKYQyJDDQLUuNJMiGhIq0yD/Bq5BI1OJlWIQ12BOfknx790JIu+JBw+cLd/f9/A6OkwH4F9RNGo8hZUvar3+JOwy1qH0I127l/d1GXwe1TCPlNeDWM4UyGwOfSyC+pkN4QRWglpsRbgeX3ALPnqGSuxAppw8Rs+trVOE7ROZfI+AfvMgGpsExHhEyIOEYLlOlOnX5g9tDKTWBd2YGl24jstuziK3qhcofj9ggZ8zgbvpRfVtGPmhCakUjVL56P0SCVJnQIBKO7T2SZULD4mCpG8X8kWSZIIZzXKEgMpvYRdRnkSwTxHBYO1Fko6g+XWF/Xo3IugqZUysY1yDOF9VChS4TxCADKsLvKvjH8OzUImyRw29uR3CuVzimi3XEMOpakXSZUGI2UWB8OLENSJIJYoxo2zCqk8M12SWKIZtmp7n4G9RN6UD2CVVc9yZM1spMAAAAAElFTkSuQmCCCw==</value>
+  </data>
+</root>

@@ -1,0 +1,32 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: MgaSystems.IMS.UnderwritingServices.Token
+// Assembly: MgaSystems.IMS.UnderwritingServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e175cb7c4ce15bbd
+// MVID: 4E63F408-1B27-4004-B8D3-2C6361F8A9AF
+// Assembly location: D:\augusta\fortegra\IMS Project\MgaSystems.IMS.UnderwritingServices.dll
+
+using Newtonsoft.Json;
+using System;
+
+#nullable disable
+namespace MgaSystems.IMS.UnderwritingServices;
+
+public class Token
+{
+  [JsonProperty("expires_in")]
+  public int ExpiresIn { get; set; }
+
+  [JsonProperty("access_token")]
+  public string AccessToken { get; set; }
+
+  [JsonProperty("token_type")]
+  public string TokenType { get; set; }
+
+  [JsonProperty("scope")]
+  public string Scope { get; set; }
+
+  [JsonIgnore]
+  public bool Initialized { get; set; }
+
+  [JsonIgnore]
+  public DateTime Expiry { get; set; }
+}

@@ -1,0 +1,855 @@
+<ExcelRatingAdmin2 x:Class="MGASystems.IMS.Excel.Views.ExcelRatingAdmin2"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                   xmlns:data="clr-namespace:MGASystems.IMS.Excel.Data.Administration2"
+                   xmlns:excelAdministrationCommands="clr-namespace:MGASystems.IMS.Excel.Controllers"
+                   xmlns:mgaInterop="clr-namespace:Mga.Wpf.Ims.Interop;assembly=Mga.Wpf.Ims"
+                   xmlns:mgaWpfControls="clr-namespace:Mga.Wpf.Ims.Controls;assembly=Mga.Wpf.Ims"
+                   xmlns:baseWpfBehaviors="clr-namespace:Mga.Wpf.Ims.Controls;assembly=Mga.Wpf.Ims"
+                   xmlns:baseWpfCommands="clr-namespace:Mga.Wpf.Ims.Commands;assembly=Mga.Wpf.Ims"
+                   xmlns:baseWpfFiltering="clr-namespace:Mga.Wpf.Ims.Filtering;assembly=Mga.Wpf.Ims"
+                   xmlns:mgaValidationRules="clr-namespace:Mga.Wpf.Ims.Validation;assembly=Mga.Wpf.Ims"
+                   xmlns:baseWpfValueConverters="clr-namespace:Mga.Wpf.Ims.ValueConverters;assembly=Mga.Wpf.Ims"
+                   xmlns:wpfToolKit="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+                   xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                   x:Name="mainWindow" PromptOnCloseIfDataContextHasChanges="true"
+                   TransactionLogFilter="8C3E131D-8BC2-40E6-87AE-034006B24692" FrameworkElement.Height="540"
+                   FrameworkElement.Width="1000" Title="Excel Rating/Data Capture Administration"
+                   FrameworkElement.MinWidth="680" FrameworkElement.MinHeight="540" ResizeMode="CanResizeWithGrip"
+                   FrameworkElement.DataContext="{Binding Source={StaticResource excelAdministrationData}}">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/SplitButtonResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/CommonResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/ToolBarResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/ListViewResources.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/DataGridResources2.xaml"/>
+        <ResourceDictionary Source="/Mga.Wpf.Ims;component/Resources/TreeViewResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <Style x:Key="mappingControlBorderStyle" TargetType="{x:Type Border}"
+             BasedOn="{StaticResource controlBorderStyle}">
+        <Setter Property="FrameworkElement.Margin" Value="3"/>
+      </Style>
+      <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource textBoxStyle}">
+        <Setter Property="FrameworkElement.Width" Value="250"/>
+      </Style>
+      <Style TargetType="{x:Type baseWpfBehaviors:SplitButton}"
+             BasedOn="{StaticResource ToolBarSplitButtonStyle}"/>
+      <Style TargetType="{x:Type DataGrid}" BasedOn="{StaticResource dataGridStyle}"/>
+      <Style TargetType="{x:Type GridViewColumnHeader}" BasedOn="{StaticResource gridViewColumnHeaderStyle}"/>
+      <Style TargetType="{x:Type CheckBox}">
+        <Setter Property="FrameworkElement.VerticalAlignment" Value="Center"/>
+        <Setter Property="FrameworkElement.Margin" Value="2"/>
+      </Style>
+      <Style x:Key="dataGridEditingToggleReadOnlyElementStyle" TargetType="{x:Type TextBox}"
+             BasedOn="{StaticResource dataGridEditingElementStyle}">
+        <Style.Triggers>
+          <DataTrigger Binding="{Binding Path=IsUIEditable}" Value="true">
+            <Setter Property="TextBoxBase.IsReadOnly" Value="false"/>
+          </DataTrigger>
+        </Style.Triggers>
+        <Setter Property="TextBoxBase.IsReadOnly" Value="true"/>
+      </Style>
+      <Style x:Key="dataGridEditingToggleReadOnlyElementStyleCombo" TargetType="{x:Type ComboBox}"
+             BasedOn="{StaticResource dataGridEditingElementStyle}">
+        <Style.Triggers>
+          <DataTrigger Binding="{Binding Path=IsUIEditable}" Value="true">
+            <Setter Property="UIElement.IsEnabled" Value="true"/>
+          </DataTrigger>
+        </Style.Triggers>
+        <Setter Property="UIElement.IsEnabled" Value="false"/>
+      </Style>
+      <Style x:Key="dataGridEditingToggleReadOnlyPremiumCheckBox" TargetType="{x:Type CheckBox}"
+             BasedOn="{StaticResource dataGridEditingElementStyle}">
+        <Style.Triggers>
+          <DataTrigger Binding="{Binding Path=IsPremiumMarkerUIEditable}" Value="true">
+            <Setter Property="UIElement.IsEnabled" Value="true"/>
+          </DataTrigger>
+        </Style.Triggers>
+        <Setter Property="FrameworkElement.HorizontalAlignment" Value="Center"/>
+        <Setter Property="UIElement.IsEnabled" Value="false"/>
+      </Style>
+      <baseWpfValueConverters:DeltaListToStringConverter x:Key="DeltaListToStringConverter"/>
+      <baseWpfValueConverters:MultiValueConverter x:Key="MultiValueConverter"/>
+      <baseWpfValueConverters:BoolToVisibilityConverter x:Key="mgaBoolToVisibilityConverter"/>
+      <BooleanToVisibilityConverter x:Key="BoolVisibilityConverter"/>
+      <baseWpfValueConverters:TypeVisibilityConverter x:Key="TypeVisibilityConverter" TypeComparison="IsSubclassOf"/>
+      <baseWpfBehaviors:StringContainsFilterStrategy x:Key="stringFilter" IgnoreCase="true"/>
+      <baseWpfBehaviors:ValueMatchesFilter x:Key="valueMatchesFilter"/>
+      <baseWpfFiltering:FilterSource x:Key="raterNameFilterSource" Enabled="true" Path="Name"
+                                     FilterStrategy="{StaticResource stringFilter}"/>
+      <baseWpfFiltering:FilterSource x:Key="fieldNameFilterSource" Enabled="true" Path="DatabaseField"
+                                     FilterStrategy="{StaticResource stringFilter}"/>
+      <baseWpfFiltering:FilterSource x:Key="cellFilterSource" Enabled="true" Path="Cell" FilterStrategy="{StaticResource stringFilter}"/>
+      <baseWpfFiltering:FilterSource x:Key="isRequiredFilterSource" Enabled="false" Path="Required"
+                                     FilterStrategy="{StaticResource valueMatchesFilter}">
+        <baseWpfFiltering:FilterSource.Value>
+          <sys:Boolean>true</sys:Boolean>
+        </baseWpfFiltering:FilterSource.Value>
+      </baseWpfFiltering:FilterSource>
+      <baseWpfFiltering:FilterSource x:Key="isRaterHiddenFilterSource" Enabled="true" Path="Hidden"
+                                     FilterStrategy="{StaticResource valueMatchesFilter}">
+        <baseWpfFiltering:FilterSource.Value>
+          <sys:Boolean>false</sys:Boolean>
+        </baseWpfFiltering:FilterSource.Value>
+      </baseWpfFiltering:FilterSource>
+      <ObjectDataProvider x:Key="excelAdministrationData" ObjectType="{x:Type data:ExcelAdministrationData}"
+                          MethodName="Create"/>
+      <baseWpfFiltering:FilterableCollectionViewSource x:Key="filteredRaters"
+                                                       CollectionViewSource.Source="{Binding Source={StaticResource excelAdministrationData}, Path=ExcelRaters}">
+        <baseWpfFiltering:FilterableCollectionViewSource.Filters>
+          <baseWpfFiltering:FilterSourceCollection>
+            <StaticResource ResourceKey="isRaterHiddenFilterSource"/>
+            <StaticResource ResourceKey="raterNameFilterSource"/>
+          </baseWpfFiltering:FilterSourceCollection>
+        </baseWpfFiltering:FilterableCollectionViewSource.Filters>
+      </baseWpfFiltering:FilterableCollectionViewSource>
+      <baseWpfFiltering:FilterableCollectionViewSource x:Key="filteredMappings"
+                                                       CollectionViewSource.Source="{Binding Source={StaticResource filteredRaters}, Path=FactorSets/ExcelMappings}">
+        <baseWpfFiltering:FilterableCollectionViewSource.Filters>
+          <baseWpfFiltering:FilterSourceCollection>
+            <StaticResource ResourceKey="fieldNameFilterSource"/>
+            <StaticResource ResourceKey="cellFilterSource"/>
+            <StaticResource ResourceKey="isRequiredFilterSource"/>
+          </baseWpfFiltering:FilterSourceCollection>
+        </baseWpfFiltering:FilterableCollectionViewSource.Filters>
+      </baseWpfFiltering:FilterableCollectionViewSource>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <UIElement.InputBindings>
+    <KeyBinding Modifiers="Ctrl" Key="M"
+                Command="{Binding Source={x:Static excelAdministrationCommands:ExcelAdministrationCommands.AddMapping}}">
+      <InputBinding.CommandParameter>
+        <MultiBinding Converter="{StaticResource MultiValueConverter}">
+          <MultiBinding.Bindings>
+            <Binding Source="{StaticResource filteredRaters}" Path="FactorSets/"/>
+            <Binding Source="{StaticResource filteredMappings}"/>
+          </MultiBinding.Bindings>
+        </MultiBinding>
+      </InputBinding.CommandParameter>
+    </KeyBinding>
+  </UIElement.InputBindings>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition/>
+      <RowDefinition Height="auto"/>
+    </Grid.RowDefinitions>
+    <wpfToolKit:BusyIndicator>
+      <FrameworkElement.Resources>
+        <Style TargetType="{x:Type wpfToolKit:BusyIndicator}">
+          <Style.Triggers>
+            <DataTrigger Binding="{Binding IsLoadingExcelFactorSets}" Value="true">
+              <Setter Property="wpfToolKit:BusyIndicator.IsBusy" Value="true"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding ElementName=treeView, Path=SelectedValue.IsLoadingChildNodes}" Value="true">
+              <Setter Property="wpfToolKit:BusyIndicator.IsBusy" Value="true"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding IsUploadingSpreadSheet}" Value="true">
+              <Setter Property="wpfToolKit:BusyIndicator.IsBusy" Value="true"/>
+            </DataTrigger>
+          </Style.Triggers>
+          <Setter Property="wpfToolKit:BusyIndicator.IsBusy" Value="false"/>
+        </Style>
+      </FrameworkElement.Resources>
+      <DockPanel LastChildFill="true">
+        <ToolBarTray DockPanel.Dock="Top">
+          <FrameworkElement.Resources>
+            <Style TargetType="{x:Type ToolBarTray}" BasedOn="{StaticResource toolBarTrayStyle}"/>
+            <Style TargetType="{x:Type Image}" BasedOn="{StaticResource verticalToolbarImageStyle}"/>
+            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource toolbarButtonStyle}"/>
+            <Style TargetType="{x:Type StackPanel}" BasedOn="{StaticResource toolbarStackPanelStyle}"/>
+            <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource verticalToolbarTextBlockStyle}"/>
+            <Style TargetType="{x:Type ToolBar}" BasedOn="{StaticResource toolBarStyle}"/>
+            <Style TargetType="{x:Type AccessText}" BasedOn="{StaticResource verticalToolbarAccessTextStyle}"/>
+          </FrameworkElement.Resources>
+          <ToolBar>
+            <Button ToolTip="Save" Command="{Binding Source={x:Static baseWpfCommands:DatabaseCommands.SubmitChanges}}"
+                    CommandParameter="{Binding Source={StaticResource excelAdministrationData}}">
+              <StackPanel>
+                <Image Source="/Mga.Wpf.Ims;component/Images/saveHS.png"/>
+                <AccessText Text="_Save"/>
+              </StackPanel>
+            </Button>
+            <Separator/>
+            <baseWpfBehaviors:UndoButton ChangeManager="{Binding ChangeManager, Mode=OneWay}"/>
+            <baseWpfBehaviors:RedoButton ChangeManager="{Binding ChangeManager, Mode=OneWay}"/>
+            <Separator/>
+            <Button ToolTip="Create a new rating model"
+                    Command="{Binding Source={x:Static excelAdministrationCommands:ExcelAdministrationCommands.CreateRater}}">
+              <ButtonBase.CommandParameter>
+                <MultiBinding Converter="{StaticResource MultiValueConverter}">
+                  <MultiBinding.Bindings>
+                    <Binding Source="{StaticResource excelAdministrationData}"/>
+                    <Binding ElementName="treeView"/>
+                  </MultiBinding.Bindings>
+                </MultiBinding>
+              </ButtonBase.CommandParameter>
+              <StackPanel>
+                <Image Source="/MGASystems.IMS.Excel;component/Images/page_add.png"/>
+                <AccessText Text="Create Model"/>
+              </StackPanel>
+            </Button>
+            <Separator Visibility="{Binding ElementName=treeView, Path=SelectedValue, ConverterParameter={x:Type data:ExcelRater}, Converter={StaticResource TypeVisibilityConverter}}"/>
+            <Button ToolTip="Add new spreadsheet version"
+                    Visibility="{Binding ElementName=treeView, Path=SelectedValue, ConverterParameter={x:Type data:ExcelRater}, Converter={StaticResource TypeVisibilityConverter}}"
+                    Command="{Binding Source={x:Static excelAdministrationCommands:ExcelAdministrationCommands.AddSpreadSheet}}">
+              <ButtonBase.CommandParameter>
+                <MultiBinding Converter="{StaticResource MultiValueConverter}">
+                  <MultiBinding.Bindings>
+                    <Binding Source="{StaticResource filteredRaters}" Path="/"/>
+                    <Binding ElementName="treeView"/>
+                  </MultiBinding.Bindings>
+                </MultiBinding>
+              </ButtonBase.CommandParameter>
+              <StackPanel>
+                <Image Source="/MGASystems.IMS.Excel;component/Images/table_add.png"/>
+                <AccessText Text="Add Spreadsheet"/>
+              </StackPanel>
+            </Button>
+            <Separator>
+              <FrameworkElement.Style>
+                <Style TargetType="{x:Type Separator}">
+                  <Style.Triggers>
+                    <MultiDataTrigger>
+                      <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding ElementName=treeView, Path=SelectedValue, ConverterParameter={x:Type data:ExcelRaterFactorSet}, Converter={StaticResource TypeVisibilityConverter}}"
+                                   Value="Visible"/>
+                        <Condition Binding="{Binding Source={StaticResource excelAdministrationData}, Path=ExcelRaters/FactorSets/FactorSetGuid}"
+                                   Value="{x:Null}"/>
+                      </MultiDataTrigger.Conditions>
+                      <Setter Property="UIElement.Visibility" Value="Visible"/>
+                    </MultiDataTrigger>
+                  </Style.Triggers>
+                  <Setter Property="UIElement.Visibility" Value="Collapsed"/>
+                </Style>
+              </FrameworkElement.Style>
+            </Separator>
+            <Button ToolTip="Add new data mapping"
+                    Command="{Binding Source={x:Static excelAdministrationCommands:ExcelAdministrationCommands.AddMapping}}">
+              <ButtonBase.CommandParameter>
+                <MultiBinding Converter="{StaticResource MultiValueConverter}">
+                  <MultiBinding.Bindings>
+                    <Binding Source="{StaticResource filteredRaters}" Path="FactorSets/"/>
+                    <Binding Source="{StaticResource filteredMappings}"/>
+                  </MultiBinding.Bindings>
+                </MultiBinding>
+              </ButtonBase.CommandParameter>
+              <FrameworkElement.Style>
+                <Style TargetType="{x:Type Button}">
+                  <Style.Triggers>
+                    <MultiDataTrigger>
+                      <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding ElementName=treeView, Path=SelectedValue, ConverterParameter={x:Type data:ExcelRaterFactorSet}, Converter={StaticResource TypeVisibilityConverter}}"
+                                   Value="Visible"/>
+                        <Condition Binding="{Binding Source={StaticResource filteredRaters}, Path=FactorSets/SelectedTabIndex}"
+                                   Value="0"/>
+                      </MultiDataTrigger.Conditions>
+                      <Setter Property="UIElement.Visibility" Value="Visible"/>
+                    </MultiDataTrigger>
+                  </Style.Triggers>
+                  <Setter Property="UIElement.Visibility" Value="Collapsed"/>
+                </Style>
+              </FrameworkElement.Style>
+              <StackPanel>
+                <Image Source="/MGASystems.IMS.Excel;component/Images/textfield_add.png"/>
+                <AccessText Text="Add _Mapping"/>
+              </StackPanel>
+            </Button>
+            <Button ToolTip="Delete data mapping"
+                    Command="{Binding Source={x:Static excelAdministrationCommands:ExcelAdministrationCommands.DeleteMappingCommand}}">
+              <ButtonBase.CommandParameter>
+                <MultiBinding Converter="{StaticResource MultiValueConverter}">
+                  <MultiBinding.Bindings>
+                    <Binding Source="{StaticResource filteredRaters}" Path="FactorSets/"/>
+                    <Binding Source="{StaticResource filteredMappings}"/>
+                    <Binding Source="{StaticResource excelAdministrationData}"/>
+                  </MultiBinding.Bindings>
+                </MultiBinding>
+              </ButtonBase.CommandParameter>
+              <FrameworkElement.Style>
+                <Style TargetType="{x:Type Button}">
+                  <Style.Triggers>
+                    <MultiDataTrigger>
+                      <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding ElementName=treeView, Path=SelectedValue, ConverterParameter={x:Type data:ExcelRaterFactorSet}, Converter={StaticResource TypeVisibilityConverter}}"
+                                   Value="Visible"/>
+                        <Condition Binding="{Binding Source={StaticResource filteredRaters}, Path=FactorSets/SelectedTabIndex}"
+                                   Value="0"/>
+                      </MultiDataTrigger.Conditions>
+                      <Setter Property="UIElement.Visibility" Value="Visible"/>
+                    </MultiDataTrigger>
+                  </Style.Triggers>
+                  <Setter Property="UIElement.Visibility" Value="Collapsed"/>
+                </Style>
+              </FrameworkElement.Style>
+              <StackPanel>
+                <Image Source="/MGASystems.IMS.Excel;component/Images/textfield_delete.png"/>
+                <AccessText Text="Delete _Mapping"/>
+              </StackPanel>
+            </Button>
+            <Separator/>
+            <Button ToolTip="Associates a new schedule to this rater"
+                    Visibility="{Binding ElementName=treeView, Path=SelectedValue, ConverterParameter={x:Type data:ExcelRaterFactorSet}, Converter={StaticResource TypeVisibilityConverter}}"
+                    Command="{Binding Source={x:Static excelAdministrationCommands:ExcelAdministrationCommands.AssociateSchedule}}"
+                    CommandParameter="{Binding Source={StaticResource filteredRaters}, Path=FactorSets/}">
+              <StackPanel>
+                <Image Source="/MGASystems.IMS.Excel;component/Images/table_add.png"/>
+                <AccessText Text="Associate Schedule"/>
+              </StackPanel>
+            </Button>
+            <Separator/>
+            <Button ToolTip="Convert this data mapping type to text"
+                    Command="{Binding Source={x:Static excelAdministrationCommands:ExcelAdministrationCommands.ChangeMappingTypeToText}}"
+                    CommandParameter="{Binding Source={StaticResource filteredMappings}, Path=/}">
+              <FrameworkElement.Style>
+                <Style TargetType="{x:Type Button}">
+                  <Style.Triggers>
+                    <MultiDataTrigger>
+                      <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding ElementName=treeView, Path=SelectedValue, ConverterParameter={x:Type data:ExcelRaterFactorSet}, Converter={StaticResource TypeVisibilityConverter}}"
+                                   Value="Visible"/>
+                        <Condition Binding="{Binding Source={StaticResource filteredRaters}, Path=FactorSets/SelectedTabIndex}"
+                                   Value="0"/>
+                      </MultiDataTrigger.Conditions>
+                      <Setter Property="UIElement.Visibility" Value="Visible"/>
+                    </MultiDataTrigger>
+                  </Style.Triggers>
+                  <Setter Property="UIElement.Visibility" Value="Collapsed"/>
+                </Style>
+              </FrameworkElement.Style>
+              <StackPanel>
+                <Image Source="/MGASystems.IMS.Excel;component/Images/table_go.png"/>
+                <AccessText Text="Change Type to Text"/>
+              </StackPanel>
+            </Button>
+            <Button ToolTip="Convert this data mapping type to decimal"
+                    Command="{Binding Source={x:Static excelAdministrationCommands:ExcelAdministrationCommands.ChangeMappingTypeToDecimal}}"
+                    CommandParameter="{Binding Source={StaticResource filteredMappings}, Path=/}">
+              <FrameworkElement.Style>
+                <Style TargetType="{x:Type Button}">
+                  <Style.Triggers>
+                    <MultiDataTrigger>
+                      <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding ElementName=treeView, Path=SelectedValue, ConverterParameter={x:Type data:ExcelRaterFactorSet}, Converter={StaticResource TypeVisibilityConverter}}"
+                                   Value="Visible"/>
+                        <Condition Binding="{Binding Source={StaticResource filteredRaters}, Path=FactorSets/SelectedTabIndex}"
+                                   Value="0"/>
+                      </MultiDataTrigger.Conditions>
+                      <Setter Property="UIElement.Visibility" Value="Visible"/>
+                    </MultiDataTrigger>
+                  </Style.Triggers>
+                  <Setter Property="UIElement.Visibility" Value="Collapsed"/>
+                </Style>
+              </FrameworkElement.Style>
+              <StackPanel>
+                <Image Source="/MGASystems.IMS.Excel;component/Images/css_go.png"/>
+                <AccessText Text="Change Type to Decimal"/>
+              </StackPanel>
+            </Button>
+            <Button ToolTip="Convert this data mapping type to date"
+                    Command="{Binding Source={x:Static excelAdministrationCommands:ExcelAdministrationCommands.ChangeMappingTypeToDateTime}}"
+                    CommandParameter="{Binding Source={StaticResource filteredMappings}, Path=/}">
+              <FrameworkElement.Style>
+                <Style TargetType="{x:Type Button}">
+                  <Style.Triggers>
+                    <MultiDataTrigger>
+                      <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding ElementName=treeView, Path=SelectedValue, ConverterParameter={x:Type data:ExcelRaterFactorSet}, Converter={StaticResource TypeVisibilityConverter}}"
+                                   Value="Visible"/>
+                        <Condition Binding="{Binding Source={StaticResource filteredRaters}, Path=FactorSets/SelectedTabIndex}"
+                                   Value="0"/>
+                        <Condition Binding="{Binding DisplayDateMappingConversion}" Value="true"/>
+                      </MultiDataTrigger.Conditions>
+                      <Setter Property="UIElement.Visibility" Value="Visible"/>
+                    </MultiDataTrigger>
+                  </Style.Triggers>
+                  <Setter Property="UIElement.Visibility" Value="Collapsed"/>
+                </Style>
+              </FrameworkElement.Style>
+              <StackPanel>
+                <Image Source="/MGASystems.IMS.Excel;component/Images/css_go.png"/>
+                <AccessText Text="Change Type to DateTime"/>
+              </StackPanel>
+            </Button>
+            <Button ToolTip="Add new quote detail"
+                    Command="{Binding Source={x:Static excelAdministrationCommands:ExcelAdministrationCommands.AddQuoteDetail}}"
+                    CommandParameter="{Binding Source={StaticResource filteredRaters}, Path=FactorSets/}">
+              <FrameworkElement.Style>
+                <Style TargetType="{x:Type Button}">
+                  <Style.Triggers>
+                    <MultiDataTrigger>
+                      <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding ElementName=treeView, Path=SelectedValue, ConverterParameter={x:Type data:ExcelRaterFactorSet}, Converter={StaticResource TypeVisibilityConverter}}"
+                                   Value="Visible"/>
+                        <Condition Binding="{Binding Source={StaticResource filteredRaters}, Path=FactorSets/SelectedTabIndex}"
+                                   Value="1"/>
+                      </MultiDataTrigger.Conditions>
+                      <Setter Property="UIElement.Visibility" Value="Visible"/>
+                    </MultiDataTrigger>
+                  </Style.Triggers>
+                  <Setter Property="UIElement.Visibility" Value="Collapsed"/>
+                </Style>
+              </FrameworkElement.Style>
+              <StackPanel>
+                <Image Source="/MGASystems.IMS.Excel;component/Images/page_add.png"/>
+                <AccessText Text="Add Quote Detail"/>
+              </StackPanel>
+            </Button>
+            <Button ToolTip="Delete quote detail"
+                    Command="{Binding Source={x:Static excelAdministrationCommands:ExcelAdministrationCommands.RemoveQuoteDetail}}"
+                    CommandParameter="{Binding Source={StaticResource filteredRaters}, Path=FactorSets/ExcelLineQuoteDetails/}">
+              <FrameworkElement.Style>
+                <Style TargetType="{x:Type Button}">
+                  <Style.Triggers>
+                    <MultiDataTrigger>
+                      <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding ElementName=treeView, Path=SelectedValue, ConverterParameter={x:Type data:ExcelRaterFactorSet}, Converter={StaticResource TypeVisibilityConverter}}"
+                                   Value="Visible"/>
+                        <Condition Binding="{Binding Source={StaticResource filteredRaters}, Path=FactorSets/SelectedTabIndex}"
+                                   Value="1"/>
+                      </MultiDataTrigger.Conditions>
+                      <Setter Property="UIElement.Visibility" Value="Visible"/>
+                    </MultiDataTrigger>
+                  </Style.Triggers>
+                  <Setter Property="UIElement.Visibility" Value="Collapsed"/>
+                </Style>
+              </FrameworkElement.Style>
+              <StackPanel>
+                <Image Source="/MGASystems.IMS.Excel;component/Images/page_delete.png"/>
+                <AccessText Text="Delete Quote Detail"/>
+              </StackPanel>
+            </Button>
+            <Separator Visibility="{Binding ElementName=treeView, Path=SelectedValue, ConverterParameter={x:Type data:ExcelRaterFactorSet}, Converter={StaticResource TypeVisibilityConverter}}"/>
+            <Button ToolTip="Saves the excel worksheet locally"
+                    Visibility="{Binding ElementName=treeView, Path=SelectedValue, ConverterParameter={x:Type data:ExcelRaterFactorSet}, Converter={StaticResource TypeVisibilityConverter}}"
+                    Command="{Binding Source={x:Static excelAdministrationCommands:ExcelAdministrationCommands.ExportSpreadSheet}}"
+                    CommandParameter="{Binding Source={StaticResource filteredRaters}, Path=FactorSets/}">
+              <StackPanel>
+                <Image Source="/MGASystems.IMS.Excel;component/Images/page_save.png"/>
+                <AccessText Text="Export Excel Sheet"/>
+              </StackPanel>
+            </Button>
+            <Button ToolTip="Enable this rater for all company lines"
+                    Visibility="{Binding ElementName=treeView, Path=SelectedValue, ConverterParameter={x:Type data:ExcelRaterFactorSet}, Converter={StaticResource TypeVisibilityConverter}}"
+                    Command="{Binding Source={x:Static excelAdministrationCommands:ExcelAdministrationCommands.EnableFactorsetsForAllCompanyLines}}"
+                    CommandParameter="{Binding Source={StaticResource filteredRaters}, Path=FactorSets/}">
+              <StackPanel>
+                <Image Source="/MGASystems.IMS.Excel;component/Images/table_add.png"/>
+                <AccessText Text="Enable for all company lines"/>
+              </StackPanel>
+            </Button>
+          </ToolBar>
+          <ToolBar Band="1"
+                   Visibility="{Binding ElementName=treeView, Path=SelectedValue, ConverterParameter={x:Type data:ExcelRaterFactorSet}, Converter={StaticResource TypeVisibilityConverter}}">
+            <Button ToolTip="Exports the current mappings to an excel sheet"
+                    Visibility="{Binding ElementName=treeView, Path=SelectedValue, ConverterParameter={x:Type data:ExcelRaterFactorSet}, Converter={StaticResource TypeVisibilityConverter}}"
+                    Command="{Binding Source={x:Static excelAdministrationCommands:ExcelAdministrationCommands.ExportMappings}}"
+                    CommandParameter="{Binding Source={StaticResource filteredRaters}, Path=FactorSets/}">
+              <StackPanel>
+                <Image Source="/MGASystems.IMS.Excel;component/Images/table_save.png"/>
+                <AccessText Text="Export Mappings to Excel"/>
+              </StackPanel>
+            </Button>
+            <Button ToolTip="Imports previously exported mappings from an excel sheet"
+                    Visibility="{Binding ElementName=treeView, Path=SelectedValue, ConverterParameter={x:Type data:ExcelRaterFactorSet}, Converter={StaticResource TypeVisibilityConverter}}"
+                    Command="{Binding Source={x:Static excelAdministrationCommands:ExcelAdministrationCommands.ImportMappings}}"
+                    CommandParameter="{Binding Source={StaticResource filteredRaters}, Path=FactorSets/}">
+              <StackPanel>
+                <Image Source="/MGASystems.IMS.Excel;component/Images/table_add.png"/>
+                <AccessText Text="Import Mappings from Excel"/>
+              </StackPanel>
+            </Button>
+          </ToolBar>
+        </ToolBarTray>
+        <Grid DataContext="{Binding Source={StaticResource filteredRaters}}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="4*"/>
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+          <Label Content="Models" Style="{StaticResource headerStyle}"/>
+          <Label Grid.Column="2" Content="Detail" Style="{StaticResource headerStyle}"/>
+          <Grid Row="1">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="auto"/>
+              <RowDefinition Height="auto"/>
+              <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal">
+              <CheckBox Content="Exclude Hidden Raters"
+                        IsChecked="{Binding Source={StaticResource isRaterHiddenFilterSource}, Mode=TwoWay, Path=Enabled, UpdateSourceTrigger=PropertyChanged}"/>
+              <CheckBox Content="Exclude Hidden Sheets"
+                        IsChecked="{Binding Source={StaticResource excelAdministrationData}, Mode=TwoWay, Path=ExcludeHiddenFactorSetsFromView, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+            <AdornerDecorator Grid.Row="1">
+              <TextBox VerticalAlignment="Center" IsReadOnly="false"
+                       Text="{Binding Source={StaticResource raterNameFilterSource}, Path=Value, UpdateSourceTrigger=PropertyChanged}">
+                <baseWpfBehaviors:CueBannerService.CueBanner>
+                  <Grid HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="*"/>
+                      <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock VerticalAlignment="Center" Text="Filter Rater Name"/>
+                  </Grid>
+                </baseWpfBehaviors:CueBannerService.CueBanner>
+              </TextBox>
+            </AdornerDecorator>
+            <TreeView Name="treeView" ScrollViewer.CanContentScroll="true" VirtualizingPanel.IsVirtualizing="true"
+                      Style="{StaticResource treeViewStyle}" IsSynchronizedWithCurrentItem="true" Grid.Row="2"
+                      ItemsSource="{Binding}">
+              <ItemsControl.ItemContainerStyle>
+                <Style TargetType="{x:Type TreeViewItem}">
+                  <Setter Property="TreeViewItem.IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}"/>
+                </Style>
+              </ItemsControl.ItemContainerStyle>
+              <FrameworkElement.Resources>
+                <HierarchicalDataTemplate x:Key="{DataTemplateKey {x:Type data:ExcelRater}}" DataType="{x:Type data:ExcelRater}"
+                                          ItemsSource="{Binding Path=FactorSets}">
+                  <StackPanel Style="{StaticResource treeViewStackPanelStyle}">
+                    <Image Style="{StaticResource treeViewItemImageFolderStyle}"/>
+                    <TextBlock>
+                      <FrameworkElement.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                          <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=IsLoadingChildNodes}" Value="true">
+                              <Setter Property="TextBlock.Text" Value="Loading..."/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Path=Hidden}" Value="true">
+                              <Setter Property="TextBlock.TextDecorations" Value="Strikethrough"/>
+                              <Setter Property="TextBlock.Foreground" Value="Gray"/>
+                            </DataTrigger>
+                          </Style.Triggers>
+                          <Setter Property="TextBlock.Text" Value="{Binding Name}"/>
+                        </Style>
+                      </FrameworkElement.Style>
+                    </TextBlock>
+                  </StackPanel>
+                </HierarchicalDataTemplate>
+                <DataTemplate DataType="{x:Type data:ExcelRaterFactorSet}">
+                  <StackPanel Style="{StaticResource treeViewStackPanelStyle}" ToolTip="{Binding Path=Memo}">
+                    <Image Style="{StaticResource treeViewItemImageStyle}"
+                           Source="/MGASystems.IMS.Excel;component/Images/excel.png"/>
+                    <TextBlock>
+                      <FrameworkElement.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                          <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=IsLoadingChildNodes}" Value="true">
+                              <Setter Property="TextBlock.Text" Value="Loading..."/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Path=Hidden}" Value="true">
+                              <Setter Property="TextBlock.TextDecorations" Value="Strikethrough"/>
+                              <Setter Property="TextBlock.Foreground" Value="Gray"/>
+                            </DataTrigger>
+                          </Style.Triggers>
+                          <Setter Property="TextBlock.Text" Value="{Binding Title}"/>
+                        </Style>
+                      </FrameworkElement.Style>
+                    </TextBlock>
+                    <TextBlock Margin="2,0,0,0" Text="{Binding EffectiveDate, StringFormat=(M/d/yy)}">
+                      <FrameworkElement.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                          <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=Hidden}" Value="true">
+                              <Setter Property="TextBlock.TextDecorations" Value="Strikethrough"/>
+                              <Setter Property="TextBlock.Foreground" Value="Gray"/>
+                            </DataTrigger>
+                          </Style.Triggers>
+                        </Style>
+                      </FrameworkElement.Style>
+                    </TextBlock>
+                  </StackPanel>
+                </DataTemplate>
+              </FrameworkElement.Resources>
+            </TreeView>
+          </Grid>
+          <GridSplitter Grid.Column="1" Style="{StaticResource verticalGridSplitterStyle}"/>
+          <Grid Column="2" Row="1">
+            <FrameworkElement.Resources>
+              <DataTemplate DataType="{x:Type data:ExcelRater}">
+                <FrameworkTemplate.Resources>
+                  <Style TargetType="{x:Type CheckBox}">
+                    <Setter Property="FrameworkElement.VerticalAlignment" Value="Center"/>
+                    <Setter Property="FrameworkElement.Margin" Value="2"/>
+                  </Style>
+                </FrameworkTemplate.Resources>
+                <Grid>
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                  </Grid.RowDefinitions>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+                  <Label Content="Name"/>
+                  <TextBox Grid.Column="1" MaxLength="50"
+                           Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true}"/>
+                  <Label Grid.Row="1" Content="Database Table Name"/>
+                  <TextBox Grid.Row="1" Grid.Column="1" IsReadOnly="true" Text="{Binding Path=DatabaseTableName, Mode=OneWay}"/>
+                  <Label Grid.Row="2" Content="Hidden From Rating"/>
+                  <CheckBox Grid.Row="2" Grid.Column="1" IsChecked="{Binding Path=Hidden}"/>
+                  <Label Grid.Row="3" Content="Reset Rater Content on Endorsement" HorizontalAlignment="Left"/>
+                  <CheckBox Grid.Row="3" Grid.Column="1" IsChecked="{Binding Path=ResetRaterOnEndorsement}"/>
+                  <Label Grid.Row="4" Content="Prompt User For Rater Sheet"/>
+                  <CheckBox Grid.Row="4" Grid.Column="1" IsChecked="{Binding Path=PromptForSpreadsheet}"/>
+                </Grid>
+              </DataTemplate>
+              <DataTemplate DataType="{x:Type data:ExcelRaterFactorSet}">
+                <Grid>
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                  </Grid.RowDefinitions>
+                  <TabControl Grid.Row="0" Margin="0,0,0,2" Height="auto">
+                    <TabItem Header="General">
+                      <Grid>
+                        <Grid.RowDefinitions>
+                          <RowDefinition Height="auto"/>
+                          <RowDefinition Height="auto"/>
+                          <RowDefinition Height="auto"/>
+                          <RowDefinition Height="auto"/>
+                          <RowDefinition Height="auto"/>
+                          <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                          <ColumnDefinition Width="auto"/>
+                          <ColumnDefinition Width="auto"/>
+                          <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Spreadsheet Title"/>
+                        <TextBox Grid.Column="1" MaxLength="50"
+                                 Text="{Binding Title, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true}"/>
+                        <Label Grid.Row="2" Content="Hidden"/>
+                        <CheckBox Grid.Row="2" Grid.Column="1" IsChecked="{Binding Path=Hidden}"/>
+                        <CheckBox Grid.Row="2" Grid.Column="2" Content="Show Premium Options" Foreground="Blue"
+                                  IsChecked="{Binding Path=ShowUpdateHistoricOptions, UpdateSourceTrigger=PropertyChanged}"
+                                  Visibility="{Binding IsAdminUser, Converter={StaticResource mgaBoolToVisibilityConverter}, ConverterParameter=False-Collapsed;*-Visible}"/>
+                        <Label Grid.Row="3">
+                          <StackPanel>
+                            <TextBlock Text="Stored Procedure (optional)"/>
+                            <TextBlock Text="will run on successful save"/>
+                          </StackPanel>
+                        </Label>
+                        <Grid Margin="0,4,0,0" Row="3" Column="1" ColumnSpan="2" HorizontalAlignment="Stretch" Width="auto">
+                          <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                          </Grid.RowDefinitions>
+                          <TextBox MaxLength="100" HorizontalAlignment="Stretch" Width="auto" Margin="2"
+                                   IsEnabled="{Binding IsNewFactorSet}"
+                                   Text="{Binding RatingProcedure, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true}"/>
+                        </Grid>
+                        <Label Grid.Row="4" Content="Use Webservice Parameters"/>
+                        <CheckBox Grid.Row="4" Grid.Column="1"
+                                  IsChecked="{Binding Path=UseWebServiceParameters, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="5" Content="Memo"/>
+                        <TextBox Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" MinHeight="40" HorizontalAlignment="Stretch"
+                                 Width="auto" MaxLength="200" AcceptsReturn="true" TextWrapping="Wrap"
+                                 VerticalScrollBarVisibility="Auto"
+                                 Text="{Binding Memo, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true}"/>
+                      </Grid>
+                    </TabItem>
+                    <TabItem Header="Premium Options" IsEnabled="{Binding ShowUpdateHistoricOptions}"
+                             Visibility="{Binding ShowUpdateHistoricOptions, Converter={StaticResource mgaBoolToVisibilityConverter}, ConverterParameter=False-Collapsed;*-Visible}">
+                      <Grid>
+                        <Grid.RowDefinitions>
+                          <RowDefinition Height="auto"/>
+                          <RowDefinition Height="auto"/>
+                          <RowDefinition Height="auto"/>
+                          <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <CheckBox Grid.Row="0" Content="Round Premium"
+                                  IsChecked="{Binding Path=RoundPremiums, UpdateSourceTrigger=PropertyChanged}"/>
+                        <CheckBox Grid.Row="1" Content="Include Leap Day in Prorata Calculation"
+                                  IsChecked="{Binding Path=IncludeLeapDayInProrataCalc, UpdateSourceTrigger=PropertyChanged}"/>
+                        <CheckBox Grid.Row="2" Content="Disable All Prorata Calculation"
+                                  IsChecked="{Binding Path=DisableAllProrataCalculation, UpdateSourceTrigger=PropertyChanged}"/>
+                        <CheckBox Grid.Row="3" Content="Allow Zero Premium"
+                                  IsChecked="{Binding Path=AllowZeroPremium, UpdateSourceTrigger=PropertyChanged}"/>
+                      </Grid>
+                    </TabItem>
+                  </TabControl>
+                  <GridSplitter Grid.Row="1" HorizontalAlignment="Stretch"/>
+                  <TabControl Grid.Row="2" SelectedIndex="{Binding SelectedTabIndex}">
+                    <TabItem Header="Mappings" DataContext="{Binding ExcelMappings}">
+                      <Grid>
+                        <Grid.RowDefinitions>
+                          <RowDefinition Height="auto"/>
+                          <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid>
+                          <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                          </Grid.ColumnDefinitions>
+                          <AdornerDecorator>
+                            <TextBox MaxWidth="150" VerticalAlignment="Center" IsReadOnly="false"
+                                     Text="{Binding Source={StaticResource cellFilterSource}, Path=Value, UpdateSourceTrigger=PropertyChanged}">
+                              <baseWpfBehaviors:CueBannerService.CueBanner>
+                                <Grid HorizontalAlignment="Stretch">
+                                  <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                  </Grid.ColumnDefinitions>
+                                  <TextBlock VerticalAlignment="Center" Text="Filter Cell"/>
+                                </Grid>
+                              </baseWpfBehaviors:CueBannerService.CueBanner>
+                            </TextBox>
+                          </AdornerDecorator>
+                          <AdornerDecorator Grid.Column="1">
+                            <TextBox MaxWidth="150" VerticalAlignment="Center" IsReadOnly="false"
+                                     Text="{Binding Source={StaticResource fieldNameFilterSource}, Path=Value, UpdateSourceTrigger=PropertyChanged}">
+                              <baseWpfBehaviors:CueBannerService.CueBanner>
+                                <Grid HorizontalAlignment="Stretch">
+                                  <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                  </Grid.ColumnDefinitions>
+                                  <TextBlock VerticalAlignment="Center" Text="Filter Field Name"/>
+                                </Grid>
+                              </baseWpfBehaviors:CueBannerService.CueBanner>
+                            </TextBox>
+                          </AdornerDecorator>
+                        </Grid>
+                        <Grid Row="1" DataContext="{Binding Source={StaticResource filteredMappings}}">
+                          <DataGrid x:Name="mappingsGrid" EditClickAction="SingleClick" AutoScrollCurrentRowIntoView="true"
+                                    BorderThickness="0" SelectionMode="Single" CanUserSortColumns="true" Margin="2"
+                                    ItemsSource="{Binding}">
+                            <FrameworkElement.Resources>
+                              <Style x:Key="maxLengthTextEditingStyle" TargetType="{x:Type TextBox}">
+                                <Setter Property="TextBox.MaxLength" Value="50"/>
+                              </Style>
+                              <Style x:Key="typesComboStyle" TargetType="{x:Type ComboBox}"
+                                     BasedOn="{StaticResource dataGridEditingToggleReadOnlyElementStyleCombo}">
+                                <Setter Property="ItemsControl.ItemTemplate">
+                                  <Setter.Value>
+                                    <DataTemplate>
+                                      <TextBlock Text="{Binding Path=Value, Mode=OneTime}"/>
+                                    </DataTemplate>
+                                  </Setter.Value>
+                                </Setter>
+                              </Style>
+                            </FrameworkElement.Resources>
+                            <DataGrid.Columns>
+                              <DataGridTextColumn Header="Cell" MinWidth="100" EditingElementStyle="{StaticResource maxLengthTextEditingStyle}"
+                                                  Binding="{Binding Cell, ValidatesOnDataErrors=true, UpdateSourceTrigger=PropertyChanged}"/>
+                              <DataGridTextColumn Header="Field" MinWidth="100"
+                                                  EditingElementStyle="{StaticResource dataGridEditingToggleReadOnlyElementStyle}"
+                                                  Binding="{Binding DatabaseField, ValidatesOnDataErrors=true, UpdateSourceTrigger=PropertyChanged}"/>
+                              <DataGridComboBoxColumn Header="Type" MinWidth="100" SelectedValuePath="Name"
+                                                      ElementStyle="{StaticResource typesComboStyle}"
+                                                      EditingElementStyle="{StaticResource typesComboStyle}"
+                                                      ItemsSource="{Binding Source={x:Static data:ExcelAdministrationData.SystemTypes}}"
+                                                      SelectedValueBinding="{Binding DatabaseType, ValidatesOnDataErrors=true, UpdateSourceTrigger=PropertyChanged}"/>
+                              <DataGridComboBoxColumn Header="Premium Option" MinWidth="100"
+                                                      SelectedValueBinding="{Binding PremiumOption, UpdateSourceTrigger=PropertyChanged}"
+                                                      ItemsSource="{Binding Source={x:Static data:ExcelAdministrationData.PremiumOptions}}"/>
+                              <DataGridTextColumn Header="Resolved Tag Name" MinWidth="100" IsReadOnly="true" Binding="{Binding ResolvedTagName}"/>
+                            </DataGrid.Columns>
+                          </DataGrid>
+                        </Grid>
+                      </Grid>
+                    </TabItem>
+                    <TabItem Header="Quote Details" DataContext="{Binding ExcelLineQuoteDetails}">
+                      <Grid>
+                        <DataGrid BorderThickness="0" EditClickAction="SingleClick" AutoScrollCurrentRowIntoView="true"
+                                  ItemsSource="{Binding}">
+                          <FrameworkElement.Resources>
+                            <Style x:Key="linesComboStyle" TargetType="{x:Type ComboBox}">
+                              <Setter Property="Control.Padding" Value="0"/>
+                              <Setter Property="FrameworkElement.Margin" Value="0"/>
+                              <Setter Property="ItemsControl.ItemTemplate">
+                                <Setter.Value>
+                                  <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Name, Mode=OneTime}"/>
+                                  </DataTemplate>
+                                </Setter.Value>
+                              </Setter>
+                            </Style>
+                          </FrameworkElement.Resources>
+                          <DataGrid.Columns>
+                            <DataGridComboBoxColumn Header="Line" MinWidth="120" SelectedValuePath="Value"
+                                                    ElementStyle="{StaticResource linesComboStyle}"
+                                                    EditingElementStyle="{StaticResource linesComboStyle}"
+                                                    ItemsSource="{Binding Source={x:Static data:ExcelAdministrationData.Lines}}"
+                                                    SelectedValueBinding="{Binding Path=LineGuid}"/>
+                            <DataGridTextColumn Header="Description" MinWidth="160" Binding="{Binding Description}"/>
+                            <DataGridTextColumn Header="Tag Name" Width="*" Binding="{Binding TagName}"/>
+                          </DataGrid.Columns>
+                        </DataGrid>
+                      </Grid>
+                    </TabItem>
+                    <TabItem Header="Associated Schedules" DataContext="{Binding ScheduleLinks}">
+                      <Grid>
+                        <ListView ItemsSource="{Binding}">
+                          <ListView.View>
+                            <GridView>
+                              <GridViewColumn Header="Name" DisplayMemberBinding="{Binding ScheduleName}"/>
+                              <GridViewColumn Header="Version" DisplayMemberBinding="{Binding ScheduleVersionTitle}"/>
+                              <GridViewColumn Header="Effective" DisplayMemberBinding="{Binding ScheduleEffectiveDate, StringFormat={0:d}}"/>
+                              <GridViewColumn Header="Start Row" DisplayMemberBinding="{Binding RowStart}"/>
+                              <GridViewColumn Header="Max Read" DisplayMemberBinding="{Binding RowEnd}"/>
+                              <GridViewColumn Header="Sentinel Column" DisplayMemberBinding="{Binding SetinelColumn}"/>
+                              <GridViewColumn Header="Null Return Value" DisplayMemberBinding="{Binding NullSetinelRetVal}"/>
+                              <GridViewColumn Header="Custom Repeater Tags"
+                                              Width="{Binding Source={x:Static data:ExcelAdministrationData.ShowScheduleAutoGenerationByColumnWidth}}">
+                                <GridViewColumn.CellTemplate>
+                                  <DataTemplate>
+                                    <Button Content="Generate or Sync"
+                                            Command="{Binding Source={x:Static excelAdministrationCommands:ExcelAdministrationCommands.GenerateOrSyncRepTags}}"
+                                            CommandParameter="{Binding ScheduleFactorSetGuid}"/>
+                                  </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                              </GridViewColumn>
+                            </GridView>
+                          </ListView.View>
+                        </ListView>
+                      </Grid>
+                    </TabItem>
+                  </TabControl>
+                </Grid>
+              </DataTemplate>
+            </FrameworkElement.Resources>
+            <ContentControl Content="{Binding ElementName=treeView, Path=SelectedValue}"/>
+          </Grid>
+        </Grid>
+      </DockPanel>
+    </wpfToolKit:BusyIndicator>
+    <StatusBar Grid.Row="1">
+      <StatusBarItem>
+        <TextBlock Text="{Binding StatusText}"/>
+      </StatusBarItem>
+      <StatusBarItem>
+        <ProgressBar Width="250" Height="8" Maximum="100" Value="{Binding SheetUploadPercentage}">
+          <FrameworkElement.Style>
+            <Style TargetType="{x:Type ProgressBar}">
+              <Style.Triggers>
+                <DataTrigger Binding="{Binding SheetUploadPercentage}" Value="0">
+                  <Setter Property="UIElement.Visibility" Value="Collapsed"/>
+                </DataTrigger>
+              </Style.Triggers>
+              <Setter Property="UIElement.Visibility" Value="Visible"/>
+            </Style>
+          </FrameworkElement.Style>
+        </ProgressBar>
+      </StatusBarItem>
+    </StatusBar>
+  </Grid>
+</ExcelRatingAdmin2>

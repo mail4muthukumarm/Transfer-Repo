@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: D:\augusta\fortegra\IMS Project\MgaSystems.IMS.Claims\lib\MgaSystems.IMS.DocumentAutomation.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E4ED032D-6395-405B-A71E-771316A9C259}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>MgaSystems.IMS.DocumentAutomation</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <ApplicationVersion>2.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MgaSystems.IMS.BusinessObjects">
+      <HintPath>lib\MgaSystems.IMS.BusinessObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Common">
+      <HintPath>lib\MgaSystems.IMS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Common.Cs">
+      <HintPath>lib\MgaSystems.IMS.Common.Cs.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.DocumentAutomation.Cs" />
+    <Reference Include="MgaSystems.IMS.Editors" />
+    <Reference Include="MgaSystems.IMS.NotesDocuments" />
+    <Reference Include="MgaSystems.IMS.Reporting" />
+    <Reference Include="MgaSystems.IMS.Security" />
+    <Reference Include="MgaSystems.IMS.Tools" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Microsoft\VisualBasic\Embedded.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\AdditionalDocuments.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\Licensing.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\Common.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\NotInitializedException.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\AddDocuments.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\AddDocumentsService.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\AdditionalDocumentInfo.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\AddDocumentsViewModel.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\AdditionalDoc.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\IAddDocumentsService.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\AutomationDoc.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\AvailableTags.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\CompanyDocumentAutomation.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\AvailableTagsViewModel.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\CompanyLineInfo.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\CompanyLocation.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\CopyConditionalViewModel.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\CopyDocumentAutomationConditional.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\DocAutomationConditional.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\DocAutomationConditionalService.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\DocAutomationConditionalViewModel.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\DocumentConditional.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\IDocAutomationConditionalService.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\Line.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\State.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\Tag.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\DocListItem.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\dsAddDoc.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\dsCompanyDocumentAutomation.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\dsCopyDocSetup.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\dsDocumentAutomation.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\dsDocumentNaming.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\dsEmailAutomation.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\dsViewPrintEmail.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\FormCopyDocSetup.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\FormCopyDocumentAutomationSetup.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\frmDocumentAutomation.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\frmDocumentNaming.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\frmEmailAutomation.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\frmPleaseWait.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\frmPleaseWaitNoProgress.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\frmPolicyPrintTypes.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\frmSelectDocumentFolder.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\frmViewPrintEmail.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\PDFPackage.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\ViewPrintEmail.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\dsAdditionalAddDocuments.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\dsSelectOneOptionPerLine.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\FormSettings.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\frmSelectOneOptionPerLine.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\MySettings.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\Security.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\dsDocumentTemplates.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\dsDocumentTemplatesWordHost.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\dsModifyTemplateDocs.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\dsTemplateDocs.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\DocuSignTagManager.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\DriverInfo.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\DynamicTagData.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\DynamicTagListManager.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\DynamicTagManager.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\ExcelDynamicTagManager.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\frmTagExtractor.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\QuoteOptionTagParser.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\TemplateDocOptions.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\My\MyApplication.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\My\MyComputer.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\My\MyProject.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\My\InternalXmlHelper.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\My\MySettingsProperty.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\My\Resources\Resources.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\QuoteOptionTagParserAttribute.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\DocTag.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\DocumentHandling.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\frmDocumentTemplateInfo.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\frmDocumentTemplates.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\frmModifyTemplateDocs.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\IQuoteOptionTagParser.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\ISupportTemplateDocs.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\ISupportPolicyTemplateDocs.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\ISupportSubmissionTemplateDocs.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\ISupportInsuredLocationTemplateDocs.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\ISupportInvoiceTemplateDocs.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\AdditionalInterestTagParser.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\DriverInfoTagParser.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\DriverInfoTags.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\InsuredLocationTagParser.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\InvoiceTagParser.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\PolicyTagParser.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\SubmissionTagParser.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\TagInfo.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\TagParserBase.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\TagParserFactory.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\TemplateCaptions.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\WordDocumentSavedEventArgs.cs" />
+    <Compile Include="MGASystems\IMS\DocumentAutomation\OfficeAuto\frmDocumentTemplatesWordHost.cs" />
+    <Compile Include="Word\Application.cs" />
+    <Compile Include="Word\ApplicationEvents2.cs" />
+    <Compile Include="Word\ApplicationEvents2_DocumentBeforeSaveEventHandler.cs" />
+    <Compile Include="Word\ApplicationEvents2_Event.cs" />
+    <Compile Include="Word\Document.cs" />
+    <Compile Include="Word\DocumentEvents.cs" />
+    <Compile Include="Word\DocumentEvents_Event.cs" />
+    <Compile Include="Word\_Application.cs" />
+    <Compile Include="Word\_Document.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MgaSystems\IMS\DocumentAutomation\dll.licenses" />
+    <EmbeddedResource Include="MGASystems\IMS\DocumentAutomation\FormCopyDocSetup.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\DocumentAutomation\FormCopyDocumentAutomationSetup.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\DocumentAutomation\frmDocumentAutomation.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\DocumentAutomation\frmDocumentNaming.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\DocumentAutomation\frmEmailAutomation.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\DocumentAutomation\frmPleaseWait.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\DocumentAutomation\frmPleaseWaitNoProgress.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\DocumentAutomation\frmPolicyPrintTypes.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\DocumentAutomation\frmSelectDocumentFolder.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\DocumentAutomation\frmSelectOneOptionPerLine.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\DocumentAutomation\frmTagExtractor.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\DocumentAutomation\frmViewPrintEmail.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\DocumentAutomation\OfficeAuto\frmDocumentTemplatesWordHost.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\DocumentAutomation\Preview.bmp" />
+    <EmbeddedResource Include="MGASystems\IMS\DocumentAutomation\Resources.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\frmDocumentTemplateInfo.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\frmDocumentTemplates.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\DocumentAutomation\TemplateDocuments\frmModifyTemplateDocs.resx" />
+    <EmbeddedResource Include="MGASystems\IMS\DocumentAutomation\ViewPrintEmail.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="document_002520automation\adddocs\adddocuments.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="document_002520automation\docautomationconditional\availabletags.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="document_002520automation\docautomationconditional\copydocumentautomationconditional.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="document_002520automation\docautomationconditional\docautomationconditional.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

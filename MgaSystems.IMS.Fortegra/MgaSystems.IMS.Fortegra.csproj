@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: D:\augusta\fortegra\IMS Project\MgaSystems.IMS.Fortegra.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{21EF06CF-B789-4588-9029-73C291838A22}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>MgaSystems.Ims.Fortegra</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>MgaSystems.Ims.Fortegra</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MgaSystems.IMS.Accounting.Controls">
+      <HintPath>lib\MgaSystems.IMS.Accounting.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Accounting.Services">
+      <HintPath>lib\MgaSystems.IMS.Accounting.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.BusinessClasses">
+      <HintPath>lib\MgaSystems.IMS.BusinessClasses.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.BusinessObjects">
+      <HintPath>lib\MgaSystems.IMS.BusinessObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Claims">
+      <HintPath>lib\MgaSystems.IMS.Claims.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Common">
+      <HintPath>lib\MgaSystems.IMS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Editors">
+      <HintPath>lib\MgaSystems.IMS.Editors.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Excel">
+      <HintPath>lib\MgaSystems.IMS.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.IPC">
+      <HintPath>lib\MgaSystems.IMS.IPC.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Policies">
+      <HintPath>lib\MgaSystems.IMS.Policies.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Rating">
+      <HintPath>lib\MgaSystems.IMS.Rating.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Security">
+      <HintPath>lib\MgaSystems.IMS.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="MgaSystems.IMS.Tools">
+      <HintPath>lib\MgaSystems.IMS.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Rater_PolicyForms_Conditions\FormConditionCompare.cs" />
+    <Compile Include="Rater_PolicyForms_Conditions\RaterConditionElements.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="ProgramCodes\dsProgCodeExt.cs" />
+    <Compile Include="ProgramCodes\FormProgramCodeExtension.cs" />
+    <Compile Include="ProgramCodes\FormProgramCodeParticipation.cs" />
+    <Compile Include="Overrides\ExcelRaterOverride.cs" />
+    <Compile Include="Overrides\Fortegra_FormProgramCode.cs" />
+    <Compile Include="Overrides\Fortegra_frmProducerContacts.cs" />
+    <Compile Include="Overrides\Fortegra_frmProducers.cs" />
+    <Compile Include="Overrides\Claims\dsClaimCloseReason.cs" />
+    <Compile Include="Overrides\Claims\Fortegra_Claimant.cs" />
+    <Compile Include="Overrides\Claims\Fortegra_ClaimSearch.cs" />
+    <Compile Include="Overrides\Claims\Fortegra_FormAddPayment.cs" />
+    <Compile Include="Overrides\Claims\Fortegra_FormAddReserve.cs" />
+    <Compile Include="Overrides\Claims\Fortegra_FormChangeReservePaymentDate.cs" />
+    <Compile Include="Overrides\Claims\Fortegra_FormClaimant.cs" />
+    <Compile Include="Overrides\Claims\Fortegra_FormClaimClose.cs" />
+    <Compile Include="Overrides\Claims\Fortegra_FormClaimCloseReason.cs" />
+    <Compile Include="Overrides\Claims\Fortegra_FormClaims.cs" />
+    <Compile Include="Overrides\Claims\Fortegra_FormClaimsManagement.cs" />
+    <Compile Include="Overrides\Claims\Fortegra_FormModifyReserve.cs" />
+    <Compile Include="Overrides\Claims\Fortegra_FormPaymentCheckInformation.cs" />
+    <Compile Include="Overrides\Claims\Fortegra_FormPaymentTransfer.cs" />
+    <Compile Include="Overrides\Claims\Fortegra_FormSettings.cs" />
+    <Compile Include="Overrides\Claims\Fortegra_ReservePayment.cs" />
+    <Compile Include="Overrides\Claims\Fortegra_UserReserveLevelProvider.cs" />
+    <Compile Include="Overrides\Claims\Claims_Administration\Fortegra_ClaimsAdministrationPortal.cs" />
+    <Compile Include="Claims\Fortegra_FormClaimExcelFileMappings.cs" />
+    <Compile Include="Claims\Fortegra_FormTPAClaimsImport.cs" />
+    <Compile Include="Claims\TPAMenuOption.cs" />
+    <Compile Include="Claims\ClaimsMenuProvider.cs" />
+    <Compile Include="Claims\ClaimsProviderExtensions.cs" />
+    <Compile Include="Claims\Fortegra_FormTPAManagement.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Claims\Fortegra_FormClaimExcelFileMappings.resx" />
+    <EmbeddedResource Include="Claims\Fortegra_FormTPAClaimsImport.resx" />
+    <EmbeddedResource Include="Claims\Fortegra_FormTPAManagement.resx" />
+    <EmbeddedResource Include="Claims\TPAMenuOption.resx" />
+    <EmbeddedResource Include="dll.licenses" />
+    <EmbeddedResource Include="Overrides\Claims\Fortegra_ClaimSearch.resx" />
+    <EmbeddedResource Include="Overrides\Claims\Fortegra_FormAddPayment.resx" />
+    <EmbeddedResource Include="Overrides\Claims\Fortegra_FormAddReserve.resx" />
+    <EmbeddedResource Include="Overrides\Claims\Fortegra_FormChangeReservePaymentDate.resx" />
+    <EmbeddedResource Include="Overrides\Claims\Fortegra_FormClaimant.resx" />
+    <EmbeddedResource Include="Overrides\Claims\Fortegra_FormClaimClose.resx" />
+    <EmbeddedResource Include="Overrides\Claims\Fortegra_FormClaimCloseReason.resx" />
+    <EmbeddedResource Include="Overrides\Claims\Fortegra_FormClaims.resx" />
+    <EmbeddedResource Include="Overrides\Claims\Fortegra_FormModifyReserve.resx" />
+    <EmbeddedResource Include="Overrides\Claims\Fortegra_FormPaymentCheckInformation.resx" />
+    <EmbeddedResource Include="Overrides\Claims\Fortegra_FormPaymentTransfer.resx" />
+    <EmbeddedResource Include="Overrides\Claims\Fortegra_FormSettings.resx" />
+    <EmbeddedResource Include="ProgramCodes\FormProgramCodeExtension.resx" />
+    <EmbeddedResource Include="ProgramCodes\FormProgramCodeParticipation.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

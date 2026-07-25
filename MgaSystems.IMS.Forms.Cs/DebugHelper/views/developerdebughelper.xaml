@@ -1,0 +1,88 @@
+<local:DeveloperDebugHelper x:Class="MgaSystems.IMS.Forms.DebugHelper.Views.DeveloperDebugHelper"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:local="clr-namespace:MgaSystems.IMS.Forms.DebugHelper.Views"
+                            xmlns:viewModels="clr-namespace:MgaSystems.IMS.Forms.DebugHelper.ViewModels"
+                            xmlns:interop="clr-namespace:Mga.Wpf.Ims.Interop;assembly=Mga.Wpf.Ims"
+                            Title="MGA Systems Exception Explorer" Control.Background="White" FrameworkElement.Height="615"
+                            FrameworkElement.Width="755" ResizeMode="CanResizeWithGrip">
+  <FrameworkElement.Resources>
+    <Style TargetType="{x:Type ListViewItem}">
+      <Style.Triggers>
+        <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+          <Setter Property="Control.Background" Value="#3FED601A"/>
+        </Trigger>
+      </Style.Triggers>
+      <Setter Property="Control.BorderBrush" Value="LightGray"/>
+      <Setter Property="Control.BorderThickness" Value="0, 0, 0, 1"/>
+      <Setter Property="FrameworkElement.Width" Value="Auto"/>
+      <Setter Property="FrameworkElement.MaxHeight" Value="50"/>
+      <Setter Property="Control.HorizontalContentAlignment" Value="Stretch"/>
+      <Setter Property="Control.VerticalContentAlignment" Value="Stretch"/>
+      <Setter Property="FrameworkElement.VerticalAlignment" Value="Top"/>
+    </Style>
+    <Style x:Key="ExceptionText" TargetType="{x:Type TextBox}">
+      <Setter Property="Control.Background" Value="Transparent"/>
+      <Setter Property="Control.BorderBrush" Value="LightGray"/>
+      <Setter Property="Control.BorderThickness" Value="0,0,1,0"/>
+      <Setter Property="FrameworkElement.Margin" Value="0,0,-8,0"/>
+      <Setter Property="UIElement.IsHitTestVisible" Value="false"/>
+      <Setter Property="TextBoxBase.IsReadOnly" Value="true"/>
+    </Style>
+    <Style TargetType="{x:Type Label}">
+      <Setter Property="Control.FontSize" Value="14pt"/>
+      <Setter Property="FrameworkElement.Margin" Value="2"/>
+      <Setter Property="Control.FontWeight" Value="Bold"/>
+    </Style>
+  </FrameworkElement.Resources>
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="0"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="Auto"/>
+    </Grid.ColumnDefinitions>
+    <StackPanel Grid.Column="1" Margin="10">
+      <Label Content="Primary Exception"/>
+      <ListView SelectionChanged="lstPrimary_SelectionChanged" x:Name="lstPrimary" FontSize="8.25 pt"
+                MinWidth="717" MinHeight="80" MaxHeight="200" ScrollViewer.CanContentScroll="true"
+                AlternationCount="2" ItemsSource="{Binding primaryException}">
+        <ListView.View>
+          <GridView>
+            <GridViewColumn Header="Property" Width="89">
+              <GridViewColumn.CellTemplate>
+                <DataTemplate>
+                  <TextBox Style="{DynamicResource ExceptionText}" Text="{Binding Path=Key, Mode=OneWay}"/>
+                </DataTemplate>
+              </GridViewColumn.CellTemplate>
+            </GridViewColumn>
+            <GridViewColumn Header="Value" Width="500">
+              <GridViewColumn.CellTemplate>
+                <DataTemplate>
+                  <TextBox Style="{DynamicResource ExceptionText}" Text="{Binding Value, Mode=OneWay}"/>
+                </DataTemplate>
+              </GridViewColumn.CellTemplate>
+            </GridViewColumn>
+          </GridView>
+        </ListView.View>
+      </ListView>
+      <Label Content="Inner Exception"/>
+      <ListView x:Name="lstInner" FontSize="8.25 pt" MinWidth="717" MinHeight="80" MaxHeight="200"
+                ScrollViewer.CanContentScroll="true" AlternationCount="2" ItemsSource="{Binding innerException}">
+        <ListView.View>
+          <GridView>
+            <GridViewColumn Header="Property" Width="89" DisplayMemberBinding="{Binding Key}"/>
+            <GridViewColumn Header="Value" Width="495" DisplayMemberBinding="{Binding Value}"/>
+          </GridView>
+        </ListView.View>
+      </ListView>
+      <Label Content="Detail"/>
+      <TextBox x:Name="detailsText" MinWidth="717" MinHeight="115" VerticalScrollBarVisibility="Auto"
+               HorizontalScrollBarVisibility="Auto" IsReadOnly="true" Text="{Binding detailsText}"/>
+      <Label Content="Fusion Log"/>
+      <TextBox x:Name="fusionLogText" MinWidth="717" MinHeight="115" VerticalScrollBarVisibility="Auto"
+               HorizontalScrollBarVisibility="Auto" IsReadOnly="true" Text="{Binding fusionText}"/>
+    </StackPanel>
+  </Grid>
+</local:DeveloperDebugHelper>

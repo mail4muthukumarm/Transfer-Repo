@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Appearance52.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAoAEAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAErSURBVDhPY/j//z9FGKsgKRirICkYqyApGKsgLuw/032350RHNmQxFAWEMFDzd6cO69vIYmCi5HjGfxAuPJz6P3df4v+MHbH/kzZG/I9ZGfw/bKHvf6DN/4Ga/yctjvofMzf0v2mF/kUMA9bdWvp/9Y1F/5dfm/d/8ZVZ/+dfmvZ/1vnJ/6ee6fs/4VTn/+7jrf/bjzb+bzpU+z9gotd/zUzVk3ADQDavvL7g/9Krc/4vvDzj/9wLU/7PODfh/+TT3f/7Trb/7zzW9L/lcN3/hoNV/2v2lf336nH9r5KseARuAD5nA/3837rB9L9rh/3/uIWR/z27XUCaz4P0wQ0gBusXaFkAnf0dqPkmsjiKIkIYqHmHQpws+dGIDWMVJAVjFSQFYxUkHv9nAACaytXUCmmsdAAAAABJRU5ErkJgggs=</value>
+  </data>
+  <data name="SqlSelectCommand4.CommandText" xml:space="preserve">
+    <value>SELECT        CompanyFeeID, PolicyTypeID
+FROM            dbo.tblCompanyPolicyChargesPolicyTypes
+WHERE        (CompanyFeeID IN
+                             (SELECT        CompanyFeeID
+                               FROM            dbo.GetCompanyFees(@companyLineGuid) AS GetCompanyFees_1)) OR
+                         (@companyLineGuid IS NULL)</value>
+  </data>
+  <data name="SqlUpdateCommand1.CommandText" xml:space="preserve">
+    <value>UPDATE     tblCompanyPolicyCharges
+SET            ChargeCode = @ChargeCode, FeeTypeID = @FeeTypeID, Payable = @Payable, FlatRate = @FlatRate, PercentageRate = @PercentageRate, ApplyPremiumEqualOrLess = @ApplyPremiumEqualOrLess, ApplyPremiumEqualOrOver = @ApplyPremiumEqualOrOver, AutoApply = @AutoApply, 
+                   Effective = @Effective, Splittable = @Splittable, OfficeID = @OfficeID, PayableEntityType = @PayableEntityType, PayableEntityGuid = @PayableEntityGuid, Minimum = @Minimum, ExcludeWhenNotFiling = @ExcludeWhenNotFiling, ExcludeOnEndorsements = @ExcludeOnEndorsements, 
+                   AppliesToPaymentID = @AppliesToPaymentID, FullyEarned = @FullyEarned, RoundToDollar = @RoundToDollar, MaxPercentage = @MaxPercentage, MaxDollars = @MaxDollars, Disabled = @Disabled, ExcludeOnRenewal = @ExcludeOnRenewal, PercentageNet = @PercentageNet, 
+                   CompanyLocationGuid = @CompanyLocationGuid, LineGuid = @LineGuid, StateID = @StateID, CompanyLicenceTypeID = @CompanyLicenceTypeID, TerrorismExcluded = @TerrorismExcluded, FeeBasedOnNumberOfLocations = @FeeBasedOnNumberOfLocations, 
+                   StateOfIssuanceOnly = @StateOfIssuanceOnly, MinStrat = @MinStrat, MaxStrat = @MaxStrat, KentuckyCityID = @KentuckyCityID, ApplyPackagePolicyOnly = @ApplyPackagePolicyOnly, DoNotApplyPackagePolicyOnly = @DoNotApplyPackagePolicyOnly, 
+                   PremiumAllocationType = @PremiumAllocationType, SendToAccounting = @SendToAccounting, FeeBasedOnNumberOfVehicles = @FeeBasedOnNumberOfVehicles, AppliesToAllStates = @AppliesToAllStates, MasterPayee = @MasterPayee, PayHomeState = @PayHomeState, 
+                   RoundDown = @RoundDown, RoundUp = @RoundUp, NoRounding = @NoRounding, InternationalStratification = @InternationalStratification, ExcludeInternationalPremiums = @ExcludeInternationalPremiums, ApplyToChildLines = @ApplyToChildLines, RoundToCent = @RoundToCent, 
+                   RoundUpToCent = @RoundUpToCent, ExcludeMultiCarrier = @ExcludeMultiCarrier, ApplytoFlatCanc = @ApplytoFlatCanc, ExcludeOriginalBinder = @ExcludeOriginalBinder, AddedBy = @AddedBy, EditedBy = @EditedBy, AddedDate = @AddedDate, EditedDate = @EditedDate, Notes = @Notes, 
+                   CountyTaxIncludedInRate = @CountyTaxIncludedInRate, MandatoryCharge = @MandatoryCharge, FullyEarnedNumDays = @FullyEarnedNumDays, ApplyOnce = @ApplyOnce
+WHERE      (CompanyFeeID = @Original_CompanyFeeID);                
+SELECT ChargeCode, FeeTypeID, Payable, FlatRate, PercentageRate, ApplyPremiumEqualOrLess, ApplyPremiumEqualOrOver, AutoApply, Effective, Splittable, OfficeID, PayableEntityType, PayableEntityGuid, Minimum, ExcludeWhenNotFiling, ExcludeOnEndorsements, AppliesToPaymentID, FullyEarned, RoundToDollar, MaxPercentage, MaxDollars, Disabled, ExcludeOnRenewal, PercentageNet, CompanyLocationGuid, LineGuid, StateID, CompanyLicenceTypeID, TerrorismExcluded, FeeBasedOnNumberOfLocations, StateOfIssuanceOnly, MinStrat, MaxStrat, KentuckyCityID, ApplyPackagePolicyOnly, DoNotApplyPackagePolicyOnly, PremiumAllocationType, SendToAccounting, FeeBasedOnNumberOfVehicles, CompanyFeeID, AppliesToAllStates, MasterPayee, PayHomeState, ApplyOnce FROM tblCompanyPolicyCharges WHERE (CompanyFeeID = @CompanyFeeID)</value>
+  </data>
+  <data name="SqlUpdateCommand2.CommandText" xml:space="preserve">
+    <value>UPDATE [dbo].[tblCompanyPolicyChargesPolicyTypes] SET [CompanyFeeID] = @CompanyFeeID, [PolicyTypeID] = @PolicyTypeID WHERE (([CompanyFeeID] = @Original_CompanyFeeID) AND ([PolicyTypeID] = @Original_PolicyTypeID));
+SELECT CompanyFeeID, PolicyTypeID FROM dbo.tblCompanyPolicyChargesPolicyTypes WHERE (CompanyFeeID = @CompanyFeeID) AND (PolicyTypeID = @PolicyTypeID)</value>
+  </data>
+  <data name="Appearance55.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA0wEAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAFeSURBVDhPpdFBasJAFAZgj+AphAhGE5RIcJEsJIqiaFAUDAQiEsRgUFBEUFwbUOiuLnKE3sBZuWrAA3ThBQpuu3udKQxkylBqu/gI//9eFi9JAMC/cMtHMGG322kYbDYbWK/X0XK5vMzn82g6nX6Mx2MYDoeX+D7BBAK/fD2fz7BYLKLZbBZ4nhe4rvvkOE5gWVb4fZ8JxGq1yu33ezgejzCZTLT4rNvtongmmED5vr8NwxBGo9HNtu0kb4filgS+93o6naDf7/u8OcUtCXyv3ev17u12+5k3p7jlYDBI4ntvrVbrjTeP45adTuel2WxG1Wo1iPf5fB4/2F0mEKZp2o1G41qpVF5pVywWvz5kNpu9045iAr43V6/X74ZhvOu6vi2VSltFUQ6yLN9EUYR0Ov3zb6zVana5XEaapiFVVVGhUECSJKFMJoMEQUCpVOoQ3yeY8Bfc8hHc8vcg8QmTC7A/g+7QeAAAAABJRU5ErkJgggs=</value>
+  </data>
+  <data name="Appearance51.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAHQMAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAKoSURBVDhPpZPtT1JRHMf9W/RP6N7etDZ90VybDZK0F5k1TBO1la7CbLBKMRGfAAVsCIaaD5RPUJIiJHAlI+QhNPXmwAza2uoNZC3LbwdaqNXaWi8+d/ece77f3/ne3zkZAP6L3ybyNStZx1QhUZ4iyB5p8cZzZJ54tmyBzZa5RYdvM1m/rt834KiXeUflgVhFrx+99ghGmc0UemsYfPVT0KLZGC228vZq0i+kKi+31ZdomVyFxRtDz3QEEuNL3Bpehty0CqNjA42jIdCVEwn64kTaJPXIUwYzc9sWo0mx6VkMIiK6NhDAkOs1hpwbuGrwQ9gfgGF2HZL7ftBlxihdOpyZNsiVL4rLtV6YPW9RNxCCkES4rPPh4+ftFNU6D6p7PBDe9WLgSRinmh+DKuoXpw1y2jys3hqB0sTiSq8PNTovqrUe9NnXYSBUdjM/0LhIrADU0yugC3Vs2uCQhNkaX3iDuj4/qfQcVXfcZDFDPgE7BIHKifLOOYIDFzROGJkwKF7XVlKbMqDF9q0x92Yqa7JShdpFRC6EIh+Q+LSNsg47StttOEcQKGwYmScGXMVeAyurtbKQPlhClcYNQZcT55VzeBF+Twy+oEQ2gxKSm99sQW0PA6UlCPp4x24EutYiLpbbMeSIoErFQCB3wOLZwNdvO6kI/lfvUCwxE0zofhhC4fVRYtC++xPpS2OZtMAYvTnig8G6hjK5DfyWaZyRTqG4wYTT9RMoqh9H64iXtHeebF8apbnS3TYmofiDvAMF+oRo0AP9zAqEWifZ8iOcbTSjRmWD2hSAsI8BzWlIEPH+g5Q2KdTzqILu2Mkbk1BOLeGekyWsocMcRH6dERSnMUZzm/58lH9Cn1BnUbxOEZWvYCluc5ziNMVJRZYgOsht+Ptl+neQ8R04hsvsalKMmgAAAABJRU5ErkJgggs=</value>
+  </data>
+  <data name="PictureBox1.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAmQIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAIkSURBVDhPhZLRT1JhGMb9E/gT+DdqMZlt5FICDZjQDBttMnXAas21LhgtTA3hQHEUUJi0g3UOAWILRxenIkJAwZliN43bNi/YvOj26fvYaBw6Wxe/7XzP97zP+37fd4YAyOJ8b9NF66ELQseen3bJeSiyIsX/1Xu8e85j7zyNUGX1l5yHIivO563qYGXlZ76Vxt6Pd2Cr/t+2nCVg5m8rB72SBWUuf3eGO95C+nQHuZYA4ZRDpvUGSaKFqwxISKDfLymmbFSZTvbsLbiTBFZKnvZi0Sn6yt5OvBHB5hGLR0VHs98vKbZlzertZgy75NyRehBT/KSC6oaUTjGZ0rotgjGhS97saj0kAdaMSbl5GEa2xYMGWQRDwJC6pZ/gtJKifv4RFosOMd6Igv/OYauxgXAtAF/5OZwFe3MsrtEP+iULinFHr3AVZkV/eZk8nw/r5CgJMk30kIXv2zI0sRFJiKR4EO32qJp0dT/Yn2+HawzYGrkXwSj2eyQF9Kxm3pDQJkclfx7pql764kGEvIJrf6HTv/f3Y+L1uPLxx4dtts50R7fmzOKN2HWXJjqiv5e702QOfPBXXkDHjWdlA0hXxf3ctMgQU5R0Yusvu5fnLT0FU/WDBrg/PYHq1VW1bEAP0nVm4cNse7W8hNjROiLk8p6VPJhKm5qq0JX/v0IPk2D4HDxYQ5B0N2dMJ3IeiqxIGWavzTkK9ksyzeUwq1qT8wAY+gMbcLyuFsUi+QAAAABJRU5ErkJgggs=</value>
+  </data>
+  <data name="Appearance54.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA3gIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAJpSURBVDhPpZP7S1NhGMf9W/SHKEGiGyFhFBTmvMydtTa3eTvL9LjFIpam7AzTDGoYuvCHcJbaVSt/yTSxUV4ycnYdWh4rL+3URq3pObumfNsmbS5HEL3weeE8PJ/vy3nOeZMA/BcbCgsaTco8Van/QJUzsyqSm1GVcO9JJTNFyvW2UmnKn/1xD4tqDfGJotjvpib4RywIvLUiMDEK/n43FrRleF1IsC+UQmK9EyfPVVD88t1urM6+Q3DwHoJdzQiaL+Dn7TasjA/CUauFVZ7NP5dmRkMi27xanRyS7dzNLqwyNgQvn4O72YClphr4LxkQaKHhN56C/8EtLB4nMX7kgH1Msi85GhCSaWe9Hiu2yciJPhMN13kdvA3qOLjTJPy91/AqLwPD4gw6GvCROsZ4eq8j2GOG21iFb0XihCxXkeCb6uAwVOMxkc5EA5gKlTfwsBdBkwHus9pQKfFyyHLgogqxZG6FJW+XN1RaC5ghi7y+ng74G7XwnimPNCda4QBnmQJLba0YEm6LBUyXKhiXsQ6+ZhrcSWWkMSHyPLjra7FQq8OgIC32CrZiKc1IBPD2dMKtksBVJtogs9JssAUieLquYFS4AwNZW2JDfFMkTn5ZQtgXK0vgudMRGZhTIVwTZblgJSFZIgTf2Y6pYnFYtvcJNsc+Y5jJghxiQnaInzuqgOdGB3400nCQcnxRyuBq0IO/2o5pZT76s1L5kBz/I/3mmfQg8fTwftYq2oOvNTq4Wi5G+Fx9Ak9ytodldr0cJi4gzIh4b8qwMF1vIXYzj/J3ckOCrdxAbhrTn52q78vc9PfL9O8g6Rcd0s65aUjWSwAAAABJRU5ErkJgggs=</value>
+  </data>
+  <data name="SqlInsertCommand2.CommandText" xml:space="preserve">
+    <value>INSERT INTO [dbo].[tblCompanyPolicyChargesPolicyTypes] ([CompanyFeeID], [PolicyTypeID]) VALUES (@CompanyFeeID, @PolicyTypeID);
+SELECT CompanyFeeID, PolicyTypeID FROM dbo.tblCompanyPolicyChargesPolicyTypes WHERE (CompanyFeeID = @CompanyFeeID) AND (PolicyTypeID = @PolicyTypeID)</value>
+  </data>
+  <data name="Appearance53.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAARwMAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAALSSURBVDhPjVLbS5NxGN4/sLm5ZeqWJdlNJ7oIoQPRhWBEIF4VGYUUUSBk0kUidCdTA0UMdBKGkugssxKdeMDcbHn43FjzgGtuNs+HuX07fPu+be7pLdnF1IsuHvi9vO/ved73fV4RgAMQLMezeHPGcsiUEeUYFYITKj4wpjQFjMq8/bUJQRwhc4Y/stYCcFYg8ANgBxDZaIHPkG7fX5sQxPFXFaFZwDMIbH0AVhux626DdziV0om1CUEcgXEVdr39iG12IEbKkYVSRJxlcA8cpXRibUIQh9+oRNilRnDyOvyjF8H2nwI3dQ9buv8kYA1piJJyeP4phJ/5CI1fQ5C5i/XuI5ROrBXxpgxJiDm2zE0oo8ExJQLf03mfPh28vZT2dxX+4Qvw9pyEMFeElS7FQQJuUlUR/l0L8E5a3BxtnUF4Qwuv/jSE2UfgzbfAGa/Q+wlcHYcQkL+IhWz00UJ2GYAdHWK+4X/z+kcvwzdwDp7PJ6ibfDhbkw8SsKNEEDQj5jUg5hlClPyPrmuwRvMK1vvgmRsI6rPBWwthbz6EwPMtDRGyi7e9BDddiOBUDvhfj7HcqYBvJBus7gx8X9IR0CnBdivg7ZLD/VHOb7bLTOutsjzR9kAqoqQcWdIg7KyEMP+CyB5isV1ODhSQAzlge1LoLvQ0polgpE77wC1WwtUktYs2dJRkhxGij5ylgLzPQXS1GvaWZJo7F2zveeyQ6t5lDu1d5to7GvkT7A1JEK1+TdEGFqrpUxPCjnKEF8rgsxbBqc0CaymE4CjBdu9ZBG2vENvpQWyrjbqtAWu+g9laiVbk6lQUuycfUEtVEJYqELA9w+pILmY00sHpeiljrUsS5jVS17bhJpGUIOR4Dr/1Nlb6LsFSJS4WOdrlmfb3crWtWcbMNcmEmUYZY62Xqi1vpJnxTTveSjNtDUnquToJM10jESyvxYypUqxmysWZfwCSxP6Dn1PvvAAAAABJRU5ErkJgggs=</value>
+  </data>
+  <data name="SqlInsertCommand1.CommandText" xml:space="preserve">
+    <value>INSERT INTO tblCompanyPolicyCharges
+(ChargeCode, FeeTypeID, Payable, FlatRate, PercentageRate, ApplyPremiumEqualOrLess, ApplyPremiumEqualOrOver, AutoApply, Effective, Splittable, OfficeID, PayableEntityType, PayableEntityGuid, Minimum, ExcludeWhenNotFiling, ExcludeOnEndorsements, AppliesToPaymentID, FullyEarned, RoundToDollar, MaxPercentage, MaxDollars, Disabled, ExcludeOnRenewal, PercentageNet, CompanyLocationGuid, LineGuid, StateID, CompanyLicenceTypeID, TerrorismExcluded, FeeBasedOnNumberOfLocations, StateOfIssuanceOnly, MinStrat, MaxStrat, KentuckyCityID, ApplyPackagePolicyOnly, 
+DoNotApplyPackagePolicyOnly, PremiumAllocationType, SendToAccounting, FeeBasedOnNumberOfVehicles, AppliesToAllStates, MasterPayee, PayHomeState, RoundDown, RoundUp, NoRounding, InternationalStratification, ExcludeInternationalPremiums, ApplyToChildLines, RoundToCent, 
+RoundUpToCent, ExcludeMultiCarrier, ApplytoFlatCanc, ExcludeOriginalBinder, AddedBy, EditedBy, AddedDate, EditedDate, Notes, CountyTaxIncludedInRate, MandatoryCharge, FullyEarnedNumDays, ApplyOnce)
+VALUES (@ChargeCode,@FeeTypeID,@Payable,@FlatRate,@PercentageRate,@ApplyPremiumEqualOrLess,@ApplyPremiumEqualOrOver,@AutoApply,@Effective,@Splittable,@OfficeID,@PayableEntityType,@PayableEntityGuid,@Minimum,@ExcludeWhenNotFiling,@ExcludeOnEndorsements,@AppliesToPaymentID,@FullyEarned,@RoundToDollar,@MaxPercentage,@MaxDollars,@Disabled,@ExcludeOnRenewal,@PercentageNet,@CompanyLocationGuid,@LineGuid,@StateID,@CompanyLicenceTypeID,@TerrorismExcluded,@FeeBasedOnNumberOfLocations,@StateOfIssuanceOnly,@MinStrat,@MaxStrat,@KentuckyCityID,@ApplyPackagePolicyOnly,@DoNotApplyPackagePolicyOnly,@PremiumAllocationType,@SendToAccounting,@FeeBasedOnNumberOfVehicles,@AppliesToAllStates,@MasterPayee,@PayHomeState,@RoundDown,@RoundUp,@NoRounding,@InternationalStratification,@ExcludeInternationalPremiums,@ApplyToChildLines,@RoundToCent,@RoundUpToCent,@ExcludeMultiCarrier,@ApplytoFlatCanc,@ExcludeOriginalBinder,@AddedBy,@EditedBy,@AddedDate,@EditedDate,@Notes,@CountyTaxIncludedInRate,@MandatoryCharge,@FullyEarnedNumDays, @ApplyOnce);               
+
+SELECT ChargeCode, FeeTypeID, Payable, FlatRate, PercentageRate, ApplyPremiumEqualOrLess, ApplyPremiumEqualOrOver, AutoApply, Effective, Splittable, OfficeID, PayableEntityType, PayableEntityGuid, Minimum, ExcludeWhenNotFiling, ExcludeOnEndorsements, AppliesToPaymentID, FullyEarned, RoundToDollar, MaxPercentage, MaxDollars, Disabled, ExcludeOnRenewal, PercentageNet, CompanyLocationGuid, LineGuid, StateID, CompanyLicenceTypeID, TerrorismExcluded, FeeBasedOnNumberOfLocations, StateOfIssuanceOnly, MinStrat, MaxStrat, KentuckyCityID, ApplyPackagePolicyOnly, DoNotApplyPackagePolicyOnly, PremiumAllocationType, SendToAccounting, FeeBasedOnNumberOfVehicles, CompanyFeeID, AppliesToAllStates, MasterPayee, PayHomeState,CountyTaxIncludedInRate, ApplyOnce FROM tblCompanyPolicyCharges WHERE (CompanyFeeID = SCOPE_IDENTITY())</value>
+  </data>
+</root>

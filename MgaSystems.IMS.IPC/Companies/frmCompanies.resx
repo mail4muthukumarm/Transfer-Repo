@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DbUpdateCommand1.CommandText" xml:space="preserve">
+    <value>UPDATE [dbo].[tblCompanyLocations] SET [CompanyLocationGUID] = @CompanyLocationGUID, [CompanyGUID] = @CompanyGUID, [DeliveryMethodID] = @DeliveryMethodID, [LocationName] = @LocationName, [Address1] = @Address1, [Address2] = @Address2, [ZipPlus] = @ZipPlus, [Phone] = @Phone, [Fax] = @Fax, [WebSite] = @WebSite, [DateAdded] = @DateAdded, [LocationTypeID] = @LocationTypeID, [StatusID] = @StatusID, [City] = @City, [County] = @County, [State] = @State, [ZipCode] = @ZipCode, [Hidden] = @Hidden, [ClaimPhone] = @ClaimPhone, [ClaimFax] = @ClaimFax, [IntermediaryGuid] = @IntermediaryGuid, [Region] = @Region, [ISOCountryCode] = @ISOCountryCode, [Email] = @Email, [LocationCode] = @LocationCode, [DisallowBinding] = @DisallowBinding, [AddedBy] = @AddedBy, [NetRateCompanyName] = @NetRateCompanyName, [NetRate_Code] = @NetRate_Code, [FatcaNonCompliant] = @FatcaNonCompliant,[StatusChangeReason]=@StatusChangeReason WHERE (([CompanyLocationGUID] = @Original_CompanyLocationGUID));
+SELECT CompanyLocationGUID, CompanyGUID, DeliveryMethodID, LocationName, Address1, Address2, ZipPlus, Phone, Fax, WebSite, DateAdded, LocationTypeID, StatusID, City, County, State, ZipCode, Hidden, ClaimPhone, ClaimFax, IntermediaryGuid, Region, ISOCountryCode, Email, LocationCode, DisallowBinding, AddedBy, NetRateCompanyName, NetRate_Code, FatcaNonCompliant,StatusChangeReason FROM dbo.tblCompanyLocations WHERE (CompanyLocationGUID = @CompanyLocationGUID) ORDER BY Name</value>
+  </data>
+  <data name="Appearance38.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAMQMAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAK8SURBVDhPlZDbT5JhHMe54o/wrq3DZqGZZZBmI9vSGU0JMFazItespgMhEFREhDECpszTbI6GI4oizQPTwHIeBpvVNA9tpnaguDKVdzLtIv328pY4kpsuvs/2/Pb7fJ73/dIAJExv2WE6mSSPmJHkkabSE+1Ek3AYhfvEjJBHmrI5oDi66VUdC3nVxxNK9gz6yo/QSTA8asrFlPMO3rvK4W8qhE97MuzTMfdI4i4eSQp9QH40PGbJx/RTMRkJpt0yzHSrMN4mwICWFfbUsuIku7AslT6oTCPGGzmYeSaFv5kLb30mXuqzMNoiwKS7BkNWPtxKJvFYmhGTUMegIo3uVaUTfmsBZp7L4W/hYcjIxtzsNJX+ejZ8Fj4CjxTo1RXAVppOtF5PoyQ0siA6WRDhb+JipktJfiofXsNZvH0zgZWVFaytrWFxYR5O+Wl0aTh49eAuOu+dh4nHIHQXkuk0X21GwN9y6e9/FpFwDqYm32F1dZWCd7LwcR5tJUw8FJ9Dj/kqmkuyoGIfDNDIZnO9OtbWaGsR+jTZ218+LcZe/jffvn5GXT4DjddOQZl9YItM7p8Ca1m5L9TMMWuDZXtjY4NalslkkMvlUCgUqKyspGaRSAQW030o2MmzUThW4k5MJtM6QRDUchRsb29HR0cHqqurY4KoVCgUHtph4gR6vX49HA5Ty1VVVbDZbLDb7airq4sJJBIJeDzerqDs9Y0UUc/lKwI7Z0hgKfjlGOlEVKJWq+FwOOB0OkGKqdmTD3aIuoUQ2DhzeVa2JlNzooBGwt/F/bdQM1yBsn4RRNZihEIhaLVauFwuuN1uGI1GBINBqIfkaJjQQTMiQ7GDj1RxcoRGvjxM2oKkLXBGnElwbucvl5aWLhkMBgoke4HZbAaXy10qrLi4nFef8zNTnTFBwj/239w3HNfB/we03419rIdhAWPUAAAAAElFTkSuQmCCCw==</value>
+  </data>
+  <data name="DbInsertCommand1.CommandText" xml:space="preserve">
+    <value>INSERT INTO [dbo].[tblCompanyLocations] ([CompanyLocationGUID], [CompanyGUID], [DeliveryMethodID], [LocationName], [Address1], [Address2], [ZipPlus], [Phone], [Fax], [WebSite], [DateAdded], [LocationTypeID], [StatusID], [City], [County], [State], [ZipCode], [Hidden], [ClaimPhone], [ClaimFax], [IntermediaryGuid], [Region], [ISOCountryCode], [Email], [LocationCode], [DisallowBinding], [AddedBy], [NetRateCompanyName], [NetRate_Code], [FatcaNonCompliant],[StatusChangeReason]) VALUES (@CompanyLocationGUID, @CompanyGUID, @DeliveryMethodID, @LocationName, @Address1, @Address2, @ZipPlus, @Phone, @Fax, @WebSite, @DateAdded, @LocationTypeID, @StatusID, @City, @County, @State, @ZipCode, @Hidden, @ClaimPhone, @ClaimFax, @IntermediaryGuid, @Region, @ISOCountryCode, @Email, @LocationCode, @DisallowBinding, @AddedBy, @NetRateCompanyName, @NetRate_Code, @FatcaNonCompliant,@StatusChangeReason);
+SELECT CompanyLocationGUID, CompanyGUID, DeliveryMethodID, LocationName, Address1, Address2, ZipPlus, Phone, Fax, WebSite, DateAdded, LocationTypeID, StatusID, City, County, State, ZipCode, Hidden, ClaimPhone, ClaimFax, IntermediaryGuid, Region, ISOCountryCode, Email, LocationCode, DisallowBinding, AddedBy, NetRateCompanyName, NetRate_Code, FatcaNonCompliant,StatusChangeReason FROM dbo.tblCompanyLocations WHERE (CompanyLocationGUID = @CompanyLocationGUID) ORDER BY Name</value>
+  </data>
+  <data name="DbDeleteCommand2.CommandText" xml:space="preserve">
+    <value>DELETE FROM [tblCompanies] WHERE (((@IsNull_CompanyGroupGUID = 1 AND [CompanyGroupGUID] IS NULL) OR ([CompanyGroupGUID] = @Original_CompanyGroupGUID)) AND ([CompanyName] = @Original_CompanyName) AND ([CompanyGUID] = @Original_CompanyGUID) AND ([CompanyID] = @Original_CompanyID) AND ((@IsNull_FSR = 1 AND [FSR] IS NULL) OR ([FSR] = @Original_FSR)) AND ((@IsNull_FSC = 1 AND [FSC] IS NULL) OR ([FSC] = @Original_FSC)) AND ((@IsNull_NAIC = 1 AND [NAIC] IS NULL) OR ([NAIC] = @Original_NAIC)) AND ((@IsNull_RatingBureauID = 1 AND [RatingBureauID] IS NULL) OR ([RatingBureauID] = @Original_RatingBureauID)) AND ((@IsNull_FEIN = 1 AND [FEIN] IS NULL) OR ([FEIN] = @Original_FEIN)) AND ((@IsNull_BureauNum = 1 AND [BureauNum] IS NULL) OR ([BureauNum] = @Original_BureauNum)) AND ((@IsNull_AMBestNum = 1 AND [AMBestNum] IS NULL) OR ([AMBestNum] = @Original_AMBestNum)) AND ((@IsNull_NCCI = 1 AND [NCCI] IS NULL) OR ([NCCI] = @Original_NCCI)))</value>
+  </data>
+  <data name="DbSelectCommand1.CommandText" xml:space="preserve">
+    <value>SELECT        CompanyGroupGUID, CompanyName, CompanyGUID, CompanyID, FSR, FSC, NAIC, RatingBureauID, FEIN, BureauNum, AMBestNum, NCCI, Logo
+FROM            tblCompanies
+WHERE        (CompanyGUID = @CompanyGuid)</value>
+  </data>
+  <data name="DbUpdateCommand2.CommandText" xml:space="preserve">
+    <value>UPDATE [tblCompanies] SET [CompanyGroupGUID] = @CompanyGroupGUID, [CompanyName] = @CompanyName, [CompanyGUID] = @CompanyGUID, [FSR] = @FSR, [FSC] = @FSC, [NAIC] = @NAIC, [RatingBureauID] = @RatingBureauID, [FEIN] = @FEIN, [BureauNum] = @BureauNum, [AMBestNum] = @AMBestNum, [NCCI] = @NCCI, [Logo] = @Logo WHERE (((@IsNull_CompanyGroupGUID = 1 AND [CompanyGroupGUID] IS NULL) OR ([CompanyGroupGUID] = @Original_CompanyGroupGUID)) AND ([CompanyName] = @Original_CompanyName) AND ([CompanyGUID] = @Original_CompanyGUID) AND ([CompanyID] = @Original_CompanyID) AND ((@IsNull_FSR = 1 AND [FSR] IS NULL) OR ([FSR] = @Original_FSR)) AND ((@IsNull_FSC = 1 AND [FSC] IS NULL) OR ([FSC] = @Original_FSC)) AND ((@IsNull_NAIC = 1 AND [NAIC] IS NULL) OR ([NAIC] = @Original_NAIC)) AND ((@IsNull_RatingBureauID = 1 AND [RatingBureauID] IS NULL) OR ([RatingBureauID] = @Original_RatingBureauID)) AND ((@IsNull_FEIN = 1 AND [FEIN] IS NULL) OR ([FEIN] = @Original_FEIN)) AND ((@IsNull_BureauNum = 1 AND [BureauNum] IS NULL) OR ([BureauNum] = @Original_BureauNum)) AND ((@IsNull_AMBestNum = 1 AND [AMBestNum] IS NULL) OR ([AMBestNum] = @Original_AMBestNum)) AND ((@IsNull_NCCI = 1 AND [NCCI] IS NULL) OR ([NCCI] = @Original_NCCI)));
+SELECT CompanyGroupGUID, CompanyName, CompanyGUID, CompanyID, FSR, FSC, NAIC, RatingBureauID, FEIN, BureauNum, AMBestNum, NCCI, Logo FROM tblCompanies WHERE (CompanyGUID = @CompanyGUID)</value>
+  </data>
+  <data name="DbSelectCommand2.CommandText" xml:space="preserve">
+    <value>SELECT        CompanyLocationGUID, CompanyGUID, DeliveryMethodID, LocationName, Address1, Address2, ZipPlus, Phone, Fax, WebSite, DateAdded, LocationTypeID, 
+                         StatusID, City, County, State, ZipCode, Hidden, ClaimPhone, ClaimFax, IntermediaryGuid, Region, ISOCountryCode, Email, LocationCode, DisallowBinding, AddedBy, 
+                         NetRateCompanyName, NetRate_Code, FatcaNonCompliant,StatusChangeReason
+FROM            dbo.tblCompanyLocations
+WHERE        (Hidden = 0) AND (CompanyGUID = @CompanyGuid)
+ORDER BY Name</value>
+  </data>
+  <data name="Appearance39.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAADAMAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAKXSURBVDhPfZBPTJJxHMapQ1t66NShfwcl65C2/uicY8sID82la05kiIosxNQcKpJhQKZYuqXoC75opVCir6UYmjPXRQ/aTMX/Ya0NDil0a+asLcMnZENffavD5/Q+n+f9/h4WgP+iTj0qWTBFrC53HIPLErZhloe3JseGHwh+Zwh05InHee72MN9K5xHQaSlgNwQzDIlOq/gwsdIbDc9QDn6M18Fj42CFOoFFE/tbMMOQ6JCph+q8s0NYHSOxMfsMa+9ILM8MYrjqvDuYYUh0UhLTZE5ryeb3uR74lnqxvmiHd4RAZdZlWzCzS5BxIyRNkiurRCYXZDZvI08QNUWUFfzy2hT40ncf3n4NRptv4WzOmcEYZWTorgIx5ySvSZLgaxBxQadNL4ehRYdaowb3HinR98GK6uFKRGlPW84pToVsF+gFF0Yf511Hb8UNODvV6FDwQWTy0JybAPOsGqbpMtQ7ilHjKEH3x1YU2QsRlxdDbhcYBezuz8MUYzCqnAv99B3UOpSomizC3cl8qN7nQ0Jmw0Um77z/X4PVVqXCOKNCvf8C/fRtNPopHShAuj4dnifXdgr2X2xUGVWFjMEi+aWQWjNws0uIXEoIaXsaLuk4bqWsosJlFooC8j5OlzRF4Vgb+Qo8eGmDpo2CkrDg6cRPKI3LOBjXZQmNbwkJ/owOKyyxmc+XD6z3L/mgcwI5E0DWCJA2AAgogBgDRBonInjV5F8L5nXRv6d6DFC88kI8BIjtmxBRm+BbfEgyAUkGH56bXwcG2ytvwXI3xnt6qosh1I5D9haQvPFfYAcy+4GMrStqXNAqHgYG2ytvwfrUnhs3WJlSHsu32qOLJsHVzvtZAFc9h/hyB9hXX7gNpdLAYMwCsP4AQX+yAK6XMLkAAAAASUVORK5CYIIL</value>
+  </data>
+  <data name="DbInsertCommand2.CommandText" xml:space="preserve">
+    <value>INSERT INTO [tblCompanies] ([CompanyGroupGUID], [CompanyName], [CompanyGUID], [FSR], [FSC], [NAIC], [RatingBureauID], [FEIN], [BureauNum], [AMBestNum], [NCCI], [Logo]) VALUES (@CompanyGroupGUID, @CompanyName, @CompanyGUID, @FSR, @FSC, @NAIC, @RatingBureauID, @FEIN, @BureauNum, @AMBestNum, @NCCI, @Logo);
+SELECT CompanyGroupGUID, CompanyName, CompanyGUID, CompanyID, FSR, FSC, NAIC, RatingBureauID, FEIN, BureauNum, AMBestNum, NCCI, Logo FROM tblCompanies WHERE (CompanyGUID = @CompanyGUID)</value>
+  </data>
+</root>

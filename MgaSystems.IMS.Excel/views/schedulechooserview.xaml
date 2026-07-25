@@ -1,0 +1,82 @@
+<ScheduleChooserView x:Class="MgaSystems.IMS.Excel.Views.ScheduleChooserView"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                     xmlns:mgaInterop="clr-namespace:Mga.Wpf.Ims.Interop;assembly=Mga.Wpf.Ims"
+                     xmlns:data="clr-namespace:MgaSystems.IMS.Excel.Data.ScheduleChooser"
+                     WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip"
+                     Title="Associate a new schedule to this rater" FrameworkElement.Height="200"
+                     FrameworkElement.MinWidth="400">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Mga.Wpf.Ims;component/Resources/CommonResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+      <BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter"/>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition/>
+      <RowDefinition Height="auto"/>
+    </Grid.RowDefinitions>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+        <RowDefinition/>
+      </Grid.RowDefinitions>
+      <Label Content="Available New Schedules For This Rater"/>
+      <ComboBox HorizontalAlignment="Stretch" Grid.Row="1" DisplayMemberPath="Title"
+                SelectedValuePath="FactorSetGuid" ItemsSource="{Binding AvailableSchedules}"
+                SelectedValue="{Binding ScheduleFactorSet}"/>
+      <Grid Row="2">
+        <FrameworkElement.Resources>
+          <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="Control.VerticalContentAlignment" Value="Center"/>
+          </Style>
+        </FrameworkElement.Resources>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="auto"/>
+          <RowDefinition Height="auto"/>
+          <RowDefinition Height="auto"/>
+          <RowDefinition Height="auto"/>
+          <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="auto"/>
+          <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Start Row Index"
+               ToolTip="This field indicates the first row in the schedule which will have data"/>
+        <TextBox Grid.Column="1" Text="{Binding StartRowIndex}"/>
+        <Label Grid.Row="1" Content="Maximum Rows to Read"
+               ToolTip="This field indicates the last row in the schedule which will have data"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding MaxRowsToRead}"/>
+        <Label Grid.Row="2" Content="Setinel Column"
+               ToolTip="This field is base-0. Whatever number is input here (n) will appear decremented on the UI (n - 1)"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding SetinelColumnIndex}"/>
+        <Label Grid.Row="3" Grid.Column="0" Content="Generate Custom Repeater Tags"
+               Visibility="{Binding ShowScheduleAutoGeneration, Converter={StaticResource booleanToVisibilityConverter}}"/>
+        <CheckBox Grid.Row="3" Grid.Column="1" IsChecked="{Binding IsGenerateRepeaterTagsChecked}"
+                  Visibility="{Binding ShowScheduleAutoGeneration, Converter={StaticResource booleanToVisibilityConverter}}"/>
+      </Grid>
+    </Grid>
+    <Grid Row="1">
+      <FrameworkElement.Resources>
+        <Style TargetType="{x:Type Button}">
+          <Setter Property="FrameworkElement.Width" Value="50"/>
+          <Setter Property="FrameworkElement.Margin" Value="2"/>
+        </Style>
+      </FrameworkElement.Resources>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition/>
+        <ColumnDefinition Width="auto"/>
+        <ColumnDefinition Width="auto"/>
+      </Grid.ColumnDefinitions>
+      <Button Grid.Column="1" Content="Cancel" IsCancel="true"/>
+      <Button Grid.Column="2" Content="OK" IsDefault="true"/>
+    </Grid>
+  </Grid>
+</ScheduleChooserView>

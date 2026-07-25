@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: D:\augusta\fortegra\IMS Project\MgaSystems.IMS.ErrorHandling.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B942C214-E534-4B3A-B8EB-5A0761FDEAA3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>MgaSystems.IMS.ErrorHandling</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <ApplicationVersion>2.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>MGASystems.ErrorHandling</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MgaSystems.IMS.Common">
+      <HintPath>lib\MgaSystems.IMS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ErrorHandling.cs" />
+    <Compile Include="My\MyApplication.cs" />
+    <Compile Include="My\MyComputer.cs" />
+    <Compile Include="My\MyProject.cs" />
+    <Compile Include="My\Resources\Resources.cs" />
+    <Compile Include="MgaReportingServices\MGAReportingServices.cs" />
+    <Compile Include="MgaReportingServices\ReportCriticalErrorSqlCompletedEventHandler.cs" />
+    <Compile Include="MgaReportingServices\ReportCriticalErrorSqlCompletedEventArgs.cs" />
+    <Compile Include="MgaReportingServices\ReportCriticalErrorSqlWithScreenshotCompletedEvent.cs" />
+    <Compile Include="MgaReportingServices\1ReportCriticalErrorSqlWithScreenshotCompletedEvent.cs" />
+    <Compile Include="MgaReportingServices\ReportCriticalErrorCompletedEventHandler.cs" />
+    <Compile Include="MgaReportingServices\ReportCriticalErrorCompletedEventArgs.cs" />
+    <Compile Include="MgaReportingServices\ReportCriticalError1CompletedEventHandler.cs" />
+    <Compile Include="MgaReportingServices\ReportCriticalError1CompletedEventArgs.cs" />
+    <Compile Include="MgaReportingServices\ReportCriticalError2CompletedEventHandler.cs" />
+    <Compile Include="MgaReportingServices\ReportCriticalError2CompletedEventArgs.cs" />
+    <Compile Include="MgaReportingServices\ReportCriticalError3CompletedEventHandler.cs" />
+    <Compile Include="MgaReportingServices\ReportCriticalError3CompletedEventArgs.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MgaSystems\IMS\ErrorHandling\dll.licenses" />
+    <EmbeddedResource Include="Resources.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

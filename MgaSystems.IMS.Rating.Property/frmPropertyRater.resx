@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SqlSelectCommand2.CommandText" xml:space="preserve">
+    <value>SELECT     tblQuoteOptionProperty.ID, tblQuoteOptionProperty.PriorID, tblQuoteOptionProperty.QuoteOptionID, tblQuoteOptionProperty.TerrorismDeclined, 
+                      tblQuoteOptionProperty.CauseofLossID, tblQuoteOptionProperty.PolicyLimitDescriptionID, tblQuoteOptionProperty.PolicyFormID, 
+                      tblQuoteOptionProperty.ValuationID, tblQuoteOptionProperty.CoInsuranceID, tblQuoteOptionProperty.TIV, tblQuoteOptionProperty.Coverage, 
+                      tblQuoteOptionProperty.PolicyLimit, tblQuoteOptionProperty.SubLimits, tblQuoteOptionProperty.AOPDA, tblQuoteOptionProperty.OtherDeduct, 
+                      tblQuoteOptionProperty.PrimaryPremium, tblQuoteOptionProperty.ExcessPremium, tblQuoteOptionProperty.TerrPremium, 
+                      tblQuoteOptionProperty.AdditionalComments, tblQuoteOptionProperty.CoInsurance, tblQuoteOptionProperty.Rate, tblQuoteOptionProperty.PriorRate, 
+                      tblQuoteOptionProperty.Valuation, tblQuoteOptionProperty.DeductiblePerID, tblQuoteOptionProperty.UnderlyingCarrier, 
+                      tblQuoteOptionProperty.UnderlyingPolNo, tblQuoteOptionProperty.UnderlyingLimit, tblQuoteOptionProperty.UnderlyingDA, 
+                      tblQuoteOptionProperty.RateBasedOffTIV, tblQuoteOptionProperty.TerrorismExcessPremium
+FROM         tblQuoteOptionProperty INNER JOIN
+                      tblQuoteOptions ON tblQuoteOptionProperty.QuoteOptionID = tblQuoteOptions.QuoteOptionID
+WHERE     (tblQuoteOptions.QuoteGUID = @QuoteGuid)</value>
+  </data>
+  <data name="Appearance56.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAUgIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAHdSURBVDhPpY7PU1JRHMX5u9ixZMuqiRkWNUytYlEbpkU1TxxKXgUTVBYoz3mRhqFQRCA/Kp0yK83EUafUJ/qGpJ3zuMvjl/vmXmTGFo6Lz50z53vP+X4dAM4Ff3RdRyqVQjweh6qqUBQFwWAQgUAAfr8fXq8XHo8HbrcbLpcLTqeTYicKzoMUuSULr4nsFwuviKnPFtlwRAomJHkTd2cOuC+QIrtoodFkqBHVXwwvFvoFmYV/0Oc7mPjYQSjb4r5Ait7W6hrDHIXLqwzap36BCKfrh7g9ucd9gRQZ2lihYPknQ2mFYaxhF4TpZK3RwXjtEMlKGzc1g/sCKfR5CyUKF5cZ3vxgeFazC4bo5FT1L56X23hSMnEj+Yf7AinSHyw7/J0h/62Lp5UjsuG4lTEw+r6Nx0UTjwoHCCR+c18gRbJuoUDhWQrnlrqIl+yCoLaLxFsTsfw+HuRauBrb5L5AitG5I8xQMPe1i+nFLmLv7ILrdHJ0dh/3p1sYmTJwWd3gvkCKBJ3c2xojohR+WLQLriW2oGb3cG/SwHBmF75wk/sCKf7Hlegmwi8NhPQdKBM7uBhaI7s/H/h8Gpci63ZY28ad9DYuKKtk9+cDn0/DN9zkW3tBwcn5wOezA8cx3iYKGm5mnhEAAAAASUVORK5CYIIL</value>
+  </data>
+  <data name="SqlCommand2.CommandText" xml:space="preserve">
+    <value>INSERT INTO tblQuoteOptions(QuoteOptionGUID, QuoteGUID, LineGUID) VALUES (@QuoteOptionGUID, @QuoteGUID, @LineGUID); SELECT QuoteOptionID, QuoteOptionGUID, QuoteGUID, LineGUID, Premium FROM tblQuoteOptions WHERE (QuoteOptionGUID = @QuoteOptionGUID)</value>
+  </data>
+  <data name="Appearance52.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAHQMAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAKoSURBVDhPpZPtT1JRHMf9W/RP6N7etDZ90VybDZK0F5k1TBO1la7CbLBKMRGfAAVsCIaaD5RPUJIiJHAlI+QhNPXmwAza2uoNZC3LbwdaqNXaWi8+d/ece77f3/ne3zkZAP6L3ybyNStZx1QhUZ4iyB5p8cZzZJ54tmyBzZa5RYdvM1m/rt834KiXeUflgVhFrx+99ghGmc0UemsYfPVT0KLZGC228vZq0i+kKi+31ZdomVyFxRtDz3QEEuNL3Bpehty0CqNjA42jIdCVEwn64kTaJPXIUwYzc9sWo0mx6VkMIiK6NhDAkOs1hpwbuGrwQ9gfgGF2HZL7ftBlxihdOpyZNsiVL4rLtV6YPW9RNxCCkES4rPPh4+ftFNU6D6p7PBDe9WLgSRinmh+DKuoXpw1y2jys3hqB0sTiSq8PNTovqrUe9NnXYSBUdjM/0LhIrADU0yugC3Vs2uCQhNkaX3iDuj4/qfQcVXfcZDFDPgE7BIHKifLOOYIDFzROGJkwKF7XVlKbMqDF9q0x92Yqa7JShdpFRC6EIh+Q+LSNsg47StttOEcQKGwYmScGXMVeAyurtbKQPlhClcYNQZcT55VzeBF+Twy+oEQ2gxKSm99sQW0PA6UlCPp4x24EutYiLpbbMeSIoErFQCB3wOLZwNdvO6kI/lfvUCwxE0zofhhC4fVRYtC++xPpS2OZtMAYvTnig8G6hjK5DfyWaZyRTqG4wYTT9RMoqh9H64iXtHeebF8apbnS3TYmofiDvAMF+oRo0AP9zAqEWifZ8iOcbTSjRmWD2hSAsI8BzWlIEPH+g5Q2KdTzqILu2Mkbk1BOLeGekyWsocMcRH6dERSnMUZzm/58lH9Cn1BnUbxOEZWvYCluc5ziNMVJRZYgOsht+Ptl+neQ8R04hsvsalKMmgAAAABJRU5ErkJgggs=</value>
+  </data>
+  <data name="SqlCommand3.CommandText" xml:space="preserve">
+    <value>UPDATE tblQuoteOptions SET QuoteOptionGUID = @QuoteOptionGUID, QuoteGUID = @QuoteGUID, LineGUID = @LineGUID WHERE (QuoteOptionGUID = @Original_QuoteOptionGUID) AND (LineGUID = @Original_LineGUID) AND (QuoteGUID = @Original_QuoteGUID); SELECT QuoteOptionID, QuoteOptionGUID, QuoteGUID, LineGUID, Premium FROM tblQuoteOptions WHERE (QuoteOptionGUID = @QuoteOptionGUID)</value>
+  </data>
+  <data name="SqlSelectCommand4.CommandText" xml:space="preserve">
+    <value>SELECT tblQuoteOptionProperty_SubLimits.PropertyOptionID, tblQuoteOptionProperty_SubLimits.SubLimitID, tblQuoteOptionProperty_SubLimits.Limit, tblQuoteOptionProperty_SubLimits.Deductible, tblQuoteOptionProperty_SubLimits.DeductiblePercentage, tblQuoteOptionProperty_SubLimits.ModificationCode FROM tblQuoteOptionProperty_SubLimits INNER JOIN tblQuoteOptionProperty ON tblQuoteOptionProperty_SubLimits.PropertyOptionID = tblQuoteOptionProperty.ID INNER JOIN tblQuoteOptions ON tblQuoteOptionProperty.QuoteOptionID = tblQuoteOptions.QuoteOptionID WHERE (tblQuoteOptions.QuoteGUID = @QuoteGuid)</value>
+  </data>
+  <data name="SqlCommand1.CommandText" xml:space="preserve">
+    <value>DELETE FROM tblQuoteOptions WHERE (QuoteOptionGUID = @Original_QuoteOptionGUID) AND (LineGUID = @Original_LineGUID) AND (Premium = @Original_Premium OR @Original_Premium IS NULL AND Premium IS NULL) AND (QuoteGUID = @Original_QuoteGUID) AND (QuoteOptionID = @Original_QuoteOptionID)</value>
+  </data>
+  <data name="SqlUpdateCommand1.CommandText" xml:space="preserve">
+    <value>UPDATE [tblQuoteOptionProperty] SET [PriorID] = @PriorID, [QuoteOptionID] = @QuoteOptionID, [TerrorismDeclined] = @TerrorismDeclined, [CauseofLossID] = @CauseofLossID, [PolicyLimitDescriptionID] = @PolicyLimitDescriptionID, [PolicyFormID] = @PolicyFormID, [ValuationID] = @ValuationID, [CoInsuranceID] = @CoInsuranceID, [TIV] = @TIV, [Coverage] = @Coverage, [PolicyLimit] = @PolicyLimit, [SubLimits] = @SubLimits, [AOPDA] = @AOPDA, [OtherDeduct] = @OtherDeduct, [PrimaryPremium] = @PrimaryPremium, [ExcessPremium] = @ExcessPremium, [TerrPremium] = @TerrPremium, [AdditionalComments] = @AdditionalComments, [CoInsurance] = @CoInsurance, [Rate] = @Rate, [PriorRate] = @PriorRate, [Valuation] = @Valuation, [DeductiblePerID] = @DeductiblePerID, [UnderlyingCarrier] = @UnderlyingCarrier, [UnderlyingPolNo] = @UnderlyingPolNo, [UnderlyingLimit] = @UnderlyingLimit, [UnderlyingDA] = @UnderlyingDA, [RateBasedOffTIV] = @RateBasedOffTIV, [TerrorismExcessPremium] = @TerrorismExcessPremium WHERE (([ID] = @Original_ID));
+SELECT ID, PriorID, QuoteOptionID, TerrorismDeclined, CauseofLossID, PolicyLimitDescriptionID, PolicyFormID, ValuationID, CoInsuranceID, TIV, Coverage, PolicyLimit, SubLimits, AOPDA, OtherDeduct, PrimaryPremium, ExcessPremium, TerrPremium, AdditionalComments, CoInsurance, Rate, PriorRate, Valuation, DeductiblePerID, UnderlyingCarrier, UnderlyingPolNo, UnderlyingLimit, UnderlyingDA, RateBasedOffTIV, TerrorismExcessPremium FROM tblQuoteOptionProperty WHERE (ID = @ID)</value>
+  </data>
+  <data name="SqlUpdateCommand2.CommandText" xml:space="preserve">
+    <value>UPDATE tblQuoteOptionProperty_SubLimits SET PropertyOptionID = @PropertyOptionID, SubLimitID = @SubLimitID, Limit = @Limit, Deductible = @Deductible, DeductiblePercentage = @DeductiblePercentage, ModificationCode = @ModificationCode WHERE (PropertyOptionID = @Original_PropertyOptionID) AND (SubLimitID = @Original_SubLimitID)</value>
+  </data>
+  <data name="Appearance55.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAngIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAIpSURBVDhPjZFvSBNxGMf3tre9it4pVi+EiAihd2VRG/VGSjBFI4yCMKI3aSt7EZkNJ1Q0yGIEiUQilbGcRImZsc4a7G9neTrdZrdCzznbnUe7+/b8Vje2dUEPfPjxPPf9fu+5+1kA/Ddzz3YemR5owMxwFwLuAwi6qltMhWYkvBWN4lg70iEPsLaIldAQfE5rylRcTvxFZb0UvaKqiecQx3sgh58gNz+J8INTiqmhmKS3yipFLmuaPAl5tg3LU2fB97cidL95aep23VZTk4HwtMImhS9CU3zICsehxJuQ+WRHrG9Pyt+7fwfTWBq6RzcSA4RKwKDj+lWIH9r/mFugLDRiNXIJgqs289lZs8t4CQsYfvzmC37mNOp/l8h7wL+8AE2egBJrxXq8GWnahHcd1H09ti0kKWzJAnKariMt6/iW0cG9eoToiB1B700kuXpkY01YDnRg1l2HbreHbVdTEtDmGqcTSK3q+JrWMejYB2TmMX3vKMbsm/Hurg1vnVYo3wU4Bv0s4JBhZhQCFskcl3RcO70dqu8OVO4WuK69GDqzDf4An9eYBhifwNaPLek4VrsJN05U47XjMCb6z+FjdAHBZI750fnwPQvYbZgZhZ/IQoqLbRNIaPlgVh4uxswzxAZqSwKMa8wRTAT3aJR58rWytp7vaR4mqmhUMDNKGgMSCqKUNYwK0WmmY/w1IHFv30iEGX8Q58ufl1PSkKGSmCNOFs//DSy/AEUu+nA6Sw2fAAAAAElFTkSuQmCCCw==</value>
+  </data>
+  <data name="Appearance54.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA8QIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAJ8SURBVDhPhZLLT1NBGMW70K2JS7cmxrjU+A9oIGIgFGhEUYkYRYIYaiyCUPqgD2p42hb6BkqLoKUWegt9UKm0JQrSGjdaQErRmLhzY4pE0OPcIRBKfSzO5M7M/Z3vzDfDAfBftUdb06oZ2aE/7WUt7FdbRJE2x3VQhqQQBxqzTDIm+/UwLE+b4j3wffLAsKBFs68BdczdDJMMYK9I5LQxxsIMHCt2eNfGoXnZAYG7FjWjt3ZNskBWrS9a0oaYFr6Pbjz9YIdt0YyGCQEmUmPoiKpQ7ajE9aFyapIFK0OStH5BAy+B26JKKMNSWBNGDCQMeLw0ACblREtQhKvWS+tZBvJp8brutZrEdSP5bQkbW98x8nYIihnxNrzqhDQoxOWB0s0dhg7a+a5jsueiH73zj+hZ2yJKCusjvUh9TUIVkcG9OgrJlJCtjPLBMly08A5QA+18p0hGIvXMdVP4ybKNxJbQyiws90u34UATWxlzX2bR7H+AEmOhghqwkbRzXZgkDRpZHqRn7X+vh5zEVoVlGE+OQhRoRJXrBoVnP4cRWguAZ+LivCb3MEcxLbESwfJGD0/qGeo8fPS908G+2EdgB61WP3WPwFFMLjOo9VdvlPWXIk+dK8jpPnOKowhJjrAp2EeiX1DTuLaEZRsma5XOCjCLLqhn21GkLwgU9OSp89Q5RzOa2OS9b7bGLRAwfGhedWJsxQGhtx4XzMUQEhOeqSjJ1eWfzdeeO7EDZhjUMfzjLcHmreCqD3ecVSCGKDYU/iKd9vOM3Kb90F7RodZ1+yB5XWOVwxU/+a4aNupmqaXkNOn0btS/affj5nDFyWu2KzFyVfl7f/i3wPkNOLzMGxqYvkUAAAAASUVORK5CYIIL</value>
+  </data>
+  <data name="SqlCommand4.CommandText" xml:space="preserve">
+    <value>DELETE FROM [dbo].[tblPropertyExposuresPriorYears] WHERE (([QuoteOptionID] = @Original_QuoteOptionID) AND ([Year] = @Original_Year) AND ((@IsNull_PriorRate = 1 AND [PriorRate] IS NULL) OR ([PriorRate] = @Original_PriorRate)) AND ((@IsNull_IncurredLosses = 1 AND [IncurredLosses] IS NULL) OR ([IncurredLosses] = @Original_IncurredLosses)) AND ([PriorID] = @Original_PriorID) AND ((@IsNull_IsPreviouslyApplied = 1 AND [IsPreviouslyApplied] IS NULL) OR ([IsPreviouslyApplied] = @Original_IsPreviouslyApplied)))</value>
+  </data>
+  <data name="SqlCommand7.CommandText" xml:space="preserve">
+    <value>UPDATE [dbo].[tblPropertyExposuresPriorYears] SET [QuoteOptionID] = @QuoteOptionID, [Year] = @Year, [PriorRate] = @PriorRate, [IncurredLosses] = @IncurredLosses, [IsPreviouslyApplied] = @IsPreviouslyApplied WHERE (([QuoteOptionID] = @Original_QuoteOptionID) AND ([Year] = @Original_Year) AND ((@IsNull_PriorRate = 1 AND [PriorRate] IS NULL) OR ([PriorRate] = @Original_PriorRate)) AND ((@IsNull_IncurredLosses = 1 AND [IncurredLosses] IS NULL) OR ([IncurredLosses] = @Original_IncurredLosses)) AND ([PriorID] = @Original_PriorID) AND ((@IsNull_IsPreviouslyApplied = 1 AND [IsPreviouslyApplied] IS NULL) OR ([IsPreviouslyApplied] = @Original_IsPreviouslyApplied)));
+SELECT QuoteOptionID, Year, PriorRate, IncurredLosses, PriorID, IsPreviouslyApplied FROM dbo.tblPropertyExposuresPriorYears WHERE (PriorID = @PriorID)</value>
+  </data>
+  <data name="SqlCommand5.CommandText" xml:space="preserve">
+    <value>INSERT INTO [dbo].[tblPropertyExposuresPriorYears] ([QuoteOptionID], [Year], [PriorRate], [IncurredLosses], [IsPreviouslyApplied]) VALUES (@QuoteOptionID, @Year, @PriorRate, @IncurredLosses, @IsPreviouslyApplied);
+SELECT QuoteOptionID, Year, PriorRate, IncurredLosses, PriorID, IsPreviouslyApplied FROM dbo.tblPropertyExposuresPriorYears WHERE (PriorID = SCOPE_IDENTITY())</value>
+  </data>
+  <data name="SqlInsertCommand2.CommandText" xml:space="preserve">
+    <value>INSERT INTO tblQuoteOptionProperty_SubLimits(PropertyOptionID, SubLimitID, Limit, Deductible, DeductiblePercentage, ModificationCode) VALUES (@PropertyOptionID, @SubLimitID, @Limit, @Deductible, @DeductiblePercentage, @ModificationCode)</value>
+  </data>
+  <data name="Appearance53.Image" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAAgIAAAKJUE5HDQoaCgAAAA1JSERSAAAAEAAAABAIBgAAAB/z/2EAAAAEZ0FNQQAAsY8L/GEFAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAGNSURBVDhPpY2/SwJhHMbvTzGLCyTISVpCCKKGflyUKJlp6CDRQbS4pNI5JGg29AMuXLICi6s8seNMM/tBFGVTkLXVllA4tD/dGd5QL5Q1fHi/fJ7n/X4pAP+CKFVWiu+IHFYRTFcwnXxWFLlHlCqRbBVXd1Wclt7gipcVRe4RpYo/9YLi9SvkswqGFm4VRe4RpQq7+QQnfw8mWkJX4FxR5B5RNgJR1pEkCaIoKiM5V9GGQqGAfD6PbDaLTCYDQRCQSCTA8zxisRg4joPP5wPLsvB4PMqXLwtkWdbkTzgcDuX5nL+FjUJNn7jBHrsweTQOb86uuM/AeTACm9gPZqcHvRtmzRsX22AIt4IONYOe04OaKjghPgrYf9iGW7ZqRWuqD6s3MUQvQzDHOzRvmKcxuj8M294QWoJNoLy5MeyVkxDut6BerRcHkt0IXwQxW5yBadmoeZrTw7rLwCIMotmvA+WRbZiQLBjPDMOeZrRi93onOtdMMC0Z0R41aF692hLQ1T7XFtSDv0KUvwfUB2sM2isyDCA8AAAAAElFTkSuQmCCCw==</value>
+  </data>
+  <data name="SqlInsertCommand1.CommandText" xml:space="preserve">
+    <value>INSERT INTO [tblQuoteOptionProperty] ([PriorID], [QuoteOptionID], [TerrorismDeclined], [CauseofLossID], [PolicyLimitDescriptionID], [PolicyFormID], [ValuationID], [CoInsuranceID], [TIV], [Coverage], [PolicyLimit], [SubLimits], [AOPDA], [OtherDeduct], [PrimaryPremium], [ExcessPremium], [TerrPremium], [AdditionalComments], [CoInsurance], [Rate], [PriorRate], [Valuation], [DeductiblePerID], [UnderlyingCarrier], [UnderlyingPolNo], [UnderlyingLimit], [UnderlyingDA], [RateBasedOffTIV], [TerrorismExcessPremium]) VALUES (@PriorID, @QuoteOptionID, @TerrorismDeclined, @CauseofLossID, @PolicyLimitDescriptionID, @PolicyFormID, @ValuationID, @CoInsuranceID, @TIV, @Coverage, @PolicyLimit, @SubLimits, @AOPDA, @OtherDeduct, @PrimaryPremium, @ExcessPremium, @TerrPremium, @AdditionalComments, @CoInsurance, @Rate, @PriorRate, @Valuation, @DeductiblePerID, @UnderlyingCarrier, @UnderlyingPolNo, @UnderlyingLimit, @UnderlyingDA, @RateBasedOffTIV, @TerrorismExcessPremium);
+SELECT ID, PriorID, QuoteOptionID, TerrorismDeclined, CauseofLossID, PolicyLimitDescriptionID, PolicyFormID, ValuationID, CoInsuranceID, TIV, Coverage, PolicyLimit, SubLimits, AOPDA, OtherDeduct, PrimaryPremium, ExcessPremium, TerrPremium, AdditionalComments, CoInsurance, Rate, PriorRate, Valuation, DeductiblePerID, UnderlyingCarrier, UnderlyingPolNo, UnderlyingLimit, UnderlyingDA, RateBasedOffTIV, TerrorismExcessPremium FROM tblQuoteOptionProperty WHERE (ID = SCOPE_IDENTITY())</value>
+  </data>
+</root>
