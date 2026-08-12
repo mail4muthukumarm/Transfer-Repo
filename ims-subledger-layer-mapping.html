@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accounting Subledger Layers Mapped to IMS</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --background: #f4f7fb;
+      --surface: #ffffff;
+      --text: #172033;
+      --muted: #596579;
+      --border: #d8e0eb;
+      --primary: #164f86;
+      --primary-soft: #eaf3fc;
+      --strong: #177245;
+      --strong-soft: #eaf7f0;
+      --partial: #8a5700;
+      --partial-soft: #fff5dc;
+      --gap: #a23232;
+      --gap-soft: #fcecec;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    main {
+      width: min(1440px, calc(100% - 32px));
+      margin: 30px auto;
+    }
+
+    header, section {
+      margin-bottom: 22px;
+      padding: 26px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+      box-shadow: 0 4px 14px rgba(23, 32, 51, 0.05);
+    }
+
+    header { border-top: 6px solid var(--primary); }
+    h1, h2 { margin-top: 0; line-height: 1.25; }
+    h1 { margin-bottom: 8px; font-size: clamp(28px, 4vw, 42px); }
+    h2 { color: var(--primary); font-size: 24px; }
+    p:last-child { margin-bottom: 0; }
+    .subtitle { color: var(--muted); font-size: 18px; }
+
+    .summary {
+      padding: 16px 18px;
+      border-left: 5px solid var(--primary);
+      border-radius: 6px;
+      background: var(--primary-soft);
+    }
+
+    .flow {
+      overflow-x: auto;
+      margin-top: 20px;
+      padding: 18px;
+      border: 1px dashed #91a4bd;
+      border-radius: 8px;
+      background: #fafcff;
+      font: 15px/1.55 Consolas, "Courier New", monospace;
+      white-space: pre;
+    }
+
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td {
+      padding: 11px 12px;
+      border: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #eaf0f7; color: #26364d; }
+    tbody tr:nth-child(even) { background: #fafcff; }
+    code {
+      padding: 2px 5px;
+      border-radius: 4px;
+      background: #edf2f8;
+      color: #172033;
+      font-family: Consolas, "Courier New", monospace;
+      overflow-wrap: anywhere;
+    }
+
+    .match {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    .strong { background: var(--strong-soft); color: var(--strong); }
+    .partial { background: var(--partial-soft); color: var(--partial); }
+    .gap { background: var(--gap-soft); color: var(--gap); }
+
+    ol { padding-left: 24px; }
+    li { margin-bottom: 10px; }
+    footer { padding: 4px 0 30px; color: var(--muted); text-align: center; }
+
+    @media (max-width: 720px) {
+      main { width: min(100% - 16px, 1440px); margin-top: 8px; }
+      header, section { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Accounting Subledger Layers Mapped to IMS</h1>
+      <p class="subtitle">Mapping of the L1-L4 tables from page 3 of <code>accounting-subledger-design (1).pdf</code> to objects found in <code>tables.sql</code>, <code>view_udf.sql</code>, and <code>sp.sql</code>.</p>
+    </header>
+
+    <section>
+      <h2>Executive summary</h2>
+      <div class="summary">
+        <strong>IMS does not implement four cleanly separated layers.</strong> The core <code>tblFin_Journal</code> and <code>tblFin_JournalPostings</code> tables combine the conceptual L1 transaction and L3 journal. L2 accounting rules are mainly implemented in stored procedures rather than generic event/rule tables.
+      </div>
+      <div class="flow">domain movement tables
+        | TransactNum / ResPayId / InvoiceNum
+        v
+tblFin_Journal (transaction and journal header)
+        | TransactNum
+        v
+tblFin_JournalPostings (signed double-entry lines and applications)
+        |
+        +-- balances calculated by UDFs
+        +-- Fortegra Oracle interface tables</div>
+    </section>
+
+    <section>
+      <h2>L1-L4 table mapping</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Layer</th><th>Diagram table</th><th>IMS table/object</th><th>Match</th><th>Explanation</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>L1</td><td><code>acct_transaction</code></td><td><code>tblFin_Journal</code> + <code>tblFin_JournalPostings</code></td><td><span class="match partial">Partial</span></td><td>IMS has no independent subledger transaction table. The journal header and signed lines jointly store date, type, amount, GL account, source document, currency, and invoice/claim links.</td></tr>
+            <tr><td>L1</td><td><code>acct_reserve_movement</code></td><td><code>tblClaims_ReservePayments</code></td><td><span class="match strong">Strong</span></td><td><code>ResPayId</code>, <code>ClaimId</code>, type/subtype, amount, payment/reserve flags, recovery, void, return, and dates represent claim reserve and payment movements. Journal lines reference <code>ClaimId</code> and <code>ResPayId</code>.</td></tr>
+            <tr><td>L1</td><td><code>acct_receipt</code></td><td><code>tblFin_RemitterJournal</code></td><td><span class="match strong">Strong</span></td><td>Incoming receipt header containing remitter, received/deposit dates, check number, amount, reconciliation, bounce, and deposit status. It shares <code>TransactNum</code> with the journal.</td></tr>
+            <tr><td>L1</td><td><code>acct_disbursement</code></td><td><code>tblFin_CheckRegister</code></td><td><span class="match strong">Strong</span></td><td>Outgoing payment header containing payment method, bank account, check number/date, payee, print data, reconciliation, and ACH account. Claim details originate in <code>tblClaims_ReservePayments</code>; ACH completion also appears in <code>tblFin_ACHPaymentsProcessed</code>.</td></tr>
+            <tr><td>L1</td><td><code>acct_application</code></td><td><code>tblFin_JournalPostings</code>; <code>tblFin_AppliedUnAccountedJournal</code>; <code>tblFin_InvoiceSweep</code></td><td><span class="match partial">Partial/combined</span></td><td><code>InvoiceNum</code>, <code>AppliedFrom</code>, claim references, and signed amounts express what the money settles. The additional tables link application transactions to source transactions or invoices.</td></tr>
+            <tr><td>L1</td><td><code>acct_deposit</code></td><td><code>tblFin_BankDeposit</code> + <code>tblFin_BankDepositDetail</code></td><td><span class="match strong">Strong</span></td><td>The header stores deposit date, bank GL, reference, user, and reconciliation. Detail associates receipt transactions and amounts with the deposit.</td></tr>
+
+            <tr><td>L2</td><td><code>acct_event</code></td><td>No direct table; stored procedures write <code>tblFin_Journal</code></td><td><span class="match gap">Gap</span></td><td>Events are procedural rather than persisted in a system-agnostic event table. Examples include <code>spFin_CashReceiptJournalEntry</code> and <code>Fortegra_spClaims_TransferPayment</code>.</td></tr>
+            <tr><td>L2</td><td><code>acct_rule</code></td><td>No direct table; stored procedures plus settings/mapping tables</td><td><span class="match gap">Gap</span></td><td>Representative configuration includes <code>tblClaims_TransferSettings</code>, <code>Fortegra_tblClaims_TransferSettings</code>, <code>tblFin_MGAAutomationAccounts</code>, and <code>tblFin_GLAccountMasterAutomationSettings</code>. These do not constitute a sequenced rule engine.</td></tr>
+            <tr><td>L2</td><td><code>acct_rule_line</code></td><td>No direct equivalent; automation mappings and journal templates are closest</td><td><span class="match gap">Gap</span></td><td><code>tblFin_JournalEntryTemplateDetails</code> contains GL account and Debit/Credit, but it is a manual journal template rather than a general accounting-event rule line. Runtime lines are largely hard-coded in procedures.</td></tr>
+
+            <tr><td>L3</td><td><code>acct_journal_batch</code></td><td>No internal equivalent</td><td><span class="match gap">Gap</span></td><td>IMS journals are not grouped under a persistent internal batch header. Oracle export <code>GROUP_ID</code> is an interface attribute, not an IMS journal batch.</td></tr>
+            <tr><td>L3</td><td><code>acct_journal_header</code></td><td><code>tblFin_Journal</code></td><td><span class="match strong">Strong</span></td><td>Contains transaction number, post date, description/type, entry type, company, user, comments, reconciliation, and void/reversal links. <code>tblFin_SuspendedJournal</code> is the pre-approval counterpart.</td></tr>
+            <tr><td>L3</td><td><code>acct_journal_line</code></td><td><code>tblFin_JournalPostings</code></td><td><span class="match strong">Strong</span></td><td>Contains signed amount, GL account, source-document type, invoice/claim/payment links, entity/payee, and transactional/functional/reporting currency data. Positive and negative amounts act as debit and credit lines. <code>tblFin_SuspendedJournalPosting</code> is the pre-approval counterpart.</td></tr>
+            <tr><td>L3</td><td><code>acct_balance</code></td><td>No authoritative stored current balance; <code>CalcGLAccountBalance</code> and related UDFs calculate it</td><td><span class="match gap">Gap</span></td><td><code>CalcGLAccountBalance</code> sums journal posting amounts by account and date. <code>tblFin_AccountStartingBalances</code> and <code>tblFin_BankAccounts.StartingBal</code> hold opening values, not a rebuildable current balance by account and period.</td></tr>
+
+            <tr><td>L4 IN</td><td><code>acct_staging_transaction</code></td><td>No generic equivalent; multiple source-specific staging/log tables</td><td><span class="match gap">Gap</span></td><td>Closest examples are <code>Fortegra_AL3ClaimImport_ReservesPayments</code>, <code>Fortegra_ClaimsImport</code>, <code>tblFin_DirectBillExcelImport</code>, <code>tblFin_ExcelImport</code>, <code>PolicyPaymentInputXmlLog</code>, and <code>tblClaims_WebServiceLog</code>. None supplies the complete generic source/idempotency/raw-payload contract.</td></tr>
+            <tr><td>L4 OUT</td><td><code>acct_interface_outbound</code> (GL)</td><td><code>Fortegra_OracleJournalTransferData</code></td><td><span class="match strong">Strong</span></td><td>Persistent Oracle GL staging containing ledger, accounting date, currency, ten segments, entered debit/credit, references, group, processed flag, and creation date. <code>Fortegra_OracleData_Debits</code> and <code>Fortegra_OracleData_Credits</code> are intermediate export-shaped tables.</td></tr>
+            <tr><td>L4 OUT</td><td><code>acct_interface_outbound</code> (AP/payment)</td><td><code>Fortegra_OracleDataTransfer</code></td><td><span class="match strong">Strong</span></td><td>Oracle payment-request payload containing payee/address, amount, claim/policy details, GL segments, IMS transaction number, and stub text. <code>Fortegra_OraclePaymentTransferLog</code> and <code>_Details</code> audit transfers.</td></tr>
+            <tr><td>L4 ACK</td><td><code>acct_interface_inbound</code></td><td><code>Fortegra_OracleCheckReconciliation</code>; <code>FORTEGRA_GL_PROCESSED_INTERFACE</code></td><td><span class="match partial">Strong/partial</span></td><td>The first returns IMS transaction number, Oracle check number, and processing status/date. The second carries processed GL interface IDs and dates.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Important field-level translations</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Conceptual field</th><th>IMS location</th></tr></thead>
+          <tbody>
+            <tr><td>Entity</td><td><code>tblFin_JournalPostings.EntityGuid</code> / <code>PayeeGuid</code>; receipt remitter in <code>tblFin_RemitterJournal.RemitterGUID</code>; claim in <code>ClaimId</code></td></tr>
+            <tr><td>Transaction type</td><td><code>tblFin_Journal.TransDescID</code>, <code>JournalEntryType</code>, and <code>tblFin_JournalPostings.SourceDocType</code></td></tr>
+            <tr><td>Accounting period/date</td><td><code>tblFin_Journal.PostDate</code>; fiscal configuration in <code>tblFin_FiscalSettings</code></td></tr>
+            <tr><td>Entered signed amount</td><td><code>tblFin_JournalPostings.Amount</code>; domain amount also appears in the L1 movement table</td></tr>
+            <tr><td>FX</td><td><code>CurrencyCode_Amount</code>, <code>ConvRate_Amount</code>, and functional/reporting amounts and rates on <code>tblFin_JournalPostings</code></td></tr>
+            <tr><td>Status</td><td>Distributed across <code>VoidedBy</code>/<code>VoiderFor</code>, reconciliation flags, payment dates, and suspended-journal approval fields</td></tr>
+            <tr><td>Reversal of</td><td><code>tblFin_Journal.VoidedBy</code> / <code>VoiderFor</code>; also <code>spFin_ReversingEntryLog</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>IMS-specific caveats</h2>
+      <ol>
+        <li><strong>L1 and L3 are collapsed.</strong> Cash receipt and claim-payment workflows create domain records and journal records together.</li>
+        <li><strong>L2 is code, not data.</strong> Accounting decisions and debit/credit construction are primarily embedded in stored procedures.</li>
+        <li><strong>Balance checking is procedural.</strong> <code>CheckDistributionBalance(TransactNum)</code> checks that signed lines sum to zero, but the supplied DDL does not show a database constraint guaranteeing this for every write path.</li>
+        <li><strong>Current GL balances are calculated, not stored.</strong> This differs from the proposed target <code>acct_balance</code>.</li>
+        <li><strong>Immutability is not guaranteed by the DDL.</strong> IMS supports void/reversal links, but the underlying tables remain updateable.</li>
+        <li><strong>Inbound staging is fragmented.</strong> The target <code>acct_staging_transaction</code> should be a new canonical table, not a rename of one legacy import table.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Recommended migration interpretation</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>New layer</th><th>IMS extraction/source of truth</th></tr></thead>
+          <tbody>
+            <tr><td>L1 transactions and movements</td><td>Build canonical movements from <code>tblFin_RemitterJournal</code>, <code>tblClaims_ReservePayments</code>, <code>tblFin_CheckRegister</code>, <code>tblFin_BankDeposit</code>/detail, and application links. Retain IMS IDs as source-record IDs.</td></tr>
+            <tr><td>L2 events and rules</td><td>Derive event types from stored procedures and source-document codes, then express the procedures' posting decisions as versioned rules and rule lines. Do not treat journal templates as a complete rule engine.</td></tr>
+            <tr><td>L3 journals</td><td>Migrate <code>tblFin_Journal</code> and <code>tblFin_JournalPostings</code> together, preserving transaction number, signed amount, GL account, source links, currencies, and reversal relationships. Validate that every migrated transaction sums to zero.</td></tr>
+            <tr><td>L4 interfaces</td><td>Consolidate source-specific imports behind <code>acct_staging_transaction</code>; generate Oracle GL from <code>Fortegra_OracleJournalTransferData</code> semantics and payment requests from <code>Fortegra_OracleDataTransfer</code>; ingest acknowledgements from the Oracle return tables.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>IMS Accounting Subledger Mapping</footer>
+  </main>
+</body>
+</html>
