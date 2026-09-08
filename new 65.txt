@@ -1,0 +1,45 @@
+ private void addUrlToZip(String documentUrl,
+                             String fileName,
+                             String snowAccessToken,
+                             String sharepointAccessToken,
+                             String snowBaseUrl,
+                             ZipOutputStream zos) throws IOException {
+        URL url = documentUrl.startsWith("/")
+                ? new URL(snowBaseUrl + documentUrl)
+                : new URL(documentUrl);
+        boolean sharepointUrl = url.getHost().toLowerCase().endsWith(".sharepoint.com");
+        if (sharepointUrl) {
+            String encodedUrl = Base64.getUrlEncoder().withoutPadding()
+                    .encodeToString(documentUrl.getBytes(StandardCharsets.UTF_8));
+            url = new URL("https://graph.microsoft.com/v1.0/shares/u!" + encodedUrl
+                    + "/driveItem/content");
+        }
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("GET");
+        conn.setRequestProperty("Accept", "application/octet-stream");
+        if (sharepointUrl) {
+            conn.setRequestProperty("Authorization", "Bearer " + sharepointAccessToken);
+        } else if (url.getHost().equalsIgnoreCase(new URL(snowBaseUrl).getHost())) {
+            conn.setRequestProperty("Authorization", "Bearer " + snowAccessToken);
+        }
+        int responseCode = conn.getResponseCode();
+        if (responseCode < 200 || responseCode >= 300) {
+            conn.disconnect();
+            throw new IOException("Document download failed: HTTP " + responseCode);
+        }
+        boolean entryOpen = false;
+        try (InputStream in = conn.getInputStream()) {
+            zos.putNextEntry(new ZipEntry(fileName));
+            entryOpen = true;
+            byte[] buffer = new byte[8192];
+            int bytesRead;
+            while ((bytesRead = in.read(buffer)) != -1) {
+                zos.write(buffer, 0, bytesRead);
+            }
+        } finally {
+            if (entryOpen) {
+                zos.closeEntry();
+            }
+            conn.disconnect();
+        }
+    }
