@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scheduled Import Set Relationships</title>
+  <style>
+    :root { --navy:#102a43; --blue:#2563eb; --cyan:#06b6d4; --green:#16a34a; --red:#dc2626; --ink:#243b53; --muted:#627d98; --line:#9fb3c8; --panel:#fff; --bg:#f4f7fb; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:radial-gradient(circle at 15% 0,#e0f2fe 0,transparent 28%),var(--bg); font:14px/1.45 Inter,Segoe UI,Arial,sans-serif; }
+    header { padding:42px clamp(22px,5vw,72px) 34px; color:white; background:linear-gradient(120deg,#102a43,#174f7a 58%,#087ea4); box-shadow:0 8px 26px #102a4328; }
+    h1 { margin:0 0 8px; font-size:clamp(28px,4vw,44px); letter-spacing:-1px; }
+    header p { margin:0; color:#d9efff; font-size:16px; }
+    main { max-width:1500px; margin:auto; padding:28px clamp(16px,4vw,56px) 60px; }
+    .stats { display:grid; grid-template-columns:repeat(4,minmax(150px,1fr)); gap:14px; margin-top:-52px; margin-bottom:25px; }
+    .stat { padding:19px 22px; border:1px solid #d9e2ec; border-radius:14px; background:#ffffffee; box-shadow:0 9px 24px #102a4314; backdrop-filter:blur(8px); }
+    .stat b { display:block; color:var(--navy); font-size:28px; line-height:1; }
+    .stat span { display:block; margin-top:7px; color:var(--muted); font-size:12px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; }
+    .toolbar { display:flex; flex-wrap:wrap; gap:11px; align-items:center; margin-bottom:28px; padding:14px; border:1px solid #d9e2ec; border-radius:14px; background:white; box-shadow:0 5px 16px #102a430d; }
+    input,select,button { min-height:42px; border:1px solid #bcccdc; border-radius:9px; background:white; color:var(--ink); font:inherit; }
+    input { flex:1 1 280px; padding:0 14px; }
+    select { padding:0 35px 0 12px; }
+    button { padding:0 16px; cursor:pointer; font-weight:700; }
+    button:hover { border-color:var(--blue); color:var(--blue); }
+    section { margin:30px 0; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:16px; margin-bottom:15px; }
+    h2 { margin:0; color:var(--navy); font-size:22px; }
+    .section-head p { margin:3px 0 0; color:var(--muted); }
+    .legend { display:flex; gap:13px; color:var(--muted); font-size:12px; white-space:nowrap; }
+    .dot { display:inline-block; width:9px; height:9px; margin-right:5px; border-radius:50%; }
+    .tree { overflow-x:auto; margin:0 0 18px; padding:22px; border:1px solid #d9e2ec; border-radius:16px; background:linear-gradient(135deg,#fff,#f8fbff); box-shadow:0 8px 22px #102a430b; }
+    .tree-title { margin:0 0 17px; color:#486581; font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+    .chain { display:flex; align-items:stretch; min-width:max-content; }
+    .connector { position:relative; align-self:center; width:62px; height:3px; background:linear-gradient(90deg,var(--cyan),var(--blue)); }
+    .connector:after { position:absolute; right:-1px; top:-5px; content:""; border-top:6px solid transparent; border-bottom:6px solid transparent; border-left:9px solid var(--blue); }
+    .connector span { position:absolute; width:90px; top:-24px; left:-13px; color:#4875a6; font-size:10px; font-weight:800; text-align:center; text-transform:uppercase; }
+    .card { position:relative; width:320px; min-height:205px; overflow:hidden; border:1px solid #cbd9e7; border-radius:13px; background:var(--panel); box-shadow:0 5px 15px #102a4311; transition:.18s ease; }
+    .card:hover { transform:translateY(-3px); border-color:#60a5fa; box-shadow:0 11px 26px #2563eb1c; }
+    .card.context { opacity:.3; }
+    .card-top { height:7px; background:linear-gradient(90deg,var(--cyan),var(--blue)); }
+    .card.inactive .card-top { background:#94a3b8; }
+    .card-body { padding:15px 17px 16px; }
+    .name { margin:0 0 10px; color:var(--navy); font-family:Consolas,monospace; font-size:15px; overflow-wrap:anywhere; }
+    .badges { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:13px; }
+    .badge { padding:4px 8px; border-radius:999px; background:#eaf2ff; color:#2459a8; font-size:10px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; }
+    .badge.active { background:#dcfce7; color:#16743a; }
+    .badge.inactive { background:#fee2e2; color:#b42318; }
+    .meta { display:grid; grid-template-columns:118px 1fr; gap:6px 8px; font-size:11px; }
+    .meta dt { color:var(--muted); font-weight:700; }
+    .meta dd { margin:0; overflow-wrap:anywhere; }
+    .parent-note { margin-top:12px; padding-top:9px; border-top:1px solid #e7eef5; color:#526d82; font-size:11px; }
+    .standalone-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:14px; }
+    .standalone-grid .card { width:auto; min-height:205px; }
+    .empty { display:none; padding:30px; border:1px dashed #9fb3c8; border-radius:14px; color:var(--muted); text-align:center; }
+    footer { padding:20px; color:#829ab1; text-align:center; font-size:12px; }
+    @media (max-width:760px) {
+      .stats { grid-template-columns:repeat(2,1fr); margin-top:-34px; }
+      .legend { display:none; }
+      .chain { flex-direction:column; align-items:center; min-width:0; }
+      .connector { width:3px; height:52px; background:linear-gradient(var(--cyan),var(--blue)); }
+      .connector:after { right:-5px; top:auto; bottom:-1px; border-top:9px solid var(--blue); border-left:6px solid transparent; border-right:6px solid transparent; border-bottom:0; }
+      .connector span { top:17px; left:10px; width:105px; text-align:left; }
+      .card { width:min(100%,350px); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Scheduled Import Sets</h1>
+    <p>Parent–child execution map with schedule, source, status and ownership details · Updated shown in Pacific and Eastern time</p>
+  </header>
+  <main>
+    <div class="stats">
+      <div class="stat"><b id="totalStat">0</b><span>Import set rows</span></div>
+      <div class="stat"><b id="activeStat">0</b><span>Active</span></div>
+      <div class="stat"><b id="linkStat">0</b><span>Parent links</span></div>
+      <div class="stat"><b id="rootStat">0</b><span>Standalone rows</span></div>
+    </div>
+
+    <div class="toolbar" aria-label="Diagram filters">
+      <input id="search" type="search" placeholder="Search name, data source or parent…">
+      <select id="status"><option value="all">All statuses</option><option value="active">Active only</option><option value="inactive">Inactive only</option></select>
+      <select id="schedule"><option value="all">All schedules</option></select>
+      <button id="reset" type="button">Reset</button>
+    </div>
+
+    <section>
+      <div class="section-head">
+        <div><h2>Relationship chains</h2><p>Follow the arrows from parent to child; child jobs run after their parent where indicated.</p></div>
+        <div class="legend"><span><i class="dot" style="background:#16a34a"></i>Active</span><span><i class="dot" style="background:#dc2626"></i>Inactive</span></div>
+      </div>
+      <div id="trees"></div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><h2>Independent schedules</h2><p>Rows with no parent that are not a parent in any relationship chain.</p></div></div>
+      <div id="standalone" class="standalone-grid"></div>
+      <div id="empty" class="empty">No import sets match the selected filters.</div>
+    </section>
+  </main>  
+
+  <script>
+    const data = [
+ {
+  "name": "pl_ims_producercontact",
+  "run": "Daily",
+  "source": "x_ds_mga_systems_stg_sn_tblProdCont",
+  "active": false,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 2,
+  "updated": "2026-02-02 19:50:27 PST",
+  "updatedEastern": "2026-02-02 22:50:27 EST",
+  "time": "00:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_journal_posting",
+  "run": "Daily",
+  "source": "x_ds_spc_journal_posting",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 3,
+  "updated": "2025-07-21 18:47:40 PDT",
+  "updatedEastern": "2025-07-21 21:47:40 EDT",
+  "time": "00:30:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_check_register",
+  "run": "Daily",
+  "source": "x_ds_spc_check_register",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "pl_journal",
+  "row": 4,
+  "updated": "2025-07-19 02:29:24 PDT",
+  "updatedEastern": "2025-07-19 05:29:24 EDT",
+  "time": "00:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_recon_paymentsource",
+  "run": "Daily",
+  "source": "x_ds_spc_payment_daily_recon_source",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 5,
+  "updated": "2025-09-02 18:40:19 PDT",
+  "updatedEastern": "2025-09-02 21:40:19 EDT",
+  "time": "21:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_ims_address",
+  "run": "Daily",
+  "source": "x_ds_mga_systems_stg_sn_Addresses",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 6,
+  "updated": "2026-09-03 03:53:38 PDT",
+  "updatedEastern": "2026-09-03 06:53:38 EDT",
+  "time": "18:00:00",
+  "repeat": 14400
+ },
+ {
+  "name": "pl_policy_history",
+  "run": "Daily",
+  "source": "x_ds_spc_quote_history",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 7,
+  "updated": "2026-02-07 00:21:06 PST",
+  "updatedEastern": "2026-02-07 03:21:06 EST",
+  "time": "18:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_ims_stg_sn_tblInsuredlocation_1",
+  "run": "Daily",
+  "source": "x_ds_mga_systems_stg_sn_tblInsuredloc_sf",
+  "active": false,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 8,
+  "updated": "2025-03-21 07:49:21 PDT",
+  "updatedEastern": "2025-03-21 10:49:21 EDT",
+  "time": "00:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_policy_quote_latest",
+  "run": "Daily",
+  "source": "x_ds_spc_policy_quote_latest",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 9,
+  "updated": "2026-02-07 07:35:27 PST",
+  "updatedEastern": "2026-02-07 10:35:27 EST",
+  "time": "23:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_journal",
+  "run": "Daily",
+  "source": "x_ds_spc_Journal",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 10,
+  "updated": "2025-07-21 18:42:14 PDT",
+  "updatedEastern": "2025-07-21 21:42:14 EDT",
+  "time": "00:30:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_ims_policy",
+  "run": "Daily",
+  "source": "x_ds_mga_systems_stg_sn_tblQuotes",
+  "active": false,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 11,
+  "updated": "2026-02-07 00:22:43 PST",
+  "updatedEastern": "2026-02-07 03:22:43 EST",
+  "time": "18:00:00",
+  "repeat": 14400
+ },
+ {
+  "name": "pl_ims_company_line",
+  "run": "Daily",
+  "source": "x_ds_mga_systems_company_line",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 12,
+  "updated": "2026-10-06 14:49:40 PDT",
+  "updatedEastern": "2026-10-06 17:49:40 EDT",
+  "time": "16:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_attorney",
+  "run": "Daily",
+  "source": "x_ds_spc_attorney",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 13,
+  "updated": "2025-09-05 15:02:34 PDT",
+  "updatedEastern": "2025-09-05 18:02:34 EDT",
+  "time": "00:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_cat_code",
+  "run": "Daily",
+  "source": "x_ds_spc_catastrophe",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 14,
+  "updated": "2026-05-04 16:22:56 PDT",
+  "updatedEastern": "2026-05-04 19:22:56 EDT",
+  "time": "19:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_vendor",
+  "run": "Daily",
+  "source": "x_ds_spc_vendor",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 15,
+  "updated": "2025-03-21 07:49:21 PDT",
+  "updatedEastern": "2025-03-21 10:49:21 EDT",
+  "time": "00:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_ims_line",
+  "run": "Daily",
+  "source": "x_ds_spc_line",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 16,
+  "updated": "2025-03-21 07:49:22 PDT",
+  "updatedEastern": "2025-03-21 10:49:22 EDT",
+  "time": "11:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_program",
+  "run": "Daily",
+  "source": "x_ds_spc_program",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 17,
+  "updated": "2026-05-05 04:37:31 PDT",
+  "updatedEastern": "2026-05-05 07:37:31 EDT",
+  "time": "19:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_ims_stg_sn_tblclaiminformation",
+  "run": "Daily",
+  "source": "x_ds_spc_stg_sn_tblclaiminformation_sf",
+  "active": false,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 18,
+  "updated": "2025-03-21 07:49:21 PDT",
+  "updatedEastern": "2025-03-21 10:49:21 EDT",
+  "time": "00:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_ims_claims",
+  "run": "Daily",
+  "source": "x_ds_mga_systems_stg_sn_Claim",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 19,
+  "updated": "2026-05-14 00:12:05 PDT",
+  "updatedEastern": "2026-05-14 03:12:05 EDT",
+  "time": "20:00:00",
+  "repeat": 14400
+ },
+ {
+  "name": "pl_ims_documentstore_association",
+  "run": "Daily",
+  "source": "x_ds_spc_documentstore_association",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 20,
+  "updated": "2025-03-21 07:49:22 PDT",
+  "updatedEastern": "2025-03-21 10:49:22 EDT",
+  "time": "21:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_claimant_totalIncurred",
+  "run": "Daily",
+  "source": "x_ds_spc_claimant_TotalIncurred",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 21,
+  "updated": "2025-07-10 06:35:59 PDT",
+  "updatedEastern": "2025-07-10 09:35:59 EDT",
+  "time": "00:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_reservesummary",
+  "run": "Daily",
+  "source": "x_ds_spc_reserve_summary",
+  "active": false,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 22,
+  "updated": "2026-07-15 09:17:54 PDT",
+  "updatedEastern": "2026-07-15 12:17:54 EDT",
+  "time": "20:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_check_register",
+  "run": "Daily",
+  "source": "x_ds_spc_check_register",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 23,
+  "updated": "2025-07-21 18:46:59 PDT",
+  "updatedEastern": "2025-07-21 21:46:59 EDT",
+  "time": "00:30:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_ims_stg_sn_claimant",
+  "run": "Once",
+  "source": "x_ds_mga_systems_stg_sn_Claimant_sf",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 24,
+  "updated": "2025-03-21 07:49:20 PDT",
+  "updatedEastern": "2025-03-21 10:49:20 EDT",
+  "time": "21:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_ims_stg_sn_tblInsuredlocation",
+  "run": "Once",
+  "source": "x_ds_mga_systems_stg_sn_tblInsuredloc_sf",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 25,
+  "updated": "2025-03-21 07:49:20 PDT",
+  "updatedEastern": "2025-03-21 10:49:20 EDT",
+  "time": "21:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_ims_stg_sn_lstclaims_losstypes",
+  "run": "Once",
+  "source": "x_ds_mga_systems_stg_sn_LossTypes_sf",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 26,
+  "updated": "2025-03-21 07:49:20 PDT",
+  "updatedEastern": "2025-03-21 10:49:20 EDT",
+  "time": "21:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_claim_accident_information",
+  "run": "Once",
+  "source": "x_ds_spc_claim_accident_information",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 27,
+  "updated": "2025-09-24 00:58:33 PDT",
+  "updatedEastern": "2025-09-24 03:58:33 EDT",
+  "time": "00:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_ims_stg_sn_tblQuotes",
+  "run": "Once",
+  "source": "x_ds_mga_systems_stg_sn_tblQuotes_sf",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 28,
+  "updated": "2025-03-21 07:49:20 PDT",
+  "updatedEastern": "2025-03-21 10:49:20 EDT",
+  "time": "21:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_ims_stg_sn_tblproducer",
+  "run": "Once",
+  "source": "x_ds_mga_systems_stg_sn_tblProducer_sf",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 29,
+  "updated": "2025-03-21 07:49:20 PDT",
+  "updatedEastern": "2025-03-21 10:49:20 EDT",
+  "time": "21:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_ims_stg_sn_lstLines",
+  "run": "Once",
+  "source": "x_ds_mga_systems_stg_sn_lstLines_sf",
+  "active": false,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 30,
+  "updated": "2025-03-21 07:49:20 PDT",
+  "updatedEastern": "2025-03-21 10:49:20 EDT",
+  "time": "21:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_document_folder",
+  "run": "Once",
+  "source": "x_ds_spc_document_folder",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 31,
+  "updated": "2025-03-21 07:49:21 PDT",
+  "updatedEastern": "2025-03-21 10:49:21 EDT",
+  "time": "00:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_recon_paymentsource_fullload",
+  "run": "Once",
+  "source": "x_ds_spc_payment_fullload_recon_source",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 32,
+  "updated": "2025-09-27 18:39:14 PDT",
+  "updatedEastern": "2025-09-27 21:39:14 EDT",
+  "time": "00:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_ims_stg_sn_prodcontact",
+  "run": "Once",
+  "source": "x_ds_mga_systems_stg_sn_tblProdCont_sf",
+  "active": false,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 33,
+  "updated": "2025-03-21 07:49:20 PDT",
+  "updatedEastern": "2025-03-21 10:49:20 EDT",
+  "time": "21:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_ims_stg_sn_tblcompany",
+  "run": "Once",
+  "source": "x_ds_mga_systems_stg_sn_tblCompany_sf",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 34,
+  "updated": "2025-03-21 07:49:20 PDT",
+  "updatedEastern": "2025-03-21 10:49:20 EDT",
+  "time": "21:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_ims_stg_sn_Claim",
+  "run": "Once",
+  "source": "x_ds_mga_systems_sf_stg_sn_Claim_sf",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 35,
+  "updated": "2025-03-21 07:49:20 PDT",
+  "updatedEastern": "2025-03-21 10:49:20 EDT",
+  "time": "21:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_ims_stg_sn_users",
+  "run": "Once",
+  "source": "x_ds_mga_systems_stg_sn_tblUsers_sf",
+  "active": false,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 36,
+  "updated": "2025-03-21 07:49:20 PDT",
+  "updatedEastern": "2025-03-21 10:49:20 EDT",
+  "time": "21:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_certs",
+  "run": "Once",
+  "source": "x_ds_spc_certs",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 37,
+  "updated": "2025-03-21 07:49:21 PDT",
+  "updatedEastern": "2025-03-21 10:49:21 EDT",
+  "time": "00:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_policy_program_map",
+  "run": "Once",
+  "source": "x_ds_spc_policy_program_map",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 38,
+  "updated": "2025-08-20 18:16:06 PDT",
+  "updatedEastern": "2025-08-20 21:16:06 EDT",
+  "time": "00:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_ims_stg_sn_rptlossrun",
+  "run": "Once",
+  "source": "x_ds_spc_stg_sn_rptlossrun_sf",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 39,
+  "updated": "2025-03-21 07:49:21 PDT",
+  "updatedEastern": "2025-03-21 10:49:21 EDT",
+  "time": "00:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_ims_stg_sn_reservepayments",
+  "run": "Once",
+  "source": "x_ds_mga_systems_stg_sn_Reserves_sf",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 40,
+  "updated": "2025-03-21 07:49:20 PDT",
+  "updatedEastern": "2025-03-21 10:49:20 EDT",
+  "time": "21:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_ims_stg_sn_address",
+  "run": "Once",
+  "source": "x_ds_mga_systems_stg_sn_Addresses_sf",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 41,
+  "updated": "2025-03-21 07:49:21 PDT",
+  "updatedEastern": "2025-03-21 10:49:21 EDT",
+  "time": "00:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_ims_stg_sn_tblclaimrespayacty",
+  "run": "Once",
+  "source": "x_ds_spc_stg_sn_paymentacty_sf",
+  "active": false,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 42,
+  "updated": "2025-03-21 07:49:21 PDT",
+  "updatedEastern": "2025-03-21 10:49:21 EDT",
+  "time": "00:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_ims_losstype",
+  "run": "After Parent Runs",
+  "source": "x_ds_mga_systems_stg_sn_LossTypes",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "pl_ims_producer",
+  "row": 43,
+  "updated": "2026-02-02 20:35:09 PST",
+  "updatedEastern": "2026-02-02 23:35:09 EST",
+  "time": "00:00:00",
+  "repeat": 14400
+ },
+ {
+  "name": "pl_ims_reservepayments",
+  "run": "After Parent Runs",
+  "source": "x_ds_mga_systems_stg_sn_Reserves",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "pl_ims_claimant",
+  "row": 44,
+  "updated": "2026-10-06 14:33:25 PDT",
+  "updatedEastern": "2026-10-06 17:33:25 EDT",
+  "time": "21:00:00",
+  "repeat": 14400
+ },
+ {
+  "name": "pl_ims_producer",
+  "run": "After Parent Runs",
+  "source": "x_ds_mga_systems_stg_sn_tblProducer",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "pl_ims_companylocation",
+  "row": 45,
+  "updated": "2026-02-02 20:34:18 PST",
+  "updatedEastern": "2026-02-02 23:34:18 EST",
+  "time": "04:00:00",
+  "repeat": 14400
+ },
+ {
+  "name": "pl_ims_claimant",
+  "run": "After Parent Runs",
+  "source": "x_ds_mga_systems_stg_sn_Claimant",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "pl_ims_address",
+  "row": 46,
+  "updated": "2026-02-02 21:07:58 PST",
+  "updatedEastern": "2026-02-03 00:07:58 EST",
+  "time": "20:00:00",
+  "repeat": 14400
+ },
+ {
+  "name": "pl_ims_companylocation",
+  "run": "After Parent Runs",
+  "source": "x_ds_mga_systems_stg_sn_tblCompany",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "pl_ims_insuredlocation",
+  "row": 47,
+  "updated": "2026-02-02 20:22:13 PST",
+  "updatedEastern": "2026-02-02 23:22:13 EST",
+  "time": "17:00:00",
+  "repeat": 14400
+ },
+ {
+  "name": "pl_ims_claimnote_association",
+  "run": "After Parent Runs",
+  "source": "x_ds_spc_note_association",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "pl_ims_claimnote",
+  "row": 48,
+  "updated": "2025-03-21 07:49:22 PDT",
+  "updatedEastern": "2025-03-21 10:49:22 EDT",
+  "time": "01:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_ims_insuredlocation",
+  "run": "Periodically",
+  "source": "x_ds_mga_systems_stg_sn_tblInsuredloc",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 49,
+  "updated": "2026-06-26 21:22:20 PDT",
+  "updatedEastern": "2026-06-27 00:22:20 EDT",
+  "time": "17:00:00",
+  "repeat": 14400
+ },
+ {
+  "name": "pl_ims_claimnote",
+  "run": "Periodically",
+  "source": "x_ds_spc_notestore_entries",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 50,
+  "updated": "2026-06-26 21:22:21 PDT",
+  "updatedEastern": "2026-06-27 00:22:21 EDT",
+  "time": "00:00:00",
+  "repeat": 86400
+ },
+ {
+  "name": "pl_ims_reserve_childline",
+  "run": "Periodically",
+  "source": "x_ds_spc_reserve_childline",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 51,
+  "updated": "2026-06-26 21:22:21 PDT",
+  "updatedEastern": "2026-06-27 00:22:21 EDT",
+  "time": "00:00:00",
+  "repeat": 14400
+ },
+ {
+  "name": "pl_company_program_code",
+  "run": "Weekly",
+  "source": "x_ds_spc_company_program_code",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 52,
+  "updated": "2025-03-21 07:49:21 PDT",
+  "updatedEastern": "2025-03-21 10:49:21 EDT",
+  "time": "00:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_ims_producerline",
+  "run": "Weekly",
+  "source": "x_ds_spc_producerline",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 53,
+  "updated": "2025-03-21 07:49:21 PDT",
+  "updatedEastern": "2025-03-21 10:49:21 EDT",
+  "time": "01:00:00",
+  "repeat": ""
+ },
+ {
+  "name": "pl_ims_lstnotetypes",
+  "run": "Weekly",
+  "source": "x_ds_spc_claimnotetype",
+  "active": true,
+  "runAs": "IMS Integration",
+  "parent": "",
+  "row": 54,
+  "updated": "2025-03-21 07:49:22 PDT",
+  "updatedEastern": "2025-03-21 10:49:22 EDT",
+  "time": "01:00:00",
+  "repeat": ""
+ }
+];
+    const byName = new Map(data.map(d => [d.name,d]));
+    const childNames = new Set(data.filter(d => d.parent).map(d => d.name));
+    const parentNames = new Set(data.filter(d => d.parent).map(d => d.parent));
+    const relatedNames = new Set([...childNames,...parentNames]);
+    const roots = data.filter(d => parentNames.has(d.name) && !d.parent);
+    const standalone = data.filter(d => !d.parent && !parentNames.has(d.name));
+    const $ = id => document.getElementById(id);
+    const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+    function childrenOf(name) { return data.filter(d => d.parent === name); }
+    function flatten(root) {
+      const result = [root];
+      let current = root;
+      while (childrenOf(current.name).length === 1) { current = childrenOf(current.name)[0]; result.push(current); }
+      return result;
+    }
+    const trees = roots.map(flatten);
+
+    function matches(d) {
+      const q = $('search').value.trim().toLowerCase();
+      const status = $('status').value;
+      const schedule = $('schedule').value;
+      const text = `${d.name} ${d.source} ${d.parent || ''}`.toLowerCase();
+      return (!q || text.includes(q)) && (status === 'all' || (status === 'active') === d.active) && (schedule === 'all' || schedule === d.run);
+    }
+
+    function card(d, context=false) {
+      return `<article class="card ${d.active?'':'inactive'} ${context?'context':''}">
+        <div class="card-top"></div><div class="card-body">
+        <h3 class="name">${esc(d.name)}</h3>
+        <div class="badges"><span class="badge ${d.active?'active':'inactive'}">${d.active?'Active':'Inactive'}</span><span class="badge">${esc(d.run)}</span></div>
+        <dl class="meta"><dt>Source</dt><dd>${esc(d.source)}</dd><dt>Run as</dt><dd>${esc(d.runAs)}</dd><dt>Time</dt><dd>${esc(d.time)}${d.repeat?` · every ${d.repeat/3600}h`:''}</dd><dt>Updated (PT)</dt><dd>${esc(d.updated)}</dd><dt>update_Eastern Time</dt><dd>${esc(d.updatedEastern)}</dd></dl>
+        ${d.parent?`<div class="parent-note">Child of <strong>${esc(d.parent)}</strong></div>`:'<div class="parent-note">No parent configured</div>'}
+        </div></article>`;
+    }
+
+    function render() {
+      const treeHtml = trees.filter(t => t.some(matches)).map((tree,i) => `<div class="tree">
+        <div class="tree-title">Dependency chain ${i+1} · ${tree.length} levels</div>
+        <div class="chain">${tree.map((d,n) => `${n?'<div class="connector"><span>triggers</span></div>':''}${card(d,!matches(d))}`).join('')}</div>
+      </div>`).join('');
+      $('trees').innerHTML = treeHtml || '<div class="empty" style="display:block">No relationship chain matches the selected filters.</div>';
+      const independent = standalone.filter(matches);
+      $('standalone').innerHTML = independent.map(d => card(d)).join('');
+      $('empty').style.display = independent.length ? 'none' : 'block';
+    }
+
+    [...new Set(data.map(d => d.run))].sort().forEach(run => $('schedule').insertAdjacentHTML('beforeend',`<option>${esc(run)}</option>`));
+    $('totalStat').textContent = data.length;
+    $('activeStat').textContent = data.filter(d => d.active).length;
+    $('linkStat').textContent = data.filter(d => d.parent).length;
+    $('rootStat').textContent = standalone.length;
+    ['search','status','schedule'].forEach(id => $(id).addEventListener(id==='search'?'input':'change',render));
+    $('reset').addEventListener('click',() => { $('search').value=''; $('status').value='all'; $('schedule').value='all'; render(); });
+    render();
+  </script>
+</body>
+</html>
