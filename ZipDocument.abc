@@ -1,0 +1,757 @@
+package au.com.jarfusion.imsdocumentadapter.document;
+
+
+import au.com.jarfusion.imsdocumentadapter.common.CommonUtil;
+import au.com.jarfusion.imsdocumentadapter.common.ExceptionUtil;
+import kong.unirest.HttpResponse;
+import kong.unirest.JsonNode;
+import kong.unirest.Unirest;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.commons.io.IOUtils;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.springframework.http.*;
+import org.springframework.web.client.RestTemplate;
+
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.file.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+
+public class ZipDocument {
+
+    private static final ObjectMapper mapper = new ObjectMapper();
+    String envn = "test";
+    //When true, .eml and .msg files are converted to .pdf before adding to the zip
+    boolean emlToPdf = false;
+    private static final int CHUNK_SIZE = 5 * 1024 * 1024;
+
+    /*
+     Constructor
+     */
+    public ZipDocument(String env){
+        envn = env;
+    }
+
+    /*
+
+     */
+    public String generateZip(String input) throws Exception {
+        JSONObject inputJsonObject = new JSONObject(input);
+        StringBuilder sb = new StringBuilder();
+        JSONObject output = new JSONObject();
+        try {
+            //Input folder
+            String sharepointFolderName = inputJsonObject.get("sharepointFolderName") == JSONObject.NULL ? null : (String) inputJsonObject.get("sharepointFolderName");
+            //Output folder
+            String documentFolder = inputJsonObject.get("documentFolder") == JSONObject.NULL ? null : (String) inputJsonObject.get("documentFolder");
+            //Input folder
+            String nonAttachment = inputJsonObject.get("nonAttachment") == JSONObject.NULL ? null : (String) inputJsonObject.get("nonAttachment");
+            String originalTable = inputJsonObject.get("originalTable") == JSONObject.NULL ? null : (String) inputJsonObject.get("originalTable");
+            Integer scope = inputJsonObject.get("scope") == JSONObject.NULL ? null : (Integer) inputJsonObject.get("scope");
+            emlToPdf = inputJsonObject.optInt("EmlToPdf", 0) == 1;
+            output.put("documentFolder",documentFolder);
+
+            //Create sharepoint token
+            String accessToken = getAccessToken(inputJsonObject,sb);
+
+            //Create zip
+            String tempPath = System.getProperty("java.io.tmpdir") + "Fortegra\\";
+            String folderName = sharepointFolderName.substring(sharepointFolderName.lastIndexOf("/") + 1);
+            output.put("folderName",folderName);
+            // String zipFileName = folderName + ".zip";
+            // Get current date and time
+            LocalDateTime now = LocalDateTime.now();
+            // Define the format (ddMMyyyyHHmmss)
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMyyyyHHmmss");
+            // Format and append
+            String zipFileName = documentFolder+"_"+ scope.toString()+"_" + now.format(formatter)+".zip";
+            output.put("zipFileName",zipFileName);
+            Path zipPath = Paths.get(tempPath, zipFileName);
+            Files.createDirectories(zipPath.getParent());
+            try (ZipOutputStream zos = new ZipOutputStream(Files.newOutputStream(zipPath))) {
+                Set<String> usedFileNames = new HashSet<>();
+                if(scope == 1) {
+                    //Count total files
+                    int totalFiles = countFiles(sharepointFolderName, accessToken, inputJsonObject,sb);
+                    AtomicInteger processedFiles = new AtomicInteger(0);
+                    sb.append("Found " + totalFiles + " files in folder: " + sharepointFolderName);
+                    sb.append("Zipping of attachments is started.");
+                    addFolderToZip(sharepointFolderName, "", zos, processedFiles, totalFiles,
+                            accessToken, inputJsonObject, sb, usedFileNames);
+                    sb.append("Zipping of attachments is completed.");
+                    sb.append("Zipping of non attachments started.");
+                    addSnowFilesToZip(zos, nonAttachment, originalTable, inputJsonObject, sb, usedFileNames);
+                    addHostedDocumentsToZip(zos, nonAttachment,accessToken, inputJsonObject, sb, usedFileNames);
+                    sb.append("Zipping of non attachments completed.");
+                }
+                else if (scope == 2){
+                    //Count total files
+                    int totalFiles = countFiles(sharepointFolderName, accessToken, inputJsonObject,sb);
+                    AtomicInteger processedFiles = new AtomicInteger(0);
+                    sb.append("Found " + totalFiles + " files in folder: " + sharepointFolderName);
+                    sb.append("Zipping of attachments is started.");
+                    addFolderToZip(sharepointFolderName, "", zos, processedFiles, totalFiles,
+                            accessToken, inputJsonObject, sb, usedFileNames);
+                    sb.append("Zipping of attachments is completed.");
+                }
+                else if(scope == 3){
+                    sb.append("Zipping of non attachments started.");
+                    addSnowFilesToZip(zos, nonAttachment, originalTable, inputJsonObject, sb, usedFileNames);
+                    addHostedDocumentsToZip(zos, nonAttachment,accessToken, inputJsonObject, sb, usedFileNames);
+                    sb.append("Zipping of non attachments completed.");
+                }
+            } catch (Exception ex) {
+                sb.append("generateZip : Error -" + ExceptionUtil.extractExceptionDetails(ex));
+            }
+
+            //Upload final zip to sharepoint
+            uploadFile(zipPath, documentFolder + "/" + zipFileName,
+                    accessToken, inputJsonObject,sb);
+            sb.append("Recursive zip uploaded: " + zipFileName);
+
+            //Collect sharepoint metadata
+            inputJsonObject.put("sharepointFileName",zipFileName);
+            inputJsonObject.put("accesstoken",accessToken);
+            JSONObject temp = new JSONObject();
+            temp.put("sharepointDriveId",inputJsonObject.get("sharepointDriveId"));
+            temp.put("sharepointFolderName",documentFolder);
+            temp.put("sharepointFileName",zipFileName);
+            temp.put("accesstoken",accessToken);
+            DocumentRepository docRepo = new DocumentRepository(envn);
+            docRepo.collectSharepointMetadata(temp,sb,output);
+        }
+        catch(Exception ex){
+            sb.append("generateZip : Error -" + ExceptionUtil.extractExceptionDetails(ex));
+        }
+        output.put("debugMessage", sb.toString());
+        return output.toString();
+    }
+
+    /*************************START - Methods to download files from sharepoint******************************/
+
+    /*
+
+     */
+    private String getAccessToken(JSONObject inputJsonObject,StringBuilder sb) throws IOException {
+        String sharepointClientId = inputJsonObject.get("sharepointClientId") == JSONObject.NULL ? null : (String) inputJsonObject.get("sharepointClientId");
+        String sharepointClientSecret = inputJsonObject.get("sharepointClientSecret") == JSONObject.NULL ? null : (String) inputJsonObject.get("sharepointClientSecret");
+        HttpResponse<JsonNode> response = Unirest.post("https://login.microsoftonline.com/" + "e49e9863-0f2e-4860-891b-48221b674dc2" + "/oauth2/v2.0/token")
+                .field("client_id", sharepointClientId)
+                .field("scope", "https://graph.microsoft.com/.default")
+                .field("client_secret", sharepointClientSecret)
+                .field("grant_type", "client_credentials")
+                .asJson();
+        if (response.getStatus() != 200) {
+            throw new RuntimeException("Failed to get token: " + response.getBody());
+        }
+        sb.append("Access token generated.");
+        return response.getBody().getObject().getString("access_token");
+    }
+
+    /*
+
+     */
+    private  int countFiles(String folderPath, String token,
+                            JSONObject inputJsonObject,StringBuilder sb) throws Exception {
+        com.fasterxml.jackson.databind.JsonNode children = null;
+        try {
+            children = listFolder(folderPath, token, inputJsonObject);
+        }
+        catch(Exception ex){
+            sb.append("countFiles : Error -" + ExceptionUtil.extractExceptionDetails(ex));
+        }
+        int count = 0;
+        if(children != null) {
+            for (int i = 0; i < children.size(); i++) {
+                com.fasterxml.jackson.databind.JsonNode item = children.get(i);
+                if (item.has("folder")) {
+                    count += countFiles(folderPath + "/" + item.get("name").asText(), token, inputJsonObject, sb);
+                } else if (item.has("file")) {
+                    count++;
+                }
+            }
+        }
+        sb.append("Count of files -"+count);
+        return count;
+    }
+
+    /*
+
+     */
+    private  void addFolderToZip(String folderPath, String relativePath, ZipOutputStream zos,
+                                       AtomicInteger processedFiles, int totalFiles,
+                                 String token,JSONObject inputJsonObject,StringBuilder sb,
+                                 Set<String> usedFileNames) throws Exception {
+        sb.append("Entering folder: " + folderPath);
+        com.fasterxml.jackson.databind.JsonNode children = null;
+
+        try {
+            children = listFolder(folderPath, token, inputJsonObject);
+        }
+        catch(Exception ex){
+            sb.append("addFolderToZip : Error -" + ExceptionUtil.extractExceptionDetails(ex));
+        }
+        if(children != null) {
+            for (int i = 0; i < children.size(); i++) {
+                com.fasterxml.jackson.databind.JsonNode item = children.get(i);
+                String name = item.get("name").asText();
+
+                if (item.has("folder")) {
+                    addFolderToZip(folderPath + "/" + name, relativePath + name + "/", zos, processedFiles,
+                            totalFiles, token, inputJsonObject, sb, usedFileNames);
+                } else if (item.has("file")) {
+                    int current = processedFiles.incrementAndGet();
+                    sb.append("Zipping file (" + current + "/" + totalFiles + "): " + relativePath + name);
+
+                    InputStream in = downloadFile(item.get("id").asText(), token, inputJsonObject);
+                    String convertFrom = emailExtensionToConvert(name);
+                    String entryName = convertFrom != null ? toPdfName(name) : name;
+                    writeZipEntry(zos, relativePath + entryName, in, convertFrom, sb);
+                    usedFileNames.add(entryName);
+                    in.close();
+                }
+            }
+        }
+    }
+
+    /*
+
+     */
+    private com.fasterxml.jackson.databind.JsonNode listFolder(String folderPath, String token,JSONObject inputJsonObject) throws Exception {
+        String sharepointDriveId = inputJsonObject.get("sharepointDriveId") == JSONObject.NULL ? null : (String) inputJsonObject.get("sharepointDriveId");
+        HttpResponse<JsonNode> response = Unirest.get("https://graph.microsoft.com/v1.0"
+                + "/drives/" + sharepointDriveId + "/root:/" + encodeGraphPath(folderPath) + ":/children")
+                .header("Authorization", "Bearer " + token)
+                .asJson();
+        if (response.getStatus() != 200) {
+            throw new RuntimeException("Error listing folder: " + response.getBody());
+        }
+        String jsonStr = response.getBody().toString();
+        return mapper.readTree(jsonStr).get("value");
+    }
+
+    /*
+
+     */
+    public static String encodeGraphPath(String path) throws UnsupportedEncodingException {
+        String[] parts = path.split("/");
+        StringBuilder encoded = new StringBuilder();
+        for (int i = 0; i < parts.length; i++) {
+            if (i > 0) encoded.append("/");
+            encoded.append(
+                    URLEncoder.encode(parts[i], String.valueOf(StandardCharsets.UTF_8))
+                            .replace("+", "%20")
+            );
+        }
+        return encoded.toString();
+    }
+
+    /*
+
+     */
+    private static InputStream downloadFile(String fileId, String token,JSONObject inputJsonObject) throws Exception {
+        String sharepointDriveId = inputJsonObject.get("sharepointDriveId") == JSONObject.NULL ? null : (String) inputJsonObject.get("sharepointDriveId");
+
+//        HttpResponse<byte[]> response = Unirest.get("https://graph.microsoft.com/v1.0"
+//                + "/drives/" + sharepointDriveId + "/items/" + fileId + "/content")
+//                .header("Authorization", "Bearer " + token)
+//                .asBytes();
+//        if (response.getStatus() != 200) {
+//            throw new RuntimeException("Error downloading file: " + response.getBody());
+//        }
+//        return new ByteArrayInputStream(response.getBody());
+
+        URL url = new URL("https://graph.microsoft.com/v1.0"
+                + "/drives/" + sharepointDriveId
+                + "/items/" + fileId + "/content");
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestProperty("Authorization", "Bearer " + token);
+        connection.setRequestMethod("GET");
+        return connection.getInputStream();
+    }
+
+    /*****************************************END*********************************************************/
+
+    /***************START - Methods to download non attachment files from servicenow *********************/
+
+    /*
+        Add servicenow non attachment files to zip
+     */
+    private boolean addSnowFilesToZip(ZipOutputStream zos,
+                                      String attachmentTableSysId,
+                                      String tableName,
+                                      JSONObject inputJsonObject,
+                                      StringBuilder sb,
+                                      Set<String> usedFileNames){
+        boolean status = false;
+        String partialURL = "ftgtest";
+        sb.append("addSnowFilesToZip: reading files from servicenow...");
+        try {
+            String snowuserName = inputJsonObject.get("snowuserName") == JSONObject.NULL ? null : (String) inputJsonObject.get("snowuserName");
+            String snowpassword = inputJsonObject.get("snowpassword") == JSONObject.NULL ? null : (String) inputJsonObject.get("snowpassword");
+            String snowClientId = inputJsonObject.get("snowClientId") == JSONObject.NULL ? null : (String) inputJsonObject.get("snowClientId");
+            String snowClientSecret = inputJsonObject.get("snowClientSecret") == JSONObject.NULL ? null : (String) inputJsonObject.get("snowClientSecret");
+            //Getting servicenow access token
+            if (envn.toUpperCase().equalsIgnoreCase("DEV")) {
+                partialURL = "ftgdev";
+            }
+            else if (envn.toUpperCase().equalsIgnoreCase("TEST")) {
+                partialURL = "ftgtest";
+            } else if (envn.toUpperCase().equalsIgnoreCase("PROD")) {
+                partialURL = "fortegra";
+            }
+            kong.unirest.HttpResponse<String> response = Unirest.post("https://" + partialURL + ".service-now.com/oauth_token.do")
+                    .header("Content-Type", "application/x-www-form-urlencoded")
+                    .field("grant_type", "password")
+                    .field("username", snowuserName)
+                    .field("password", snowpassword)
+                    .field("client_id", snowClientId)
+                    .field("client_secret", snowClientSecret)
+                    .asString();
+            JSONObject inputObj = new JSONObject(response.getBody());
+            String access_token = inputObj.get("access_token") == JSONObject.NULL ? null : (String) inputObj.get("access_token");
+            List<AttachmentInfo> attachments = readAllFilesForTableSysId(access_token,"https://" + partialURL + ".service-now.com",
+                    attachmentTableSysId,tableName,sb);
+            //Iterate list of attachment id
+            for (int i = 0; i < attachments.size(); i++) {
+
+                String fileName = attachments.get(i).fileName;
+                String convertFrom = emailExtensionToConvert(fileName);
+                String uniqueFileName = makeUniqueEntryName(convertFrom != null ? toPdfName(fileName) : fileName,usedFileNames);
+
+                sb.append("addSnowFilesToZip: zip file-"+uniqueFileName);
+                readAttachmentFromSnow(access_token,attachments.get(i).sysId,
+                        uniqueFileName,convertFrom,zos,sb,partialURL);
+            }
+            status = true;
+        }
+        catch (Exception e) {
+            sb.append( "Error in readAttachmentFromSnow:" + ExceptionUtil.extractExceptionDetails(e));
+            status = false;
+        }
+        return status;
+    }
+
+    /*
+        Add documents referenced by x_verge_sf_host and x_verge_sf_document to the zip.
+     */
+    private boolean addHostedDocumentsToZip(ZipOutputStream zos,
+                                            String host,
+                                            String sharepointAccessToken,
+                                            JSONObject inputJsonObject,
+                                            StringBuilder sb,
+                                            Set<String> usedFileNames) {
+        String partialURL = "";
+        if (envn.toUpperCase().equalsIgnoreCase("DEV")) {
+            partialURL = "ftgdev";
+        }
+        else if (envn.toUpperCase().equalsIgnoreCase("TEST")) {
+            partialURL = "ftgtest";
+        } else if (envn.toUpperCase().equalsIgnoreCase("PROD")) {
+            partialURL = "fortegra";
+        }
+
+        String baseUrl = "https://" + partialURL + ".service-now.com";
+        try {
+            String accessToken = getSnowAccessToken(inputJsonObject, baseUrl);
+            List<JSONObject> hosts = readSnowTableRecords(accessToken, baseUrl,
+                    "x_verge_sf_host", "host=" + host, "sys_id");
+            int added = 0;
+            for (JSONObject hostRecord : hosts) {
+                List<JSONObject> documents = readSnowTableRecords(accessToken, baseUrl,
+                        "x_verge_sf_document", "parent=" + hostRecord.getString("sys_id"), "url");
+                for (JSONObject document : documents) {
+                    String documentUrl = document.optString("url", "");
+                    String fileName = fileNameFromUrl(documentUrl);
+                    if (fileName.isEmpty()) {
+                        sb.append("addHostedDocumentsToZip: skipped document with no file name in URL-")
+                                .append(documentUrl);
+                        continue;
+                    }
+                    String convertFrom = emailExtensionToConvert(fileName);
+                    String entryName = convertFrom != null ? toPdfName(fileName) : fileName;
+                    if (!usedFileNames.add(entryName)) {
+                        sb.append("addHostedDocumentsToZip: file already exists-").append(entryName);
+                        continue;
+                    }
+                    try {
+                        addUrlToZip(documentUrl, entryName, convertFrom, accessToken, sharepointAccessToken,
+                                baseUrl, zos, sb);
+                        added++;
+                        sb.append("addHostedDocumentsToZip: zip file-").append(entryName);
+                    } catch (Exception ex) {
+                        sb.append("addHostedDocumentsToZip: failed-").append(entryName).append(":")
+                                .append(ExceptionUtil.extractExceptionDetails(ex));
+                    }
+                }
+            }
+            sb.append("addHostedDocumentsToZip: added ").append(added).append(" files.");
+            return true;
+        } catch (Exception ex) {
+            sb.append("Error in addHostedDocumentsToZip:")
+                    .append(ExceptionUtil.extractExceptionDetails(ex));
+            return false;
+        }
+    }
+
+    /*
+
+     */
+    private String getSnowAccessToken(JSONObject inputJsonObject, String baseUrl) {
+        kong.unirest.HttpResponse<String> response = Unirest.post(baseUrl + "/oauth_token.do")
+                .header("Content-Type", "application/x-www-form-urlencoded")
+                .field("grant_type", "password")
+                .field("username", inputJsonObject.optString("snowuserName", null))
+                .field("password", inputJsonObject.optString("snowpassword", null))
+                .field("client_id", inputJsonObject.optString("snowClientId", null))
+                .field("client_secret", inputJsonObject.optString("snowClientSecret", null))
+                .asString();
+        if (response.getStatus() != 200) {
+            throw new RuntimeException("Failed to get ServiceNow token: HTTP " + response.getStatus());
+        }
+        return new JSONObject(response.getBody()).getString("access_token");
+    }
+
+    /*
+
+     */
+    private List<JSONObject> readSnowTableRecords(String accessToken,
+                                                  String baseUrl,
+                                                  String table,
+                                                  String query,
+                                                  String fields) throws IOException {
+        List<JSONObject> records = new ArrayList<>();
+        int limit = 1000;
+        int offset = 0;
+        while (true) {
+            String apiUrl = baseUrl + "/api/now/table/" + table
+                    + "?sysparm_query=" + URLEncoder.encode(query, "UTF-8")
+                    + "&sysparm_fields=" + URLEncoder.encode(fields, "UTF-8")
+                    + "&sysparm_limit=" + limit + "&sysparm_offset=" + offset;
+            HttpURLConnection conn = (HttpURLConnection) new URL(apiUrl).openConnection();
+            conn.setRequestMethod("GET");
+            conn.setRequestProperty("Authorization", "Bearer " + accessToken);
+            conn.setRequestProperty("Accept", "application/json");
+            int responseCode = conn.getResponseCode();
+            if (responseCode < 200 || responseCode >= 300) {
+                conn.disconnect();
+                throw new IOException("ServiceNow table query failed for " + table + ": HTTP " + responseCode);
+            }
+            StringBuilder body = new StringBuilder();
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(
+                    conn.getInputStream(), StandardCharsets.UTF_8))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    body.append(line);
+                }
+            } finally {
+                conn.disconnect();
+            }
+            JSONArray result = new JSONObject(body.toString()).getJSONArray("result");
+            for (int i = 0; i < result.length(); i++) {
+                records.add(result.getJSONObject(i));
+            }
+            if (result.length() < limit) {
+                return records;
+            }
+            offset += limit;
+        }
+    }
+
+    /*
+
+     */
+    static String fileNameFromUrl(String documentUrl) {
+        try {
+            String path = documentUrl.startsWith("http://") || documentUrl.startsWith("https://")
+                    ? new URL(documentUrl).getPath()
+                    : documentUrl;
+            int queryStart = path.indexOf('?');
+            if (queryStart >= 0) {
+                path = path.substring(0, queryStart);
+            }
+            int fragmentStart = path.indexOf('#');
+            if (fragmentStart >= 0) {
+                path = path.substring(0, fragmentStart);
+            }
+            int slash = path.lastIndexOf('/');
+            String fileName = slash >= 0 ? path.substring(slash + 1) : path;
+            fileName = java.net.URLDecoder.decode(fileName.replace("+", "%2B"), "UTF-8");
+            if (fileName.isEmpty() || fileName.equals(".") || fileName.equals("..")
+                    || fileName.contains("/") || fileName.contains("\\")) {
+                return "";
+            }
+            return fileName;
+        } catch (Exception ex) {
+            return "";
+        }
+    }
+
+    /*
+
+     */
+    private void addUrlToZip(String documentUrl,
+                             String fileName,
+                             String convertFrom,
+                             String snowAccessToken,
+                             String sharepointAccessToken,
+                             String snowBaseUrl,
+                             ZipOutputStream zos,
+                             StringBuilder sb) throws IOException {
+        URL url = documentUrl.startsWith("/")
+                ? new URL(snowBaseUrl + documentUrl)
+                : new URL(documentUrl);
+        boolean sharepointUrl = url.getHost().toLowerCase().endsWith(".sharepoint.com");
+        if (sharepointUrl) {
+            String encodedUrl = Base64.getUrlEncoder().withoutPadding()
+                    .encodeToString(documentUrl.getBytes(StandardCharsets.UTF_8));
+            url = new URL("https://graph.microsoft.com/v1.0/shares/u!" + encodedUrl
+                    + "/driveItem/content");
+        }
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("GET");
+        conn.setRequestProperty("Accept", "application/octet-stream");
+        if (sharepointUrl) {
+            conn.setRequestProperty("Authorization", "Bearer " + sharepointAccessToken);
+        } else if (url.getHost().equalsIgnoreCase(new URL(snowBaseUrl).getHost())) {
+            conn.setRequestProperty("Authorization", "Bearer " + snowAccessToken);
+        }
+        int responseCode = conn.getResponseCode();
+        if (responseCode < 200 || responseCode >= 300) {
+            conn.disconnect();
+            throw new IOException("Document download failed: HTTP " + responseCode);
+        }
+        try (InputStream in = conn.getInputStream()) {
+            writeZipEntry(zos, fileName, in, convertFrom, sb);
+        } finally {
+            conn.disconnect();
+        }
+    }
+
+    /*
+        Read all attachments for a table sys id
+     */
+    private List<AttachmentInfo> readAllFilesForTableSysId(String accessToken,
+                                                           String base_url,
+                                                           String attachmentTableSysId,
+                                                           String tableName,
+                                                           StringBuilder sb){
+        List<AttachmentInfo> attachments = new ArrayList<>();
+        try {
+            // Build REST URL with query parameters
+            String apiUrl = base_url + "/api/now/table/sys_attachment" +
+                    "?sysparm_query=table_name=" + tableName +
+                    "^table_sys_id=" + attachmentTableSysId +
+                    "&sysparm_fields=sys_id,file_name";
+            // Open HTTP connection
+            URL url = new URL(apiUrl);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            conn.setRequestProperty("Authorization", "Bearer " + accessToken);
+            conn.setRequestProperty("Accept", "application/json");
+            // Get response
+            int responseCode = conn.getResponseCode();
+            if (responseCode == 200) {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                StringBuilder responseBuilder = new StringBuilder();
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    responseBuilder.append(line);
+                }
+                reader.close();
+                // Parse JSON
+                JSONObject jsonResponse = new JSONObject(responseBuilder.toString());
+                JSONArray resultArray = jsonResponse.getJSONArray("result");
+                // Store sys_ids and file_names in list
+                for (int i = 0; i < resultArray.length(); i++) {
+                    JSONObject attachment = resultArray.getJSONObject(i);
+                    String sysId = attachment.getString("sys_id");
+                    String fileName = attachment.getString("file_name");
+                    attachments.add(new AttachmentInfo(sysId, fileName));
+                    sb.append("readAllFilesForTableSysId -> Attachment -"+fileName);
+                }
+
+            } else {
+                sb.append("readAllFilesForTableSysId -> Failed: HTTP error code : "+responseCode);
+            }
+            conn.disconnect();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return attachments;
+    }
+
+    /*
+    1. Download streams from servicenow
+    2. Create a file in mid server
+    3. Add to zip file
+   */
+    private boolean readAttachmentFromSnow(String accessToken,
+                                           String attachmentSysId,
+                                           String snow_attachmentFileName,
+                                           String convertFrom,
+                                           ZipOutputStream zos,
+                                           StringBuilder sb,String partialURL){
+        boolean status = false;
+        //String partialURL = "ftgtest";
+        sb.append("readAttachmentFromSnow: Downloading streams from servicenow...");
+        try {
+            //Reading servicenow file streams
+            URL url = new URL("https://"+partialURL+".service-now.com" + "/api/now/attachment/" + attachmentSysId + "/file");
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            conn.setRequestProperty("Authorization", "Bearer " + accessToken);
+            conn.setRequestProperty("Accept", "application/octet-stream");
+            try (InputStream in = conn.getInputStream()) {
+                writeZipEntry(zos, snow_attachmentFileName, in, convertFrom, sb);
+            }
+            sb.append("readAttachmentFromSnow: Downloaded streams from servicenow completed. " +
+                    "File Name: " + snow_attachmentFileName);
+            status = true;
+        } catch (Exception e) {
+            sb.append( "Error in readAttachmentFromSnow:" + ExceptionUtil.extractExceptionDetails(e));
+            status = false;
+        }
+        return status;
+    }
+
+    /***************************** END ********************************************************************/
+
+    /*
+
+     */
+    private static void uploadFile(Path filePath, String targetPath, String token,
+                                   JSONObject inputJsonObject, StringBuilder sb) throws Exception {
+        String sharepointDriveId = inputJsonObject.get("sharepointDriveId") == JSONObject.NULL ? null : (String) inputJsonObject.get("sharepointDriveId");
+        boolean status = false;
+        try {
+            kong.unirest.HttpResponse<JsonNode> session = Unirest.post(
+                    "https://graph.microsoft.com/v1.0/drives/" + sharepointDriveId +
+                            "/root:/" + targetPath + ":/createUploadSession")
+                    .header("Authorization", "Bearer " + token)
+                    .header("Content-Type", "application/json")
+                    .body("{}")
+                    .asJson();
+            String uploadUrl = session.getBody().getObject().getString("uploadUrl");
+            File file = new File(filePath.toString());
+            FileInputStream fis = new FileInputStream(file);
+            byte[] buffer = new byte[CHUNK_SIZE];
+            long fileSize = file.length();
+            long bytesRemaining = fileSize;
+            long offset = 0;
+            while (bytesRemaining > 0) {
+                int bytesRead = fis.read(buffer, 0, CHUNK_SIZE);
+                if (bytesRead <= 0) {
+                    break;
+                }
+                byte[] chunk = new byte[bytesRead];
+                System.arraycopy(buffer, 0, chunk, 0, bytesRead);
+                HttpHeaders headers = new HttpHeaders();
+                headers.setBearerAuth(token);
+                headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+
+                // Set the content range header
+                String contentRange = "bytes " + offset + "-" + (offset + bytesRead - 1) + "/" + fileSize;
+                headers.set("Content-Range", contentRange);
+                HttpEntity<byte[]> chunkEntity = new HttpEntity<>(chunk, headers);
+                RestTemplate restTemplate = new RestTemplate();
+                ResponseEntity<String> response = restTemplate.exchange(uploadUrl, HttpMethod.PUT, chunkEntity, String.class);
+                if (!response.getStatusCode().is2xxSuccessful()) {
+                    sb.append("uploadFileInChunks: Error in uploading chunks.."+response.getStatusCode());
+                }
+                offset += bytesRead;
+                bytesRemaining -= bytesRead;
+            }
+            fis.close();
+            if (file.exists()) {
+                file.delete();
+            }
+            status = true;
+        }
+        catch (Exception ex){
+            throw ex;
+        }
+    }
+
+    /*
+
+     */
+    private String makeUniqueEntryName(String fileName, Set<String> usedFileName){
+        String candidate = fileName;
+        if(usedFileName.add(candidate)){
+            return candidate;
+        }
+        int dotIndex = fileName.lastIndexOf('.');
+        String base = dotIndex > 0 ? fileName.substring(0,dotIndex):fileName;
+        String extension = dotIndex > 0 ? fileName.substring(dotIndex): "";
+        int counter =1;
+        do{
+            candidate = base + " ("+counter+")" +extension;
+            counter++;
+
+        }while (!usedFileName.add(candidate));
+        return candidate;
+    }
+
+    /*
+        When EmlToPdf=1 and the file is an .eml or .msg email, returns its extension
+        (original case, e.g. ".eml", ".MSG"); otherwise null (file is zipped as is).
+     */
+    private String emailExtensionToConvert(String fileName){
+        if (!emlToPdf || fileName.length() < 4) {
+            return null;
+        }
+        String extension = fileName.substring(fileName.length() - 4);
+        return extension.equalsIgnoreCase(".eml") || extension.equalsIgnoreCase(".msg") ? extension : null;
+    }
+
+    /*
+        Replaces the .eml / .msg extension with .pdf
+     */
+    private static String toPdfName(String emailFileName){
+        return emailFileName.substring(0, emailFileName.length() - 4) + ".pdf";
+    }
+
+    /*
+        Writes the stream to the zip as entryName.
+        When convertFrom is ".eml" or ".msg" the stream is an email which is converted to pdf.
+        If conversion fails, the original email is added instead with its original extension.
+     */
+    private void writeZipEntry(ZipOutputStream zos, String entryName, InputStream in,
+                               String convertFrom, StringBuilder sb) throws IOException {
+        byte[] content = null;
+        if (convertFrom != null) {
+            byte[] email = IOUtils.toByteArray(in);
+            try {
+                content = convertFrom.equalsIgnoreCase(".msg")
+                        ? MsgToPdfConverter.convert(email)
+                        : EmlToPdfConverter.convert(email);
+            } catch (Exception ex) {
+                entryName = entryName.substring(0, entryName.length() - 4) + convertFrom;
+                content = email;
+                sb.append("writeZipEntry: email to PDF conversion failed, adding original file-" + entryName
+                        + ":" + ExceptionUtil.extractExceptionDetails(ex));
+            }
+        }
+        zos.putNextEntry(new ZipEntry(entryName));
+        try {
+            if (content != null) {
+                zos.write(content);
+            } else {
+                IOUtils.copy(in, zos);
+            }
+        } finally {
+            zos.closeEntry();
+        }
+    }
+
+}
