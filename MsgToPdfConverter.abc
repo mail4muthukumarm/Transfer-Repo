@@ -1,0 +1,71 @@
+package au.com.jarfusion.imsdocumentadapter.document;
+
+import org.apache.poi.hsmf.MAPIMessage;
+import org.apache.poi.hsmf.datatypes.AttachmentChunks;
+
+import java.io.ByteArrayInputStream;
+import java.net.URLConnection;
+import java.util.Base64;
+import java.util.Calendar;
+
+/*
+    Converts an Outlook .msg email into a PDF with the same layout as EmlToPdfConverter:
+    email headers, attachment names and the body (HTML body when present, otherwise plain text).
+ */
+public final class MsgToPdfConverter {
+
+    private MsgToPdfConverter() {
+    }
+
+    public static byte[] convert(byte[] msgBytes) throws Exception {
+        MAPIMessage msg = new MAPIMessage(new ByteArrayInputStream(msgBytes));
+        msg.setReturnNullOnMissingChunk(true);
+        // Older (non-Unicode) .msg files store text in a code page; pick it up from the message
+        msg.guess7BitEncoding();
+
+        EmlToPdfConverter.Email email = new EmlToPdfConverter.Email();
+        String displayFrom = msg.getDisplayFrom();
+        String fromAddress = msg.getStringFromChunk(msg.getMainChunks().getEmailFromChunk());
+        if (fromAddress != null && (fromAddress.startsWith("/") || !fromAddress.contains("@"))) {
+            // Internal Exchange sender id (/O=.../CN=...), not an email address
+            fromAddress = null;
+        }
+        email.from = displayFrom != null && fromAddress != null && !displayFrom.equals(fromAddress)
+                ? displayFrom + " <" + fromAddress + ">"
+                : displayFrom != null ? displayFrom : fromAddress;
+        Calendar sent = msg.getMessageDate();
+        email.sent = sent != null ? EmlToPdfConverter.formatDate(sent.getTime()) : null;
+        email.to = msg.getDisplayTo();
+        email.cc = msg.getDisplayCC();
+        email.subject = msg.getSubject();
+        email.html = msg.getHtmlBody();
+        email.text = msg.getTextBody();
+
+        for (AttachmentChunks attachment : msg.getAttachmentFiles()) {
+            String fileName = msg.getStringFromChunk(attachment.getAttachLongFileName());
+            if (fileName == null) {
+                fileName = msg.getStringFromChunk(attachment.getAttachFileName());
+            }
+            String contentId = msg.getStringFromChunk(attachment.getAttachContentId());
+            // Images shown in the HTML body (cid:) are embedded, not listed as attachments
+            if (contentId != null && attachment.getAttachData() != null && email.html != null
+                    && email.html.contains("cid:" + contentId)) {
+                String mimeType = msg.getStringFromChunk(attachment.getAttachMimeTag());
+                if (mimeType == null && fileName != null) {
+                    mimeType = URLConnection.guessContentTypeFromName(fileName);
+                }
+                email.inlineImages.put(contentId, "data:" + (mimeType != null ? mimeType : "image/png")
+                        + ";base64," + Base64.getEncoder().encodeToString(attachment.getAttachData().getValue()));
+                continue;
+            }
+            if (fileName == null && attachment.isEmbeddedMessage()) {
+                MAPIMessage embedded = attachment.getEmbeddedMessage();
+                embedded.setReturnNullOnMissingChunk(true);
+                String subject = embedded.getSubject();
+                fileName = (subject != null ? subject : "attached message") + ".msg";
+            }
+            email.attachments.add(fileName != null ? fileName : "(unnamed attachment)");
+        }
+        return EmlToPdfConverter.render(email);
+    }
+}

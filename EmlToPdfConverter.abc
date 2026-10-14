@@ -1,0 +1,198 @@
+package au.com.jarfusion.imsdocumentadapter.document;
+
+import com.openhtmltopdf.pdfboxout.PdfRendererBuilder;
+import org.apache.commons.io.IOUtils;
+import org.jsoup.Jsoup;
+import org.jsoup.helper.W3CDom;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.nodes.Node;
+
+import javax.mail.Address;
+import javax.mail.Message;
+import javax.mail.Multipart;
+import javax.mail.Part;
+import javax.mail.Session;
+import javax.mail.internet.ContentType;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimePart;
+import javax.mail.internet.MimeUtility;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Base64;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+
+/*
+    Converts an EML (RFC 822) email into a PDF showing the email headers,
+    the attachment names and the body (HTML body when present, otherwise plain text).
+ */
+public final class EmlToPdfConverter {
+
+    private static final String CSS =
+            "@page { size: A4; margin: 15mm; }"
+                    + "body { font-family: sans-serif; font-size: 10pt; word-wrap: break-word; }"
+                    + "table.email-headers td { vertical-align: top; padding: 1px 6px 1px 0; }"
+                    + "table.email-headers td.label { font-weight: bold; white-space: nowrap; }"
+                    + "pre.email-text { font-family: sans-serif; white-space: pre-wrap; }"
+                    + "img { max-width: 100%; }";
+
+    private EmlToPdfConverter() {
+    }
+
+    public static byte[] convert(byte[] eml) throws Exception {
+        MimeMessage message = new MimeMessage(Session.getInstance(new Properties()),
+                new ByteArrayInputStream(eml));
+        Email email = new Email();
+        email.from = addresses(message.getFrom());
+        email.sent = message.getSentDate() != null
+                ? formatDate(message.getSentDate())
+                : message.getHeader("Date", null);
+        email.to = addresses(message.getRecipients(Message.RecipientType.TO));
+        email.cc = addresses(message.getRecipients(Message.RecipientType.CC));
+        email.subject = message.getSubject();
+        collectParts(message, email);
+        return render(email);
+    }
+
+    /*
+        Email content to render. Filled from an EML here, or from an Outlook MSG by MsgToPdfConverter.
+     */
+    static class Email {
+        String from;
+        String sent;
+        String to;
+        String cc;
+        String subject;
+        String html;
+        String text;
+        final List<String> attachments = new ArrayList<>();
+        // Content-ID -> data URI, used to show images referenced as cid: in the HTML body
+        final Map<String, String> inlineImages = new HashMap<>();
+    }
+
+    static byte[] render(Email email) throws Exception {
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        PdfRendererBuilder builder = new PdfRendererBuilder();
+        builder.useFastMode();
+        // Do not fetch remote resources (tracking pixels, external images) while converting.
+        builder.useUriResolver((baseUri, uri) -> uri.startsWith("data:") ? uri : null);
+        builder.withW3cDocument(new W3CDom().fromJsoup(buildHtml(email)), null);
+        builder.toStream(out);
+        builder.run();
+        return out.toByteArray();
+    }
+
+    static String formatDate(Date date) {
+        return new SimpleDateFormat("EEEE, d MMMM yyyy h:mm a").format(date);
+    }
+
+    private static void collectParts(Part part, Email parts) throws Exception {
+        if (part.isMimeType("multipart/*")) {
+            Multipart multipart = (Multipart) part.getContent();
+            for (int i = 0; i < multipart.getCount(); i++) {
+                collectParts(multipart.getBodyPart(i), parts);
+            }
+            return;
+        }
+        String disposition = part.getDisposition();
+        String fileName = decodedFileName(part);
+        String contentId = part instanceof MimePart ? ((MimePart) part).getContentID() : null;
+        if (contentId != null && part.isMimeType("image/*")) {
+            String mimeType = new ContentType(part.getContentType()).getBaseType();
+            byte[] bytes = IOUtils.toByteArray(part.getInputStream());
+            parts.inlineImages.put(contentId.replaceAll("^<|>$", ""),
+                    "data:" + mimeType + ";base64," + Base64.getEncoder().encodeToString(bytes));
+            if (!Part.ATTACHMENT.equalsIgnoreCase(disposition)) {
+                return;
+            }
+        }
+        if (Part.ATTACHMENT.equalsIgnoreCase(disposition) || fileName != null
+                || part.isMimeType("message/rfc822")) {
+            parts.attachments.add(fileName != null ? fileName : "(unnamed attachment)");
+        } else if (part.isMimeType("text/html") && parts.html == null) {
+            parts.html = part.getContent().toString();
+        } else if (part.isMimeType("text/plain") && parts.text == null) {
+            parts.text = part.getContent().toString();
+        }
+    }
+
+    private static String decodedFileName(Part part) throws Exception {
+        String fileName = part.getFileName();
+        if (fileName == null) {
+            return null;
+        }
+        try {
+            return MimeUtility.decodeText(fileName);
+        } catch (Exception ex) {
+            return fileName;
+        }
+    }
+
+    private static Document buildHtml(Email parts) {
+        Document doc = Document.createShell("");
+        doc.head().appendElement("meta").attr("charset", "UTF-8");
+        doc.head().appendElement("style").text(CSS);
+
+        Element headers = doc.body().appendElement("table").addClass("email-headers");
+        addHeaderRow(headers, "From", parts.from);
+        addHeaderRow(headers, "Sent", parts.sent);
+        addHeaderRow(headers, "To", parts.to);
+        addHeaderRow(headers, "Cc", parts.cc);
+        addHeaderRow(headers, "Subject", parts.subject);
+        addHeaderRow(headers, "Attachments", String.join("; ", parts.attachments));
+        doc.body().appendElement("hr");
+
+        Element body = doc.body().appendElement("div");
+        if (parts.html != null) {
+            Document email = Jsoup.parse(parts.html);
+            email.select("script, link, meta, base, iframe, object, embed").remove();
+            for (Element img : email.select("img[src^=cid:]")) {
+                String dataUri = parts.inlineImages.get(img.attr("src").substring(4));
+                if (dataUri != null) {
+                    img.attr("src", dataUri);
+                } else {
+                    img.remove();
+                }
+            }
+            for (Element style : email.select("style")) {
+                doc.head().appendChild(style);
+            }
+            for (Node node : new ArrayList<>(email.body().childNodes())) {
+                body.appendChild(node);
+            }
+        } else {
+            body.appendElement("pre").addClass("email-text").text(parts.text == null ? "" : parts.text);
+        }
+        return doc;
+    }
+
+    private static void addHeaderRow(Element table, String label, String value) {
+        if (value == null || value.isEmpty()) {
+            return;
+        }
+        Element row = table.appendElement("tr");
+        row.appendElement("td").addClass("label").text(label + ":");
+        row.appendElement("td").text(value);
+    }
+
+    private static String addresses(Address[] addresses) {
+        if (addresses == null) {
+            return null;
+        }
+        List<String> values = new ArrayList<>();
+        for (Address address : addresses) {
+            values.add(address.toString());
+        }
+        try {
+            return MimeUtility.decodeText(String.join("; ", values));
+        } catch (Exception ex) {
+            return String.join("; ", values);
+        }
+    }
+}
